@@ -94,6 +94,23 @@
   .dash { margin: 0 4px; color: var(--muted); }
   .vs { font-size: .8rem; color: var(--muted); padding: 0 12px; }
   .live { color: var(--live); }
+  .select-label { display: block; font-size: .8rem; color: var(--muted); margin-bottom: 4px; }
+  .select {
+    width: 100%; max-width: 320px; font: inherit; color: var(--text); background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px;
+  }
+  .squad-head { display: flex; align-items: center; gap: 10px; margin: 14px 0 6px; }
+  .squad-head .muted { margin-left: auto; }
+  .squad-table td.player { white-space: normal; }
+  .squad-table td.num, .squad-table th.num { width: 2.5em; color: var(--muted); font-weight: 600; }
+  .squad-table td.country { text-align: left; }
+  .squad-table th.country { text-align: left; }
+  .squad-table td.country span { vertical-align: middle; }
+  .flag { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  .squad-table tr.group th {
+    text-align: left; text-transform: none; letter-spacing: 0; font-size: .85rem; color: var(--accent);
+    padding-top: 14px; border-bottom: 1px solid var(--border);
+  }
   footer { padding-bottom: 28px; font-size: .8rem; color: var(--muted); }
   @media (max-width: 520px) {
     h1 { font-size: 1.25rem; }
@@ -102,6 +119,8 @@
     .opt { display: none; }
     th, td { padding: 8px 4px; }
     .card { padding: 14px 12px; }
+    .squad-table td.country span { display: none; }
+    .select { max-width: none; }
   }
 </style>
 </head>
@@ -110,7 +129,7 @@
   <div>
     <h1>Primera División de Costa Rica</h1>
     <p class="subtitle">Torneo Apertura 2026</p>
-    <p class="updated">Última actualización: <time datetime="2026-10-28T19:17:14.221Z">28 de octubre de 2026 a las 13:17</time> (hora de Costa Rica)</p>
+    <p class="updated">Última actualización: <time datetime="2026-10-28T19:28:10.830Z">28 de octubre de 2026 a las 13:28</time> (hora de Costa Rica)</p>
   </div>
   <button class="theme-btn" type="button" id="theme-btn" aria-label="Cambiar tema">Tema</button>
 </header>
@@ -506,6 +525,2824 @@
     </div>
     <p class="note">Calculado a partir de los goles registrados en 65 partidos (sin autogoles). Puede diferir levemente del conteo oficial.</p>
     </section>
+  <section class="card span-2" id="plantillas"><h2>Plantillas</h2>
+    <label class="select-label" for="squad-select">Equipo</label>
+    <select id="squad-select" class="select"><option value="858" selected>Saprissa</option><option value="7239">Cartaginés</option><option value="20705">Sporting San José</option><option value="2057">Alajuelense</option><option value="859">AD San Carlos</option><option value="7237">Puntarenas FC</option><option value="131790">Inter de San Carlos</option><option value="862">Herediano</option><option value="132447">Escorpiones Belén</option><option value="7234">Pérez Zeledón</option></select>
+    
+      <div class="squad" data-team="858">
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>Saprissa</strong><span class="muted">37 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(5)</span></th></tr>
+          
+          <tr>
+            <td class="num">13</td>
+            <td class="player">Isaac Alfaro</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">34</td>
+            <td class="player">Jafeth López</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">35</td>
+            <td class="player">Ian O&#39;Rourke</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">40</td>
+            <td class="player">Abraham Madriz</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Minor Jesus Alvarez Cordero</td>
+            <td>36</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(14)</span></th></tr>
+          
+          <tr>
+            <td class="num">3</td>
+            <td class="player">Pablo Arboine</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">4</td>
+            <td class="player">Kendall Waston</td>
+            <td>38</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">5</td>
+            <td class="player">Joseph Mora</td>
+            <td>33</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">6</td>
+            <td class="player">Óscar Duarte</td>
+            <td>37</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">17</td>
+            <td class="player">Gerald Taylor</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">21</td>
+            <td class="player">Fidel Escobar</td>
+            <td>31</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">22</td>
+            <td class="player">Jorkaeff Azofeifa</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">27</td>
+            <td class="player">Samir Taylor</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">30</td>
+            <td class="player">Douglas Sequeira</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">42</td>
+            <td class="player">Julian González</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">53</td>
+            <td class="player">José Gabriel Carvajal Solano</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Matías Cordero Salas</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Shawn Johnson</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Thiago Cordero</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(8)</span></th></tr>
+          
+          <tr>
+            <td class="num">8</td>
+            <td class="player">David Guzmán</td>
+            <td>36</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">20</td>
+            <td class="player">Mariano Torres</td>
+            <td>39</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina" title="Argentina" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Argentina</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">25</td>
+            <td class="player">Sebastian Acuna Murillo</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">26</td>
+            <td class="player">Andrey Soto</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">3</td>
+          </tr>
+          <tr>
+            <td class="num">31</td>
+            <td class="player">Sebastián Padilla López</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">39</td>
+            <td class="player">Alberth Barahona</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">41</td>
+            <td class="player">Fabricio Urbina</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">50</td>
+            <td class="player">Mathias Jesús Elizondo Picado</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(10)</span></th></tr>
+          
+          <tr>
+            <td class="num">7</td>
+            <td class="player">Newton Williams</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
+            <td class="pts">3</td>
+          </tr>
+          <tr>
+            <td class="num">11</td>
+            <td class="player">Bancy Hernández</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">14</td>
+            <td class="player">Ariel Rodríguez</td>
+            <td>37</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">19</td>
+            <td class="player">Keyshwen Kermey Arboine Peterkin</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">23</td>
+            <td class="player">Luis Paradela</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">24</td>
+            <td class="player">Orlando Sinclair</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">4</td>
+          </tr>
+          <tr>
+            <td class="num">28</td>
+            <td class="player">Gerson Torres</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">52</td>
+            <td class="player">Ariel González</td>
+            <td>20</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Derek Allord Woodly Cerdas</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Johnny Jair Myrie Lewis</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="squad" data-team="7239" hidden>
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>Cartaginés</strong><span class="muted">38 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(4)</span></th></tr>
+          
+          <tr>
+            <td class="num">1</td>
+            <td class="player">Kevin Briceño</td>
+            <td>35</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">33</td>
+            <td class="player">Christopher Moya</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">34</td>
+            <td class="player">Darién Hidalgo</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">43</td>
+            <td class="player">Ramsses Cubero Cantillo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(12)</span></th></tr>
+          
+          <tr>
+            <td class="num">2</td>
+            <td class="player">Randal Cordero</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">4</td>
+            <td class="player">Luis Olivas</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">12</td>
+            <td class="player">José Quirós</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">17</td>
+            <td class="player">Yael López</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">18</td>
+            <td class="player">Carlos Barahona</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">19</td>
+            <td class="player">Diego Gonzalez</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">20</td>
+            <td class="player">Diego Mesén</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">21</td>
+            <td class="player">Johan Enrique Cortés Alfaro</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">36</td>
+            <td class="player">Derek Rodriguez Núñez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">38</td>
+            <td class="player">Emmanuel Brenes</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ian Díaz</td>
+            <td>19</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Joaquín Huertas Cruz</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(14)</span></th></tr>
+          
+          <tr>
+            <td class="num">6</td>
+            <td class="player">Claudio Alvarado</td>
+            <td>20</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">8</td>
+            <td class="player">Douglas López</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">11</td>
+            <td class="player">Leonardo Alfaro</td>
+            <td>19</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">15</td>
+            <td class="player">Luis Flores</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">25</td>
+            <td class="player">Santiago Quirós</td>
+            <td>16</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">26</td>
+            <td class="player">Bernald Alfaro</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">27</td>
+            <td class="player">Andrey Gerardo Mora Matarrita</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">31</td>
+            <td class="player">Gian Mauro Morera Alvarado</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">37</td>
+            <td class="player">Henryk Styf Martinez Al Tamirano</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">39</td>
+            <td class="player">Mauricio Villalobos</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Brandon Brizuela</td>
+            <td>20</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Faiboll Alvarado</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jose Andres Rodriguez Chiroldes</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Sebastián Dario Fallas Chacón</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(8)</span></th></tr>
+          
+          <tr>
+            <td class="num">7</td>
+            <td class="player">Manuel Morán</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">9</td>
+            <td class="player">José De Jesús González</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">13</td>
+            <td class="player">Juan Gaete</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/chi.png" alt="Chile" title="Chile" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Chile</span></td>
+            <td class="pts">6</td>
+          </tr>
+          <tr>
+            <td class="num">16</td>
+            <td class="player">Geancarlo Castro</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">4</td>
+          </tr>
+          <tr>
+            <td class="num">22</td>
+            <td class="player">Alonso Hernández</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="Estados Unidos" title="Estados Unidos" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Estados Unidos</span></td>
+            <td class="pts">5</td>
+          </tr>
+          <tr>
+            <td class="num">31</td>
+            <td class="player">José Mora</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Nicolás Vargas</td>
+            <td>19</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Saul Chavarría</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="squad" data-team="20705" hidden>
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>Sporting San José</strong><span class="muted">37 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(3)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Alejandro Chaves Elizondo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Leonel Moreira</td>
+            <td>36</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Rodiney Fermín Leal Medina</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(13)</span></th></tr>
+          
+          <tr>
+            <td class="num">30</td>
+            <td class="player">Sebastián Gómez</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ariel Soto</td>
+            <td>34</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Christopher Meneses</td>
+            <td>36</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Dominic Adrián Chévez Soto</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Eduardo Pastrana</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Fabio Francisco Coronado Quesada</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jean Carlo Batista González</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Ignacio Gómez Valverde</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kevin Espinoza</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ryan Davis</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Santiago Row Solano</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Yostin Salinas</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Youstin Salas</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(10)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Alexander López</td>
+            <td>34</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
+            <td class="pts">3</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Anderson José Barboza Ureña</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Andrew Isaac Barrantes Espinoza</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Carlos Pineda</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Diego Marín Monge</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Gabriel Leiva</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">5</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jeremi Daniel Hernández Corrales</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Pinto</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/bol.png" alt="Bolivia" title="Bolivia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Bolivia</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kevin Andrey Blandón Morales</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Matías Alonso Rojas Rodríguez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(11)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Daniel Colindres</td>
+            <td>41</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Dylan Alexis Ramírez Bolaños</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Erson Méndez</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Joser Guillermo González Oviedo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Joshua Navarro</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">4</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kaden Farrier</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Marco Ureña</td>
+            <td>36</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Mayron George</td>
+            <td>33</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">4</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Óscar Segura Hernández</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Randy Ariel Ramírez Abrahams</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Renzo Carballo</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="Paraguay" title="Paraguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Paraguay</span></td>
+            <td class="pts">2</td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="squad" data-team="2057" hidden>
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>Alajuelense</strong><span class="muted">39 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(4)</span></th></tr>
+          
+          <tr>
+            <td class="num">1</td>
+            <td class="player">Bayron Mora</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">23</td>
+            <td class="player">Washington Ortega</td>
+            <td>31</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/uru.png" alt="Uruguay" title="Uruguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Uruguay</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">40</td>
+            <td class="player">Daniel Velásquez</td>
+            <td>20</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">59</td>
+            <td class="player">José Fabián Núñez Chinchilla</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(16)</span></th></tr>
+          
+          <tr>
+            <td class="num">2</td>
+            <td class="player">Deylan Paz</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">3</td>
+            <td class="player">Giancarlo González</td>
+            <td>38</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">13</td>
+            <td class="player">Alexis Gamboa</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">15</td>
+            <td class="player">Farbod Samadian</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">17</td>
+            <td class="player">Daniel Chacón</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">21</td>
+            <td class="player">Yeison Molina</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">22</td>
+            <td class="player">Rónald Matarrita</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">24</td>
+            <td class="player">Aarón Salazar</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">26</td>
+            <td class="player">Fernando Pinar</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">30</td>
+            <td class="player">Brayan Calderón</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">32</td>
+            <td class="player">Lucca Unmuth Badilla</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">42</td>
+            <td class="player">John Ruiz</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">44</td>
+            <td class="player">Ethan Barley</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Giankarlo Kaled Romulus Gómez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Guillermo Villalobos</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Santiago van der Putten</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(10)</span></th></tr>
+          
+          <tr>
+            <td class="num">5</td>
+            <td class="player">Celso Borges</td>
+            <td>38</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">10</td>
+            <td class="player">Juanpi</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/ven.png" alt="Venezuela" title="Venezuela" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Venezuela</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">14</td>
+            <td class="player">Roan Wilson</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">19</td>
+            <td class="player">Charles Forstner</td>
+            <td>19</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">27</td>
+            <td class="player">Kyan Mcdonald</td>
+            <td>16</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">29</td>
+            <td class="player">Deylan Aguilar</td>
+            <td>19</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">34</td>
+            <td class="player">Creichel Pérez</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">35</td>
+            <td class="player">Rashir Parkins</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Malcom Pilone</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina" title="Argentina" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Argentina</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Santiago Rosales</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(9)</span></th></tr>
+          
+          <tr>
+            <td class="num">7</td>
+            <td class="player">Anthony Hernández</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">9</td>
+            <td class="player">Ángel Zaldívar</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">11</td>
+            <td class="player">Luis Díaz</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">18</td>
+            <td class="player">Ronaldo Cisneros</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts">6</td>
+          </tr>
+          <tr>
+            <td class="num">28</td>
+            <td class="player">Yerlan Sosa</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">33</td>
+            <td class="player">Jeison Lucumi</td>
+            <td>31</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia" title="Colombia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Colombia</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">39</td>
+            <td class="player">Esteban Cruz</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">99</td>
+            <td class="player">Kenyel Michel</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">6</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Issac Badilla</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="squad" data-team="859" hidden>
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>AD San Carlos</strong><span class="muted">32 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(2)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jason Vega</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José David Vega García</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(9)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Daniel Jesus Mora Herrera</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">David Andrés Rodríguez Amores</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Gerardo Castillo</td>
+            <td>–</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jean Aguero</td>
+            <td>33</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jefferson Rivera</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jordy Evans</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Keiner Andrés Córdoba Roa</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Pablo Fonseca</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Yoisel Piedra</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
+            <td class="pts">1</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(14)</span></th></tr>
+          
+          <tr>
+            <td class="num">11</td>
+            <td class="player">Roberto Córdoba</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Abraham Carmona Calvo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Allen Guevara</td>
+            <td>37</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Christian Martínez</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/slv.png" alt="El Salvador" title="El Salvador" width="20" height="14" loading="lazy" onerror="this.remove()"><span>El Salvador</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Cristopher Alfaro Villalobos</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Emmanuel Hernández Porras</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jefry Valverde</td>
+            <td>31</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jeikel Venegas</td>
+            <td>38</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jorshuad Pilarte</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Pablo Agüero Casanova</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kenneth Cerdas</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Luis Felipe Pérez Chaves</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Osvaldo Rojas Acosta</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Sebastián Gómez Pérez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(7)</span></th></tr>
+          
+          <tr>
+            <td class="num">7</td>
+            <td class="player">Jorman Aguilar</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Brian Martínez</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="España" title="España" width="20" height="14" loading="lazy" onerror="this.remove()"><span>España</span></td>
+            <td class="pts">5</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Dylan Imanol Masís Rodríguez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Geison Andrey Castro Urbina</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Juan Camilo Agualimpia Valencia</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kendall Gabriel Gómez Morales</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Raul Vidal</td>
+            <td>32</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">1</td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="squad" data-team="7237" hidden>
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7237.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>Puntarenas FC</strong><span class="muted">36 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(4)</span></th></tr>
+          
+          <tr>
+            <td class="num">80</td>
+            <td class="player">Diego Andrey Sequeira Chaves</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Erick Pineda</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Guillermo Barrera Apú</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Daniel Rojas Molina</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(8)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Derek Andrés Cordero Alvarado</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Hiram Muñoz</td>
+            <td>31</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kenner Gutiérrez</td>
+            <td>37</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kevin Fajardo</td>
+            <td>37</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kliver Gómez</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Krisler Jesús Villalobos Chavarría</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Wálter Cortés</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Wesly Decas</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(14)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Amferny Arias</td>
+            <td>26</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Berny Segura</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ismael André Mairena Jiménez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jaylon Hadden</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Adrián López Rojas</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Eduardo Leiva Rojas</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kevin Cabezas</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Lucas Comachi</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina" title="Argentina" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Argentina</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Pablo Manuel Álvarez Hodgson</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Sebastián Pastrana Espinoza</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ulises Segura</td>
+            <td>33</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Vladimir Carlton Edghill Serrano</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Wilson Alberto Hernández González</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Yeltsin Tejeda</td>
+            <td>34</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(10)</span></th></tr>
+          
+          <tr>
+            <td class="num">28</td>
+            <td class="player">Yosimar Obando Hidalgo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Aarón González Gutiérrez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Chris Auden Villalobos Venegas</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Dariel Castrillo</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">4</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Doryan Rodriguez</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">4</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Dylan Andrey Rivera Camareno</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jaret Andrés Hernández Moreno</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jordy Hernández</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Raheem Cole</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Randy Alexander Taylor Dosman</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="squad" data-team="131790" hidden>
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131790.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>Inter de San Carlos</strong><span class="muted">34 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(4)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Aarón Cruz</td>
+            <td>35</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Antonny Monreal</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Berny Rojas</td>
+            <td>20</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Guido Jiménez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(8)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Adriel Ramos Barrantes</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Carlos Martinez</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Daniel José Vargas Marchena</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Joel Ramos Barrantes</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jonathan Chacón</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina" title="Argentina" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Argentina</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Andrés Arias Jiménez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Juan Rodriguez</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Wilson Ramiro González Castillo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(11)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Aikel Nahun Pennant Vega</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Glen Gabriel Casanova Hernández</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Armando Rodríguez Elizondo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kendall Porras</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Maikol Vega</td>
+            <td>20</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Nendali Mendoza Pérez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Óscar Yahir Leal Arguedas</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Samuel Andrés Román Castillo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Sebastian Castro</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ulises Yamir Micael Villan</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Wilmer Azofeifa</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(11)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Andrés Gómez</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Carlos Villegas</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Erick Torres</td>
+            <td>33</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts">3</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Fabricio Alemán</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jefferson Steven Sánchez Galloway</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Joel Campbell</td>
+            <td>34</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">5</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Joseph Bolaños</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Randy Vega</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Rashid Chirino</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Yamil José Leal Arguedas</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Yeudid Snyder López Rosales</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="squad" data-team="862" hidden>
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/862.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>Herediano</strong><span class="muted">36 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(4)</span></th></tr>
+          
+          <tr>
+            <td class="num">1</td>
+            <td class="player">Dany Carvajal</td>
+            <td>37</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">31</td>
+            <td class="player">Alexandre Lezcano</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">35</td>
+            <td class="player">Marshall Alfaro</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">92</td>
+            <td class="player">Anthony Walker</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(10)</span></th></tr>
+          
+          <tr>
+            <td class="num">5</td>
+            <td class="player">Haxzel Quirós</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">16</td>
+            <td class="player">Darril Araya</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">20</td>
+            <td class="player">Reggy Rivera</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">21</td>
+            <td class="player">Jesús Everado Rubio Quintero</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">37</td>
+            <td class="player">Keysher Fuller</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">38</td>
+            <td class="player">Getsel Montes</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">55</td>
+            <td class="player">Yurguin Román</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">99</td>
+            <td class="player">Keyner Brown</td>
+            <td>34</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Andrés Morera Carrillo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jesus Vega</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(14)</span></th></tr>
+          
+          <tr>
+            <td class="num">8</td>
+            <td class="player">Allan Cruz</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">10</td>
+            <td class="player">Elías Aguilar</td>
+            <td>34</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">11</td>
+            <td class="player">Ronaldo Araya</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">22</td>
+            <td class="player">Aaron Murillo</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">24</td>
+            <td class="player">Sergio Rodríguez</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">25</td>
+            <td class="player">Emerson Bravo</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">26</td>
+            <td class="player">Eduardo Juárez</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">27</td>
+            <td class="player">Aarón Suárez</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">28</td>
+            <td class="player">Santiago Vargas</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">42</td>
+            <td class="player">Daniel Alberto González Pérez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">45</td>
+            <td class="player">Nick Bennette</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">88</td>
+            <td class="player">Ariel Araúz</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Jeaustin Jafeth Mondy Fortuna</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Sebastián López</td>
+            <td>18</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(8)</span></th></tr>
+          
+          <tr>
+            <td class="num">32</td>
+            <td class="player">Abner Adale Hudson Hansell</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">33</td>
+            <td class="player">Fernando Lesme</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="Paraguay" title="Paraguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Paraguay</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">41</td>
+            <td class="player">Joyfer Chal Vilorio</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">43</td>
+            <td class="player">Gabriel Sibaja</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">44</td>
+            <td class="player">Kionell Estrada</td>
+            <td>19</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">97</td>
+            <td class="player">Randall Leal</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Arturo Campos</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Deyverjen Garry Matthews Araya</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="squad" data-team="132447" hidden>
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/132447.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>Escorpiones Belén</strong><span class="muted">41 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(2)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Brayan Rodríguez</td>
+            <td>30</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Johnny Álvarez</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(11)</span></th></tr>
+          
+          <tr>
+            <td class="num">71</td>
+            <td class="player">Carlos Ordóñez</td>
+            <td>24</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia" title="Colombia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Colombia</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Abraham Solera Agüero</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Alexander Jiménez</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Emanuel Salazar</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Erikson David Arias Rodríguez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Leandro Mena</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Orlando Calvo</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Pablo Andrés Morera Jara</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Preston Kilwien</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="Estados Unidos" title="Estados Unidos" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Estados Unidos</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ricardo Peña</td>
+            <td>34</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Waylon Francis</td>
+            <td>36</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(11)</span></th></tr>
+          
+          <tr>
+            <td class="num">80</td>
+            <td class="player">Dylan Flores</td>
+            <td>33</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Cristian Muñoz</td>
+            <td>26</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Elian Andrés Morales Traña</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Esthuar Raúl Dávila Garita</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Greivin Fonseca</td>
+            <td>26</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Arturo Tello Salas</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Joshua Arce Guevara</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Michael Camejo</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Néstor Monge</td>
+            <td>36</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ricardo Montenegro</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="Estados Unidos" title="Estados Unidos" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Estados Unidos</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Santiago Abarca Acuña</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(17)</span></th></tr>
+          
+          <tr>
+            <td class="num">15</td>
+            <td class="player">Deyver Antonio Vega Álvarez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">99</td>
+            <td class="player">Danilo Pimpinati Rocha</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">3</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Abner Mauricio Hidalgo Espinoza</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Anderson Jesús Fernández Espinoza</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Anderson Nuñez</td>
+            <td>–</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ary Gabriel Sequeira Pérez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Bryan Jiménez</td>
+            <td>30</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Fabián Miguel Chaves Rodríguez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ian José Fernández Espinoza</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Javier Camareno</td>
+            <td>28</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Johan Venegas</td>
+            <td>37</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">John Jairo Ruiz</td>
+            <td>32</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Josué Daniel Serrano Montero</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Luis Alejandro González Marchena</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Mauro Stiwert Gutiérrez Solís</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Raúl Yulian López Orellana</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts">2</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Rodolfo Montiel</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">2</td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="squad" data-team="7234" hidden>
+        <p class="squad-head"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7234.png" alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'"><strong>Pérez Zeledón</strong><span class="muted">36 jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            
+        <tbody>
+          <tr class="group"><th colspan="5">Porteros <span class="muted">(3)</span></th></tr>
+          
+          <tr>
+            <td class="num">1</td>
+            <td class="player">Bryan Segura</td>
+            <td>29</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Alexander Gabriel Mora Figueroa</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Miguel Aju</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Defensas <span class="muted">(12)</span></th></tr>
+          
+          <tr>
+            <td class="num">23</td>
+            <td class="player">Mauricio Núnez</td>
+            <td>33</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Barlon Sequeira</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Elián Quesada Thorn</td>
+            <td>21</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kenneth Alejandro Carvajal Mondragón</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kenneth Guzmán</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Keral Ríos</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Keymar Mclean</td>
+            <td>20</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Luis Hernández</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Manuel Aguilar</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Rawy Rodríguez</td>
+            <td>23</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Sebastián Hernández</td>
+            <td>17</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">William Albán Fernández González</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(15)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Allan Fabián Fallas Sánchez</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Andy Steven López Santamaria</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Cristopher Gerardo Domínguez Orozco</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Darío Muñoz Araya</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Ethan George Drummond Arroyo</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Joaquin Aguirre</td>
+            <td>31</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/uru.png" alt="Uruguay" title="Uruguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Uruguay</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Alejandro Porras Montero</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Joshua Canales</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Justin Valverde Camacho</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Kenneth Gonzalez</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Luis Espinoza</td>
+            <td>22</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Marvin Angulo</td>
+            <td>40</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">1</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Pablo Gamboa Solis</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Silvio Rodríguez Rojas</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Wilber Renteria</td>
+            <td>34</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia" title="Colombia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Colombia</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="group"><th colspan="5">Delanteros <span class="muted">(6)</span></th></tr>
+          
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Axel Amador</td>
+            <td>25</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">3</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Erick David Marín Campos</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">John Cristopher Fonseca Mayorga</td>
+            <td>–</td>
+            <td class="country"><span>–</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Alvarado</td>
+            <td>28</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts">3</td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">José Córdoba</td>
+            <td>27</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
+          </tr>
+          <tr>
+            <td class="num">–</td>
+            <td class="player">Nicolás Morínigo</td>
+            <td>26</td>
+            <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="Paraguay" title="Paraguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Paraguay</span></td>
+            <td class="pts"></td>
+          </tr>
+        </tbody>
+          </table>
+        </div>
+      </div>
+    <p class="note">Plantilla inscrita según ESPN. Goles del torneo actual, calculados a partir de los partidos.</p>
+    </section>
   <section class="card"><h2>Títulos de Primera División por club</h2>
     <div class="bars">
       <div class="bar-row">
@@ -540,7 +3377,7 @@
       </div></div>
     <p class="one-title"><strong>Con 1 título:</strong> Carmelita, San Carlos, Brujas, Uruguay de Coronado, Universitarios, Municipal Liberia, Pérez Zeledón, Municipal Puntarenas.</p></section>
 </main>
-<footer>Fuente: ESPN (site.api.espn.com, liga crc.1). Página generada el 28 de octubre de 2026 a las 13:17.</footer>
+<footer>Fuente: ESPN (site.api.espn.com, liga crc.1). Página generada el 28 de octubre de 2026 a las 13:28.</footer>
 <script>
   (function () {
     var root = document.documentElement, btn = document.getElementById('theme-btn');
@@ -555,6 +3392,19 @@
       label();
     });
     label();
+
+    var sel = document.getElementById('squad-select');
+    if (sel) {
+      var show = function (id) {
+        document.querySelectorAll('.squad').forEach(function (el) { el.hidden = el.dataset.team !== id; });
+      };
+      try { var saved = localStorage.getItem('squad'); if (saved && sel.querySelector('option[value="' + saved + '"]')) sel.value = saved; } catch (e) {}
+      show(sel.value);
+      sel.addEventListener('change', function () {
+        show(sel.value);
+        try { localStorage.setItem('squad', sel.value); } catch (e) {}
+      });
+    }
   })();
 </script>
 </body>

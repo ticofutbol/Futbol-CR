@@ -136,7 +136,8 @@ async function fetchUpcomingMatches() {
 // Los partidos terminados no cambian, por eso sus goles se guardan en data/goals-cache.json.
 async function fetchScorers(played) {
   const cache = await readJson(GOALS_CACHE, {});
-  const missing = played.filter(m => !cache[m.id]);
+  // Entradas sin playerId vienen de una versión anterior: se vuelven a descargar una vez.
+  const missing = played.filter(m => !cache[m.id] || cache[m.id].some(g => !('playerId' in g)));
   const failed = [];
   await mapLimit(missing, 6, async m => {
     try {
@@ -144,6 +145,7 @@ async function fetchScorers(played) {
       cache[m.id] = (s.keyEvents ?? [])
         .filter(k => k.scoringPlay)
         .map(k => ({
+          playerId: k.participants?.[0]?.athlete?.id ?? null,
           player: k.participants?.[0]?.athlete?.displayName ?? 'Desconocido',
           team: k.team?.displayName ?? '',
           type: k.type?.text ?? 'Goal',
@@ -160,15 +162,52 @@ async function fetchScorers(played) {
   for (const m of played) for (const g of cache[m.id] ?? []) {
     total++;
     if (/own/i.test(g.type)) continue; // los autogoles no cuentan para el goleador
-    const key = `${g.player}|${g.team}`;
-    const row = tally.get(key) ?? { player: g.player, team: g.team, goals: 0, penalties: 0 };
+    const key = g.playerId ?? `${g.player}|${g.team}`;
+    const row = tally.get(key) ?? { playerId: g.playerId, player: g.player, team: g.team, goals: 0, penalties: 0 };
     row.goals++;
     if (/penalty/i.test(g.type)) row.penalties++;
     tally.set(key, row);
   }
   const rows = [...tally.values()].sort((a, b) => b.goals - a.goals || a.penalties - b.penalties || a.player.localeCompare(b.player));
   const cut = rows[9]?.goals ?? 0; // incluye empatados con el décimo
-  return { matchesCounted: played.length, goalsCounted: total, rows: rows.filter((r, i) => i < 10 || r.goals === cut).slice(0, 15) };
+  return {
+    matchesCounted: played.length,
+    goalsCounted: total,
+    rows: rows.filter((r, i) => i < 10 || r.goals === cut).slice(0, 15),
+    all: rows, // para cruzar con las plantillas
+  };
+}
+
+const POSITIONS = { G: 'Porteros', D: 'Defensas', M: 'Mediocampistas', F: 'Delanteros' };
+
+// Plantillas: dorsal, posición, edad y nacionalidad vienen del roster de cada equipo;
+// los goles se cruzan con los calculados en fetchScorers (por id de jugador).
+async function fetchSquads(teams, scorers) {
+  const goalsById = new Map((scorers?.all ?? []).filter(r => r.playerId).map(r => [r.playerId, r]));
+  const rosters = await mapLimit(teams, 5, t => getJson(`${SITE}/teams/${t.id}/roster`));
+  return {
+    teams: teams.map((t, i) => {
+      const players = (rosters[i].athletes ?? []).map(a => {
+        const g = goalsById.get(a.id);
+        const pos = a.position?.abbreviation;
+        return {
+          id: a.id,
+          jersey: a.jersey ?? null,
+          name: a.displayName,
+          position: POSITIONS[pos] ? pos : 'F',
+          age: a.age ?? null,
+          country: a.citizenship ?? a.flag?.alt ?? null,
+          flag: a.flag?.href ?? null,
+          goals: g?.goals ?? 0,
+          penalties: g?.penalties ?? 0,
+        };
+      });
+      const order = Object.keys(POSITIONS);
+      players.sort((a, b) => order.indexOf(a.position) - order.indexOf(b.position)
+        || (Number(a.jersey) || 999) - (Number(b.jersey) || 999) || a.name.localeCompare(b.name));
+      return { id: t.id, name: t.name, short: t.short, logo: t.logo, players };
+    }),
+  };
 }
 
 async function section(name, prev, fn, warnings) {
@@ -210,10 +249,15 @@ async function main() {
     return fetchScorers(played);
   }, warnings);
 
+  const squads = await section('Plantillas', prev.squads, async () => {
+    if (!standings?.rows?.length) throw new Error('Sin lista de equipos');
+    return fetchSquads(standings.rows, scorers);
+  }, warnings);
+
   const data = {
     source: 'ESPN (site.api.espn.com, liga crc.1)',
     generatedAt: new Date().toISOString(),
-    lastSuccessAt: [standings, results, upcoming, scorers].some(s => s && !s.stale)
+    lastSuccessAt: [standings, results, upcoming, scorers, squads].some(s => s && !s.stale)
       ? new Date().toISOString()
       : prev.lastSuccessAt ?? null,
     warnings,
@@ -221,6 +265,7 @@ async function main() {
     results,
     upcoming,
     scorers,
+    squads,
     history,
   };
 

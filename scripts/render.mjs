@@ -114,6 +114,58 @@ function scorersSection(s) {
     ${staleNote(s)}`;
 }
 
+const POSITION_NAMES = { G: 'Porteros', D: 'Defensas', M: 'Mediocampistas', F: 'Delanteros' };
+
+// ESPN da los países en inglés; los que se escriben distinto en español.
+const COUNTRY_ES = {
+  Panama: 'Panamá', Mexico: 'México', USA: 'Estados Unidos', 'United States': 'Estados Unidos',
+  Spain: 'España', Brazil: 'Brasil', Peru: 'Perú', Haiti: 'Haití', Canada: 'Canadá',
+  'Dominican Republic': 'República Dominicana', 'Trinidad and Tobago': 'Trinidad y Tobago',
+  France: 'Francia', Italy: 'Italia', Germany: 'Alemania', England: 'Inglaterra', Netherlands: 'Países Bajos',
+};
+const country = c => COUNTRY_ES[c] ?? c;
+
+function squadsSection(sq) {
+  const teams = sq?.teams ?? [];
+  if (!teams.length) return empty('Plantillas no disponibles.');
+  const options = teams.map((t, i) => `<option value="${esc(t.id)}"${i === 0 ? ' selected' : ''}>${esc(t.name)}</option>`).join('');
+  const panels = teams.map((t, i) => {
+    const groups = Object.entries(POSITION_NAMES).map(([pos, title]) => {
+      const players = t.players.filter(p => p.position === pos);
+      if (!players.length) return '';
+      const rows = players.map(p => `
+          <tr>
+            <td class="num">${esc(p.jersey ?? '–')}</td>
+            <td class="player">${esc(p.name)}</td>
+            <td>${p.age ?? '–'}</td>
+            <td class="country">${p.flag ? `<img class="flag" src="${esc(p.flag)}" alt="${esc(country(p.country))}" title="${esc(country(p.country))}" width="20" height="14" loading="lazy" onerror="this.remove()">` : ''}<span>${esc(country(p.country) ?? '–')}</span></td>
+            <td class="pts">${p.goals || ''}</td>
+          </tr>`).join('');
+      return `
+        <tbody>
+          <tr class="group"><th colspan="5">${title} <span class="muted">(${players.length})</span></th></tr>
+          ${rows}
+        </tbody>`;
+    }).join('');
+    return `
+      <div class="squad" data-team="${esc(t.id)}"${i === 0 ? '' : ' hidden'}>
+        <p class="squad-head">${logo(t, 28)}<strong>${esc(t.name)}</strong><span class="muted">${t.players.length} jugadores</span></p>
+        <div class="table-wrap">
+          <table class="squad-table">
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            ${groups}
+          </table>
+        </div>
+      </div>`;
+  }).join('');
+  return `
+    <label class="select-label" for="squad-select">Equipo</label>
+    <select id="squad-select" class="select">${options}</select>
+    ${panels}
+    <p class="note">Plantilla inscrita según ESPN. Goles del torneo actual, calculados a partir de los partidos.</p>
+    ${staleNote(sq)}`;
+}
+
 function historySection(h) {
   const clubs = [...(h?.clubs ?? [])].sort((a, b) => b.titles - a.titles);
   if (!clubs.length) return empty('Sin datos históricos.');
@@ -237,6 +289,23 @@ export function buildHtml(data) {
   .dash { margin: 0 4px; color: var(--muted); }
   .vs { font-size: .8rem; color: var(--muted); padding: 0 12px; }
   .live { color: var(--live); }
+  .select-label { display: block; font-size: .8rem; color: var(--muted); margin-bottom: 4px; }
+  .select {
+    width: 100%; max-width: 320px; font: inherit; color: var(--text); background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px;
+  }
+  .squad-head { display: flex; align-items: center; gap: 10px; margin: 14px 0 6px; }
+  .squad-head .muted { margin-left: auto; }
+  .squad-table td.player { white-space: normal; }
+  .squad-table td.num, .squad-table th.num { width: 2.5em; color: var(--muted); font-weight: 600; }
+  .squad-table td.country { text-align: left; }
+  .squad-table th.country { text-align: left; }
+  .squad-table td.country span { vertical-align: middle; }
+  .flag { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  .squad-table tr.group th {
+    text-align: left; text-transform: none; letter-spacing: 0; font-size: .85rem; color: var(--accent);
+    padding-top: 14px; border-bottom: 1px solid var(--border);
+  }
   footer { padding-bottom: 28px; font-size: .8rem; color: var(--muted); }
   @media (max-width: 520px) {
     h1 { font-size: 1.25rem; }
@@ -245,6 +314,8 @@ export function buildHtml(data) {
     .opt { display: none; }
     th, td { padding: 8px 4px; }
     .card { padding: 14px 12px; }
+    .squad-table td.country span { display: none; }
+    .select { max-width: none; }
   }
 </style>
 </head>
@@ -264,6 +335,7 @@ export function buildHtml(data) {
   <section class="card"><h2>Últimos resultados</h2>${matchList(data.results, 'results')}</section>
   <section class="card"><h2>Próximos partidos</h2>${matchList(data.upcoming, 'upcoming')}</section>
   <section class="card"><h2>Goleadores</h2>${scorersSection(data.scorers)}</section>
+  <section class="card span-2" id="plantillas"><h2>Plantillas</h2>${squadsSection(data.squads)}</section>
   <section class="card"><h2>${esc(data.history?.title ?? 'Historia')}</h2>${historySection(data.history)}</section>
 </main>
 <footer>Fuente: ${esc(data.source)}. Página generada el ${esc(fmtStamp(data.generatedAt))}.</footer>
@@ -281,6 +353,19 @@ export function buildHtml(data) {
       label();
     });
     label();
+
+    var sel = document.getElementById('squad-select');
+    if (sel) {
+      var show = function (id) {
+        document.querySelectorAll('.squad').forEach(function (el) { el.hidden = el.dataset.team !== id; });
+      };
+      try { var saved = localStorage.getItem('squad'); if (saved && sel.querySelector('option[value="' + saved + '"]')) sel.value = saved; } catch (e) {}
+      show(sel.value);
+      sel.addEventListener('change', function () {
+        show(sel.value);
+        try { localStorage.setItem('squad', sel.value); } catch (e) {}
+      });
+    }
   })();
 </script>
 </body>
