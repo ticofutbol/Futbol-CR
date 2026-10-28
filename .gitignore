@@ -1,0 +1,8 @@
+# Claves y configuración local: nunca se suben
+.env
+.env.*
+
+node_modules/
+*.tmp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1015 @@
+{
+  "401876832": [
+    {
+      "player": "Mayron George",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Deyver Antonio Vega Álvarez",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    },
+    {
+      "player": "Mayron George",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Mayron George",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Erson Méndez",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Raúl Yulian López Orellana",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    }
+  ],
+  "401876833": [
+    {
+      "player": "Anthony Hernández",
+      "team": "Alajuelense",
+      "type": "Goal"
+    }
+  ],
+  "401876834": [
+    {
+      "player": "Nick Bennette",
+      "team": "Herediano",
+      "type": "Goal"
+    },
+    {
+      "player": "Allan Cruz",
+      "team": "Herediano",
+      "type": "Goal"
+    },
+    {
+      "player": "Geancarlo Castro",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Elías Aguilar",
+      "team": "Herediano",
+      "type": "Penalty - Scored"
+    }
+  ],
+  "401876835": [
+    {
+      "player": "Kenneth Cerdas",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Raul Vidal",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Mariano Torres",
+      "team": "Saprissa",
+      "type": "Goal"
+    }
+  ],
+  "401876836": [
+    {
+      "player": "Alexander López",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Joshua Navarro",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Jeikel Venegas",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Joshua Navarro",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Yoisel Piedra",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Roberto Córdoba",
+      "team": "AD San Carlos",
+      "type": "Penalty - Scored"
+    }
+  ],
+  "401876837": [
+    {
+      "player": "Daniel Alberto González Pérez",
+      "team": "Herediano",
+      "type": "Goal"
+    },
+    {
+      "player": "Allan Cruz",
+      "team": "Herediano",
+      "type": "Goal"
+    },
+    {
+      "player": "Elías Aguilar",
+      "team": "Herediano",
+      "type": "Penalty - Scored"
+    }
+  ],
+  "401876838": [
+    {
+      "player": "Doryan Rodriguez",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Danilo Pimpinati Rocha",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    },
+    {
+      "player": "Doryan Rodriguez",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    }
+  ],
+  "401876839": [
+    {
+      "player": "Sebastian Acuna Murillo",
+      "team": "Cartaginés",
+      "type": "Own Goal"
+    }
+  ],
+  "401876840": [
+    {
+      "player": "Deyver Antonio Vega Álvarez",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    },
+    {
+      "player": "Danilo Pimpinati Rocha",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    },
+    {
+      "player": "Axel Amador",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    },
+    {
+      "player": "Danilo Pimpinati Rocha",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    },
+    {
+      "player": "Rodolfo Montiel",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    }
+  ],
+  "401876841": [
+    {
+      "player": "Ronaldo Cisneros",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Fernando Lesme",
+      "team": "Herediano",
+      "type": "Goal"
+    }
+  ],
+  "401876842": [
+    {
+      "player": "Sebastian Acuna Murillo",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Andrey Soto",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Jorkaeff Azofeifa",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Gerson Torres",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Kendall Waston",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Orlando Sinclair",
+      "team": "Saprissa",
+      "type": "Goal"
+    }
+  ],
+  "401876843": [
+    {
+      "player": "José De Jesús González",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Yeltsin Tejeda",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Juan Gaete",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Juan Gaete",
+      "team": "Cartaginés",
+      "type": "Goal"
+    }
+  ],
+  "401876844": [
+    {
+      "player": "Gabriel Leiva",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Alonso Hernández",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Joshua Navarro",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Daniel Colindres",
+      "team": "Sporting San José",
+      "type": "Goal"
+    }
+  ],
+  "401876845": [
+    {
+      "player": "Ronaldo Cisneros",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Dariel Castrillo",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    }
+  ],
+  "401876846": [
+    {
+      "player": "John Jairo Ruiz",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    }
+  ],
+  "401876847": [
+    {
+      "player": "Brian Martínez",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876848": [
+    {
+      "player": "Kevin Cabezas",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    }
+  ],
+  "401876849": [
+    {
+      "player": "José Pinto",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Axel Amador",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    },
+    {
+      "player": "Gabriel Leiva",
+      "team": "Sporting San José",
+      "type": "Goal"
+    }
+  ],
+  "401876850": [
+    {
+      "player": "Orlando Sinclair",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Mariano Torres",
+      "team": "Saprissa",
+      "type": "Penalty - Scored"
+    }
+  ],
+  "401876851": [
+    {
+      "player": "Jefferson Rivera",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876852": [
+    {
+      "player": "Gabriel Leiva",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Andrey Soto",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Youstin Salas",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Mayron George",
+      "team": "Sporting San José",
+      "type": "Penalty - Scored"
+    },
+    {
+      "player": "Gabriel Leiva",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Ariel Rodríguez",
+      "team": "Saprissa",
+      "type": "Goal"
+    }
+  ],
+  "401876853": [
+    {
+      "player": "Brian Martínez",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Brian Martínez",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876854": [
+    {
+      "player": "Keyner Brown",
+      "team": "Herediano",
+      "type": "Goal"
+    },
+    {
+      "player": "Ronaldo Araya",
+      "team": "Herediano",
+      "type": "Goal"
+    }
+  ],
+  "401876855": [
+    {
+      "player": "Claudio Alvarado",
+      "team": "Cartaginés",
+      "type": "Penalty - Scored"
+    },
+    {
+      "player": "Farbod Samadian",
+      "team": "Cartaginés",
+      "type": "Own Goal"
+    },
+    {
+      "player": "Douglas López",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Ronaldo Cisneros",
+      "team": "Alajuelense",
+      "type": "Goal"
+    }
+  ],
+  "401876856": [
+    {
+      "player": "Alonso Hernández",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Hiram Muñoz",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Geancarlo Castro",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Geancarlo Castro",
+      "team": "Cartaginés",
+      "type": "Goal"
+    }
+  ],
+  "401876857": [
+    {
+      "player": "Orlando Sinclair",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Sebastian Acuna Murillo",
+      "team": "Saprissa",
+      "type": "Goal"
+    }
+  ],
+  "401876858": [
+    {
+      "player": "José Alvarado",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    },
+    {
+      "player": "Fernando Lesme",
+      "team": "Herediano",
+      "type": "Penalty - Scored"
+    },
+    {
+      "player": "Ronaldo Araya",
+      "team": "Herediano",
+      "type": "Goal"
+    },
+    {
+      "player": "Axel Amador",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    },
+    {
+      "player": "Marvin Angulo",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    }
+  ],
+  "401876859": [
+    {
+      "player": "Brian Martínez",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876860": [
+    {
+      "player": "Ronaldo Cisneros",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Elián Quesada Thorn",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    }
+  ],
+  "401876861": [
+    {
+      "player": "Gerson Torres",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Andrey Soto",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Cristian Muñoz",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    }
+  ],
+  "401876862": [
+    {
+      "player": "Alonso Hernández",
+      "team": "Cartaginés",
+      "type": "Goal"
+    }
+  ],
+  "401876863": [
+    {
+      "player": "Dariel Castrillo",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Jorman Aguilar",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Amferny Arias",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    }
+  ],
+  "401876864": [
+    {
+      "player": "Doryan Rodriguez",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    }
+  ],
+  "401876865": [
+    {
+      "player": "Rodolfo Montiel",
+      "team": "Escorpiones Belén",
+      "type": "Penalty - Scored"
+    },
+    {
+      "player": "Alonso Hernández",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Alonso Hernández",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Juan Gaete",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Juan Gaete",
+      "team": "Cartaginés",
+      "type": "Goal"
+    }
+  ],
+  "401876866": [
+    {
+      "player": "Jefferson Rivera",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876867": [
+    {
+      "player": "José Pinto",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Alexander López",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Daniel Colindres",
+      "team": "Sporting San José",
+      "type": "Goal"
+    }
+  ],
+  "401876868": [
+    {
+      "player": "Erson Méndez",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Marco Ureña",
+      "team": "Sporting San José",
+      "type": "Goal"
+    }
+  ],
+  "401876869": [
+    {
+      "player": "Doryan Rodriguez",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Alexis Gamboa",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Kenyel Michel",
+      "team": "Alajuelense",
+      "type": "Goal"
+    }
+  ],
+  "401876870": [
+    {
+      "player": "Jefferson Brenes",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Douglas López",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Jefferson Brenes",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Bancy Hernández",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Carlos Barahona",
+      "team": "Cartaginés",
+      "type": "Goal"
+    }
+  ],
+  "401876871": [
+    {
+      "player": "Brian Martínez",
+      "team": "AD San Carlos",
+      "type": "Penalty - Scored"
+    }
+  ],
+  "401876872": [
+    {
+      "player": "Jefferson Brenes",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Jefferson Brenes",
+      "team": "Saprissa",
+      "type": "Goal"
+    }
+  ],
+  "401876873": [],
+  "401876874": [
+    {
+      "player": "Rashir Parkins",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Jeison Lucumi",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Kenyel Michel",
+      "team": "Alajuelense",
+      "type": "Goal"
+    }
+  ],
+  "401876875": [
+    {
+      "player": "José De Jesús González",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Alexander López",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Geancarlo Castro",
+      "team": "Cartaginés",
+      "type": "Goal"
+    }
+  ],
+  "401876876": [
+    {
+      "player": "Jaylon Hadden",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Renzo Carballo",
+      "team": "Sporting San José",
+      "type": "Goal"
+    }
+  ],
+  "401876877": [
+    {
+      "player": "José Alvarado",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    }
+  ],
+  "401876878": [
+    {
+      "player": "Anthony Hernández",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Raúl Yulian López Orellana",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    },
+    {
+      "player": "Alexis Gamboa",
+      "team": "Alajuelense",
+      "type": "Goal"
+    }
+  ],
+  "401876879": [
+    {
+      "player": "Newton Williams",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Newton Williams",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Kenneth Cerdas",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876880": [
+    {
+      "player": "Renzo Carballo",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Kenyel Michel",
+      "team": "Alajuelense",
+      "type": "Goal"
+    }
+  ],
+  "401876881": [
+    {
+      "player": "Orlando Sinclair",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "José Alvarado",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    },
+    {
+      "player": "Luis Paradela",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Luis Paradela",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Newton Williams",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "player": "Fabricio Urbina",
+      "team": "Saprissa",
+      "type": "Goal"
+    }
+  ],
+  "401876882": [
+    {
+      "player": "Dariel Castrillo",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Santiago Vargas",
+      "team": "Herediano",
+      "type": "Goal"
+    }
+  ],
+  "401876883": [],
+  "401876884": [
+    {
+      "player": "Juan Gaete",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Juan Gaete",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "player": "Kevin Briceño",
+      "team": "Inter de San Carlos",
+      "type": "Own Goal"
+    },
+    {
+      "player": "Bernald Alfaro",
+      "team": "Cartaginés",
+      "type": "Goal"
+    }
+  ],
+  "401876885": [
+    {
+      "player": "Yurguin Román",
+      "team": "Herediano",
+      "type": "Goal"
+    },
+    {
+      "player": "Joel Campbell",
+      "team": "Inter de San Carlos",
+      "type": "Penalty - Scored"
+    }
+  ],
+  "401876891": [
+    {
+      "player": "Erick Torres",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Kevin Cabezas",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Wilson Alberto Hernández González",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Pablo Manuel Álvarez Hodgson",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    }
+  ],
+  "401876892": [
+    {
+      "player": "Juanpi",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Rashid Chirino",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Juanpi",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Wilmer Azofeifa",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Kenyel Michel",
+      "team": "Alajuelense",
+      "type": "Goal"
+    }
+  ],
+  "401876893": [
+    {
+      "player": "Wilmer Azofeifa",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Yoisel Piedra",
+      "team": "Inter de San Carlos",
+      "type": "Own Goal"
+    },
+    {
+      "player": "Roberto Córdoba",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876894": [
+    {
+      "player": "Joaquin Aguirre",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    },
+    {
+      "player": "Erick Torres",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876895": [
+    {
+      "player": "Ronaldo Cisneros",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Kenyel Michel",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Kenyel Michel",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "player": "Ronaldo Cisneros",
+      "team": "Alajuelense",
+      "type": "Penalty - Scored"
+    },
+    {
+      "player": "John Ruiz",
+      "team": "Alajuelense",
+      "type": "Goal"
+    }
+  ],
+  "401876896": [
+    {
+      "player": "Dariel Castrillo",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "player": "Juan Rodriguez",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876897": [
+    {
+      "player": "Joel Campbell",
+      "team": "Inter de San Carlos",
+      "type": "Penalty - Scored"
+    },
+    {
+      "player": "Joel Campbell",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876898": [
+    {
+      "player": "Gabriel Leiva",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "player": "Joshua Navarro",
+      "team": "Sporting San José",
+      "type": "Goal"
+    }
+  ],
+  "401876899": [
+    {
+      "player": "Joel Campbell",
+      "team": "Inter de San Carlos",
+      "type": "Penalty - Scored"
+    }
+  ],
+  "401876900": [
+    {
+      "player": "Randy Vega",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876901": [
+    {
+      "player": "Erick Torres",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "player": "Joel Campbell",
+      "team": "Inter de San Carlos",
+      "type": "Penalty - Scored"
+    }
+  ]
+}

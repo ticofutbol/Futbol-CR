@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Fútbol CR</title>
+<meta name="description" content="Tabla, resultados, goleadores e historia de la Primera División de Costa Rica.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+<script>
+  try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<style>
+  :root {
+    --bg: #f4f5f2; --surface: #ffffff; --surface-2: #eef0ec; --text: #15201a; --muted: #5d6b62;
+    --border: #dde2dc; --accent: #0b6e4f; --accent-soft: #dcefe6; --bar: #9aa8a0; --hist: #b5651d;
+    --win: #0b6e4f; --warn-bg: #fff4d6; --warn-text: #6b4e00; --live: #c62828;
+    --shadow: 0 1px 2px rgb(0 0 0 / .05), 0 2px 8px rgb(0 0 0 / .04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1411; --surface: #161e1a; --surface-2: #1d2722; --text: #e6ece8; --muted: #93a39a;
+      --border: #2a3530; --accent: #3fbf8f; --accent-soft: #173a2d; --bar: #4e5c55; --hist: #e0954a;
+      --win: #3fbf8f; --warn-bg: #3a2f0f; --warn-text: #f3d58a; --live: #ff6b6b; --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1411; --surface: #161e1a; --surface-2: #1d2722; --text: #e6ece8; --muted: #93a39a;
+    --border: #2a3530; --accent: #3fbf8f; --accent-soft: #173a2d; --bar: #4e5c55; --hist: #e0954a;
+    --win: #3fbf8f; --warn-bg: #3a2f0f; --warn-text: #f3d58a; --live: #ff6b6b; --shadow: none;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  header, main, footer { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+  header { padding-top: 20px; padding-bottom: 8px; display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; }
+  h1 { margin: 0; font-size: 1.5rem; letter-spacing: -.01em; }
+  .subtitle { margin: 2px 0 0; color: var(--muted); }
+  .updated { margin: 6px 0 0; font-size: .85rem; color: var(--muted); }
+  .updated time { color: var(--text); font-weight: 600; }
+  .theme-btn {
+    flex: none; border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .85rem; cursor: pointer;
+  }
+  .banner { margin: 8px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--warn-bg); color: var(--warn-text); font-size: .9rem; }
+  main { display: grid; gap: 16px; grid-template-columns: 1fr; padding-top: 12px; padding-bottom: 24px; }
+  @media (min-width: 900px) {
+    main { grid-template-columns: 1.4fr 1fr; }
+    .span-2 { grid-column: 1 / -1; }
+  }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; box-shadow: var(--shadow); min-width: 0; }
+  .card h2 { margin: 0 0 12px; font-size: 1.05rem; }
+  .table-wrap { overflow-x: auto; margin: 0 -4px; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { padding: 8px 6px; text-align: center; white-space: nowrap; }
+  th { font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+  tbody tr + tr td { border-top: 1px solid var(--border); }
+  td.team, th.team, td.player, th.player { text-align: left; }
+  td.team { display: flex; align-items: center; gap: 8px; font-weight: 500; }
+  td.pos { color: var(--muted); width: 2em; }
+  td.pts { font-weight: 700; }
+  tr.zone td { background: var(--accent-soft); }
+  tr.zone td.pos { color: var(--accent); font-weight: 700; box-shadow: inset 3px 0 0 var(--accent); }
+  .abbr { display: none; }
+  .logo { width: 20px; height: 20px; object-fit: contain; flex: none; display: inline-block; }
+  .legend, .note, .one-title { margin: 10px 0 0; font-size: .85rem; color: var(--muted); }
+  .one-title { color: var(--text); }
+  .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); vertical-align: -1px; margin-right: 6px; }
+  .stale { margin: 10px 0 0; font-size: .8rem; color: var(--warn-text); background: var(--warn-bg); padding: 6px 10px; border-radius: 8px; }
+  .empty { color: var(--muted); margin: 0; }
+  .muted { color: var(--muted); font-size: .8rem; }
+  .sub { display: block; font-size: .8rem; color: var(--muted); }
+  .bars { display: grid; gap: 8px; }
+  .bar-row { display: grid; grid-template-columns: minmax(90px, 9.5em) 1fr 2.2em; gap: 10px; align-items: center; font-size: .9rem; }
+  .bar-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bar-track { height: 14px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+  .bar { display: block; height: 100%; background: var(--bar); border-radius: 4px; }
+  .bar.zone { background: var(--accent); }
+  .bar.hist { background: var(--hist); }
+  .bar-value { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .matches { list-style: none; margin: 0; padding: 0; }
+  .match { padding: 10px 0; }
+  .match + .match { border-top: 1px solid var(--border); }
+  .match-meta { font-size: .78rem; color: var(--muted); margin-bottom: 4px; text-transform: capitalize; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .match-line { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; }
+  .side { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .side.home { justify-content: flex-end; text-align: right; }
+  .side .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .side.win .name { font-weight: 700; color: var(--win); }
+  .score { font-weight: 700; font-size: 1.05rem; font-variant-numeric: tabular-nums; background: var(--surface-2); padding: 2px 10px; border-radius: 8px; }
+  .dash { margin: 0 4px; color: var(--muted); }
+  .vs { font-size: .8rem; color: var(--muted); padding: 0 12px; }
+  .live { color: var(--live); }
+  footer { padding-bottom: 28px; font-size: .8rem; color: var(--muted); }
+  @media (max-width: 520px) {
+    h1 { font-size: 1.25rem; }
+    .full { display: none; }
+    .abbr { display: inline; }
+    .opt { display: none; }
+    th, td { padding: 8px 4px; }
+    .card { padding: 14px 12px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Primera División de Costa Rica</h1>
+    <p class="subtitle">Torneo Apertura 2026</p>
+    <p class="updated">Última actualización: <time datetime="2026-10-28T18:51:58.460Z">28 de octubre de 2026 a las 12:51</time> (hora de Costa Rica)</p>
+  </div>
+  <button class="theme-btn" type="button" id="theme-btn" aria-label="Cambiar tema">Tema</button>
+</header>
+<main>
+  
+  <section class="card"><h2>Tabla de posiciones</h2>
+    <div class="table-wrap">
+      <table class="standings">
+        <thead><tr>
+          <th class="pos">#</th><th class="team">Equipo</th>
+          <th title="Partidos jugados">PJ</th><th title="Ganados">G</th><th title="Empatados">E</th><th title="Perdidos">P</th>
+          <th class="opt" title="Goles a favor">GF</th><th class="opt" title="Goles en contra">GC</th>
+          <th title="Diferencia de gol">DG</th><th title="Puntos">Pts</th>
+        </tr></thead>
+        <tbody>
+      <tr class="zone">
+        <td class="pos">1</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">Saprissa</span><span class="abbr">SAP</span></td>
+        <td>13</td><td>8</td><td>0</td><td>5</td>
+        <td class="opt">27</td><td class="opt">14</td><td>+13</td>
+        <td class="pts">24</td>
+      </tr>
+      <tr class="zone">
+        <td class="pos">2</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">Cartaginés</span><span class="abbr">CAR</span></td>
+        <td>13</td><td>8</td><td>0</td><td>5</td>
+        <td class="opt">24</td><td class="opt">17</td><td>+7</td>
+        <td class="pts">24</td>
+      </tr>
+      <tr class="zone">
+        <td class="pos">3</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">Sporting San José</span><span class="abbr">SSJ</span></td>
+        <td>13</td><td>7</td><td>3</td><td>3</td>
+        <td class="opt">26</td><td class="opt">20</td><td>+6</td>
+        <td class="pts">24</td>
+      </tr>
+      <tr class="zone">
+        <td class="pos">4</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">Alajuelense</span><span class="abbr">ALA</span></td>
+        <td>13</td><td>6</td><td>4</td><td>3</td>
+        <td class="opt">21</td><td class="opt">14</td><td>+7</td>
+        <td class="pts">22</td>
+      </tr>
+      <tr class="">
+        <td class="pos">5</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">AD San Carlos</span><span class="abbr">ADSC</span></td>
+        <td>13</td><td>7</td><td>1</td><td>5</td>
+        <td class="opt">15</td><td class="opt">15</td><td>0</td>
+        <td class="pts">22</td>
+      </tr>
+      <tr class="">
+        <td class="pos">6</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7237.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">Puntarenas FC</span><span class="abbr">PUN</span></td>
+        <td>13</td><td>5</td><td>3</td><td>5</td>
+        <td class="opt">15</td><td class="opt">19</td><td>-4</td>
+        <td class="pts">18</td>
+      </tr>
+      <tr class="">
+        <td class="pos">7</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131790.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">Inter de San Carlos</span><span class="abbr">ISC</span></td>
+        <td>13</td><td>5</td><td>3</td><td>5</td>
+        <td class="opt">15</td><td class="opt">20</td><td>-5</td>
+        <td class="pts">18</td>
+      </tr>
+      <tr class="">
+        <td class="pos">8</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/862.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">Herediano</span><span class="abbr">HER</span></td>
+        <td>13</td><td>4</td><td>2</td><td>7</td>
+        <td class="opt">15</td><td class="opt">17</td><td>-2</td>
+        <td class="pts">14</td>
+      </tr>
+      <tr class="">
+        <td class="pos">9</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/132447.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">Escorpiones Belén</span><span class="abbr">BEL</span></td>
+        <td>13</td><td>3</td><td>1</td><td>9</td>
+        <td class="opt">14</td><td class="opt">22</td><td>-8</td>
+        <td class="pts">10</td>
+      </tr>
+      <tr class="">
+        <td class="pos">10</td>
+        <td class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7234.png" alt="" width="20" height="20" loading="lazy" onerror="this.style.visibility='hidden'"><span class="full">Pérez Zeledón</span><span class="abbr">ZEL</span></td>
+        <td>13</td><td>2</td><td>3</td><td>8</td>
+        <td class="opt">9</td><td class="opt">23</td><td>-14</td>
+        <td class="pts">9</td>
+      </tr></tbody>
+      </table>
+    </div>
+    <p class="legend"><span class="swatch"></span>Zona de semifinales (primeros 4)</p>
+    </section>
+  <section class="card"><h2>Puntos por equipo</h2><div class="bars" role="img" aria-label="Puntos por equipo">
+      <div class="bar-row">
+        <span class="bar-label">Saprissa</span>
+        <span class="bar-track"><span class="bar zone" style="width:100.0%"></span></span>
+        <span class="bar-value">24</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Cartaginés</span>
+        <span class="bar-track"><span class="bar zone" style="width:100.0%"></span></span>
+        <span class="bar-value">24</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Spr. San José</span>
+        <span class="bar-track"><span class="bar zone" style="width:100.0%"></span></span>
+        <span class="bar-value">24</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Alajuelense</span>
+        <span class="bar-track"><span class="bar zone" style="width:91.7%"></span></span>
+        <span class="bar-value">22</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">AD San Carlos</span>
+        <span class="bar-track"><span class="bar " style="width:91.7%"></span></span>
+        <span class="bar-value">22</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Puntarenas</span>
+        <span class="bar-track"><span class="bar " style="width:75.0%"></span></span>
+        <span class="bar-value">18</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Inter de San Carlos</span>
+        <span class="bar-track"><span class="bar " style="width:75.0%"></span></span>
+        <span class="bar-value">18</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Herediano</span>
+        <span class="bar-track"><span class="bar " style="width:58.3%"></span></span>
+        <span class="bar-value">14</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Belén</span>
+        <span class="bar-track"><span class="bar " style="width:41.7%"></span></span>
+        <span class="bar-value">10</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Pérez Zeledón</span>
+        <span class="bar-track"><span class="bar " style="width:37.5%"></span></span>
+        <span class="bar-value">9</span>
+      </div></div></section>
+  <section class="card"><h2>Últimos resultados</h2><ul class="matches">
+      <li class="match">
+        <div class="match-meta">dom, 25 oct, 18:00 · Alejandro Morera Soto</div>
+        <div class="match-line">
+          <span class="side home win"><span class="name">Alajuelense</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">1<span class="dash">–</span>0</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7234.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Pérez Zeledón</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">dom, 25 oct, 16:00 · Estadio Carlos Ugalde Álvarez</div>
+        <div class="match-line">
+          <span class="side home win"><span class="name">AD San Carlos</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">2<span class="dash">–</span>1</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Saprissa</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">sáb, 24 oct, 20:00 · Estadio Carlos Alvarado</div>
+        <div class="match-line">
+          <span class="side home win"><span class="name">Herediano</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/862.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">3<span class="dash">–</span>1</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Cartaginés</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">sáb, 24 oct, 18:00 · Estadio Lito Pérez</div>
+        <div class="match-line">
+          <span class="side home win"><span class="name">Puntarenas</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7237.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">3<span class="dash">–</span>1</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131790.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Inter de San Carlos</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">vie, 23 oct, 20:00 · Estadio Ricardo Saprissa</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Belén</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/132447.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">2<span class="dash">–</span>4</span>
+          <span class="side away win"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Spr. San José</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">lun, 19 oct, 20:00 · Estadio Ricardo Saprissa</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Belén</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/132447.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">1<span class="dash">–</span>2</span>
+          <span class="side away win"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7237.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Puntarenas</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">lun, 19 oct, 18:00 · Estadio Puente Piedra</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Spr. San José</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">3<span class="dash">–</span>3</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">AD San Carlos</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">dom, 18 oct, 16:00 · Estadio Municipal de Pérez Zeledón</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Pérez Zeledón</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7234.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">0<span class="dash">–</span>3</span>
+          <span class="side away win"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/862.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Herediano</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">dom, 18 oct, 11:00 · Estadio José Rafael &quot;Fello&quot; Meza Ivankovich</div>
+        <div class="match-line">
+          <span class="side home win"><span class="name">Cartaginés</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">1<span class="dash">–</span>0</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Saprissa</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">sáb, 17 oct, 20:00 · Estadio Carlos Ugalde Álvarez</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Inter de San Carlos</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131790.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="score">2<span class="dash">–</span>3</span>
+          <span class="side away win"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Alajuelense</span></span>
+        </div>
+      </li></ul></section>
+  <section class="card"><h2>Próximos partidos</h2><ul class="matches">
+      <li class="match">
+        <div class="match-meta">vie, 30 oct, 18:00 · Estadio Carlos Ugalde Álvarez</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Inter de San Carlos</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131790.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/132447.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Belén</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">vie, 30 oct, 20:00 · Estadio Municipal de Pérez Zeledón</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Pérez Zeledón</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7234.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7237.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Puntarenas</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">sáb, 31 oct, 20:00 · Estadio Puente Piedra</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Spr. San José</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/862.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Herediano</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">dom, 1 nov, 11:00 · Estadio José Rafael &quot;Fello&quot; Meza Ivankovich</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Cartaginés</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">AD San Carlos</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">dom, 1 nov, 16:00 · Estadio Ricardo Saprissa</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Saprissa</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Alajuelense</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">mar, 3 nov, 19:00 · Estadio Puente Piedra</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Spr. San José</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7234.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Pérez Zeledón</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">mié, 4 nov, 18:00 · Estadio Lito Pérez</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Puntarenas</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7237.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">AD San Carlos</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">mié, 4 nov, 20:00 · Estadio Ricardo Saprissa</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Belén</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/132447.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Alajuelense</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">jue, 5 nov, 17:00 · Estadio Carlos Ugalde Álvarez</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Inter de San Carlos</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131790.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Cartaginés</span></span>
+        </div>
+      </li>
+      <li class="match">
+        <div class="match-meta">jue, 5 nov, 20:00 · Estadio Carlos Alvarado</div>
+        <div class="match-line">
+          <span class="side home"><span class="name">Herediano</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/862.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+          <span class="vs">vs</span>
+          <span class="side away"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'"><span class="name">Saprissa</span></span>
+        </div>
+      </li></ul></section>
+  <section class="card"><h2>Goleadores</h2>
+    <div class="table-wrap">
+      <table class="scorers">
+        <thead><tr><th class="pos">#</th><th class="player">Jugador</th><th>Goles</th><th></th></tr></thead>
+        <tbody>
+      <tr>
+        <td class="pos">1</td>
+        <td class="player">Juan Gaete<span class="sub">Cartaginés</span></td>
+        <td class="pts">6</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">1</td>
+        <td class="player">Kenyel Michel<span class="sub">Alajuelense</span></td>
+        <td class="pts">6</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">1</td>
+        <td class="player">Ronaldo Cisneros<span class="sub">Alajuelense</span></td>
+        <td class="pts">6</td>
+        <td class="muted">1 pen.</td>
+      </tr>
+      <tr>
+        <td class="pos">4</td>
+        <td class="player">Alonso Hernández<span class="sub">Cartaginés</span></td>
+        <td class="pts">5</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">4</td>
+        <td class="player">Gabriel Leiva<span class="sub">Sporting San José</span></td>
+        <td class="pts">5</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">4</td>
+        <td class="player">Brian Martínez<span class="sub">AD San Carlos</span></td>
+        <td class="pts">5</td>
+        <td class="muted">1 pen.</td>
+      </tr>
+      <tr>
+        <td class="pos">4</td>
+        <td class="player">Joel Campbell<span class="sub">Inter de San Carlos</span></td>
+        <td class="pts">5</td>
+        <td class="muted">4 pen.</td>
+      </tr>
+      <tr>
+        <td class="pos">8</td>
+        <td class="player">Dariel Castrillo<span class="sub">Puntarenas FC</span></td>
+        <td class="pts">4</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">8</td>
+        <td class="player">Doryan Rodriguez<span class="sub">Puntarenas FC</span></td>
+        <td class="pts">4</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">8</td>
+        <td class="player">Geancarlo Castro<span class="sub">Cartaginés</span></td>
+        <td class="pts">4</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">8</td>
+        <td class="player">Jefferson Brenes<span class="sub">Saprissa</span></td>
+        <td class="pts">4</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">8</td>
+        <td class="player">Joshua Navarro<span class="sub">Sporting San José</span></td>
+        <td class="pts">4</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">8</td>
+        <td class="player">Orlando Sinclair<span class="sub">Saprissa</span></td>
+        <td class="pts">4</td>
+        <td class="muted"></td>
+      </tr>
+      <tr>
+        <td class="pos">8</td>
+        <td class="player">Mayron George<span class="sub">Sporting San José</span></td>
+        <td class="pts">4</td>
+        <td class="muted">1 pen.</td>
+      </tr></tbody>
+      </table>
+    </div>
+    <p class="note">Calculado a partir de los goles registrados en 65 partidos (sin autogoles). Puede diferir levemente del conteo oficial.</p>
+    </section>
+  <section class="card"><h2>Títulos de Primera División por club</h2>
+    <div class="bars">
+      <div class="bar-row">
+        <span class="bar-label">Saprissa</span>
+        <span class="bar-track"><span class="bar hist" style="width:100.0%"></span></span>
+        <span class="bar-value">40</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Herediano</span>
+        <span class="bar-track"><span class="bar hist" style="width:80.0%"></span></span>
+        <span class="bar-value">32</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Alajuelense</span>
+        <span class="bar-track"><span class="bar hist" style="width:77.5%"></span></span>
+        <span class="bar-value">31</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">La Libertad</span>
+        <span class="bar-track"><span class="bar hist" style="width:15.0%"></span></span>
+        <span class="bar-value">6</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Cartaginés</span>
+        <span class="bar-track"><span class="bar hist" style="width:10.0%"></span></span>
+        <span class="bar-value">4</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Orión</span>
+        <span class="bar-track"><span class="bar hist" style="width:5.0%"></span></span>
+        <span class="bar-value">2</span>
+      </div></div>
+    <p class="one-title"><strong>Con 1 título:</strong> Carmelita, San Carlos, Brujas, Uruguay de Coronado, Universitarios, Municipal Liberia, Pérez Zeledón, Municipal Puntarenas.</p></section>
+</main>
+<footer>Fuente: ESPN (site.api.espn.com, liga crc.1). Página generada el 28 de octubre de 2026 a las 12:51.</footer>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('theme-btn');
+    function current() {
+      return root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    }
+    function label() { btn.textContent = current() === 'dark' ? '☀︎ Claro' : '☾ Oscuro'; }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      label();
+    });
+    label();
+  })();
+</script>
+</body>
+</html>

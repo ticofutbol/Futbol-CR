@@ -1,0 +1,14 @@
+{
+  "name": "futbol-cr-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard de la Primera División de Costa Rica con datos de ESPN",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "update": "node scripts/update.mjs",
+    "render": "node scripts/render.mjs"
+  }
+}

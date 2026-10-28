@@ -1,0 +1,19 @@
+{
+  "title": "Títulos de Primera División por club",
+  "clubs": [
+    { "club": "Saprissa", "titles": 40 },
+    { "club": "Herediano", "titles": 32 },
+    { "club": "Alajuelense", "titles": 31 },
+    { "club": "La Libertad", "titles": 6 },
+    { "club": "Cartaginés", "titles": 4 },
+    { "club": "Orión", "titles": 2 },
+    { "club": "Carmelita", "titles": 1 },
+    { "club": "San Carlos", "titles": 1 },
+    { "club": "Brujas", "titles": 1 },
+    { "club": "Uruguay de Coronado", "titles": 1 },
+    { "club": "Universitarios", "titles": 1 },
+    { "club": "Municipal Liberia", "titles": 1 },
+    { "club": "Pérez Zeledón", "titles": 1 },
+    { "club": "Municipal Puntarenas", "titles": 1 }
+  ]
+}

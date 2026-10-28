@@ -1,0 +1,820 @@
+{
+  "source": "ESPN (site.api.espn.com, liga crc.1)",
+  "generatedAt": "2026-10-28T18:51:58.460Z",
+  "lastSuccessAt": "2026-10-28T18:51:58.460Z",
+  "warnings": [],
+  "standings": {
+    "league": "Costa Rican Primera Division",
+    "season": "2026-27 Primera División de Costa Rica",
+    "tournament": "Apertura",
+    "rows": [
+      {
+        "id": "858",
+        "name": "Saprissa",
+        "short": "Saprissa",
+        "abbr": "SAP",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+        "rank": 1,
+        "pj": 13,
+        "g": 8,
+        "e": 0,
+        "p": 5,
+        "gf": 27,
+        "gc": 14,
+        "dg": 13,
+        "pts": 24
+      },
+      {
+        "id": "7239",
+        "name": "Cartaginés",
+        "short": "Cartaginés",
+        "abbr": "CAR",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
+        "rank": 2,
+        "pj": 13,
+        "g": 8,
+        "e": 0,
+        "p": 5,
+        "gf": 24,
+        "gc": 17,
+        "dg": 7,
+        "pts": 24
+      },
+      {
+        "id": "20705",
+        "name": "Sporting San José",
+        "short": "Spr. San José",
+        "abbr": "SSJ",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+        "rank": 3,
+        "pj": 13,
+        "g": 7,
+        "e": 3,
+        "p": 3,
+        "gf": 26,
+        "gc": 20,
+        "dg": 6,
+        "pts": 24
+      },
+      {
+        "id": "2057",
+        "name": "Alajuelense",
+        "short": "Alajuelense",
+        "abbr": "ALA",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+        "rank": 4,
+        "pj": 13,
+        "g": 6,
+        "e": 4,
+        "p": 3,
+        "gf": 21,
+        "gc": 14,
+        "dg": 7,
+        "pts": 22
+      },
+      {
+        "id": "859",
+        "name": "AD San Carlos",
+        "short": "San Carlos",
+        "abbr": "ADSC",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
+        "rank": 5,
+        "pj": 13,
+        "g": 7,
+        "e": 1,
+        "p": 5,
+        "gf": 15,
+        "gc": 15,
+        "dg": 0,
+        "pts": 22
+      },
+      {
+        "id": "7237",
+        "name": "Puntarenas FC",
+        "short": "Puntarenas",
+        "abbr": "PUN",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+        "rank": 6,
+        "pj": 13,
+        "g": 5,
+        "e": 3,
+        "p": 5,
+        "gf": 15,
+        "gc": 19,
+        "dg": -4,
+        "pts": 18
+      },
+      {
+        "id": "131790",
+        "name": "Inter de San Carlos",
+        "short": "San Carlos",
+        "abbr": "ISC",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+        "rank": 7,
+        "pj": 13,
+        "g": 5,
+        "e": 3,
+        "p": 5,
+        "gf": 15,
+        "gc": 20,
+        "dg": -5,
+        "pts": 18
+      },
+      {
+        "id": "862",
+        "name": "Herediano",
+        "short": "Herediano",
+        "abbr": "HER",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+        "rank": 8,
+        "pj": 13,
+        "g": 4,
+        "e": 2,
+        "p": 7,
+        "gf": 15,
+        "gc": 17,
+        "dg": -2,
+        "pts": 14
+      },
+      {
+        "id": "132447",
+        "name": "Escorpiones Belén",
+        "short": "Belén",
+        "abbr": "BEL",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+        "rank": 9,
+        "pj": 13,
+        "g": 3,
+        "e": 1,
+        "p": 9,
+        "gf": 14,
+        "gc": 22,
+        "dg": -8,
+        "pts": 10
+      },
+      {
+        "id": "7234",
+        "name": "Pérez Zeledón",
+        "short": "Pérez Zeledón",
+        "abbr": "ZEL",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+        "rank": 10,
+        "pj": 13,
+        "g": 2,
+        "e": 3,
+        "p": 8,
+        "gf": 9,
+        "gc": 23,
+        "dg": -14,
+        "pts": 9
+      }
+    ],
+    "updatedAt": "2026-10-28T18:51:55.981Z",
+    "stale": false
+  },
+  "results": {
+    "matches": [
+      {
+        "id": "401876833",
+        "date": "2026-10-26T00:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Alejandro Morera Soto",
+        "home": {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "1"
+        },
+        "away": {
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876835",
+        "date": "2026-10-25T22:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Carlos Ugalde Álvarez",
+        "home": {
+          "id": "859",
+          "name": "AD San Carlos",
+          "short": "San Carlos",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
+          "score": "2"
+        },
+        "away": {
+          "id": "858",
+          "name": "Saprissa",
+          "short": "Saprissa",
+          "abbr": "SAP",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+          "score": "1"
+        }
+      },
+      {
+        "id": "401876834",
+        "date": "2026-10-25T02:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Carlos Alvarado",
+        "home": {
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "score": "3"
+        },
+        "away": {
+          "id": "7239",
+          "name": "Cartaginés",
+          "short": "Cartaginés",
+          "abbr": "CAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
+          "score": "1"
+        }
+      },
+      {
+        "id": "401876891",
+        "date": "2026-10-25T00:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Lito Pérez",
+        "home": {
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "score": "3"
+        },
+        "away": {
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "score": "1"
+        }
+      },
+      {
+        "id": "401876832",
+        "date": "2026-10-24T02:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Ricardo Saprissa",
+        "home": {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "2"
+        },
+        "away": {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "4"
+        }
+      },
+      {
+        "id": "401876838",
+        "date": "2026-10-20T02:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Ricardo Saprissa",
+        "home": {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "1"
+        },
+        "away": {
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "score": "2"
+        }
+      },
+      {
+        "id": "401876836",
+        "date": "2026-10-20T00:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Puente Piedra",
+        "home": {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "3"
+        },
+        "away": {
+          "id": "859",
+          "name": "AD San Carlos",
+          "short": "San Carlos",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
+          "score": "3"
+        }
+      },
+      {
+        "id": "401876837",
+        "date": "2026-10-18T22:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Municipal de Pérez Zeledón",
+        "home": {
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "score": "3"
+        }
+      },
+      {
+        "id": "401876839",
+        "date": "2026-10-18T17:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio José Rafael \"Fello\" Meza Ivankovich",
+        "home": {
+          "id": "7239",
+          "name": "Cartaginés",
+          "short": "Cartaginés",
+          "abbr": "CAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
+          "score": "1"
+        },
+        "away": {
+          "id": "858",
+          "name": "Saprissa",
+          "short": "Saprissa",
+          "abbr": "SAP",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876892",
+        "date": "2026-10-18T02:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Carlos Ugalde Álvarez",
+        "home": {
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "score": "2"
+        },
+        "away": {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "3"
+        }
+      }
+    ],
+    "updatedAt": "2026-10-28T18:51:56.698Z",
+    "stale": false
+  },
+  "upcoming": {
+    "matches": [
+      {
+        "id": "401876890",
+        "date": "2026-10-31T00:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Carlos Ugalde Álvarez",
+        "home": {
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876829",
+        "date": "2026-10-31T02:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Municipal de Pérez Zeledón",
+        "home": {
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876828",
+        "date": "2026-11-01T02:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Puente Piedra",
+        "home": {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876831",
+        "date": "2026-11-01T17:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio José Rafael \"Fello\" Meza Ivankovich",
+        "home": {
+          "id": "7239",
+          "name": "Cartaginés",
+          "short": "Cartaginés",
+          "abbr": "CAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "859",
+          "name": "AD San Carlos",
+          "short": "San Carlos",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876830",
+        "date": "2026-11-01T22:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Ricardo Saprissa",
+        "home": {
+          "id": "858",
+          "name": "Saprissa",
+          "short": "Saprissa",
+          "abbr": "SAP",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876824",
+        "date": "2026-11-04T01:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Puente Piedra",
+        "home": {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876825",
+        "date": "2026-11-05T00:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Lito Pérez",
+        "home": {
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "859",
+          "name": "AD San Carlos",
+          "short": "San Carlos",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876826",
+        "date": "2026-11-05T02:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Ricardo Saprissa",
+        "home": {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876889",
+        "date": "2026-11-05T23:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Carlos Ugalde Álvarez",
+        "home": {
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "7239",
+          "name": "Cartaginés",
+          "short": "Cartaginés",
+          "abbr": "CAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
+          "score": "0"
+        }
+      },
+      {
+        "id": "401876827",
+        "date": "2026-11-06T02:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Carlos Alvarado",
+        "home": {
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "858",
+          "name": "Saprissa",
+          "short": "Saprissa",
+          "abbr": "SAP",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+          "score": "0"
+        }
+      }
+    ],
+    "updatedAt": "2026-10-28T18:51:58.456Z",
+    "stale": false
+  },
+  "scorers": {
+    "matchesCounted": 65,
+    "goalsCounted": 177,
+    "rows": [
+      {
+        "player": "Juan Gaete",
+        "team": "Cartaginés",
+        "goals": 6,
+        "penalties": 0
+      },
+      {
+        "player": "Kenyel Michel",
+        "team": "Alajuelense",
+        "goals": 6,
+        "penalties": 0
+      },
+      {
+        "player": "Ronaldo Cisneros",
+        "team": "Alajuelense",
+        "goals": 6,
+        "penalties": 1
+      },
+      {
+        "player": "Alonso Hernández",
+        "team": "Cartaginés",
+        "goals": 5,
+        "penalties": 0
+      },
+      {
+        "player": "Gabriel Leiva",
+        "team": "Sporting San José",
+        "goals": 5,
+        "penalties": 0
+      },
+      {
+        "player": "Brian Martínez",
+        "team": "AD San Carlos",
+        "goals": 5,
+        "penalties": 1
+      },
+      {
+        "player": "Joel Campbell",
+        "team": "Inter de San Carlos",
+        "goals": 5,
+        "penalties": 4
+      },
+      {
+        "player": "Dariel Castrillo",
+        "team": "Puntarenas FC",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
+        "player": "Doryan Rodriguez",
+        "team": "Puntarenas FC",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
+        "player": "Geancarlo Castro",
+        "team": "Cartaginés",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
+        "player": "Jefferson Brenes",
+        "team": "Saprissa",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
+        "player": "Joshua Navarro",
+        "team": "Sporting San José",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
+        "player": "Orlando Sinclair",
+        "team": "Saprissa",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
+        "player": "Mayron George",
+        "team": "Sporting San José",
+        "goals": 4,
+        "penalties": 1
+      }
+    ],
+    "updatedAt": "2026-10-28T18:51:58.460Z",
+    "stale": false
+  },
+  "history": {
+    "title": "Títulos de Primera División por club",
+    "clubs": [
+      {
+        "club": "Saprissa",
+        "titles": 40
+      },
+      {
+        "club": "Herediano",
+        "titles": 32
+      },
+      {
+        "club": "Alajuelense",
+        "titles": 31
+      },
+      {
+        "club": "La Libertad",
+        "titles": 6
+      },
+      {
+        "club": "Cartaginés",
+        "titles": 4
+      },
+      {
+        "club": "Orión",
+        "titles": 2
+      },
+      {
+        "club": "Carmelita",
+        "titles": 1
+      },
+      {
+        "club": "San Carlos",
+        "titles": 1
+      },
+      {
+        "club": "Brujas",
+        "titles": 1
+      },
+      {
+        "club": "Uruguay de Coronado",
+        "titles": 1
+      },
+      {
+        "club": "Universitarios",
+        "titles": 1
+      },
+      {
+        "club": "Municipal Liberia",
+        "titles": 1
+      },
+      {
+        "club": "Pérez Zeledón",
+        "titles": 1
+      },
+      {
+        "club": "Municipal Puntarenas",
+        "titles": 1
+      }
+    ]
+  }
+}
