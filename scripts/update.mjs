@@ -218,6 +218,7 @@ const POSITIONS = { G: 'Porteros', D: 'Defensas', M: 'Mediocampistas', F: 'Delan
 // Plantillas: dorsal, posición, edad y nacionalidad vienen del roster de cada equipo;
 // los goles se cruzan con los calculados en fetchScorers (por id de jugador).
 async function fetchSquads(teams, scorers) {
+  const manual = await readJson(new URL('data/dorsales.json', ROOT), {});
   const goalsById = new Map((scorers?.all ?? []).filter(r => r.playerId).map(r => [r.playerId, r]));
   const rosters = await mapLimit(teams, 5, t => getJson(`${SITE}/teams/${t.id}/roster`));
   return {
@@ -237,12 +238,58 @@ async function fetchSquads(teams, scorers) {
           penalties: g?.penalties ?? 0,
         };
       });
+      applyManualSquad(players, manual.teams?.[t.name], scorers, t.name);
       const order = Object.keys(POSITIONS);
       players.sort((a, b) => order.indexOf(a.position) - order.indexOf(b.position)
         || (Number(a.jersey) || 999) - (Number(b.jersey) || 999) || a.name.localeCompare(b.name));
       return { id: t.id, name: t.name, short: t.short, logo: t.logo, players };
     }),
   };
+}
+
+// Banderas de ESPN por país (nombres en español, como vienen de Transfermarkt).
+const FLAG_CODE = {
+  'Costa Rica': 'crc', Nicaragua: 'nca', Honduras: 'hon', 'México': 'mex', 'Panamá': 'pan', Argentina: 'arg',
+  Italia: 'ita', Colombia: 'col', Uruguay: 'uru', Venezuela: 'ven', Cuba: 'cub', Chile: 'chi', Paraguay: 'par',
+  Bolivia: 'bol', 'El Salvador': 'slv', 'Estados Unidos': 'usa', 'España': 'esp', Brasil: 'bra', Jamaica: 'jam',
+  Guatemala: 'gua', 'Perú': 'per', Ecuador: 'ecu', 'República Dominicana': 'dom', 'Haití': 'hai', 'Canadá': 'can',
+  'Trinidad y Tobago': 'tri',
+};
+const flagUrl = c => FLAG_CODE[c] ? `https://a.espncdn.com/i/teamlogos/countries/500/${FLAG_CODE[c]}.png` : null;
+const normName = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+
+// Completa la plantilla de ESPN con data/dorsales.json: dorsal, posición y nacionalidad de la lista manual;
+// los jugadores que ESPN no tiene se agregan. Empareja por nombre (o por "espn" si el nombre difiere).
+function applyManualSquad(players, manualTeam, scorers, teamName) {
+  if (!manualTeam?.players?.length) return;
+  const goalsByName = new Map((scorers?.all ?? []).filter(r => r.team === teamName).map(r => [normName(r.player), r]));
+  const used = new Set();
+  const findEspn = m => {
+    const target = normName(m.espn ?? m.name);
+    const exact = players.find(p => !used.has(p) && normName(p.name) === target);
+    if (exact) return exact;
+    const words = target.split(' '), first = words[0], last = words.at(-1);
+    const loose = players.filter(p => !used.has(p) && normName(p.name).split(' ').includes(first) && normName(p.name).split(' ').includes(last));
+    return loose.length === 1 ? loose[0] : null; // si hay más de uno parecido, no se adivina
+  };
+  for (const m of manualTeam.players) {
+    const country = m.countries?.[0] ?? null;
+    let p = findEspn(m);
+    if (p) {
+      used.add(p);
+      if (m.jersey != null) p.jersey = String(m.jersey);
+      if (m.position) p.position = m.position;
+      if (country) { p.country = country; p.flag = flagUrl(country) ?? p.flag; }
+      p.age ??= m.age;
+    } else {
+      const g = goalsByName.get(normName(m.name));
+      players.push({
+        id: `tm-${normName(m.name).replace(/[^a-z0-9]+/g, '-')}`, jersey: m.jersey != null ? String(m.jersey) : null, name: m.name,
+        position: m.position ?? 'F', age: m.age, country, flag: flagUrl(country),
+        goals: g?.goals ?? 0, penalties: g?.penalties ?? 0, added: true,
+      });
+    }
+  }
 }
 
 async function section(name, prev, fn, warnings) {
