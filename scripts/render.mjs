@@ -9,7 +9,21 @@ const SEMIFINAL_SPOTS = 4;
 const PAGE_URL = 'https://ticofutbol.github.io/Futbol-CR/';
 const OG_TITLE = 'Primera División de Costa Rica ⚽ Fútbol CR';
 const OG_VERSION = 1; // súbelo si cambias public/og.jpg, para que WhatsApp no use la imagen vieja
-const SHARE_TEXT = 'Tabla, resultados, goleadores y plantillas de la Primera División de Costa Rica 🇨🇷⚽';
+// Pestañas: [id, nombre, ícono SVG]. El id es el #hash del link.
+const TABS = [
+  ['inicio', 'Inicio', '<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>'],
+  ['tabla', 'Tabla', '<path d="M4 6h16M4 12h16M4 18h16"/><path d="M9 3v18"/>'],
+  ['goleadores', 'Goleadores', '<circle cx="12" cy="12" r="9"/><path d="m12 7 3.5 2.5-1.3 4h-4.4l-1.3-4z"/><path d="M12 3v4M20.5 9.5l-5 0M17 19.5l-2.8-6M7 19.5l2.8-6M3.5 9.5l5 0"/>'],
+  ['plantillas', 'Plantillas', '<path d="M8 3 3 6l2 4 3-1v12h8V9l3 1 2-4-5-3a4 4 0 0 1-8 0z"/>'],
+  ['historia', 'Historia', '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>'],
+];
+// Cada #hash (pestaña o sección) apunta a la pestaña que lo contiene; incluye los links viejos de antes de las pestañas.
+const TAB_OF = {
+  ...Object.fromEntries(TABS.map(([id]) => [id, id])),
+  zona: 'inicio', resultados: 'inicio', proximos: 'inicio',
+  posiciones: 'tabla', puntos: 'tabla', top10: 'goleadores', jugadores: 'plantillas', palmares: 'historia',
+};
+const SHARE_TEXT ='Tabla, resultados, goleadores y plantillas de la Primera División de Costa Rica 🇨🇷⚽';
 
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
@@ -116,6 +130,21 @@ function standingsSection(s, form) {
     </div>
     <p class="legend"><span class="swatch"></span>Zona de semifinales · Racha: últimos 5 partidos, el más reciente primero</p>
     ${staleNote(s)}`;
+}
+
+// Resumen para la pestaña Inicio: los que hoy están en zona de semifinales.
+function miniStandings(s, form) {
+  if (!s?.rows?.length) return empty('Tabla no disponible.');
+  const rows = s.rows.slice(0, SEMIFINAL_SPOTS).map((r, i) => `
+      <li><span class="pos-badge zone-badge">${i + 1}</span>${logo(r, 26)}
+        <span class="who"><b>${esc(r.name)}</b><span class="muted">${r.pj} PJ · ${signed(r.dg)} DG</span></span>
+        ${formPills(form?.[r.id])}<span class="goals">${r.pts}<small> pts</small></span></li>`).join('');
+  const next = s.rows[SEMIFINAL_SPOTS];
+  const gap = next ? s.rows[SEMIFINAL_SPOTS - 1].pts - next.pts : null;
+  return `
+    <ol class="scorer-list mini">${rows}</ol>
+    ${next ? `<p class="note">5.º lugar: ${esc(next.name)} con ${next.pts} pts${gap === 0 ? ', igualado en puntos con el 4.º' : `, a ${gap} del 4.º`}.</p>` : ''}
+    <a class="more-link" href="#tabla">Ver tabla completa →</a>`;
 }
 
 function pointsChart(s) {
@@ -318,7 +347,7 @@ export function buildHtml(data) {
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#063d2a">
 <title>${esc(OG_TITLE)}</title>
@@ -349,6 +378,9 @@ export function buildHtml(data) {
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
   try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
+  // Se decide la pestaña antes de pintar la página, para que no parpadee.
+  var TAB_OF = ${JSON.stringify(TAB_OF)};
+  document.documentElement.dataset.tab = TAB_OF[location.hash.slice(1)] || 'inicio';
 </script>
 <style>
   :root {
@@ -416,11 +448,32 @@ export function buildHtml(data) {
   .hchip.accent { background: #fbbf24; color: #1f1500; border-color: transparent; font-weight: 700; }
 
   /* Navegación */
-  .tabs { position: sticky; top: 0; z-index: 10; margin-top: 16px; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-  .tabs .wrap { display: flex; gap: 6px; overflow-x: auto; padding-top: 8px; padding-bottom: 8px; scrollbar-width: none; }
-  .tabs .wrap::-webkit-scrollbar { display: none; }
-  .tabs a { flex: none; text-decoration: none; color: var(--muted); font-weight: 600; font-size: .85rem; padding: 6px 12px; border-radius: 999px; }
-  .tabs a:hover, .tabs a.active { background: var(--accent-soft); color: var(--accent); }
+  /* Pestañas: en compu van dentro de la portada; en celular, fijas abajo como en una app. */
+  .tabbar { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+  .tab-link { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; color: rgb(255 255 255 / .85); font-weight: 600; font-size: .9rem; padding: 8px 14px; border-radius: 999px; background: rgb(255 255 255 / .08); border: 1px solid rgb(255 255 255 / .14); }
+  .tab-link svg { width: 18px; height: 18px; }
+  .tab-link:hover { background: rgb(255 255 255 / .16); color: #fff; }
+${TABS.map(([id]) => `  html[data-tab="${id}"] .tab-link[data-tab="${id}"] { background: #fff; color: var(--hero-1); border-color: #fff; }
+  html[data-tab="${id}"] .panel:not([data-tab="${id}"]) { display: none; }`).join('\n')}
+  /* Fuera de Inicio, la portada se achica para dejar más espacio al contenido. */
+  html[data-tab]:not([data-tab="inicio"]) .hero { padding-bottom: 20px; }
+  html[data-tab]:not([data-tab="inicio"]) .eyebrow { display: none; }
+  html[data-tab]:not([data-tab="inicio"]) h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); margin-top: 14px; }
+  html[data-tab]:not([data-tab="inicio"]) h1 br { display: none; }
+  html[data-tab]:not([data-tab="inicio"]) .hero-chips { margin-top: 10px; }
+  @media (max-width: 760px) {
+    .tabbar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; margin: 0; gap: 0; flex-wrap: nowrap;
+      background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border); padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+    }
+    .tab-link { flex: 1; flex-direction: column; gap: 2px; padding: 6px 2px; border: 0; border-radius: 12px; background: none; color: var(--muted); font-size: .68rem; }
+    .tab-link svg { width: 22px; height: 22px; }
+    .tab-link:hover { background: none; color: var(--text); }
+${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { background: var(--accent-soft); color: var(--accent); }`).join('\n')}
+    body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+    .toast { bottom: calc(84px + env(safe-area-inset-bottom)); }
+  }
 
   .banner { margin: 16px 0 0; padding: 10px 12px; border-radius: 12px; background: var(--warn-bg); color: var(--warn-text); font-size: .9rem; }
 
@@ -452,8 +505,19 @@ export function buildHtml(data) {
   .countdown { color: var(--accent); font-weight: 700; }
 
   /* Grilla y tarjetas */
-  main.wrap { display: grid; gap: 16px; grid-template-columns: 1fr; padding-top: 16px; padding-bottom: 28px; }
-  @media (min-width: 1180px) { main.wrap { grid-template-columns: 1.45fr 1fr; } .span-2 { grid-column: 1 / -1; } }
+  main.wrap { padding-bottom: 28px; }
+  .panel { padding-top: 16px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: 1fr; align-items: start; }
+  .panel .kpis + .grid, .panel .banner + .grid { margin-top: 16px; }
+  @media (min-width: 1000px) { .grid.two { grid-template-columns: 1fr 1fr; } .grid.two > :first-child { grid-row: span 1; } }
+  @media (min-width: 1180px) { .grid.two-wide { grid-template-columns: 1.45fr 1fr; } }
+  .grid.narrow { max-width: 760px; margin: 0 auto; }
+  .more-link { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--accent); text-decoration: none; }
+  .more-link:hover { text-decoration: underline; }
+  .scorer-list.mini { margin-top: 0; }
+  .scorer-list.mini .form { margin-right: 4px; }
+  .pos-badge.zone-badge { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; flex: none; }
+  .goals small { font-family: Inter, system-ui, sans-serif; font-size: .7rem; color: var(--muted); font-weight: 600; }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); min-width: 0; }
   .sec-head { margin: 0 0 14px; }
   .kicker { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
@@ -612,32 +676,42 @@ export function buildHtml(data) {
       </div>
     </div>
     <p class="eyebrow">Costa Rica · Liga FPD</p>
-    <h1>Primera<br>División</h1>
+    <h1>Primera <br>División</h1>
     <div class="hero-chips">
       <span class="hchip accent">${esc(s?.tournament ?? 'Apertura')} ${year}</span>
       ${jornada ? `<span class="hchip">Jornada <b>${jornada}</b></span>` : ''}
       <span class="hchip">Actualizado <b><time datetime="${esc(stamp)}">${esc(fmtShort(stamp))}</time></b></span>
     </div>
+    <nav class="tabbar" aria-label="Secciones">
+      ${TABS.map(([id, name, path]) => `<a class="tab-link" data-tab="${id}" href="#${id}"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${path}</svg><span>${name}</span></a>`).join('')}
+    </nav>
   </div>
 </header>
-<div class="wrap">
-  ${kpis(data, teamsByName)}
-  ${warnings}
-</div>
-<nav class="tabs" aria-label="Secciones">
-  <div class="wrap">
-    <a href="#tabla">Tabla</a><a href="#puntos">Puntos</a><a href="#resultados">Resultados</a><a href="#proximos">Próximos</a>
-    <a href="#goleadores">Goleadores</a><a href="#plantillas">Plantillas</a><a href="#historia">Historia</a>
-  </div>
-</nav>
 <main class="wrap">
-  <section class="card">${sectionHead('tabla', 'Apertura ' + year, 'Tabla de posiciones')}${standingsSection(s, form)}</section>
-  <section class="card">${sectionHead('puntos', 'Comparativo', 'Puntos por equipo')}${pointsChart(s)}</section>
-  <section class="card">${sectionHead('resultados', 'Últimas 2 jornadas', 'Resultados')}${matchList(data.results, 'results')}</section>
-  <section class="card">${sectionHead('proximos', 'Calendario', 'Próximos partidos')}${calendarBox()}${matchList(data.upcoming, 'upcoming')}</section>
-  <section class="card">${sectionHead('goleadores', 'Top 10', 'Goleadores')}${scorersSection(data.scorers, teamsByName)}</section>
-  <section class="card">${sectionHead('historia', 'Palmarés', esc(data.history?.title ?? 'Historia'))}${historySection(data.history)}</section>
-  <section class="card span-2">${sectionHead('plantillas', 'Jugadores', 'Plantillas')}${squadsSection(data.squads)}</section>
+  <div class="panel" data-tab="inicio">
+    ${kpis(data, teamsByName)}
+    ${warnings}
+    <div class="grid two">
+      <section class="card">${sectionHead('zona', 'Apertura ' + year, 'Zona de semifinales')}${miniStandings(s, form)}</section>
+      <section class="card">${sectionHead('proximos', 'Calendario', 'Próximos partidos')}${calendarBox()}${matchList(data.upcoming, 'upcoming')}</section>
+      <section class="card">${sectionHead('resultados', 'Últimas 2 jornadas', 'Resultados')}${matchList(data.results, 'results')}</section>
+    </div>
+  </div>
+  <div class="panel" data-tab="tabla">
+    <div class="grid two-wide">
+      <section class="card">${sectionHead('posiciones', 'Apertura ' + year, 'Tabla de posiciones')}${standingsSection(s, form)}</section>
+      <section class="card">${sectionHead('puntos', 'Comparativo', 'Puntos por equipo')}${pointsChart(s)}</section>
+    </div>
+  </div>
+  <div class="panel" data-tab="goleadores">
+    <div class="grid narrow"><section class="card">${sectionHead('top10', 'Top 10', 'Goleadores')}${scorersSection(data.scorers, teamsByName)}</section></div>
+  </div>
+  <div class="panel" data-tab="plantillas">
+    <section class="card">${sectionHead('jugadores', 'Jugadores', 'Plantillas')}${squadsSection(data.squads)}</section>
+  </div>
+  <div class="panel" data-tab="historia">
+    <div class="grid narrow"><section class="card">${sectionHead('palmares', 'Palmarés', esc(data.history?.title ?? 'Historia'))}${historySection(data.history)}</section></div>
+  </div>
 </main>
 <footer class="wrap">
   <p><a class="wa-link" href="https://wa.me/?text=${encodeURIComponent(SHARE_TEXT + '\n' + PAGE_URL)}" target="_blank" rel="noopener">Compartir por WhatsApp</a></p>
@@ -661,13 +735,13 @@ export function buildHtml(data) {
 
     var sel = document.getElementById('squad-select');
     if (sel) {
-      var show = function (id) {
+      var showSquad = function (id) {
         document.querySelectorAll('.squad').forEach(function (el) { el.hidden = el.dataset.team !== id; });
       };
       try { var saved = localStorage.getItem('squad'); if (saved && sel.querySelector('option[value="' + saved + '"]')) sel.value = saved; } catch (e) {}
-      show(sel.value);
+      showSquad(sel.value);
       sel.addEventListener('change', function () {
-        show(sel.value);
+        showSquad(sel.value);
         try { localStorage.setItem('squad', sel.value); } catch (e) {}
       });
     }
@@ -680,7 +754,8 @@ export function buildHtml(data) {
     }
     var shareBtn = document.getElementById('share-btn');
     shareBtn.addEventListener('click', function () {
-      var url = shareBtn.dataset.url, text = shareBtn.dataset.text;
+      var tab = root.dataset.tab;
+      var url = shareBtn.dataset.url + (tab && tab !== 'inicio' ? '#' + tab : ''), text = shareBtn.dataset.text;
       if (navigator.share) {
         navigator.share({ title: document.title, text: text, url: url }).catch(function () {});
       } else if (navigator.clipboard) {
@@ -706,18 +781,24 @@ export function buildHtml(data) {
       el.textContent = d >= 2 ? 'en ' + d + ' días' : d === 1 ? 'mañana' : h >= 1 ? 'en ' + h + ' h' : 'en ' + Math.max(1, Math.round(ms / 60e3)) + ' min';
     });
 
-    // Resalta la sección visible en la barra de navegación.
-    var links = Array.prototype.slice.call(document.querySelectorAll('.tabs a'));
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          var id = e.target.querySelector('.sec-head').id;
-          links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
-        });
-      }, { rootMargin: '-45% 0px -50% 0px' });
-      links.forEach(function (a) { var t = document.querySelector(a.getAttribute('href')); if (t) io.observe(t.closest('section')); });
+    // Pestañas: la pestaña activa va en el #hash del link (se puede compartir, p. ej. #plantillas).
+    function showTab(hash, push) {
+      var id = (hash || '').replace('#', '');
+      var tab = TAB_OF[id] || 'inicio';
+      root.dataset.tab = tab;
+      if (push) history.pushState(null, '', '#' + tab);
+      var target = id && id !== tab ? document.getElementById(id) : null;
+      if (target) target.scrollIntoView();
+      else window.scrollTo(0, 0);
     }
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        showTab(a.getAttribute('href'), true);
+      });
+    });
+    window.addEventListener('popstate', function () { showTab(location.hash, false); });
+    if (location.hash && location.hash !== '#' + root.dataset.tab) showTab(location.hash, false);
   })();
 </script>
 </body>
