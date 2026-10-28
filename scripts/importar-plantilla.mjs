@@ -15,7 +15,7 @@ if (!file || !team) {
 const POSITION = [
   [/portero/i, 'G'],
   [/defensa|lateral|líbero|libero/i, 'D'],
-  [/pivote|mediocentro|mediapunta|interior|volante|medio/i, 'M'],
+  [/pivote|mediocentro|centrocampista|mediapunta|interior|volante|medio/i, 'M'],
   [/extremo|delantero|punta|segundo/i, 'F'],
 ];
 const positionOf = text => POSITION.find(([re]) => re.test(text))?.[1] ?? null;

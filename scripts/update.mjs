@@ -253,7 +253,7 @@ const FLAG_CODE = {
   Italia: 'ita', Colombia: 'col', Uruguay: 'uru', Venezuela: 'ven', Cuba: 'cub', Chile: 'chi', Paraguay: 'par',
   Bolivia: 'bol', 'El Salvador': 'slv', 'Estados Unidos': 'usa', 'España': 'esp', Brasil: 'bra', Jamaica: 'jam',
   Guatemala: 'gua', 'Perú': 'per', Ecuador: 'ecu', 'República Dominicana': 'dom', 'Haití': 'hai', 'Canadá': 'can',
-  'Trinidad y Tobago': 'tri',
+  'Trinidad y Tobago': 'tri', Inglaterra: 'eng', 'Hungría': 'hun',
 };
 const flagUrl = c => FLAG_CODE[c] ? `https://a.espncdn.com/i/teamlogos/countries/500/${FLAG_CODE[c]}.png` : null;
 const normName = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
