@@ -6,7 +6,7 @@ import { buildIcs } from './calendar.mjs';
 const ROOT = new URL('../', import.meta.url);
 const TZ = 'America/Costa_Rica';
 const SEMIFINAL_SPOTS = 4;
-const PAGE_URL = 'https://sebascr714-glitch.github.io/Futbol-CR/';
+const PAGE_URL = 'https://ticofutbol.github.io/Futbol-CR/';
 
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
