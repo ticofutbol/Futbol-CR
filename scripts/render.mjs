@@ -194,7 +194,7 @@ function scorersSection(s, teamsByName) {
   return `
     <div class="podium">${podium}</div>
     <ol class="scorer-list">${rest}</ol>
-    <p class="note">Calculado a partir de los goles registrados en ${s.matchesCounted} partidos (sin autogoles). Puede diferir levemente del conteo oficial.</p>
+    <p class="note">Calculado a partir de los goles registrados por ESPN en ${s.matchesCounted} partidos (sin autogoles)${s.corrections ? `, con ${s.corrections} ${s.corrections === 1 ? 'gol corregido' : 'goles corregidos'} a mano según las crónicas de los medios` : ''}. Puede diferir levemente del conteo oficial.</p>
     ${staleNote(s)}`;
 }
 

@@ -1,36 +1,42 @@
 {
   "401876832": [
     {
+      "minute": "31'",
       "playerId": "212592",
       "player": "Mayron George",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "45'+1'",
       "playerId": "3145692",
       "player": "Deyver Antonio Vega Álvarez",
       "team": "Escorpiones Belén",
       "type": "Goal"
     },
     {
+      "minute": "57'",
       "playerId": "212592",
       "player": "Mayron George",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "61'",
       "playerId": "212592",
       "player": "Mayron George",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "90'+2'",
       "playerId": "324450",
       "player": "Erson Méndez",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "90'+5'",
       "playerId": "3118776",
       "player": "Raúl Yulian López Orellana",
       "team": "Escorpiones Belén",
@@ -39,6 +45,7 @@
   ],
   "401876833": [
     {
+      "minute": "90'+4'",
       "playerId": "201120",
       "player": "Anthony Hernández",
       "team": "Alajuelense",
@@ -47,24 +54,28 @@
   ],
   "401876834": [
     {
+      "minute": "1'",
       "playerId": "404047",
       "player": "Nick Bennette",
       "team": "Herediano",
       "type": "Goal"
     },
     {
+      "minute": "52'",
       "playerId": "229883",
       "player": "Allan Cruz",
       "team": "Herediano",
       "type": "Goal"
     },
     {
+      "minute": "62'",
       "playerId": "310005",
       "player": "Geancarlo Castro",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "73'",
       "playerId": "210206",
       "player": "Elías Aguilar",
       "team": "Herediano",
@@ -73,18 +84,21 @@
   ],
   "401876835": [
     {
+      "minute": "39'",
       "playerId": "217560",
       "player": "Kenneth Cerdas",
       "team": "AD San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "43'",
       "playerId": "176491",
       "player": "Raul Vidal",
       "team": "AD San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "69'",
       "playerId": "35147",
       "player": "Mariano Torres",
       "team": "Saprissa",
@@ -93,36 +107,42 @@
   ],
   "401876836": [
     {
+      "minute": "8'",
       "playerId": "175969",
       "player": "Alexander López",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "25'",
       "playerId": "320433",
       "player": "Joshua Navarro",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "27'",
       "playerId": "243841",
       "player": "Jeikel Venegas",
       "team": "AD San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "31'",
       "playerId": "320433",
       "player": "Joshua Navarro",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "54'",
       "playerId": "246984",
       "player": "Yoisel Piedra",
       "team": "AD San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "80'",
       "playerId": "228457",
       "player": "Roberto Córdoba",
       "team": "AD San Carlos",
@@ -131,18 +151,21 @@
   ],
   "401876837": [
     {
+      "minute": "69'",
       "playerId": "3097949",
       "player": "Daniel Alberto González Pérez",
       "team": "Herediano",
       "type": "Goal"
     },
     {
+      "minute": "71'",
       "playerId": "229883",
       "player": "Allan Cruz",
       "team": "Herediano",
       "type": "Goal"
     },
     {
+      "minute": "75'",
       "playerId": "210206",
       "player": "Elías Aguilar",
       "team": "Herediano",
@@ -151,18 +174,21 @@
   ],
   "401876838": [
     {
+      "minute": "1'",
       "playerId": "328392",
       "player": "Doryan Rodriguez",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "15'",
       "playerId": "3100022",
       "player": "Danilo Pimpinati Rocha",
       "team": "Escorpiones Belén",
       "type": "Goal"
     },
     {
+      "minute": "86'",
       "playerId": "328392",
       "player": "Doryan Rodriguez",
       "team": "Puntarenas FC",
@@ -171,6 +197,7 @@
   ],
   "401876839": [
     {
+      "minute": "44'",
       "playerId": "302973",
       "player": "Sebastian Acuna Murillo",
       "team": "Cartaginés",
@@ -179,30 +206,35 @@
   ],
   "401876840": [
     {
+      "minute": "11'",
       "playerId": "3145692",
       "player": "Deyver Antonio Vega Álvarez",
       "team": "Escorpiones Belén",
       "type": "Goal"
     },
     {
+      "minute": "21'",
       "playerId": "3100022",
       "player": "Danilo Pimpinati Rocha",
       "team": "Escorpiones Belén",
       "type": "Goal"
     },
     {
+      "minute": "28'",
       "playerId": "277201",
       "player": "Axel Amador",
       "team": "Pérez Zeledón",
       "type": "Goal"
     },
     {
+      "minute": "29'",
       "playerId": "3100022",
       "player": "Danilo Pimpinati Rocha",
       "team": "Escorpiones Belén",
       "type": "Goal"
     },
     {
+      "minute": "86'",
       "playerId": "407927",
       "player": "Rodolfo Montiel",
       "team": "Escorpiones Belén",
@@ -211,12 +243,14 @@
   ],
   "401876841": [
     {
+      "minute": "8'",
       "playerId": "208436",
       "player": "Ronaldo Cisneros",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "45'+6'",
       "playerId": "381345",
       "player": "Fernando Lesme",
       "team": "Herediano",
@@ -225,36 +259,42 @@
   ],
   "401876842": [
     {
+      "minute": "17'",
       "playerId": "302973",
       "player": "Sebastian Acuna Murillo",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "26'",
       "playerId": "291004",
       "player": "Andrey Soto",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "38'",
       "playerId": "362925",
       "player": "Jorkaeff Azofeifa",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "55'",
       "playerId": "141888",
       "player": "Gerson Torres",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "69'",
       "playerId": "132937",
       "player": "Kendall Waston",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "78'",
       "playerId": "286975",
       "player": "Orlando Sinclair",
       "team": "Saprissa",
@@ -263,24 +303,28 @@
   ],
   "401876843": [
     {
+      "minute": "29'",
       "playerId": "280546",
       "player": "José De Jesús González",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "45'+2'",
       "playerId": "151369",
       "player": "Yeltsin Tejeda",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "68'",
       "playerId": "205163",
       "player": "Juan Gaete",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "90'+5'",
       "playerId": "205163",
       "player": "Juan Gaete",
       "team": "Cartaginés",
@@ -289,24 +333,28 @@
   ],
   "401876844": [
     {
+      "minute": "10'",
       "playerId": "227608",
       "player": "Gabriel Leiva",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "58'",
       "playerId": "185890",
       "player": "Alonso Hernández",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "72'",
       "playerId": "320433",
       "player": "Joshua Navarro",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "90'+1'",
       "playerId": "151184",
       "player": "Daniel Colindres",
       "team": "Sporting San José",
@@ -315,12 +363,14 @@
   ],
   "401876845": [
     {
+      "minute": "45'",
       "playerId": "208436",
       "player": "Ronaldo Cisneros",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "90'",
       "playerId": "407914",
       "player": "Dariel Castrillo",
       "team": "Puntarenas FC",
@@ -329,6 +379,7 @@
   ],
   "401876846": [
     {
+      "minute": "35'",
       "playerId": "190944",
       "player": "John Jairo Ruiz",
       "team": "Escorpiones Belén",
@@ -337,6 +388,7 @@
   ],
   "401876847": [
     {
+      "minute": "5'",
       "playerId": "253612",
       "player": "Brian Martínez",
       "team": "AD San Carlos",
@@ -345,6 +397,7 @@
   ],
   "401876848": [
     {
+      "minute": "42'",
       "playerId": "381346",
       "player": "Kevin Cabezas",
       "team": "Puntarenas FC",
@@ -353,18 +406,21 @@
   ],
   "401876849": [
     {
+      "minute": "25'",
       "playerId": "81856",
       "player": "José Pinto",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "36'",
       "playerId": "277201",
       "player": "Axel Amador",
       "team": "Pérez Zeledón",
       "type": "Goal"
     },
     {
+      "minute": "47'",
       "playerId": "227608",
       "player": "Gabriel Leiva",
       "team": "Sporting San José",
@@ -373,12 +429,14 @@
   ],
   "401876850": [
     {
+      "minute": "7'",
       "playerId": "286975",
       "player": "Orlando Sinclair",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "90'+1'",
       "playerId": "35147",
       "player": "Mariano Torres",
       "team": "Saprissa",
@@ -387,6 +445,7 @@
   ],
   "401876851": [
     {
+      "minute": "28'",
       "playerId": "421138",
       "player": "Jefferson Rivera",
       "team": "AD San Carlos",
@@ -395,36 +454,42 @@
   ],
   "401876852": [
     {
+      "minute": "2'",
       "playerId": "227608",
       "player": "Gabriel Leiva",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "29'",
       "playerId": "291004",
       "player": "Andrey Soto",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "30'",
       "playerId": "260484",
       "player": "Youstin Salas",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "42'",
       "playerId": "212592",
       "player": "Mayron George",
       "team": "Sporting San José",
       "type": "Penalty - Scored"
     },
     {
+      "minute": "64'",
       "playerId": "227608",
       "player": "Gabriel Leiva",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "82'",
       "playerId": "87727",
       "player": "Ariel Rodríguez",
       "team": "Saprissa",
@@ -433,12 +498,14 @@
   ],
   "401876853": [
     {
+      "minute": "11'",
       "playerId": "253612",
       "player": "Brian Martínez",
       "team": "AD San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "19'",
       "playerId": "253612",
       "player": "Brian Martínez",
       "team": "AD San Carlos",
@@ -447,12 +514,14 @@
   ],
   "401876854": [
     {
+      "minute": "82'",
       "playerId": "217135",
       "player": "Keyner Brown",
       "team": "Herediano",
       "type": "Goal"
     },
     {
+      "minute": "89'",
       "playerId": "285725",
       "player": "Ronaldo Araya",
       "team": "Herediano",
@@ -461,24 +530,28 @@
   ],
   "401876855": [
     {
+      "minute": "12'",
       "playerId": "360070",
       "player": "Claudio Alvarado",
       "team": "Cartaginés",
       "type": "Penalty - Scored"
     },
     {
+      "minute": "22'",
       "playerId": "406456",
       "player": "Farbod Samadian",
       "team": "Cartaginés",
       "type": "Own Goal"
     },
     {
+      "minute": "72'",
       "playerId": "276951",
       "player": "Douglas López",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "74'",
       "playerId": "208436",
       "player": "Ronaldo Cisneros",
       "team": "Alajuelense",
@@ -487,24 +560,28 @@
   ],
   "401876856": [
     {
+      "minute": "7'",
       "playerId": "185890",
       "player": "Alonso Hernández",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "35'",
       "playerId": "239562",
       "player": "Hiram Muñoz",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "65'",
       "playerId": "310005",
       "player": "Geancarlo Castro",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "73'",
       "playerId": "310005",
       "player": "Geancarlo Castro",
       "team": "Cartaginés",
@@ -513,12 +590,14 @@
   ],
   "401876857": [
     {
+      "minute": "45'+3'",
       "playerId": "286975",
       "player": "Orlando Sinclair",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "52'",
       "playerId": "302973",
       "player": "Sebastian Acuna Murillo",
       "team": "Saprissa",
@@ -527,30 +606,35 @@
   ],
   "401876858": [
     {
+      "minute": "5'",
       "playerId": "419947",
       "player": "José Alvarado",
       "team": "Pérez Zeledón",
       "type": "Goal"
     },
     {
+      "minute": "33'",
       "playerId": "381345",
       "player": "Fernando Lesme",
       "team": "Herediano",
       "type": "Penalty - Scored"
     },
     {
+      "minute": "67'",
       "playerId": "285725",
       "player": "Ronaldo Araya",
       "team": "Herediano",
       "type": "Goal"
     },
     {
+      "minute": "79'",
       "playerId": "277201",
       "player": "Axel Amador",
       "team": "Pérez Zeledón",
       "type": "Goal"
     },
     {
+      "minute": "90'",
       "playerId": "92511",
       "player": "Marvin Angulo",
       "team": "Pérez Zeledón",
@@ -559,6 +643,7 @@
   ],
   "401876859": [
     {
+      "minute": "40'",
       "playerId": "253612",
       "player": "Brian Martínez",
       "team": "AD San Carlos",
@@ -567,12 +652,14 @@
   ],
   "401876860": [
     {
+      "minute": "45'",
       "playerId": "208436",
       "player": "Ronaldo Cisneros",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "49'",
       "playerId": "350672",
       "player": "Elián Quesada Thorn",
       "team": "Pérez Zeledón",
@@ -581,18 +668,21 @@
   ],
   "401876861": [
     {
+      "minute": "34'",
       "playerId": "141888",
       "player": "Gerson Torres",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "55'",
       "playerId": "291004",
       "player": "Andrey Soto",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "58'",
       "playerId": "265899",
       "player": "Cristian Muñoz",
       "team": "Escorpiones Belén",
@@ -601,6 +691,7 @@
   ],
   "401876862": [
     {
+      "minute": "44'",
       "playerId": "185890",
       "player": "Alonso Hernández",
       "team": "Cartaginés",
@@ -609,18 +700,21 @@
   ],
   "401876863": [
     {
+      "minute": "39'",
       "playerId": "407914",
       "player": "Dariel Castrillo",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "46'",
       "playerId": "159210",
       "player": "Jorman Aguilar",
       "team": "AD San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "90'+3'",
       "playerId": "265900",
       "player": "Amferny Arias",
       "team": "Puntarenas FC",
@@ -629,6 +723,7 @@
   ],
   "401876864": [
     {
+      "minute": "81'",
       "playerId": "328392",
       "player": "Doryan Rodriguez",
       "team": "Puntarenas FC",
@@ -637,30 +732,35 @@
   ],
   "401876865": [
     {
+      "minute": "23'",
       "playerId": "407927",
       "player": "Rodolfo Montiel",
       "team": "Escorpiones Belén",
       "type": "Penalty - Scored"
     },
     {
+      "minute": "45'+2'",
       "playerId": "185890",
       "player": "Alonso Hernández",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "70'",
       "playerId": "185890",
       "player": "Alonso Hernández",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "79'",
       "playerId": "205163",
       "player": "Juan Gaete",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "85'",
       "playerId": "205163",
       "player": "Juan Gaete",
       "team": "Cartaginés",
@@ -669,6 +769,7 @@
   ],
   "401876866": [
     {
+      "minute": "71'",
       "playerId": "421138",
       "player": "Jefferson Rivera",
       "team": "AD San Carlos",
@@ -677,18 +778,21 @@
   ],
   "401876867": [
     {
+      "minute": "53'",
       "playerId": "81856",
       "player": "José Pinto",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "67'",
       "playerId": "175969",
       "player": "Alexander López",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "88'",
       "playerId": "151184",
       "player": "Daniel Colindres",
       "team": "Sporting San José",
@@ -697,12 +801,14 @@
   ],
   "401876868": [
     {
+      "minute": "2'",
       "playerId": "324450",
       "player": "Erson Méndez",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "4'",
       "playerId": "148141",
       "player": "Marco Ureña",
       "team": "Sporting San José",
@@ -711,18 +817,21 @@
   ],
   "401876869": [
     {
+      "minute": "28'",
       "playerId": "328392",
       "player": "Doryan Rodriguez",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "41'",
       "playerId": "267307",
       "player": "Alexis Gamboa",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "69'",
       "playerId": "352169",
       "player": "Kenyel Michel",
       "team": "Alajuelense",
@@ -731,30 +840,35 @@
   ],
   "401876870": [
     {
+      "minute": "13'",
       "playerId": "290955",
       "player": "Jefferson Brenes",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "31'",
       "playerId": "276951",
       "player": "Douglas López",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "34'",
       "playerId": "290955",
       "player": "Jefferson Brenes",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "77'",
       "playerId": "330909",
       "player": "Bancy Hernández",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "88'",
       "playerId": "347575",
       "player": "Carlos Barahona",
       "team": "Cartaginés",
@@ -763,6 +877,7 @@
   ],
   "401876871": [
     {
+      "minute": "62'",
       "playerId": "253612",
       "player": "Brian Martínez",
       "team": "AD San Carlos",
@@ -771,12 +886,14 @@
   ],
   "401876872": [
     {
+      "minute": "35'",
       "playerId": "290955",
       "player": "Jefferson Brenes",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "73'",
       "playerId": "290955",
       "player": "Jefferson Brenes",
       "team": "Saprissa",
@@ -786,18 +903,21 @@
   "401876873": [],
   "401876874": [
     {
+      "minute": "33'",
       "playerId": "293397",
       "player": "Rashir Parkins",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "66'",
       "playerId": "184787",
       "player": "Jeison Lucumi",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "84'",
       "playerId": "352169",
       "player": "Kenyel Michel",
       "team": "Alajuelense",
@@ -806,18 +926,21 @@
   ],
   "401876875": [
     {
+      "minute": "52'",
       "playerId": "280546",
       "player": "José De Jesús González",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "62'",
       "playerId": "175969",
       "player": "Alexander López",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "86'",
       "playerId": "310005",
       "player": "Geancarlo Castro",
       "team": "Cartaginés",
@@ -826,12 +949,14 @@
   ],
   "401876876": [
     {
+      "minute": "37'",
       "playerId": "271298",
       "player": "Jaylon Hadden",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "45'+6'",
       "playerId": "357104",
       "player": "Renzo Carballo",
       "team": "Sporting San José",
@@ -840,6 +965,7 @@
   ],
   "401876877": [
     {
+      "minute": "27'",
       "playerId": "419947",
       "player": "José Alvarado",
       "team": "Pérez Zeledón",
@@ -848,18 +974,21 @@
   ],
   "401876878": [
     {
+      "minute": "72'",
       "playerId": "201120",
       "player": "Anthony Hernández",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "75'",
       "playerId": "3118776",
       "player": "Raúl Yulian López Orellana",
       "team": "Escorpiones Belén",
       "type": "Goal"
     },
     {
+      "minute": "90'+4'",
       "playerId": "267307",
       "player": "Alexis Gamboa",
       "team": "Alajuelense",
@@ -868,18 +997,21 @@
   ],
   "401876879": [
     {
+      "minute": "65'",
       "playerId": "316735",
       "player": "Newton Williams",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "69'",
       "playerId": "316735",
       "player": "Newton Williams",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "83'",
       "playerId": "217560",
       "player": "Kenneth Cerdas",
       "team": "AD San Carlos",
@@ -888,12 +1020,14 @@
   ],
   "401876880": [
     {
+      "minute": "30'",
       "playerId": "357104",
       "player": "Renzo Carballo",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "87'",
       "playerId": "352169",
       "player": "Kenyel Michel",
       "team": "Alajuelense",
@@ -902,36 +1036,42 @@
   ],
   "401876881": [
     {
+      "minute": "47'",
       "playerId": "286975",
       "player": "Orlando Sinclair",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "55'",
       "playerId": "419947",
       "player": "José Alvarado",
       "team": "Pérez Zeledón",
       "type": "Goal"
     },
     {
+      "minute": "59'",
       "playerId": "282105",
       "player": "Luis Paradela",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "67'",
       "playerId": "282105",
       "player": "Luis Paradela",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "70'",
       "playerId": "316735",
       "player": "Newton Williams",
       "team": "Saprissa",
       "type": "Goal"
     },
     {
+      "minute": "82'",
       "playerId": "404050",
       "player": "Fabricio Urbina",
       "team": "Saprissa",
@@ -940,12 +1080,14 @@
   ],
   "401876882": [
     {
+      "minute": "30'",
       "playerId": "407914",
       "player": "Dariel Castrillo",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "45'+2'",
       "playerId": "316864",
       "player": "Santiago Vargas",
       "team": "Herediano",
@@ -955,24 +1097,28 @@
   "401876883": [],
   "401876884": [
     {
+      "minute": "30'",
       "playerId": "205163",
       "player": "Juan Gaete",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "47'",
       "playerId": "205163",
       "player": "Juan Gaete",
       "team": "Cartaginés",
       "type": "Goal"
     },
     {
+      "minute": "58'",
       "playerId": "163233",
       "player": "Kevin Briceño",
       "team": "Inter de San Carlos",
       "type": "Own Goal"
     },
     {
+      "minute": "78'",
       "playerId": "256555",
       "player": "Bernald Alfaro",
       "team": "Cartaginés",
@@ -981,12 +1127,14 @@
   ],
   "401876885": [
     {
+      "minute": "9'",
       "playerId": "310004",
       "player": "Yurguin Román",
       "team": "Herediano",
       "type": "Goal"
     },
     {
+      "minute": "22'",
       "playerId": "166669",
       "player": "Joel Campbell",
       "team": "Inter de San Carlos",
@@ -995,24 +1143,28 @@
   ],
   "401876891": [
     {
+      "minute": "31'",
       "playerId": "153727",
       "player": "Erick Torres",
       "team": "Inter de San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "72'",
       "playerId": "381346",
       "player": "Kevin Cabezas",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "75'",
       "playerId": "3136517",
       "player": "Wilson Alberto Hernández González",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "90'",
       "playerId": "3099939",
       "player": "Pablo Manuel Álvarez Hodgson",
       "team": "Puntarenas FC",
@@ -1021,30 +1173,35 @@
   ],
   "401876892": [
     {
+      "minute": "16'",
       "playerId": "207279",
       "player": "Juanpi",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "21'",
       "playerId": "291003",
       "player": "Rashid Chirino",
       "team": "Inter de San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "23'",
       "playerId": "207279",
       "player": "Juanpi",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "59'",
       "playerId": "227935",
       "player": "Wilmer Azofeifa",
       "team": "Inter de San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "70'",
       "playerId": "352169",
       "player": "Kenyel Michel",
       "team": "Alajuelense",
@@ -1053,18 +1210,21 @@
   ],
   "401876893": [
     {
+      "minute": "31'",
       "playerId": "227935",
       "player": "Wilmer Azofeifa",
       "team": "Inter de San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "51'",
       "playerId": "246984",
       "player": "Yoisel Piedra",
       "team": "Inter de San Carlos",
       "type": "Own Goal"
     },
     {
+      "minute": "56'",
       "playerId": "228457",
       "player": "Roberto Córdoba",
       "team": "AD San Carlos",
@@ -1073,12 +1233,14 @@
   ],
   "401876894": [
     {
+      "minute": "43'",
       "playerId": "194438",
       "player": "Joaquin Aguirre",
       "team": "Pérez Zeledón",
       "type": "Goal"
     },
     {
+      "minute": "51'",
       "playerId": "153727",
       "player": "Erick Torres",
       "team": "Inter de San Carlos",
@@ -1087,30 +1249,35 @@
   ],
   "401876895": [
     {
+      "minute": "14'",
       "playerId": "208436",
       "player": "Ronaldo Cisneros",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "20'",
       "playerId": "352169",
       "player": "Kenyel Michel",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "64'",
       "playerId": "352169",
       "player": "Kenyel Michel",
       "team": "Alajuelense",
       "type": "Goal"
     },
     {
+      "minute": "80'",
       "playerId": "208436",
       "player": "Ronaldo Cisneros",
       "team": "Alajuelense",
       "type": "Penalty - Scored"
     },
     {
+      "minute": "84'",
       "playerId": "170446",
       "player": "John Ruiz",
       "team": "Alajuelense",
@@ -1119,12 +1286,14 @@
   ],
   "401876896": [
     {
+      "minute": "11'",
       "playerId": "407914",
       "player": "Dariel Castrillo",
       "team": "Puntarenas FC",
       "type": "Goal"
     },
     {
+      "minute": "90'",
       "playerId": "305948",
       "player": "Juan Rodriguez",
       "team": "Inter de San Carlos",
@@ -1133,12 +1302,14 @@
   ],
   "401876897": [
     {
+      "minute": "45'+2'",
       "playerId": "166669",
       "player": "Joel Campbell",
       "team": "Inter de San Carlos",
       "type": "Penalty - Scored"
     },
     {
+      "minute": "73'",
       "playerId": "166669",
       "player": "Joel Campbell",
       "team": "Inter de San Carlos",
@@ -1147,12 +1318,14 @@
   ],
   "401876898": [
     {
+      "minute": "5'",
       "playerId": "227608",
       "player": "Gabriel Leiva",
       "team": "Sporting San José",
       "type": "Goal"
     },
     {
+      "minute": "88'",
       "playerId": "320433",
       "player": "Joshua Navarro",
       "team": "Sporting San José",
@@ -1161,6 +1334,7 @@
   ],
   "401876899": [
     {
+      "minute": "78'",
       "playerId": "166669",
       "player": "Joel Campbell",
       "team": "Inter de San Carlos",
@@ -1169,6 +1343,7 @@
   ],
   "401876900": [
     {
+      "minute": "9'",
       "playerId": "399115",
       "player": "Randy Vega",
       "team": "Inter de San Carlos",
@@ -1177,12 +1352,14 @@
   ],
   "401876901": [
     {
+      "minute": "13'",
       "playerId": "153727",
       "player": "Erick Torres",
       "team": "Inter de San Carlos",
       "type": "Goal"
     },
     {
+      "minute": "65'",
       "playerId": "166669",
       "player": "Joel Campbell",
       "team": "Inter de San Carlos",

@@ -1,0 +1,21 @@
+{
+  "_info": "Correcciones manuales a los goles de ESPN. Cada una se aplica solo si ESPN sigue mostrando al jugador 'from' en ese partido y minuto; si ESPN lo corrige, se ignora sola.",
+  "goals": [
+    {
+      "event": "401876870",
+      "match": "Saprissa 3-2 Cartaginés (15 ago 2026)",
+      "minute": "31'",
+      "from": { "id": "276951", "name": "Douglas López" },
+      "to": { "id": "185890", "name": "Alonso Hernández" },
+      "source": "Diario Extra y La Nación: el gol del 31' fue de Joaquín Alonso Hernández, con pase de Douglas López."
+    },
+    {
+      "event": "401876843",
+      "match": "Cartaginés 3-1 Puntarenas FC (13 oct 2026)",
+      "minute": "90'+5'",
+      "from": { "id": "205163", "name": "Juan Gaete" },
+      "to": { "id": "310005", "name": "Geancarlo Castro" },
+      "source": "CRHoy y La Teja: los goles fueron de José de Jesús González, Gaete (68') y Geancarlo Castro."
+    }
+  ]
+}

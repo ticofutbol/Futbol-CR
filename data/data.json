@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-28T19:58:46.645Z",
-  "lastSuccessAt": "2026-10-28T19:58:46.645Z",
+  "generatedAt": "2026-10-28T20:37:28.648Z",
+  "lastSuccessAt": "2026-10-28T20:37:28.648Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-28T19:58:44.875Z",
+    "updatedAt": "2026-10-28T20:37:24.897Z",
     "stale": false
   },
   "results": {
@@ -2077,7 +2077,7 @@
         }
       }
     },
-    "updatedAt": "2026-10-28T19:58:45.225Z",
+    "updatedAt": "2026-10-28T20:37:25.587Z",
     "stale": false
   },
   "upcoming": {
@@ -2925,16 +2925,17 @@
         }
       }
     ],
-    "updatedAt": "2026-10-28T19:58:46.299Z",
+    "updatedAt": "2026-10-28T20:37:27.789Z",
     "stale": false
   },
   "scorers": {
     "matchesCounted": 65,
     "goalsCounted": 177,
+    "corrections": 2,
     "rows": [
       {
-        "playerId": "205163",
-        "player": "Juan Gaete",
+        "playerId": "185890",
+        "player": "Alonso Hernández",
         "team": "Cartaginés",
         "goals": 6,
         "penalties": 0
@@ -2954,16 +2955,23 @@
         "penalties": 1
       },
       {
-        "playerId": "185890",
-        "player": "Alonso Hernández",
+        "playerId": "227608",
+        "player": "Gabriel Leiva",
+        "team": "Sporting San José",
+        "goals": 5,
+        "penalties": 0
+      },
+      {
+        "playerId": "310005",
+        "player": "Geancarlo Castro",
         "team": "Cartaginés",
         "goals": 5,
         "penalties": 0
       },
       {
-        "playerId": "227608",
-        "player": "Gabriel Leiva",
-        "team": "Sporting San José",
+        "playerId": "205163",
+        "player": "Juan Gaete",
+        "team": "Cartaginés",
         "goals": 5,
         "penalties": 0
       },
@@ -2992,13 +3000,6 @@
         "playerId": "328392",
         "player": "Doryan Rodriguez",
         "team": "Puntarenas FC",
-        "goals": 4,
-        "penalties": 0
-      },
-      {
-        "playerId": "310005",
-        "player": "Geancarlo Castro",
-        "team": "Cartaginés",
         "goals": 4,
         "penalties": 0
       },
@@ -3033,8 +3034,8 @@
     ],
     "all": [
       {
-        "playerId": "205163",
-        "player": "Juan Gaete",
+        "playerId": "185890",
+        "player": "Alonso Hernández",
         "team": "Cartaginés",
         "goals": 6,
         "penalties": 0
@@ -3054,16 +3055,23 @@
         "penalties": 1
       },
       {
-        "playerId": "185890",
-        "player": "Alonso Hernández",
+        "playerId": "227608",
+        "player": "Gabriel Leiva",
+        "team": "Sporting San José",
+        "goals": 5,
+        "penalties": 0
+      },
+      {
+        "playerId": "310005",
+        "player": "Geancarlo Castro",
         "team": "Cartaginés",
         "goals": 5,
         "penalties": 0
       },
       {
-        "playerId": "227608",
-        "player": "Gabriel Leiva",
-        "team": "Sporting San José",
+        "playerId": "205163",
+        "player": "Juan Gaete",
+        "team": "Cartaginés",
         "goals": 5,
         "penalties": 0
       },
@@ -3092,13 +3100,6 @@
         "playerId": "328392",
         "player": "Doryan Rodriguez",
         "team": "Puntarenas FC",
-        "goals": 4,
-        "penalties": 0
-      },
-      {
-        "playerId": "310005",
-        "player": "Geancarlo Castro",
-        "team": "Cartaginés",
         "goals": 4,
         "penalties": 0
       },
@@ -3211,13 +3212,6 @@
         "playerId": "3145692",
         "player": "Deyver Antonio Vega Álvarez",
         "team": "Escorpiones Belén",
-        "goals": 2,
-        "penalties": 0
-      },
-      {
-        "playerId": "276951",
-        "player": "Douglas López",
-        "team": "Cartaginés",
         "goals": 2,
         "penalties": 0
       },
@@ -3400,6 +3394,13 @@
         "playerId": "3097949",
         "player": "Daniel Alberto González Pérez",
         "team": "Herediano",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
+        "playerId": "276951",
+        "player": "Douglas López",
+        "team": "Cartaginés",
         "goals": 1,
         "penalties": 0
       },
@@ -3607,7 +3608,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-28T19:58:46.301Z",
+    "updatedAt": "2026-10-28T20:37:27.794Z",
     "stale": false
   },
   "squads": {
@@ -4228,7 +4229,7 @@
             "age": 28,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 2,
+            "goals": 1,
             "penalties": 0
           },
           {
@@ -4393,7 +4394,7 @@
             "age": 29,
             "country": "Chile",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/chi.png",
-            "goals": 6,
+            "goals": 5,
             "penalties": 0
           },
           {
@@ -4404,7 +4405,7 @@
             "age": 24,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 4,
+            "goals": 5,
             "penalties": 0
           },
           {
@@ -4415,7 +4416,7 @@
             "age": 32,
             "country": "USA",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-            "goals": 5,
+            "goals": 6,
             "penalties": 0
           },
           {
@@ -7719,7 +7720,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-28T19:58:46.645Z",
+    "updatedAt": "2026-10-28T20:37:28.648Z",
     "stale": false
   },
   "history": {

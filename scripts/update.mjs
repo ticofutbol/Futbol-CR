@@ -6,6 +6,7 @@ import { render } from './render.mjs';
 const ROOT = new URL('../', import.meta.url);
 const DATA_FILE = new URL('data/data.json', ROOT);
 const GOALS_CACHE = new URL('data/goals-cache.json', ROOT);
+const CORRECTIONS = new URL('data/corrections.json', ROOT);
 
 const LEAGUE = 'crc.1';
 const SITE = `https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUE}`;
@@ -157,8 +158,8 @@ async function fetchUpcomingMatches() {
 // Los partidos terminados no cambian, por eso sus goles se guardan en data/goals-cache.json.
 async function fetchScorers(played) {
   const cache = await readJson(GOALS_CACHE, {});
-  // Entradas sin playerId vienen de una versión anterior: se vuelven a descargar una vez.
-  const missing = played.filter(m => !cache[m.id] || cache[m.id].some(g => !('playerId' in g)));
+  // Entradas sin playerId o minute vienen de una versión anterior: se vuelven a descargar una vez.
+  const missing = played.filter(m => !cache[m.id] || cache[m.id].some(g => !('playerId' in g) || !('minute' in g)));
   const failed = [];
   await mapLimit(missing, 6, async m => {
     try {
@@ -166,6 +167,7 @@ async function fetchScorers(played) {
       cache[m.id] = (s.keyEvents ?? [])
         .filter(k => k.scoringPlay)
         .map(k => ({
+          minute: k.clock?.displayValue ?? null,
           playerId: k.participants?.[0]?.athlete?.id ?? null,
           player: k.participants?.[0]?.athlete?.displayName ?? 'Desconocido',
           team: k.team?.displayName ?? '',
@@ -178,9 +180,20 @@ async function fetchScorers(played) {
   await writeJson(GOALS_CACHE, cache);
   if (failed.length) throw new Error(`No se pudo leer el resumen de ${failed.length} partido(s)`);
 
+  // Correcciones manuales (data/corrections.json) sobre una copia: el caché guarda lo que dice ESPN.
+  const { goals: fixes = [] } = await readJson(CORRECTIONS, {});
+  const goalsOf = id => (cache[id] ?? []).map(g => {
+    const fix = fixes.find(f => f.event === id && f.minute === g.minute && f.from.id === g.playerId);
+    return fix ? { ...g, playerId: fix.to.id, player: fix.to.name, corrected: true } : g;
+  });
+  for (const f of fixes) {
+    if (played.some(m => m.id === f.event) && !goalsOf(f.event).some(g => g.corrected && g.minute === f.minute))
+      console.warn(`  (corrección sin aplicar: ${f.match} ${f.minute}; puede que ESPN ya la haya arreglado)`);
+  }
+
   const tally = new Map();
   let total = 0;
-  for (const m of played) for (const g of cache[m.id] ?? []) {
+  for (const m of played) for (const g of goalsOf(m.id)) {
     total++;
     if (/own/i.test(g.type)) continue; // los autogoles no cuentan para el goleador
     const key = g.playerId ?? `${g.player}|${g.team}`;
@@ -194,6 +207,7 @@ async function fetchScorers(played) {
   return {
     matchesCounted: played.length,
     goalsCounted: total,
+    corrections: played.reduce((n, m) => n + goalsOf(m.id).filter(g => g.corrected).length, 0),
     rows: rows.filter((r, i) => i < 10 || r.goals === cut).slice(0, 15),
     all: rows, // para cruzar con las plantillas
   };
