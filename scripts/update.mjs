@@ -114,6 +114,27 @@ async function fetchPlayedMatches(teamIds) {
   return [...byId.values()].sort((a, b) => b.date.localeCompare(a.date));
 }
 
+// Racha: últimos 5 resultados de cada equipo, del más reciente al más viejo (G/E/P).
+function teamForm(played, teamIds) {
+  const form = Object.fromEntries(teamIds.map(id => [id, []]));
+  for (const m of played) { // ya viene ordenado del más reciente al más viejo
+    const h = Number(m.home.score), a = Number(m.away.score);
+    for (const [me, gf, gc] of [[m.home.id, h, a], [m.away.id, a, h]]) {
+      if (form[me] && form[me].length < 5) form[me].push(gf > gc ? 'G' : gf === gc ? 'E' : 'P');
+    }
+  }
+  return form;
+}
+
+// Cifras del torneo para las tarjetas destacadas.
+function seasonStats(played) {
+  const goals = played.reduce((s, m) => s + Number(m.home.score) + Number(m.away.score), 0);
+  const biggest = [...played].sort((x, y) =>
+    Math.abs(y.home.score - y.away.score) - Math.abs(x.home.score - x.away.score)
+    || (Number(y.home.score) + Number(y.away.score)) - (Number(x.home.score) + Number(x.away.score)))[0] ?? null;
+  return { matches: played.length, goals, biggest };
+}
+
 // ESPN no acepta rangos de fechas en el scoreboard de esta liga: se consulta día por día.
 async function fetchUpcomingMatches() {
   const days = [];
@@ -239,7 +260,7 @@ async function main() {
   const results = await section('Últimos resultados', prev.results, async () => {
     if (!teamIds.length) throw new Error('Sin lista de equipos');
     played = await fetchPlayedMatches(teamIds);
-    return { matches: played.slice(0, RECENT_COUNT) };
+    return { matches: played.slice(0, RECENT_COUNT), form: teamForm(played, teamIds), stats: seasonStats(played) };
   }, warnings);
 
   const upcoming = await section('Próximos partidos', prev.upcoming, async () => ({ matches: await fetchUpcomingMatches() }), warnings);

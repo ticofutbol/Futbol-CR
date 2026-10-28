@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-28T19:29:34.294Z",
-  "lastSuccessAt": "2026-10-28T19:29:34.294Z",
+  "generatedAt": "2026-10-28T19:37:23.024Z",
+  "lastSuccessAt": "2026-10-28T19:37:23.024Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-28T19:29:33.697Z",
+    "updatedAt": "2026-10-28T19:37:21.344Z",
     "stale": false
   },
   "results": {
@@ -415,7 +415,107 @@
         }
       }
     ],
-    "updatedAt": "2026-10-28T19:29:33.835Z",
+    "form": {
+      "858": [
+        "P",
+        "P",
+        "G",
+        "P",
+        "G"
+      ],
+      "859": [
+        "G",
+        "E",
+        "P",
+        "G",
+        "G"
+      ],
+      "862": [
+        "G",
+        "G",
+        "E",
+        "P",
+        "P"
+      ],
+      "2057": [
+        "G",
+        "G",
+        "E",
+        "E",
+        "G"
+      ],
+      "7234": [
+        "P",
+        "P",
+        "P",
+        "E",
+        "P"
+      ],
+      "7237": [
+        "G",
+        "G",
+        "P",
+        "E",
+        "G"
+      ],
+      "7239": [
+        "P",
+        "G",
+        "G",
+        "P",
+        "P"
+      ],
+      "20705": [
+        "G",
+        "E",
+        "P",
+        "G",
+        "G"
+      ],
+      "131790": [
+        "P",
+        "P",
+        "G",
+        "E",
+        "P"
+      ],
+      "132447": [
+        "P",
+        "P",
+        "G",
+        "G",
+        "P"
+      ]
+    },
+    "stats": {
+      "matches": 65,
+      "goals": 180,
+      "biggest": {
+        "id": "401876842",
+        "date": "2026-10-16T02:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Ricardo Saprissa",
+        "home": {
+          "id": "858",
+          "name": "Saprissa",
+          "short": "Saprissa",
+          "abbr": "SAP",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+          "score": "6"
+        },
+        "away": {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "0"
+        }
+      }
+    },
+    "updatedAt": "2026-10-28T19:37:21.804Z",
     "stale": false
   },
   "upcoming": {
@@ -661,7 +761,7 @@
         }
       }
     ],
-    "updatedAt": "2026-10-28T19:29:34.178Z",
+    "updatedAt": "2026-10-28T19:37:22.676Z",
     "stale": false
   },
   "scorers": {
@@ -1343,7 +1443,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-28T19:29:34.180Z",
+    "updatedAt": "2026-10-28T19:37:22.680Z",
     "stale": false
   },
   "squads": {
@@ -5455,7 +5555,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-28T19:29:34.294Z",
+    "updatedAt": "2026-10-28T19:37:23.024Z",
     "stale": false
   },
   "history": {

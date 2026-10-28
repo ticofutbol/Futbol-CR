@@ -11,15 +11,16 @@ const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmt = (iso, opts) => new Intl.DateTimeFormat('es-CR', { timeZone: TZ, ...opts }).format(new Date(iso));
 const fmtDateTime = iso => fmt(iso, { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', hour12: false });
 const fmtStamp = iso => fmt(iso, { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false });
+const fmtShort = iso => fmt(iso, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', hour12: false });
 const signed = n => (n > 0 ? `+${n}` : String(n));
 
 // Nombre corto, salvo que dos equipos compartan el mismo (p. ej. AD San Carlos e Inter de San Carlos).
 let shortCounts = new Map();
 const label = t => (shortCounts.get(t.short) ?? 0) > 1 ? t.name : t.short;
 
-const logo = (t, size = 20) => t.logo
-  ? `<img class="logo" src="${esc(t.logo)}" alt="" width="${size}" height="${size}" loading="lazy" onerror="this.style.visibility='hidden'">`
-  : `<span class="logo"></span>`;
+const logo = (t, size = 20, cls = 'logo') => t?.logo
+  ? `<img class="${cls}" src="${esc(t.logo)}" alt="" width="${size}" height="${size}" loading="lazy" onerror="this.style.visibility='hidden'">`
+  : `<span class="${cls}" style="width:${size}px;height:${size}px"></span>`;
 
 function staleNote(sec) {
   if (!sec?.stale) return '';
@@ -29,15 +30,72 @@ function staleNote(sec) {
 
 const empty = msg => `<p class="empty">${esc(msg)}</p>`;
 
-function standingsSection(s) {
+const sectionHead = (id, kicker, title) =>
+  `<div class="sec-head" id="${id}"><span class="kicker">${esc(kicker)}</span><h2>${esc(title)}</h2></div>`;
+
+const formPills = (form = []) => form.length
+  ? `<span class="form" aria-label="Últimos resultados: ${form.join(', ')}">${form.map(f => `<i class="f-${f}">${f}</i>`).join('')}</span>`
+  : '';
+
+/* ---------- Tarjetas destacadas ---------- */
+
+function kpis(data, teamsByName) {
+  const s = data.standings, sc = data.scorers, st = data.results?.stats, next = data.upcoming?.matches?.[0];
+  const cards = [];
+  const leader = s?.rows?.[0];
+  if (leader) cards.push(`
+    <div class="kpi kpi-leader">
+      <span class="kpi-label">Líder</span>
+      <div class="kpi-main">${logo(leader, 44, 'kpi-logo')}<div><strong class="kpi-name">${esc(leader.name)}</strong>
+      <span class="kpi-sub">${signed(leader.dg)} DG · ${leader.g}G ${leader.e}E ${leader.p}P</span></div></div>
+      <span class="kpi-big">${leader.pts}<small>pts</small></span>
+    </div>`);
+  const top = sc?.rows?.[0];
+  if (top) {
+    const tied = sc.rows.filter(r => r.goals === top.goals).length;
+    cards.push(`
+    <div class="kpi">
+      <span class="kpi-label">Goleador</span>
+      <div class="kpi-main">${logo(teamsByName.get(top.team), 44, 'kpi-logo')}<div><strong class="kpi-name">${esc(top.player)}</strong>
+      <span class="kpi-sub">${esc(top.team)}${tied > 1 ? ` · empatado con ${tied - 1} más` : ''}</span></div></div>
+      <span class="kpi-big">${top.goals}<small>goles</small></span>
+    </div>`);
+  }
+  if (st?.matches) {
+    const b = st.biggest;
+    cards.push(`
+    <div class="kpi">
+      <span class="kpi-label">Goles del torneo</span>
+      <div class="kpi-main"><div><strong class="kpi-name">${(st.goals / st.matches).toFixed(2)} por partido</strong>
+      <span class="kpi-sub">${st.matches} partidos jugados${b ? ` · Mayor goleada: ${esc(label(b.home))} ${esc(b.home.score)}–${esc(b.away.score)} ${esc(label(b.away))}` : ''}</span></div></div>
+      <span class="kpi-big">${st.goals}<small>goles</small></span>
+    </div>`);
+  }
+  if (next) cards.push(`
+    <div class="kpi kpi-next">
+      <span class="kpi-label">Próximo partido</span>
+      <div class="vs-row">
+        <span class="vs-team">${logo(next.home, 44, 'kpi-logo')}<b>${esc(label(next.home))}</b></span>
+        <span class="vs-mid">VS</span>
+        <span class="vs-team">${logo(next.away, 44, 'kpi-logo')}<b>${esc(label(next.away))}</b></span>
+      </div>
+      <span class="kpi-sub center">${esc(fmtDateTime(next.date))} · <span class="countdown" data-date="${esc(next.date)}"></span></span>
+    </div>`);
+  return cards.length ? `<section class="kpis">${cards.join('')}</section>` : '';
+}
+
+/* ---------- Tabla ---------- */
+
+function standingsSection(s, form) {
   if (!s?.rows?.length) return empty('Tabla no disponible.');
   const rows = s.rows.map((r, i) => `
       <tr class="${i < SEMIFINAL_SPOTS ? 'zone' : ''}">
-        <td class="pos">${i + 1}</td>
-        <td class="team">${logo(r)}<span class="full">${esc(r.name)}</span><span class="abbr">${esc(r.abbr)}</span></td>
+        <td class="pos"><span class="pos-badge">${i + 1}</span></td>
+        <td class="team">${logo(r, 24)}<span class="full">${esc(r.name)}</span><span class="abbr">${esc(r.abbr)}</span></td>
         <td>${r.pj}</td><td>${r.g}</td><td>${r.e}</td><td>${r.p}</td>
-        <td class="opt">${r.gf}</td><td class="opt">${r.gc}</td><td>${signed(r.dg)}</td>
+        <td class="opt">${r.gf}</td><td class="opt">${r.gc}</td><td class="dg ${r.dg > 0 ? 'pos-dg' : r.dg < 0 ? 'neg-dg' : ''}">${signed(r.dg)}</td>
         <td class="pts">${r.pts}</td>
+        <td class="form-cell">${formPills(form?.[r.id])}</td>
       </tr>`).join('');
   return `
     <div class="table-wrap">
@@ -46,12 +104,12 @@ function standingsSection(s) {
           <th class="pos">#</th><th class="team">Equipo</th>
           <th title="Partidos jugados">PJ</th><th title="Ganados">G</th><th title="Empatados">E</th><th title="Perdidos">P</th>
           <th class="opt" title="Goles a favor">GF</th><th class="opt" title="Goles en contra">GC</th>
-          <th title="Diferencia de gol">DG</th><th title="Puntos">Pts</th>
+          <th title="Diferencia de gol">DG</th><th title="Puntos">Pts</th><th class="form-cell" title="Últimos 5 partidos, del más reciente al más viejo">Racha</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div>
-    <p class="legend"><span class="swatch"></span>Zona de semifinales (primeros ${SEMIFINAL_SPOTS})</p>
+    <p class="legend"><span class="swatch"></span>Zona de semifinales · Racha: últimos 5 partidos, el más reciente primero</p>
     ${staleNote(s)}`;
 }
 
@@ -59,13 +117,15 @@ function pointsChart(s) {
   if (!s?.rows?.length) return empty('Sin datos para el gráfico.');
   const max = Math.max(...s.rows.map(r => r.pts), 1);
   const bars = s.rows.map((r, i) => `
-      <div class="bar-row">
-        <span class="bar-label">${esc(label(r))}</span>
+      <div class="bar-row" style="--d:${i * 60}ms">
+        <span class="bar-label">${logo(r, 20)}<span>${esc(label(r))}</span></span>
         <span class="bar-track"><span class="bar ${i < SEMIFINAL_SPOTS ? 'zone' : ''}" style="width:${(r.pts / max * 100).toFixed(1)}%"></span></span>
         <span class="bar-value">${r.pts}</span>
       </div>`).join('');
   return `<div class="bars" role="img" aria-label="Puntos por equipo">${bars}</div>`;
 }
+
+/* ---------- Partidos ---------- */
 
 function matchList(sec, kind) {
   const list = sec?.matches ?? [];
@@ -73,46 +133,54 @@ function matchList(sec, kind) {
   const items = list.map(m => {
     const played = kind === 'results';
     const hs = Number(m.home.score), as = Number(m.away.score);
-    const win = side => played && (side === 'home' ? hs > as : as > hs) ? ' win' : '';
+    const cls = side => !played ? '' : (side === 'home' ? hs > as : as > hs) ? ' win' : hs === as ? ' draw' : ' lose';
     const center = played || m.state === 'in'
-      ? `<span class="score">${esc(m.home.score)}<span class="dash">–</span>${esc(m.away.score)}</span>`
-      : `<span class="vs">vs</span>`;
+      ? `<span class="score${m.state === 'in' ? ' live-score' : ''}">${esc(m.home.score)}<span class="dash">–</span>${esc(m.away.score)}</span>`
+      : `<span class="kick">${esc(fmt(m.date, { hour: '2-digit', minute: '2-digit', hour12: false }))}</span>`;
     return `
       <li class="match">
-        <div class="match-meta">${esc(fmtDateTime(m.date))}${m.state === 'in' ? ' · <strong class="live">En vivo</strong>' : ''}${m.venue ? ` · ${esc(m.venue)}` : ''}</div>
+        <div class="match-meta"><span class="date-chip">${esc(fmt(m.date, { weekday: 'short', day: 'numeric', month: 'short' }))}</span>${m.state === 'in' ? '<strong class="live">● En vivo</strong>' : ''}${m.venue ? `<span class="venue">${esc(m.venue)}</span>` : ''}</div>
         <div class="match-line">
-          <span class="side home${win('home')}"><span class="name">${esc(label(m.home))}</span>${logo(m.home, 22)}</span>
+          <span class="side home${cls('home')}"><span class="name">${esc(label(m.home))}</span>${logo(m.home, 28)}</span>
           ${center}
-          <span class="side away${win('away')}">${logo(m.away, 22)}<span class="name">${esc(label(m.away))}</span></span>
+          <span class="side away${cls('away')}">${logo(m.away, 28)}<span class="name">${esc(label(m.away))}</span></span>
         </div>
       </li>`;
   }).join('');
   return `<ul class="matches">${items}</ul>${staleNote(sec)}`;
 }
 
-function scorersSection(s) {
+/* ---------- Goleadores ---------- */
+
+function scorersSection(s, teamsByName) {
   if (!s?.rows?.length) return empty('Goleadores no disponibles en la fuente.');
   let rank = 0, prevGoals = null;
-  const rows = s.rows.map((r, i) => {
+  const ranked = s.rows.map((r, i) => {
     if (r.goals !== prevGoals) { rank = i + 1; prevGoals = r.goals; }
-    return `
-      <tr>
-        <td class="pos">${rank}</td>
-        <td class="player">${esc(r.player)}<span class="sub">${esc(r.team)}</span></td>
-        <td class="pts">${r.goals}</td>
-        <td class="muted">${r.penalties ? `${r.penalties} pen.` : ''}</td>
-      </tr>`;
-  }).join('');
+    return { ...r, rank };
+  });
+  const medal = ['gold', 'silver', 'bronze'];
+  // La medalla depende del puesto real: si hay empate, comparten el mismo color.
+  const podium = ranked.slice(0, 3).map(r => `
+      <div class="podium-card ${medal[r.rank - 1] ?? ''}">
+        <span class="medal">${r.rank}</span>
+        ${logo(teamsByName.get(r.team), 40, 'podium-logo')}
+        <strong>${esc(r.player)}</strong>
+        <span class="muted">${esc(r.team)}</span>
+        <span class="podium-goals">${r.goals}<small> goles${r.penalties ? ` · ${r.penalties} pen.` : ''}</small></span>
+      </div>`).join('');
+  const rest = ranked.slice(3).map(r => `
+      <li><span class="rank">${r.rank}</span>${logo(teamsByName.get(r.team), 22)}
+        <span class="who"><b>${esc(r.player)}</b><span class="muted">${esc(r.team)}</span></span>
+        <span class="goals">${r.goals}</span></li>`).join('');
   return `
-    <div class="table-wrap">
-      <table class="scorers">
-        <thead><tr><th class="pos">#</th><th class="player">Jugador</th><th>Goles</th><th></th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
+    <div class="podium">${podium}</div>
+    <ol class="scorer-list">${rest}</ol>
     <p class="note">Calculado a partir de los goles registrados en ${s.matchesCounted} partidos (sin autogoles). Puede diferir levemente del conteo oficial.</p>
     ${staleNote(s)}`;
 }
+
+/* ---------- Plantillas ---------- */
 
 const POSITION_NAMES = { G: 'Porteros', D: 'Defensas', M: 'Mediocampistas', F: 'Delanteros' };
 
@@ -135,11 +203,11 @@ function squadsSection(sq) {
       if (!players.length) return '';
       const rows = players.map(p => `
           <tr>
-            <td class="num">${esc(p.jersey ?? '–')}</td>
+            <td class="num"><span class="jersey">${esc(p.jersey ?? '–')}</span></td>
             <td class="player">${esc(p.name)}</td>
             <td>${p.age ?? '–'}</td>
             <td class="country">${p.flag ? `<img class="flag" src="${esc(p.flag)}" alt="${esc(country(p.country))}" title="${esc(country(p.country))}" width="20" height="14" loading="lazy" onerror="this.remove()">` : ''}<span>${esc(country(p.country) ?? '–')}</span></td>
-            <td class="pts">${p.goals || ''}</td>
+            <td class="pts">${p.goals ? `<span class="goal-badge">${p.goals}</span>` : ''}</td>
           </tr>`).join('');
       return `
         <tbody>
@@ -147,9 +215,14 @@ function squadsSection(sq) {
           ${rows}
         </tbody>`;
     }).join('');
+    const goals = t.players.reduce((n, p) => n + p.goals, 0);
+    const ages = t.players.filter(p => p.age).map(p => p.age);
+    const avgAge = ages.length ? (ages.reduce((a, b) => a + b, 0) / ages.length).toFixed(1) : '–';
+    const foreign = t.players.filter(p => p.country && p.country !== 'Costa Rica').length;
     return `
       <div class="squad" data-team="${esc(t.id)}"${i === 0 ? '' : ' hidden'}>
-        <p class="squad-head">${logo(t, 28)}<strong>${esc(t.name)}</strong><span class="muted">${t.players.length} jugadores</span></p>
+        <div class="squad-head">${logo(t, 48, 'squad-logo')}<div><strong>${esc(t.name)}</strong>
+          <div class="squad-stats"><span><b>${t.players.length}</b> jugadores</span><span><b>${avgAge}</b> edad prom.</span><span><b>${foreign}</b> extranjeros</span><span><b>${goals}</b> goles</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
             <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
@@ -159,36 +232,53 @@ function squadsSection(sq) {
       </div>`;
   }).join('');
   return `
-    <label class="select-label" for="squad-select">Equipo</label>
-    <select id="squad-select" class="select">${options}</select>
+    <div class="select-wrap"><label class="select-label" for="squad-select">Elige un equipo</label>
+    <select id="squad-select" class="select">${options}</select></div>
     ${panels}
     <p class="note">Plantilla inscrita según ESPN. Goles del torneo actual, calculados a partir de los partidos.</p>
     ${staleNote(sq)}`;
 }
 
+/* ---------- Historia ---------- */
+
 function historySection(h) {
   const clubs = [...(h?.clubs ?? [])].sort((a, b) => b.titles - a.titles);
   if (!clubs.length) return empty('Sin datos históricos.');
   const max = clubs[0].titles;
-  const big = clubs.filter(c => c.titles > 1);
+  const big3 = clubs.slice(0, 3);
+  const mid = clubs.slice(3).filter(c => c.titles > 1);
   const one = clubs.filter(c => c.titles === 1);
-  const bars = big.map(c => `
+  const tiles = big3.map((c, i) => `
+      <div class="trophy-tile t${i + 1}">
+        <span class="trophy" aria-hidden="true">🏆</span>
+        <span class="trophy-count">${c.titles}</span>
+        <strong>${esc(c.club)}</strong>
+      </div>`).join('');
+  const bars = mid.map(c => `
       <div class="bar-row">
-        <span class="bar-label">${esc(c.club)}</span>
+        <span class="bar-label"><span>${esc(c.club)}</span></span>
         <span class="bar-track"><span class="bar hist" style="width:${(c.titles / max * 100).toFixed(1)}%"></span></span>
         <span class="bar-value">${c.titles}</span>
       </div>`).join('');
   return `
-    <div class="bars">${bars}</div>
-    ${one.length ? `<p class="one-title"><strong>Con 1 título:</strong> ${one.map(c => esc(c.club)).join(', ')}.</p>` : ''}`;
+    <div class="trophies">${tiles}</div>
+    ${bars ? `<div class="bars hist-bars">${bars}</div>` : ''}
+    ${one.length ? `<p class="one-title">Con 1 título</p><div class="chips">${one.map(c => `<span class="chip">${esc(c.club)}</span>`).join('')}</div>` : ''}`;
 }
+
+/* ---------- Página ---------- */
+
+const PITCH = encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300' fill='none' stroke='white' stroke-opacity='.10' stroke-width='2'><rect x='10' y='10' width='580' height='280'/><line x1='300' y1='10' x2='300' y2='290'/><circle cx='300' cy='150' r='50'/><rect x='10' y='80' width='70' height='140'/><rect x='520' y='80' width='70' height='140'/></svg>`);
 
 export function buildHtml(data) {
   const s = data.standings;
   shortCounts = new Map();
   for (const r of s?.rows ?? []) shortCounts.set(r.short, (shortCounts.get(r.short) ?? 0) + 1);
-  const title = `Torneo ${s?.tournament ?? 'Apertura'} ${new Date(data.generatedAt).getFullYear()}`;
+  const teamsByName = new Map((s?.rows ?? []).map(r => [r.name, r]));
+  const year = new Date(data.generatedAt).getFullYear();
+  const jornada = Math.max(0, ...(s?.rows ?? []).map(r => r.pj));
   const stamp = data.lastSuccessAt ?? data.generatedAt;
+  const form = data.results?.form;
   const warnings = (data.warnings ?? []).length
     ? `<div class="banner" role="status">Algunas fuentes fallaron en la última actualización; se muestran los últimos datos guardados.</div>`
     : '';
@@ -199,146 +289,273 @@ export function buildHtml(data) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#063d2a">
 <title>Fútbol CR</title>
-<meta name="description" content="Tabla, resultados, goleadores e historia de la Primera División de Costa Rica.">
+<meta name="description" content="Tabla, resultados, goleadores, plantillas e historia de la Primera División de Costa Rica.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
   try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
 </script>
 <style>
   :root {
-    --bg: #f4f5f2; --surface: #ffffff; --surface-2: #eef0ec; --text: #15201a; --muted: #5d6b62;
-    --border: #dde2dc; --accent: #0b6e4f; --accent-soft: #dcefe6; --bar: #9aa8a0; --hist: #b5651d;
-    --win: #0b6e4f; --warn-bg: #fff4d6; --warn-text: #6b4e00; --live: #c62828;
-    --shadow: 0 1px 2px rgb(0 0 0 / .05), 0 2px 8px rgb(0 0 0 / .04);
+    --bg: #eef2ee; --surface: #ffffff; --surface-2: #f1f4f1; --text: #0f1a14; --muted: #5b6b61;
+    --border: #dfe6e0; --accent: #0a8a5c; --accent-2: #0fb376; --accent-soft: #dff3ea; --gold: #e0a100;
+    --bar: #c3cdc7; --win: #16a34a; --draw: #94a3a0; --loss: #e5484d; --warn-bg: #fff4d6; --warn-text: #6b4e00;
+    --live: #e5484d; --shadow: 0 1px 2px rgb(16 40 28 / .06), 0 8px 24px rgb(16 40 28 / .06);
+    --hero-1: #04281b; --hero-2: #0a7a52; --display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0e1411; --surface: #161e1a; --surface-2: #1d2722; --text: #e6ece8; --muted: #93a39a;
-      --border: #2a3530; --accent: #3fbf8f; --accent-soft: #173a2d; --bar: #4e5c55; --hist: #e0954a;
-      --win: #3fbf8f; --warn-bg: #3a2f0f; --warn-text: #f3d58a; --live: #ff6b6b; --shadow: none;
+      --bg: #080d0a; --surface: #111915; --surface-2: #18221d; --text: #e9f0eb; --muted: #8fa198;
+      --border: #223029; --accent: #34d399; --accent-2: #10b981; --accent-soft: #10291f; --gold: #fbbf24;
+      --bar: #2c3a33; --win: #22c55e; --draw: #6b7c74; --loss: #f87171; --warn-bg: #3a2f0f; --warn-text: #f3d58a;
+      --live: #ff6b6b; --shadow: 0 1px 0 rgb(255 255 255 / .03) inset; --hero-1: #02160e; --hero-2: #075c3d;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0e1411; --surface: #161e1a; --surface-2: #1d2722; --text: #e6ece8; --muted: #93a39a;
-    --border: #2a3530; --accent: #3fbf8f; --accent-soft: #173a2d; --bar: #4e5c55; --hist: #e0954a;
-    --win: #3fbf8f; --warn-bg: #3a2f0f; --warn-text: #f3d58a; --live: #ff6b6b; --shadow: none;
+    --bg: #080d0a; --surface: #111915; --surface-2: #18221d; --text: #e9f0eb; --muted: #8fa198;
+    --border: #223029; --accent: #34d399; --accent-2: #10b981; --accent-soft: #10291f; --gold: #fbbf24;
+    --bar: #2c3a33; --win: #22c55e; --draw: #6b7c74; --loss: #f87171; --warn-bg: #3a2f0f; --warn-text: #f3d58a;
+    --live: #ff6b6b; --shadow: 0 1px 0 rgb(255 255 255 / .03) inset; --hero-1: #02160e; --hero-2: #075c3d;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
   body {
     margin: 0; background: var(--bg); color: var(--text);
-    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font: 15px/1.45 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     -webkit-text-size-adjust: 100%;
   }
-  header, main, footer { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-  header { padding-top: 20px; padding-bottom: 8px; display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; }
-  h1 { margin: 0; font-size: 1.5rem; letter-spacing: -.01em; }
-  .subtitle { margin: 2px 0 0; color: var(--muted); }
-  .updated { margin: 6px 0 0; font-size: .85rem; color: var(--muted); }
-  .updated time { color: var(--text); font-weight: 600; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 16px; }
+
+  /* Hero */
+  .hero {
+    color: #fff; position: relative; overflow: hidden;
+    background:
+      url("data:image/svg+xml,${PITCH}") center/cover no-repeat,
+      radial-gradient(1200px 400px at 85% -10%, rgb(255 255 255 / .14), transparent 60%),
+      linear-gradient(135deg, var(--hero-1), var(--hero-2));
+    padding: 18px 0 64px;
+  }
+  .hero-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .brand { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; opacity: .9; }
+  .brand .ball { font-size: 1.1rem; }
   .theme-btn {
-    flex: none; border: 1px solid var(--border); background: var(--surface); color: var(--text);
-    border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .85rem; cursor: pointer;
+    border: 1px solid rgb(255 255 255 / .3); background: rgb(255 255 255 / .1); color: #fff;
+    border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .85rem; cursor: pointer; backdrop-filter: blur(6px);
   }
-  .banner { margin: 8px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--warn-bg); color: var(--warn-text); font-size: .9rem; }
-  main { display: grid; gap: 16px; grid-template-columns: 1fr; padding-top: 12px; padding-bottom: 24px; }
-  @media (min-width: 900px) {
-    main { grid-template-columns: 1.4fr 1fr; }
-    .span-2 { grid-column: 1 / -1; }
-  }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; box-shadow: var(--shadow); min-width: 0; }
-  .card h2 { margin: 0 0 12px; font-size: 1.05rem; }
-  .table-wrap { overflow-x: auto; margin: 0 -4px; }
+  .theme-btn:hover { background: rgb(255 255 255 / .2); }
+  .eyebrow { margin: 26px 0 0; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; color: #a7f3d0; }
+  h1 { margin: 2px 0 0; font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: .92; letter-spacing: .01em; text-transform: uppercase; }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .hchip { background: rgb(255 255 255 / .12); border: 1px solid rgb(255 255 255 / .18); border-radius: 999px; padding: 5px 12px; font-size: .82rem; backdrop-filter: blur(6px); }
+  .hchip b { font-weight: 700; }
+  .hchip.accent { background: #fbbf24; color: #1f1500; border-color: transparent; font-weight: 700; }
+
+  /* Navegación */
+  .tabs { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+  .tabs .wrap { display: flex; gap: 6px; overflow-x: auto; padding-top: 8px; padding-bottom: 8px; scrollbar-width: none; }
+  .tabs .wrap::-webkit-scrollbar { display: none; }
+  .tabs a { flex: none; text-decoration: none; color: var(--muted); font-weight: 600; font-size: .85rem; padding: 6px 12px; border-radius: 999px; }
+  .tabs a:hover, .tabs a.active { background: var(--accent-soft); color: var(--accent); }
+
+  .banner { margin: 16px 0 0; padding: 10px 12px; border-radius: 12px; background: var(--warn-bg); color: var(--warn-text); font-size: .9rem; }
+
+  /* Tarjetas destacadas */
+  .kpis { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: -44px; position: relative; z-index: 1; }
+  @media (min-width: 640px) { .kpis { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1000px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
+  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; box-shadow: var(--shadow); display: grid; gap: 8px; position: relative; overflow: hidden; min-width: 0; }
+  .kpi::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+  .kpi-leader::before, .kpi-next::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+  .kpi-label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .kpi-main { display: flex; align-items: center; gap: 10px; min-width: 0; padding-right: 64px; }
+  .kpi-main > div { min-width: 0; }
+  .kpi-logo { width: 44px; height: 44px; object-fit: contain; flex: none; }
+  .kpi-name { display: block; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .kpi-sub { display: block; font-size: .8rem; color: var(--muted); }
+  .kpi-sub.center { text-align: center; }
+  .kpi-big { position: absolute; right: 16px; top: 26px; font-family: var(--display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--accent); text-align: right; }
+  .kpi-big small { display: block; font-family: Inter, system-ui, sans-serif; font-size: .68rem; font-weight: 600; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+  .vs-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 6px; text-align: center; }
+  .vs-team { display: grid; justify-items: center; gap: 4px; min-width: 0; }
+  .vs-team b { font-size: .9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+  .vs-mid { font-family: var(--display); font-weight: 800; font-size: 1.3rem; color: var(--muted); }
+  .countdown { color: var(--accent); font-weight: 700; }
+
+  /* Grilla y tarjetas */
+  main.wrap { display: grid; gap: 16px; grid-template-columns: 1fr; padding-top: 16px; padding-bottom: 28px; }
+  @media (min-width: 920px) { main.wrap { grid-template-columns: 1.45fr 1fr; } .span-2 { grid-column: 1 / -1; } }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); min-width: 0; }
+  .sec-head { margin: 0 0 14px; }
+  .kicker { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .sec-head h2 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 1.7rem; line-height: 1.05; text-transform: uppercase; letter-spacing: .01em; }
+
+  /* Tablas */
+  .table-wrap { overflow-x: auto; margin: 0 -6px; }
   table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-  th, td { padding: 8px 6px; text-align: center; white-space: nowrap; }
-  th { font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+  th, td { padding: 9px 6px; text-align: center; white-space: nowrap; }
+  th { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; border-bottom: 1px solid var(--border); }
   tbody tr + tr td { border-top: 1px solid var(--border); }
   td.team, th.team, td.player, th.player { text-align: left; }
-  td.team { display: flex; align-items: center; gap: 8px; font-weight: 500; }
-  td.pos { color: var(--muted); width: 2em; }
-  td.pts { font-weight: 700; }
-  tr.zone td { background: var(--accent-soft); }
-  tr.zone td.pos { color: var(--accent); font-weight: 700; box-shadow: inset 3px 0 0 var(--accent); }
+  td.team { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+  td.pos { width: 2.4em; }
+  .pos-badge { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 8px; font-weight: 700; font-size: .8rem; color: var(--muted); background: var(--surface-2); }
+  tr.zone .pos-badge { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; }
+  tr.zone td { background: color-mix(in srgb, var(--accent-soft) 70%, transparent); }
+  td.pts { font-weight: 800; font-family: var(--display); font-size: 1.15rem; }
+  .pos-dg { color: var(--win); font-weight: 600; } .neg-dg { color: var(--loss); font-weight: 600; }
+  tbody tr:hover td { background: var(--surface-2); }
+  tr.zone:hover td { background: var(--accent-soft); }
   .abbr { display: none; }
   .logo { width: 20px; height: 20px; object-fit: contain; flex: none; display: inline-block; }
-  .legend, .note, .one-title { margin: 10px 0 0; font-size: .85rem; color: var(--muted); }
-  .one-title { color: var(--text); }
-  .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); vertical-align: -1px; margin-right: 6px; }
+  .form { display: inline-flex; gap: 3px; }
+  .form i { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 6px; font-style: normal; font-size: .68rem; font-weight: 800; color: #fff; }
+  .f-G { background: var(--win); } .f-E { background: var(--draw); } .f-P { background: var(--loss); }
+  .legend, .note { margin: 12px 0 0; font-size: .8rem; color: var(--muted); }
+  .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); vertical-align: -1px; margin-right: 6px; }
   .stale { margin: 10px 0 0; font-size: .8rem; color: var(--warn-text); background: var(--warn-bg); padding: 6px 10px; border-radius: 8px; }
   .empty { color: var(--muted); margin: 0; }
   .muted { color: var(--muted); font-size: .8rem; }
-  .sub { display: block; font-size: .8rem; color: var(--muted); }
-  .bars { display: grid; gap: 8px; }
-  .bar-row { display: grid; grid-template-columns: minmax(90px, 9.5em) 1fr 2.2em; gap: 10px; align-items: center; font-size: .9rem; }
-  .bar-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .bar-track { height: 14px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
-  .bar { display: block; height: 100%; background: var(--bar); border-radius: 4px; }
-  .bar.zone { background: var(--accent); }
-  .bar.hist { background: var(--hist); }
-  .bar-value { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
-  .matches { list-style: none; margin: 0; padding: 0; }
-  .match { padding: 10px 0; }
-  .match + .match { border-top: 1px solid var(--border); }
-  .match-meta { font-size: .78rem; color: var(--muted); margin-bottom: 4px; text-transform: capitalize; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* Barras */
+  .bars { display: grid; gap: 9px; }
+  .bar-row { display: grid; grid-template-columns: minmax(110px, 10.5em) 1fr 2.4em; gap: 10px; align-items: center; font-size: .9rem; }
+  .bar-label { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .bar-label span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bar-track { height: 16px; background: var(--surface-2); border-radius: 999px; overflow: hidden; }
+  .bar { display: block; height: 100%; background: var(--bar); border-radius: 999px; transform-origin: left; animation: grow .9s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d, 0ms); }
+  .bar.zone { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+  .bar.hist { background: linear-gradient(90deg, #d97706, #fbbf24); }
+  .bar-value { text-align: right; font-family: var(--display); font-weight: 800; font-size: 1.15rem; }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) { .bar { animation: none; } html { scroll-behavior: auto; } }
+
+  /* Partidos */
+  .matches { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .match { padding: 10px 12px; border-radius: 14px; background: var(--surface-2); }
+  .match-meta { display: flex; align-items: center; gap: 8px; font-size: .75rem; color: var(--muted); margin-bottom: 6px; min-width: 0; }
+  .date-chip { flex: none; text-transform: capitalize; font-weight: 700; color: var(--text); }
+  .venue { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .match-line { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; }
-  .side { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .side { display: flex; align-items: center; gap: 8px; min-width: 0; font-weight: 500; }
   .side.home { justify-content: flex-end; text-align: right; }
   .side .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .side.win .name { font-weight: 700; color: var(--win); }
-  .score { font-weight: 700; font-size: 1.05rem; font-variant-numeric: tabular-nums; background: var(--surface-2); padding: 2px 10px; border-radius: 8px; }
+  .side.win .name { font-weight: 800; }
+  .side.lose .name { color: var(--muted); }
+  .score { font-family: var(--display); font-weight: 800; font-size: 1.35rem; font-variant-numeric: tabular-nums; background: var(--surface); border: 1px solid var(--border); padding: 0 12px; border-radius: 10px; min-width: 72px; text-align: center; }
+  .live-score { border-color: var(--live); color: var(--live); }
   .dash { margin: 0 4px; color: var(--muted); }
-  .vs { font-size: .8rem; color: var(--muted); padding: 0 12px; }
+  .kick { font-family: var(--display); font-weight: 700; font-size: 1.1rem; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; padding: 2px 10px; border-radius: 10px; min-width: 72px; text-align: center; }
   .live { color: var(--live); }
-  .select-label { display: block; font-size: .8rem; color: var(--muted); margin-bottom: 4px; }
-  .select {
-    width: 100%; max-width: 320px; font: inherit; color: var(--text); background: var(--surface-2);
-    border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px;
-  }
-  .squad-head { display: flex; align-items: center; gap: 10px; margin: 14px 0 6px; }
-  .squad-head .muted { margin-left: auto; }
-  .squad-table td.player { white-space: normal; }
-  .squad-table td.num, .squad-table th.num { width: 2.5em; color: var(--muted); font-weight: 600; }
-  .squad-table td.country { text-align: left; }
-  .squad-table th.country { text-align: left; }
+
+  /* Goleadores */
+  .podium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: end; }
+  .podium-card { display: grid; justify-items: center; text-align: center; gap: 4px; padding: 14px 8px; border-radius: 16px; background: var(--surface-2); position: relative; min-width: 0; }
+  .podium-card strong { font-size: .88rem; line-height: 1.2; }
+  .podium-card .muted { font-size: .72rem; }
+  .podium-card.gold { padding-top: 22px; background: linear-gradient(180deg, color-mix(in srgb, #fbbf24 22%, var(--surface-2)), var(--surface-2)); }
+  .podium-logo { width: 40px; height: 40px; object-fit: contain; }
+  .medal { position: absolute; top: -10px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: .8rem; color: #1b1300; box-shadow: 0 2px 6px rgb(0 0 0 / .2); }
+  .gold .medal { background: linear-gradient(135deg, #fde68a, #f59e0b); }
+  .silver .medal { background: linear-gradient(135deg, #f1f5f9, #94a3b8); }
+  .bronze .medal { background: linear-gradient(135deg, #fed7aa, #c2410c); color: #fff; }
+  .podium-goals { font-family: var(--display); font-weight: 800; font-size: 1.9rem; line-height: 1; color: var(--accent); }
+  .podium-goals small { font-family: Inter, system-ui, sans-serif; font-size: .7rem; color: var(--muted); font-weight: 600; }
+  .scorer-list { list-style: none; margin: 14px 0 0; padding: 0; }
+  .scorer-list li { display: flex; align-items: center; gap: 10px; padding: 8px 4px; }
+  .scorer-list li + li { border-top: 1px solid var(--border); }
+  .rank { width: 1.6em; text-align: center; color: var(--muted); font-weight: 700; }
+  .who { display: grid; min-width: 0; flex: 1; }
+  .who b { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .goals { font-family: var(--display); font-weight: 800; font-size: 1.2rem; }
+
+  /* Plantillas */
+  .select-wrap { display: grid; gap: 4px; max-width: 340px; }
+  .select-label { font-size: .75rem; font-weight: 600; color: var(--muted); }
+  .select { width: 100%; font: inherit; font-weight: 600; color: var(--text); background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; }
+  .squad-head { display: flex; align-items: center; gap: 14px; margin: 16px 0 8px; padding: 14px; border-radius: 16px; background: linear-gradient(135deg, var(--accent-soft), transparent); }
+  .squad-head strong { font-family: var(--display); font-weight: 800; font-size: 1.5rem; text-transform: uppercase; }
+  .squad-logo { width: 48px; height: 48px; object-fit: contain; flex: none; }
+  .squad-stats { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .8rem; color: var(--muted); }
+  .squad-stats b { color: var(--text); }
+  .squad-table td.player { white-space: normal; font-weight: 500; }
+  .squad-table td.num, .squad-table th.num { width: 3em; }
+  .jersey { display: inline-grid; place-items: center; min-width: 28px; height: 24px; padding: 0 4px; border-radius: 7px; background: var(--surface-2); border: 1px solid var(--border); font-family: var(--display); font-weight: 700; font-size: .95rem; }
+  .squad-table td.country, .squad-table th.country { text-align: left; }
   .squad-table td.country span { vertical-align: middle; }
   .flag { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
-  .squad-table tr.group th {
-    text-align: left; text-transform: none; letter-spacing: 0; font-size: .85rem; color: var(--accent);
-    padding-top: 14px; border-bottom: 1px solid var(--border);
-  }
-  footer { padding-bottom: 28px; font-size: .8rem; color: var(--muted); }
-  @media (max-width: 520px) {
-    h1 { font-size: 1.25rem; }
+  .goal-badge { display: inline-grid; place-items: center; min-width: 24px; height: 24px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; font-family: var(--display); font-weight: 800; font-size: .95rem; padding: 0 6px; }
+  .squad-table tr.group th { text-align: left; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; color: var(--accent); padding-top: 16px; }
+
+  /* Historia */
+  .trophies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  .trophy-tile { display: grid; justify-items: center; gap: 2px; padding: 14px 6px; border-radius: 16px; text-align: center; background: linear-gradient(180deg, color-mix(in srgb, #fbbf24 18%, var(--surface-2)), var(--surface-2)); min-width: 0; }
+  .trophy { font-size: 1.5rem; }
+  .trophy-count { font-family: var(--display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--gold); }
+  .trophy-tile strong { font-size: .85rem; }
+  .hist-bars { margin-bottom: 4px; }
+  .one-title { margin: 16px 0 8px; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: .8rem; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); }
+
+  footer { padding-bottom: 32px; font-size: .8rem; color: var(--muted); }
+
+  @media (max-width: 560px) {
     .full { display: none; }
     .abbr { display: inline; }
     .opt { display: none; }
-    th, td { padding: 8px 4px; }
-    .card { padding: 14px 12px; }
+    th, td { padding: 8px 3px; }
+    .card { padding: 14px 12px; border-radius: 16px; }
+    .form i { width: 8px; height: 8px; border-radius: 50%; font-size: 0; }
+    .form { gap: 2px; }
     .squad-table td.country span { display: none; }
-    .select { max-width: none; }
+    .select-wrap { max-width: none; }
+    .podium { gap: 6px; }
+    .podium-card { padding: 12px 4px; }
+    .podium-card strong { font-size: .78rem; }
+    .bar-row { grid-template-columns: minmax(96px, 8.5em) 1fr 2.2em; }
   }
 </style>
 </head>
 <body>
-<header>
-  <div>
-    <h1>Primera División de Costa Rica</h1>
-    <p class="subtitle">${esc(title)}</p>
-    <p class="updated">Última actualización: <time datetime="${esc(stamp)}">${esc(fmtStamp(stamp))}</time> (hora de Costa Rica)</p>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="brand"><span class="ball">⚽</span> Fútbol CR</span>
+      <button class="theme-btn" type="button" id="theme-btn" aria-label="Cambiar tema">Tema</button>
+    </div>
+    <p class="eyebrow">Costa Rica · Liga FPD</p>
+    <h1>Primera<br>División</h1>
+    <div class="hero-chips">
+      <span class="hchip accent">${esc(s?.tournament ?? 'Apertura')} ${year}</span>
+      ${jornada ? `<span class="hchip">Jornada <b>${jornada}</b></span>` : ''}
+      <span class="hchip">Actualizado <b><time datetime="${esc(stamp)}">${esc(fmtShort(stamp))}</time></b></span>
+    </div>
   </div>
-  <button class="theme-btn" type="button" id="theme-btn" aria-label="Cambiar tema">Tema</button>
 </header>
-<main>
-  ${warnings ? `<div class="span-2">${warnings}</div>` : ''}
-  <section class="card"><h2>Tabla de posiciones</h2>${standingsSection(s)}</section>
-  <section class="card"><h2>Puntos por equipo</h2>${pointsChart(s)}</section>
-  <section class="card"><h2>Últimos resultados</h2>${matchList(data.results, 'results')}</section>
-  <section class="card"><h2>Próximos partidos</h2>${matchList(data.upcoming, 'upcoming')}</section>
-  <section class="card"><h2>Goleadores</h2>${scorersSection(data.scorers)}</section>
-  <section class="card span-2" id="plantillas"><h2>Plantillas</h2>${squadsSection(data.squads)}</section>
-  <section class="card"><h2>${esc(data.history?.title ?? 'Historia')}</h2>${historySection(data.history)}</section>
+<nav class="tabs" aria-label="Secciones">
+  <div class="wrap">
+    <a href="#tabla">Tabla</a><a href="#puntos">Puntos</a><a href="#resultados">Resultados</a><a href="#proximos">Próximos</a>
+    <a href="#goleadores">Goleadores</a><a href="#plantillas">Plantillas</a><a href="#historia">Historia</a>
+  </div>
+</nav>
+<div class="wrap">
+  ${warnings}
+  ${kpis(data, teamsByName)}
+</div>
+<main class="wrap">
+  <section class="card">${sectionHead('tabla', 'Apertura ' + year, 'Tabla de posiciones')}${standingsSection(s, form)}</section>
+  <section class="card">${sectionHead('puntos', 'Comparativo', 'Puntos por equipo')}${pointsChart(s)}</section>
+  <section class="card">${sectionHead('resultados', 'Últimas 2 jornadas', 'Resultados')}${matchList(data.results, 'results')}</section>
+  <section class="card">${sectionHead('proximos', 'Calendario', 'Próximos partidos')}${matchList(data.upcoming, 'upcoming')}</section>
+  <section class="card">${sectionHead('goleadores', 'Top 10', 'Goleadores')}${scorersSection(data.scorers, teamsByName)}</section>
+  <section class="card">${sectionHead('historia', 'Palmarés', esc(data.history?.title ?? 'Historia'))}${historySection(data.history)}</section>
+  <section class="card span-2">${sectionHead('plantillas', 'Jugadores', 'Plantillas')}${squadsSection(data.squads)}</section>
 </main>
-<footer>Fuente: ${esc(data.source)}. Página generada el ${esc(fmtStamp(data.generatedAt))}.</footer>
+<footer class="wrap">Fuente: ${esc(data.source)}. Última actualización: ${esc(fmtStamp(stamp))} (hora de Costa Rica).</footer>
 <script>
   (function () {
     var root = document.documentElement, btn = document.getElementById('theme-btn');
@@ -365,6 +582,28 @@ export function buildHtml(data) {
         show(sel.value);
         try { localStorage.setItem('squad', sel.value); } catch (e) {}
       });
+    }
+
+    // Cuenta regresiva del próximo partido (se calcula al abrir la página).
+    document.querySelectorAll('.countdown').forEach(function (el) {
+      var ms = new Date(el.dataset.date) - Date.now();
+      if (ms < -2 * 3600e3) { el.textContent = 'ya se jugó'; return; }
+      if (ms < 0) { el.textContent = 'en juego'; return; }
+      var h = Math.floor(ms / 3600e3), d = Math.floor(h / 24);
+      el.textContent = d >= 2 ? 'en ' + d + ' días' : d === 1 ? 'mañana' : h >= 1 ? 'en ' + h + ' h' : 'en ' + Math.max(1, Math.round(ms / 60e3)) + ' min';
+    });
+
+    // Resalta la sección visible en la barra de navegación.
+    var links = Array.prototype.slice.call(document.querySelectorAll('.tabs a'));
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var id = e.target.querySelector('.sec-head').id;
+          links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      links.forEach(function (a) { var t = document.querySelector(a.getAttribute('href')); if (t) io.observe(t.closest('section')); });
     }
   })();
 </script>
