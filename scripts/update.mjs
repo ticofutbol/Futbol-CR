@@ -262,6 +262,9 @@ const normName = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().r
 // Completa la plantilla de ESPN con data/dorsales.json: dorsal, posición y nacionalidad de la lista manual;
 // los jugadores que ESPN no tiene se agregan. Empareja por nombre (o por "espn" si el nombre difiere).
 function applyManualSquad(players, manualTeam, scorers, teamName) {
+  // Jugadores de ESPN que no deben aparecer (lista "excluir" del equipo en data/dorsales.json).
+  const excluded = new Set((manualTeam?.excluir ?? []).map(normName));
+  for (let i = players.length - 1; i >= 0; i--) if (excluded.has(normName(players[i].name))) players.splice(i, 1);
   if (!manualTeam?.players?.length) return;
   const goalsByName = new Map((scorers?.all ?? []).filter(r => r.team === teamName).map(r => [normName(r.player), r]));
   const used = new Set();

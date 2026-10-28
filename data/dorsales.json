@@ -1,9 +1,12 @@
 {
-  "_info": "Dorsales, posiciones y nacionalidades copiados a mano de Transfermarkt. Completan lo que ESPN no trae. Para emparejar un nombre distinto al de ESPN, agrega \"espn\": \"<nombre en ESPN>\" al jugador.",
+  "_info": "Dorsales, posiciones y nacionalidades copiados a mano de Transfermarkt. Completan lo que ESPN no trae. Para emparejar un nombre distinto al de ESPN, agrega \"espn\": \"<nombre en ESPN>\" al jugador. Para quitar a un jugador que ESPN lista de más, ponlo en \"excluir\" del equipo.",
   "teams": {
     "Puntarenas FC": {
       "updated": "2026-10-28",
       "source": "Transfermarkt (copiado a mano)",
+      "excluir": [
+        "Erick Pineda"
+      ],
       "players": [
         {
           "jersey": 97,

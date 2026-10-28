@@ -55,11 +55,12 @@ if (process.argv[1]?.endsWith('importar-plantilla.mjs')) {
   const target = new URL('../data/dorsales.json', import.meta.url);
   let db;
   try { db = JSON.parse(await readFile(target, 'utf8')); } catch { db = { _info: '', teams: {} }; }
-  db._info = 'Dorsales, posiciones y nacionalidades copiados a mano de Transfermarkt. Completan lo que ESPN no trae. Para emparejar un nombre distinto al de ESPN, agrega "espn": "<nombre en ESPN>" al jugador.';
+  db._info = 'Dorsales, posiciones y nacionalidades copiados a mano de Transfermarkt. Completan lo que ESPN no trae. Para emparejar un nombre distinto al de ESPN, agrega "espn": "<nombre en ESPN>" al jugador. Para quitar a un jugador que ESPN lista de más, ponlo en "excluir" del equipo.';
   const prev = db.teams[team]?.players ?? [];
   // Conserva los emparejamientos manuales ("espn") de una importación anterior.
   for (const p of players) { const old = prev.find(o => o.name === p.name); if (old?.espn) p.espn = old.espn; }
-  db.teams[team] = { updated: new Date().toISOString().slice(0, 10), source: 'Transfermarkt (copiado a mano)', players };
+  // Conserva la lista "excluir" (jugadores de ESPN que no deben aparecer).
+  db.teams[team] = { updated: new Date().toISOString().slice(0, 10), source: 'Transfermarkt (copiado a mano)', ...(db.teams[team]?.excluir && { excluir: db.teams[team].excluir }), players };
   await writeFile(target, JSON.stringify(db, null, 2) + '\n', 'utf8');
   console.log(`${team}: ${players.length} jugadores guardados en data/dorsales.json`);
   for (const p of players) console.log(`  #${String(p.jersey ?? '-').padStart(2)} ${p.name.padEnd(24)} ${(p.position ?? '?')} ${p.age ?? '-'} ${p.countries.join(' / ')}`);
