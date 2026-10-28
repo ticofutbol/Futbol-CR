@@ -373,7 +373,7 @@ export function buildHtml(data) {
   .hchip.accent { background: #fbbf24; color: #1f1500; border-color: transparent; font-weight: 700; }
 
   /* Navegación */
-  .tabs { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+  .tabs { position: sticky; top: 0; z-index: 10; margin-top: 16px; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
   .tabs .wrap { display: flex; gap: 6px; overflow-x: auto; padding-top: 8px; padding-bottom: 8px; scrollbar-width: none; }
   .tabs .wrap::-webkit-scrollbar { display: none; }
   .tabs a { flex: none; text-decoration: none; color: var(--muted); font-weight: 600; font-size: .85rem; padding: 6px 12px; border-radius: 999px; }
@@ -385,27 +385,32 @@ export function buildHtml(data) {
   .kpis { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: -44px; position: relative; z-index: 1; }
   @media (min-width: 640px) { .kpis { grid-template-columns: 1fr 1fr; } }
   @media (min-width: 1000px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
-  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; box-shadow: var(--shadow); display: grid; gap: 8px; position: relative; overflow: hidden; min-width: 0; }
+  .kpi {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px; box-shadow: var(--shadow);
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 12px; row-gap: 10px;
+    position: relative; overflow: hidden; min-width: 0;
+  }
+  .kpi-label, .vs-row, .kpi-sub.center { grid-column: 1 / -1; }
   .kpi::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
   .kpi-leader::before, .kpi-next::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
   .kpi-label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-  .kpi-main { display: flex; align-items: center; gap: 10px; min-width: 0; padding-right: 64px; }
+  .kpi-main { display: flex; align-items: center; gap: 10px; min-width: 0; }
   .kpi-main > div { min-width: 0; }
   .kpi-logo { width: 44px; height: 44px; object-fit: contain; flex: none; }
-  .kpi-name { display: block; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .kpi-name { display: block; font-size: 1rem; line-height: 1.2; overflow-wrap: anywhere; }
   .kpi-sub { display: block; font-size: .8rem; color: var(--muted); }
   .kpi-sub.center { text-align: center; }
-  .kpi-big { position: absolute; right: 16px; top: 26px; font-family: var(--display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--accent); text-align: right; }
+  .kpi-big { font-family: var(--display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--accent); text-align: right; }
   .kpi-big small { display: block; font-family: Inter, system-ui, sans-serif; font-size: .68rem; font-weight: 600; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
   .vs-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 6px; text-align: center; }
   .vs-team { display: grid; justify-items: center; gap: 4px; min-width: 0; }
-  .vs-team b { font-size: .9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+  .vs-team b { font-size: .9rem; line-height: 1.15; overflow-wrap: anywhere; }
   .vs-mid { font-family: var(--display); font-weight: 800; font-size: 1.3rem; color: var(--muted); }
   .countdown { color: var(--accent); font-weight: 700; }
 
   /* Grilla y tarjetas */
   main.wrap { display: grid; gap: 16px; grid-template-columns: 1fr; padding-top: 16px; padding-bottom: 28px; }
-  @media (min-width: 920px) { main.wrap { grid-template-columns: 1.45fr 1fr; } .span-2 { grid-column: 1 / -1; } }
+  @media (min-width: 1180px) { main.wrap { grid-template-columns: 1.45fr 1fr; } .span-2 { grid-column: 1 / -1; } }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); min-width: 0; }
   .sec-head { margin: 0 0 14px; }
   .kicker { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
@@ -442,7 +447,7 @@ export function buildHtml(data) {
   .bars { display: grid; gap: 9px; }
   .bar-row { display: grid; grid-template-columns: minmax(110px, 10.5em) 1fr 2.4em; gap: 10px; align-items: center; font-size: .9rem; }
   .bar-label { display: flex; align-items: center; gap: 8px; min-width: 0; }
-  .bar-label span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bar-label span { line-height: 1.15; overflow-wrap: anywhere; }
   .bar-track { height: 16px; background: var(--surface-2); border-radius: 999px; overflow: hidden; }
   .bar { display: block; height: 100%; background: var(--bar); border-radius: 999px; transform-origin: left; animation: grow .9s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d, 0ms); }
   .bar.zone { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
@@ -454,13 +459,13 @@ export function buildHtml(data) {
   /* Partidos */
   .matches { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
   .match { padding: 10px 12px; border-radius: 14px; background: var(--surface-2); }
-  .match-meta { display: flex; align-items: center; gap: 8px; font-size: .75rem; color: var(--muted); margin-bottom: 6px; min-width: 0; }
+  .match-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: .75rem; color: var(--muted); margin-bottom: 6px; min-width: 0; }
   .date-chip { flex: none; text-transform: capitalize; font-weight: 700; color: var(--text); }
-  .venue { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .venue { min-width: 0; }
   .match-line { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; }
   .side { display: flex; align-items: center; gap: 8px; min-width: 0; font-weight: 500; }
   .side.home { justify-content: flex-end; text-align: right; }
-  .side .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .side .name { line-height: 1.15; overflow-wrap: anywhere; }
   .side.win .name { font-weight: 800; }
   .side.lose .name { color: var(--muted); }
   .score { font-family: var(--display); font-weight: 800; font-size: 1.35rem; font-variant-numeric: tabular-nums; background: var(--surface); border: 1px solid var(--border); padding: 0 12px; border-radius: 10px; min-width: 72px; text-align: center; }
@@ -499,7 +504,7 @@ export function buildHtml(data) {
   .scorer-list li + li { border-top: 1px solid var(--border); }
   .rank { width: 1.6em; text-align: center; color: var(--muted); font-weight: 700; }
   .who { display: grid; min-width: 0; flex: 1; }
-  .who b { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .who b { font-weight: 600; line-height: 1.2; overflow-wrap: anywhere; }
   .goals { font-family: var(--display); font-weight: 800; font-size: 1.2rem; }
 
   /* Plantillas */
@@ -566,16 +571,16 @@ export function buildHtml(data) {
     </div>
   </div>
 </header>
+<div class="wrap">
+  ${kpis(data, teamsByName)}
+  ${warnings}
+</div>
 <nav class="tabs" aria-label="Secciones">
   <div class="wrap">
     <a href="#tabla">Tabla</a><a href="#puntos">Puntos</a><a href="#resultados">Resultados</a><a href="#proximos">Próximos</a>
     <a href="#goleadores">Goleadores</a><a href="#plantillas">Plantillas</a><a href="#historia">Historia</a>
   </div>
 </nav>
-<div class="wrap">
-  ${warnings}
-  ${kpis(data, teamsByName)}
-</div>
 <main class="wrap">
   <section class="card">${sectionHead('tabla', 'Apertura ' + year, 'Tabla de posiciones')}${standingsSection(s, form)}</section>
   <section class="card">${sectionHead('puntos', 'Comparativo', 'Puntos por equipo')}${pointsChart(s)}</section>
