@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-28T21:51:14.473Z",
-  "lastSuccessAt": "2026-10-28T21:51:14.473Z",
+  "generatedAt": "2026-10-28T21:51:23.433Z",
+  "lastSuccessAt": "2026-10-28T21:51:23.433Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-28T21:51:13.388Z",
+    "updatedAt": "2026-10-28T21:51:21.904Z",
     "stale": false
   },
   "results": {
@@ -2077,7 +2077,7 @@
         }
       }
     },
-    "updatedAt": "2026-10-28T21:51:13.594Z",
+    "updatedAt": "2026-10-28T21:51:22.317Z",
     "stale": false
   },
   "upcoming": {
@@ -2925,7 +2925,7 @@
         }
       }
     ],
-    "updatedAt": "2026-10-28T21:51:14.083Z",
+    "updatedAt": "2026-10-28T21:51:23.109Z",
     "stale": false
   },
   "scorers": {
@@ -3608,7 +3608,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-28T21:51:14.086Z",
+    "updatedAt": "2026-10-28T21:51:23.113Z",
     "stale": false
   },
   "squads": {
@@ -6596,6 +6596,18 @@
             "penalties": 0
           },
           {
+            "id": "tm-everardo-rubio",
+            "jersey": "21",
+            "name": "Everardo Rubio",
+            "position": "D",
+            "age": 29,
+            "country": "México",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+            "goals": 0,
+            "penalties": 0,
+            "added": true
+          },
+          {
             "id": "224656",
             "jersey": "21",
             "name": "Jesús Everado Rubio Quintero",
@@ -6603,17 +6615,6 @@
             "age": 29,
             "country": "Mexico",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-            "goals": 0,
-            "penalties": 0
-          },
-          {
-            "id": "278526",
-            "jersey": "37",
-            "name": "Keysher Fuller",
-            "position": "D",
-            "age": 32,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -6695,17 +6696,6 @@
             "penalties": 2
           },
           {
-            "id": "285725",
-            "jersey": "11",
-            "name": "Ronaldo Araya",
-            "position": "M",
-            "age": 27,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 2,
-            "penalties": 0
-          },
-          {
             "id": "228455",
             "jersey": "22",
             "name": "Aaron Murillo",
@@ -6722,19 +6712,8 @@
             "name": "Sergio Rodríguez",
             "position": "M",
             "age": 30,
-            "country": "Mexico",
+            "country": "México",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-            "goals": 0,
-            "penalties": 0
-          },
-          {
-            "id": "400417",
-            "jersey": "25",
-            "name": "Emerson Bravo",
-            "position": "M",
-            "age": 25,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -6827,13 +6806,35 @@
             "penalties": 0
           },
           {
+            "id": "285725",
+            "jersey": "11",
+            "name": "Ronaldo Araya",
+            "position": "F",
+            "age": 27,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 2,
+            "penalties": 0
+          },
+          {
+            "id": "400417",
+            "jersey": "25",
+            "name": "Emerson Bravo",
+            "position": "F",
+            "age": 25,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0
+          },
+          {
             "id": "3098133",
             "jersey": "32",
             "name": "Abner Adale Hudson Hansell",
             "position": "F",
-            "age": null,
-            "country": null,
-            "flag": null,
+            "age": 21,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -6849,13 +6850,36 @@
             "penalties": 1
           },
           {
+            "id": "tm-jesus-henestrosa",
+            "jersey": "34",
+            "name": "Jesús Henestrosa",
+            "position": "F",
+            "age": 32,
+            "country": "México",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+            "goals": 0,
+            "penalties": 0,
+            "added": true
+          },
+          {
+            "id": "278526",
+            "jersey": "37",
+            "name": "Keysher Fuller",
+            "position": "F",
+            "age": 32,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0
+          },
+          {
             "id": "3099934",
             "jersey": "41",
             "name": "Joyfer Chal Vilorio",
             "position": "F",
-            "age": null,
-            "country": null,
-            "flag": null,
+            "age": 20,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -6882,6 +6906,17 @@
             "penalties": 0
           },
           {
+            "id": "3135023",
+            "jersey": "80",
+            "name": "Deyverjen Garry Matthews Araya",
+            "position": "F",
+            "age": 24,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0
+          },
+          {
             "id": "223034",
             "jersey": "97",
             "name": "Randall Leal",
@@ -6900,17 +6935,6 @@
             "age": 30,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0
-          },
-          {
-            "id": "3135023",
-            "jersey": null,
-            "name": "Deyverjen Garry Matthews Araya",
-            "position": "F",
-            "age": null,
-            "country": null,
-            "flag": null,
             "goals": 0,
             "penalties": 0
           }
@@ -7816,7 +7840,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-28T21:51:14.473Z",
+    "updatedAt": "2026-10-28T21:51:23.433Z",
     "stale": false
   },
   "history": {
