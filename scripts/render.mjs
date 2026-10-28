@@ -1,10 +1,12 @@
 // Genera public/index.html (página estática, sin dependencias) a partir de data/data.json.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import { buildIcs } from './calendar.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const TZ = 'America/Costa_Rica';
 const SEMIFINAL_SPOTS = 4;
+const PAGE_URL = 'https://sebascr714-glitch.github.io/Futbol-CR/';
 
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
@@ -141,13 +143,29 @@ function matchList(sec, kind) {
       <li class="match">
         <div class="match-meta"><span class="date-chip">${esc(fmt(m.date, { weekday: 'short', day: 'numeric', month: 'short' }))}</span>${m.state === 'in' ? '<strong class="live">● En vivo</strong>' : ''}${m.venue ? `<span class="venue">${esc(m.venue)}</span>` : ''}</div>
         <div class="match-line">
-          <span class="side home${cls('home')}"><span class="name">${esc(label(m.home))}</span>${logo(m.home, 28)}</span>
+          <span class="side home${cls('home')}"><span class="name">${esc(label(m.home))}</span><span class="name-abbr">${esc(m.home.abbr)}</span>${logo(m.home, 28)}</span>
           ${center}
-          <span class="side away${cls('away')}">${logo(m.away, 28)}<span class="name">${esc(label(m.away))}</span></span>
+          <span class="side away${cls('away')}">${logo(m.away, 28)}<span class="name">${esc(label(m.away))}</span><span class="name-abbr">${esc(m.away.abbr)}</span></span>
         </div>
       </li>`;
   }).join('');
   return `<ul class="matches">${items}</ul>${staleNote(sec)}`;
+}
+
+function calendarBox() {
+  const ics = new URL('partidos.ics', PAGE_URL).href;
+  const webcal = ics.replace(/^https?:/, 'webcal:');
+  const google = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(webcal)}`;
+  return `
+    <div class="cal-box">
+      <div class="cal-text"><strong>📅 Recibe un aviso antes de cada partido</strong>
+        <span>Agrega el calendario a tu celular una sola vez; los partidos nuevos y los cambios de horario se actualizan solos.</span></div>
+      <div class="cal-actions">
+        <a class="btn" href="${esc(google)}" target="_blank" rel="noopener">Google Calendar</a>
+        <a class="btn" href="${esc(webcal)}">iPhone / Mac</a>
+        <a class="btn ghost" href="partidos.ics" download>Descargar .ics</a>
+      </div>
+    </div>`;
 }
 
 /* ---------- Goleadores ---------- */
@@ -450,6 +468,18 @@ export function buildHtml(data) {
   .dash { margin: 0 4px; color: var(--muted); }
   .kick { font-family: var(--display); font-weight: 700; font-size: 1.1rem; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; padding: 2px 10px; border-radius: 10px; min-width: 72px; text-align: center; }
   .live { color: var(--live); }
+  .name-abbr { display: none; font-weight: inherit; }
+  @media (max-width: 420px) {
+    .side .name { display: none; }
+    .name-abbr { display: inline; }
+  }
+  .cal-box { display: grid; gap: 10px; padding: 14px; margin-bottom: 12px; border-radius: 14px; border: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent); background: var(--accent-soft); }
+  .cal-text { display: grid; gap: 2px; }
+  .cal-text span { font-size: .82rem; color: var(--muted); }
+  .cal-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 700; font-size: .82rem; padding: 8px 12px; border-radius: 10px; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
 
   /* Goleadores */
   .podium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: end; }
@@ -550,7 +580,7 @@ export function buildHtml(data) {
   <section class="card">${sectionHead('tabla', 'Apertura ' + year, 'Tabla de posiciones')}${standingsSection(s, form)}</section>
   <section class="card">${sectionHead('puntos', 'Comparativo', 'Puntos por equipo')}${pointsChart(s)}</section>
   <section class="card">${sectionHead('resultados', 'Últimas 2 jornadas', 'Resultados')}${matchList(data.results, 'results')}</section>
-  <section class="card">${sectionHead('proximos', 'Calendario', 'Próximos partidos')}${matchList(data.upcoming, 'upcoming')}</section>
+  <section class="card">${sectionHead('proximos', 'Calendario', 'Próximos partidos')}${calendarBox()}${matchList(data.upcoming, 'upcoming')}</section>
   <section class="card">${sectionHead('goleadores', 'Top 10', 'Goleadores')}${scorersSection(data.scorers, teamsByName)}</section>
   <section class="card">${sectionHead('historia', 'Palmarés', esc(data.history?.title ?? 'Historia'))}${historySection(data.history)}</section>
   <section class="card span-2">${sectionHead('plantillas', 'Jugadores', 'Plantillas')}${squadsSection(data.squads)}</section>
@@ -615,6 +645,7 @@ export function buildHtml(data) {
 export async function render(data) {
   await mkdir(new URL('public/', ROOT), { recursive: true });
   await writeFile(new URL('public/index.html', ROOT), buildHtml(data), 'utf8');
+  await writeFile(new URL('public/partidos.ics', ROOT), buildIcs(data, { pageUrl: PAGE_URL }), 'utf8');
 }
 
 // Uso directo: `npm run render` regenera el HTML desde data/data.json sin descargar nada.

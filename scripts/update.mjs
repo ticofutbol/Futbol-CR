@@ -12,7 +12,7 @@ const SITE = `https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUE}`;
 const STANDINGS_URL = `https://site.api.espn.com/apis/v2/sports/soccer/${LEAGUE}/standings`;
 const RECENT_COUNT = 10;    // 2 jornadas de 5 partidos (10 equipos)
 const UPCOMING_COUNT = 10;
-const UPCOMING_DAYS = 35;
+const UPCOMING_DAYS = 45;   // también define cuántos días a futuro cubre el calendario .ics
 
 async function getJson(url, tries = 2) {
   for (let i = 1; ; i++) {
@@ -150,7 +150,7 @@ async function fetchUpcomingMatches() {
     const m = match(ev);
     if (!m.completed) byId.set(m.id, m);
   }
-  return [...byId.values()].sort((a, b) => a.date.localeCompare(b.date)).slice(0, UPCOMING_COUNT);
+  return [...byId.values()].sort((a, b) => a.date.localeCompare(b.date));
 }
 
 // Goleadores: ESPN no publica la tabla, así que se suman los goles del resumen de cada partido.
@@ -260,10 +260,14 @@ async function main() {
   const results = await section('Últimos resultados', prev.results, async () => {
     if (!teamIds.length) throw new Error('Sin lista de equipos');
     played = await fetchPlayedMatches(teamIds);
-    return { matches: played.slice(0, RECENT_COUNT), form: teamForm(played, teamIds), stats: seasonStats(played) };
+    // `all` alimenta el calendario .ics con los resultados de la temporada.
+    return { matches: played.slice(0, RECENT_COUNT), all: played, form: teamForm(played, teamIds), stats: seasonStats(played) };
   }, warnings);
 
-  const upcoming = await section('Próximos partidos', prev.upcoming, async () => ({ matches: await fetchUpcomingMatches() }), warnings);
+  const upcoming = await section('Próximos partidos', prev.upcoming, async () => {
+    const all = await fetchUpcomingMatches();
+    return { matches: all.slice(0, UPCOMING_COUNT), all };
+  }, warnings);
 
   const scorers = await section('Goleadores', prev.scorers, async () => {
     if (!played) throw new Error('Sin lista de partidos jugados');
