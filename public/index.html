@@ -5,9 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#063d2a">
-<title>Fútbol CR</title>
-<meta name="description" content="Tabla, resultados, goleadores, plantillas e historia de la Primera División de Costa Rica.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+<title>Primera División de Costa Rica ⚽ Fútbol CR</title>
+<meta name="description" content="Líder: Saprissa (24 pts) · Goleo: Alonso Hernández, Kenyel Michel y otros (6) · Tabla, resultados, plantillas y calendario. Se actualiza todos los días.">
+<link rel="canonical" href="https://ticofutbol.github.io/Futbol-CR/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fútbol CR">
+<meta property="og:locale" content="es_CR">
+<meta property="og:url" content="https://ticofutbol.github.io/Futbol-CR/">
+<meta property="og:title" content="Primera División de Costa Rica ⚽ Fútbol CR">
+<meta property="og:description" content="Líder: Saprissa (24 pts) · Goleo: Alonso Hernández, Kenyel Michel y otros (6) · Tabla, resultados, plantillas y calendario. Se actualiza todos los días.">
+<meta property="og:image" content="https://ticofutbol.github.io/Futbol-CR/og.jpg?v=1">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Primera División de Costa Rica: tabla, resultados, goleadores y plantillas">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fútbol CR">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -62,6 +82,16 @@
     border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .85rem; cursor: pointer; backdrop-filter: blur(6px);
   }
   .theme-btn:hover { background: rgb(255 255 255 / .2); }
+  .hero-actions { display: flex; gap: 8px; }
+  .share-btn { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; background: #fbbf24; color: #1f1500; border-color: transparent; }
+  .share-btn:hover { background: #fcd34d; }
+  .toast {
+    position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom)); transform: translate(-50%, 20px); opacity: 0;
+    background: #0f1a14; color: #fff; padding: 10px 16px; border-radius: 12px; font-size: .9rem; font-weight: 600;
+    box-shadow: 0 8px 24px rgb(0 0 0 / .3); transition: opacity .2s, transform .2s; z-index: 50; pointer-events: none; max-width: calc(100% - 32px); text-align: center;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+  .wa-link { color: var(--accent); font-weight: 600; }
   .eyebrow { margin: 26px 0 0; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; color: #a7f3d0; }
   h1 { margin: 2px 0 0; font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: .92; letter-spacing: .01em; text-transform: uppercase; }
   .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
@@ -257,7 +287,13 @@
   <div class="wrap">
     <div class="hero-top">
       <span class="brand"><span class="ball">⚽</span> Fútbol CR</span>
-      <button class="theme-btn" type="button" id="theme-btn" aria-label="Cambiar tema">Tema</button>
+      <div class="hero-actions">
+        <button class="theme-btn share-btn" type="button" id="share-btn" data-url="https://ticofutbol.github.io/Futbol-CR/" data-text="Tabla, resultados, goleadores y plantillas de la Primera División de Costa Rica 🇨🇷⚽">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+          Compartir
+        </button>
+        <button class="theme-btn" type="button" id="theme-btn" aria-label="Cambiar tema">Tema</button>
+      </div>
     </div>
     <p class="eyebrow">Costa Rica · Liga FPD</p>
     <h1>Primera<br>División</h1>
@@ -3544,7 +3580,11 @@
     <p class="note">Plantilla inscrita según ESPN. Goles del torneo actual, calculados a partir de los partidos.</p>
     </section>
 </main>
-<footer class="wrap">Fuente: ESPN (site.api.espn.com, liga crc.1). Última actualización: 28 de octubre de 2026 a las 14:37 (hora de Costa Rica).</footer>
+<footer class="wrap">
+  <p><a class="wa-link" href="https://wa.me/?text=Tabla%2C%20resultados%2C%20goleadores%20y%20plantillas%20de%20la%20Primera%20Divisi%C3%B3n%20de%20Costa%20Rica%20%F0%9F%87%A8%F0%9F%87%B7%E2%9A%BD%0Ahttps%3A%2F%2Fticofutbol.github.io%2FFutbol-CR%2F" target="_blank" rel="noopener">Compartir por WhatsApp</a></p>
+  Fuente: ESPN (site.api.espn.com, liga crc.1). Última actualización: 28 de octubre de 2026 a las 14:37 (hora de Costa Rica).
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
   (function () {
     var root = document.documentElement, btn = document.getElementById('theme-btn');
@@ -3571,6 +3611,31 @@
         show(sel.value);
         try { localStorage.setItem('squad', sel.value); } catch (e) {}
       });
+    }
+
+    // Compartir: usa el menú nativo del celular; si no existe (compu), copia el link.
+    var toast = document.getElementById('toast'), toastTimer;
+    function notify(msg) {
+      toast.textContent = msg; toast.classList.add('show');
+      clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2600);
+    }
+    var shareBtn = document.getElementById('share-btn');
+    shareBtn.addEventListener('click', function () {
+      var url = shareBtn.dataset.url, text = shareBtn.dataset.text;
+      if (navigator.share) {
+        navigator.share({ title: document.title, text: text, url: url }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(text + '\n' + url).then(
+          function () { notify('Link copiado: pégalo en WhatsApp'); },
+          function () { prompt('Copia este link:', url); });
+      } else {
+        prompt('Copia este link:', url);
+      }
+    });
+
+    // Para abrirla como app y sin conexión.
+    if ('serviceWorker' in navigator && location.protocol === 'https:') {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
     }
 
     // Cuenta regresiva del próximo partido (se calcula al abrir la página).

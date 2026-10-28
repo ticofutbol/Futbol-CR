@@ -7,6 +7,9 @@ const ROOT = new URL('../', import.meta.url);
 const TZ = 'America/Costa_Rica';
 const SEMIFINAL_SPOTS = 4;
 const PAGE_URL = 'https://ticofutbol.github.io/Futbol-CR/';
+const OG_TITLE = 'Primera División de Costa Rica ⚽ Fútbol CR';
+const OG_VERSION = 1; // súbelo si cambias public/og.jpg, para que WhatsApp no use la imagen vieja
+const SHARE_TEXT = 'Tabla, resultados, goleadores y plantillas de la Primera División de Costa Rica 🇨🇷⚽';
 
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
@@ -301,6 +304,16 @@ export function buildHtml(data) {
     ? `<div class="banner" role="status">Algunas fuentes fallaron en la última actualización; se muestran los últimos datos guardados.</div>`
     : '';
 
+  // Descripción de la vista previa (WhatsApp, redes): cambia con los datos del día.
+  const leader = s?.rows?.[0];
+  const top = data.scorers?.rows?.[0];
+  const topNames = top ? data.scorers.rows.filter(r => r.goals === top.goals).map(r => r.player) : [];
+  const description = [
+    leader && `Líder: ${leader.name} (${leader.pts} pts)`,
+    top && `Goleo: ${topNames.slice(0, 2).join(', ')}${topNames.length > 2 ? ' y otros' : ''} (${top.goals})`,
+    'Tabla, resultados, plantillas y calendario. Se actualiza todos los días.',
+  ].filter(Boolean).join(' · ');
+
   return `<!doctype html>
 <html lang="es">
 <head>
@@ -308,9 +321,29 @@ export function buildHtml(data) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#063d2a">
-<title>Fútbol CR</title>
-<meta name="description" content="Tabla, resultados, goleadores, plantillas e historia de la Primera División de Costa Rica.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+<title>${esc(OG_TITLE)}</title>
+<meta name="description" content="${esc(description)}">
+<link rel="canonical" href="${PAGE_URL}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fútbol CR">
+<meta property="og:locale" content="es_CR">
+<meta property="og:url" content="${PAGE_URL}">
+<meta property="og:title" content="${esc(OG_TITLE)}">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:image" content="${PAGE_URL}og.jpg?v=${OG_VERSION}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Primera División de Costa Rica: tabla, resultados, goleadores y plantillas">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fútbol CR">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -365,6 +398,16 @@ export function buildHtml(data) {
     border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .85rem; cursor: pointer; backdrop-filter: blur(6px);
   }
   .theme-btn:hover { background: rgb(255 255 255 / .2); }
+  .hero-actions { display: flex; gap: 8px; }
+  .share-btn { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; background: #fbbf24; color: #1f1500; border-color: transparent; }
+  .share-btn:hover { background: #fcd34d; }
+  .toast {
+    position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom)); transform: translate(-50%, 20px); opacity: 0;
+    background: #0f1a14; color: #fff; padding: 10px 16px; border-radius: 12px; font-size: .9rem; font-weight: 600;
+    box-shadow: 0 8px 24px rgb(0 0 0 / .3); transition: opacity .2s, transform .2s; z-index: 50; pointer-events: none; max-width: calc(100% - 32px); text-align: center;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+  .wa-link { color: var(--accent); font-weight: 600; }
   .eyebrow { margin: 26px 0 0; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; color: #a7f3d0; }
   h1 { margin: 2px 0 0; font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: .92; letter-spacing: .01em; text-transform: uppercase; }
   .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
@@ -560,7 +603,13 @@ export function buildHtml(data) {
   <div class="wrap">
     <div class="hero-top">
       <span class="brand"><span class="ball">⚽</span> Fútbol CR</span>
-      <button class="theme-btn" type="button" id="theme-btn" aria-label="Cambiar tema">Tema</button>
+      <div class="hero-actions">
+        <button class="theme-btn share-btn" type="button" id="share-btn" data-url="${PAGE_URL}" data-text="${esc(SHARE_TEXT)}">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+          Compartir
+        </button>
+        <button class="theme-btn" type="button" id="theme-btn" aria-label="Cambiar tema">Tema</button>
+      </div>
     </div>
     <p class="eyebrow">Costa Rica · Liga FPD</p>
     <h1>Primera<br>División</h1>
@@ -590,7 +639,11 @@ export function buildHtml(data) {
   <section class="card">${sectionHead('historia', 'Palmarés', esc(data.history?.title ?? 'Historia'))}${historySection(data.history)}</section>
   <section class="card span-2">${sectionHead('plantillas', 'Jugadores', 'Plantillas')}${squadsSection(data.squads)}</section>
 </main>
-<footer class="wrap">Fuente: ${esc(data.source)}. Última actualización: ${esc(fmtStamp(stamp))} (hora de Costa Rica).</footer>
+<footer class="wrap">
+  <p><a class="wa-link" href="https://wa.me/?text=${encodeURIComponent(SHARE_TEXT + '\n' + PAGE_URL)}" target="_blank" rel="noopener">Compartir por WhatsApp</a></p>
+  Fuente: ${esc(data.source)}. Última actualización: ${esc(fmtStamp(stamp))} (hora de Costa Rica).
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
   (function () {
     var root = document.documentElement, btn = document.getElementById('theme-btn');
@@ -617,6 +670,31 @@ export function buildHtml(data) {
         show(sel.value);
         try { localStorage.setItem('squad', sel.value); } catch (e) {}
       });
+    }
+
+    // Compartir: usa el menú nativo del celular; si no existe (compu), copia el link.
+    var toast = document.getElementById('toast'), toastTimer;
+    function notify(msg) {
+      toast.textContent = msg; toast.classList.add('show');
+      clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2600);
+    }
+    var shareBtn = document.getElementById('share-btn');
+    shareBtn.addEventListener('click', function () {
+      var url = shareBtn.dataset.url, text = shareBtn.dataset.text;
+      if (navigator.share) {
+        navigator.share({ title: document.title, text: text, url: url }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(text + '\\n' + url).then(
+          function () { notify('Link copiado: pégalo en WhatsApp'); },
+          function () { prompt('Copia este link:', url); });
+      } else {
+        prompt('Copia este link:', url);
+      }
+    });
+
+    // Para abrirla como app y sin conexión.
+    if ('serviceWorker' in navigator && location.protocol === 'https:') {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
     }
 
     // Cuenta regresiva del próximo partido (se calcula al abrir la página).
@@ -647,9 +725,18 @@ export function buildHtml(data) {
 `;
 }
 
+// Revisa que el JavaScript de la página no tenga errores de sintaxis antes de escribirla.
+function checkScripts(html) {
+  for (const [, code] of html.matchAll(/<script>([\s\S]*?)<\/script>/g)) {
+    try { new Function(code); } catch (err) { throw new Error(`El script de la página tiene un error: ${err.message}`); }
+  }
+}
+
 export async function render(data) {
+  const html = buildHtml(data);
+  checkScripts(html);
   await mkdir(new URL('public/', ROOT), { recursive: true });
-  await writeFile(new URL('public/index.html', ROOT), buildHtml(data), 'utf8');
+  await writeFile(new URL('public/index.html', ROOT), html, 'utf8');
   await writeFile(new URL('public/partidos.ics', ROOT), buildIcs(data, { pageUrl: PAGE_URL }), 'utf8');
 }
 

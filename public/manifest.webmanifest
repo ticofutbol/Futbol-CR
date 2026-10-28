@@ -1,0 +1,19 @@
+{
+  "name": "Fútbol CR · Primera División",
+  "short_name": "Fútbol CR",
+  "description": "Tabla, resultados, goleadores, plantillas y calendario de la Primera División de Costa Rica.",
+  "lang": "es-CR",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#04281b",
+  "theme_color": "#063d2a",
+  "categories": ["sports"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

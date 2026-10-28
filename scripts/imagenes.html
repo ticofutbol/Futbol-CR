@@ -1,0 +1,158 @@
+<!doctype html>
+<!--
+  Generador de la imagen de vista previa (public/og.jpg) y de los íconos de la app (public/icons/*.png).
+  Ábrelo en Chrome o Edge y descarga cada imagen con su botón; guárdalas en esas carpetas.
+  Solo hace falta volver a usarlo si cambia el diseño: estas imágenes no dependen de los datos del día.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generador de imágenes</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font: 15px/1.4 Inter, system-ui, sans-serif; background: #f1f4f1; color: #0f1a14; margin: 0; padding: 24px; }
+  .item { display: inline-grid; gap: 8px; margin: 0 24px 24px 0; vertical-align: top; }
+  canvas { background: repeating-conic-gradient(#ddd 0 25%, #fff 0 50%) 0 0 / 16px 16px; max-width: 600px; height: auto; border: 1px solid #ccc; }
+  a { font-weight: 600; color: #0a7a52; }
+</style>
+</head>
+<body>
+<h1>Imágenes de Fútbol CR</h1>
+<div id="out"></div>
+<script>
+const SITE = 'ticofutbol.github.io/Futbol-CR';
+const DARK = '#04281b', MID = '#0a7a52';
+
+function bg(ctx, w, h) {
+  const g = ctx.createLinearGradient(0, 0, w, h);
+  g.addColorStop(0, DARK); g.addColorStop(1, MID);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  const glow = ctx.createRadialGradient(w * .85, -h * .1, 0, w * .85, -h * .1, w * .7);
+  glow.addColorStop(0, 'rgba(255,255,255,.16)'); glow.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.fillStyle = glow; ctx.fillRect(0, 0, w, h);
+}
+
+// Líneas de cancha muy tenues.
+function pitch(ctx, w, h, lw) {
+  ctx.save();
+  ctx.strokeStyle = 'rgba(255,255,255,.10)'; ctx.lineWidth = lw;
+  const m = lw * 6;
+  ctx.strokeRect(m, m, w - 2 * m, h - 2 * m);
+  ctx.beginPath(); ctx.moveTo(w / 2, m); ctx.lineTo(w / 2, h - m); ctx.stroke();
+  ctx.beginPath(); ctx.arc(w / 2, h / 2, h * .18, 0, Math.PI * 2); ctx.stroke();
+  ctx.strokeRect(m, h * .3, w * .1, h * .4); ctx.strokeRect(w - m - w * .1, h * .3, w * .1, h * .4);
+  ctx.restore();
+}
+
+function polygon(ctx, cx, cy, r, rot, n = 5) {
+  ctx.beginPath();
+  for (let i = 0; i < n; i++) {
+    const a = rot + i * 2 * Math.PI / n;
+    ctx[i ? 'lineTo' : 'moveTo'](cx + r * Math.cos(a), cy + r * Math.sin(a));
+  }
+  ctx.closePath();
+}
+
+// Balón de fútbol dibujado con figuras simples.
+function ball(ctx, cx, cy, r) {
+  ctx.save();
+  ctx.shadowColor = 'rgba(0,0,0,.35)'; ctx.shadowBlur = r * .25; ctx.shadowOffsetY = r * .08;
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+  ctx.restore();
+
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.clip();
+  const ink = '#13201a', up = -Math.PI / 2;
+  ctx.fillStyle = ink; ctx.strokeStyle = ink; ctx.lineWidth = r * .045; ctx.lineJoin = 'round';
+  const pr = r * .34;
+  polygon(ctx, cx, cy, pr, up); ctx.fill();
+  for (let i = 0; i < 5; i++) {
+    const a = up + i * 2 * Math.PI / 5;
+    const vx = cx + pr * Math.cos(a), vy = cy + pr * Math.sin(a);
+    const ox = cx + r * .92 * Math.cos(a), oy = cy + r * .92 * Math.sin(a);
+    ctx.beginPath(); ctx.moveTo(vx, vy); ctx.lineTo(cx + r * .68 * Math.cos(a), cy + r * .68 * Math.sin(a)); ctx.stroke();
+    polygon(ctx, ox, oy, r * .3, a + Math.PI); ctx.fill();
+    // costuras entre parches vecinos
+    const b = a + Math.PI / 5;
+    ctx.beginPath();
+    ctx.moveTo(cx + r * .68 * Math.cos(a), cy + r * .68 * Math.sin(a));
+    ctx.lineTo(cx + r * .8 * Math.cos(b), cy + r * .8 * Math.sin(b));
+    ctx.lineTo(cx + r * .68 * Math.cos(a + 2 * Math.PI / 5), cy + r * .68 * Math.sin(a + 2 * Math.PI / 5));
+    ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx + r * .8 * Math.cos(b), cy + r * .8 * Math.sin(b)); ctx.lineTo(cx + r * 1.1 * Math.cos(b), cy + r * 1.1 * Math.sin(b)); ctx.stroke();
+  }
+  const shade = ctx.createRadialGradient(cx - r * .35, cy - r * .4, r * .1, cx, cy, r);
+  shade.addColorStop(0, 'rgba(255,255,255,.25)'); shade.addColorStop(.6, 'rgba(255,255,255,0)'); shade.addColorStop(1, 'rgba(0,0,0,.28)');
+  ctx.fillStyle = shade; ctx.fillRect(cx - r, cy - r, 2 * r, 2 * r);
+  ctx.restore();
+}
+
+// Franja con los colores de la bandera de Costa Rica.
+function flagBand(ctx, x, y, w, h) {
+  const rows = [['#002b7f', 1], ['#fff', 1], ['#ce1126', 2], ['#fff', 1], ['#002b7f', 1]];
+  let yy = y;
+  for (const [c, k] of rows) { ctx.fillStyle = c; ctx.fillRect(x, yy, w, h * k / 6); yy += h * k / 6; }
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+}
+
+function icon(size, { maskable = false, rounded = false } = {}) {
+  const c = document.createElement('canvas'); c.width = c.height = size;
+  const ctx = c.getContext('2d');
+  if (rounded) { roundRect(ctx, 0, 0, size, size, size * .22); ctx.clip(); }
+  bg(ctx, size, size);
+  const k = maskable ? .78 : 1; // los íconos "maskable" dejan margen porque Android los recorta en círculo
+  const r = size * .3 * k, cy = size * (maskable ? .47 : .45);
+  ball(ctx, size / 2, cy, r);
+  const bw = size * .44 * k, bh = size * .075 * k;
+  ctx.save(); roundRect(ctx, (size - bw) / 2, cy + r + size * .06 * k, bw, bh, bh * .35); ctx.clip();
+  flagBand(ctx, (size - bw) / 2, cy + r + size * .06 * k, bw, bh); ctx.restore();
+  return c;
+}
+
+function og() {
+  const w = 1200, h = 630, c = document.createElement('canvas'); c.width = w; c.height = h;
+  const ctx = c.getContext('2d');
+  bg(ctx, w, h); pitch(ctx, w, h, 3);
+  const x = 72;
+  ctx.fillStyle = '#a7f3d0'; ctx.font = '700 26px Inter';
+  ctx.letterSpacing = '6px'; ctx.fillText('COSTA RICA · LIGA FPD', x, 150); ctx.letterSpacing = '0px';
+  ctx.fillStyle = '#fff'; ctx.font = '800 150px "Barlow Condensed"';
+  ctx.fillText('PRIMERA', x, 290); ctx.fillText('DIVISIÓN', x, 425);
+  flagBand(ctx, x, 455, 150, 18);
+  ctx.font = '600 30px Inter'; ctx.fillStyle = 'rgba(255,255,255,.9)';
+  ctx.fillText('Tabla · Resultados · Goleadores · Plantillas', x, 528);
+  ctx.font = '600 22px Inter'; ctx.fillStyle = 'rgba(255,255,255,.65)';
+  ctx.fillText(SITE + '  ·  Se actualiza todos los días', x, 580);
+  ball(ctx, 940, 300, 170);
+  return c;
+}
+
+async function save(name, canvas, type = 'image/png', quality) {
+  const url = canvas.toDataURL(type, quality);
+  const item = document.createElement('div'); item.className = 'item';
+  item.innerHTML = `<strong>${name}</strong>`;
+  item.appendChild(canvas);
+  const a = document.createElement('a'); a.href = url; a.download = name.split('/').pop(); a.textContent = 'Descargar ' + name;
+  item.appendChild(a); document.getElementById('out').appendChild(item);
+  // Si la página se sirve con el guardador local, se escribe directo en public/.
+  try { await fetch('/save?name=' + encodeURIComponent(name), { method: 'POST', body: url }); } catch (e) {}
+}
+
+(async () => {
+  await Promise.all(['800 100px "Barlow Condensed"', '600 20px Inter', '700 20px Inter'].map(f => document.fonts.load(f)));
+  await save('og.jpg', og(), 'image/jpeg', .9);
+  await save('icons/icon-512.png', icon(512));
+  await save('icons/icon-192.png', icon(192));
+  await save('icons/icon-maskable-512.png', icon(512, { maskable: true }));
+  await save('icons/apple-touch-icon.png', icon(180));
+  await save('icons/favicon-32.png', icon(32, { rounded: true }));
+  document.title = 'listo';
+})();
+</script>
+</body>
+</html>
