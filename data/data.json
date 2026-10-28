@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-28T21:50:45.956Z",
-  "lastSuccessAt": "2026-10-28T21:50:45.956Z",
+  "generatedAt": "2026-10-28T21:50:55.460Z",
+  "lastSuccessAt": "2026-10-28T21:50:55.460Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-28T21:50:44.899Z",
+    "updatedAt": "2026-10-28T21:50:53.291Z",
     "stale": false
   },
   "results": {
@@ -2077,7 +2077,7 @@
         }
       }
     },
-    "updatedAt": "2026-10-28T21:50:45.222Z",
+    "updatedAt": "2026-10-28T21:50:54.071Z",
     "stale": false
   },
   "upcoming": {
@@ -2925,7 +2925,7 @@
         }
       }
     ],
-    "updatedAt": "2026-10-28T21:50:45.756Z",
+    "updatedAt": "2026-10-28T21:50:54.858Z",
     "stale": false
   },
   "scorers": {
@@ -3608,7 +3608,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-28T21:50:45.759Z",
+    "updatedAt": "2026-10-28T21:50:54.866Z",
     "stale": false
   },
   "squads": {
@@ -3625,6 +3625,17 @@
             "name": "Isaac Alfaro",
             "position": "G",
             "age": 23,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0
+          },
+          {
+            "id": "308717",
+            "jersey": "30",
+            "name": "Minor Jesus Alvarez Cordero",
+            "position": "G",
+            "age": 36,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -3658,17 +3669,6 @@
             "name": "Abraham Madriz",
             "position": "G",
             "age": 22,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0
-          },
-          {
-            "id": "308717",
-            "jersey": null,
-            "name": "Minor Jesus Alvarez Cordero",
-            "position": "G",
-            "age": 36,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -3719,6 +3719,17 @@
             "penalties": 0
           },
           {
+            "id": "310348",
+            "jersey": "15",
+            "name": "Douglas Sequeira",
+            "position": "D",
+            "age": 23,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0
+          },
+          {
             "id": "335998",
             "jersey": "17",
             "name": "Gerald Taylor",
@@ -3735,7 +3746,7 @@
             "name": "Fidel Escobar",
             "position": "D",
             "age": 31,
-            "country": "Panama",
+            "country": "Panamá",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
             "goals": 0,
             "penalties": 0
@@ -3763,17 +3774,6 @@
             "penalties": 0
           },
           {
-            "id": "310348",
-            "jersey": "30",
-            "name": "Douglas Sequeira",
-            "position": "D",
-            "age": 23,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0
-          },
-          {
             "id": "127604",
             "jersey": "42",
             "name": "Julian González",
@@ -3785,13 +3785,24 @@
             "penalties": 0
           },
           {
+            "id": "404037",
+            "jersey": "48",
+            "name": "Thiago Cordero",
+            "position": "D",
+            "age": 17,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0
+          },
+          {
             "id": "3107880",
             "jersey": "53",
             "name": "José Gabriel Carvajal Solano",
             "position": "D",
-            "age": null,
-            "country": null,
-            "flag": null,
+            "age": 21,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -3812,17 +3823,6 @@
             "name": "Shawn Johnson",
             "position": "D",
             "age": 23,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0
-          },
-          {
-            "id": "404037",
-            "jersey": null,
-            "name": "Thiago Cordero",
-            "position": "D",
-            "age": 17,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -3877,9 +3877,9 @@
             "jersey": "31",
             "name": "Sebastián Padilla López",
             "position": "M",
-            "age": null,
-            "country": null,
-            "flag": null,
+            "age": 21,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -3910,9 +3910,9 @@
             "jersey": "50",
             "name": "Mathias Jesús Elizondo Picado",
             "position": "M",
-            "age": null,
-            "country": null,
-            "flag": null,
+            "age": 18,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -3922,7 +3922,7 @@
             "name": "Newton Williams",
             "position": "F",
             "age": 25,
-            "country": "Panama",
+            "country": "Panamá",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
             "goals": 3,
             "penalties": 0
@@ -3954,9 +3954,9 @@
             "jersey": "19",
             "name": "Keyshwen Kermey Arboine Peterkin",
             "position": "F",
-            "age": null,
-            "country": null,
-            "flag": null,
+            "age": 24,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -3994,6 +3994,17 @@
             "penalties": 0
           },
           {
+            "id": "3097960",
+            "jersey": "49",
+            "name": "Johnny Jair Myrie Lewis",
+            "position": "F",
+            "age": 20,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0
+          },
+          {
             "id": "400415",
             "jersey": "52",
             "name": "Ariel González",
@@ -4008,17 +4019,6 @@
             "id": "3097974",
             "jersey": null,
             "name": "Derek Allord Woodly Cerdas",
-            "position": "F",
-            "age": null,
-            "country": null,
-            "flag": null,
-            "goals": 0,
-            "penalties": 0
-          },
-          {
-            "id": "3097960",
-            "jersey": null,
-            "name": "Johnny Jair Myrie Lewis",
             "position": "F",
             "age": null,
             "country": null,
@@ -7816,7 +7816,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-28T21:50:45.956Z",
+    "updatedAt": "2026-10-28T21:50:55.460Z",
     "stale": false
   },
   "history": {
