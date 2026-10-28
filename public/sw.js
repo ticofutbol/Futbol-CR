@@ -1,6 +1,6 @@
 // Service worker: permite abrir la app instalada sin conexión.
 // Siempre intenta la red primero (para mostrar los datos del día) y solo si falla usa la última copia guardada.
-const CACHE = 'futbol-cr-v1';
+const CACHE = 'futbol-cr-v2';
 
 self.addEventListener('install', () => self.skipWaiting());
 
@@ -20,7 +20,10 @@ self.addEventListener('fetch', event => {
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);
     try {
-      const res = await fetch(req);
+      // La página siempre se revalida con GitHub (que permite guardarla 10 min): así se ve la versión del día.
+      const res = req.mode === 'navigate'
+        ? await fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' })
+        : await fetch(req);
       if (res.ok) cache.put(req, res.clone());
       return res;
     } catch (err) {
