@@ -509,7 +509,13 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   .panel { padding-top: 16px; }
   .grid { display: grid; gap: 16px; grid-template-columns: 1fr; align-items: start; }
   .panel .kpis + .grid, .panel .banner + .grid { margin-top: 16px; }
-  @media (min-width: 1000px) { .grid.two { grid-template-columns: 1fr 1fr; } .grid.two > :first-child { grid-row: span 1; } }
+  /* Inicio en compu: zona y resultados apilados a la izquierda, próximos ocupa toda la columna derecha. */
+  @media (min-width: 1000px) {
+    .grid.home { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; }
+    .grid.home > :nth-child(1) { grid-column: 1; grid-row: 1; }
+    .grid.home > :nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
+    .grid.home > :nth-child(3) { grid-column: 1; grid-row: 2; }
+  }
   @media (min-width: 1180px) { .grid.two-wide { grid-template-columns: 1.45fr 1fr; } }
   .grid.narrow { max-width: 760px; margin: 0 auto; }
   .more-link { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--accent); text-decoration: none; }
@@ -691,7 +697,7 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   <div class="panel" data-tab="inicio">
     ${kpis(data, teamsByName)}
     ${warnings}
-    <div class="grid two">
+    <div class="grid home">
       <section class="card">${sectionHead('zona', 'Apertura ' + year, 'Zona de semifinales')}${miniStandings(s, form)}</section>
       <section class="card">${sectionHead('proximos', 'Calendario', 'Próximos partidos')}${calendarBox()}${matchList(data.upcoming, 'upcoming')}</section>
       <section class="card">${sectionHead('resultados', 'Últimas 2 jornadas', 'Resultados')}${matchList(data.results, 'results')}</section>

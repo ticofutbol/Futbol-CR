@@ -176,7 +176,13 @@
   .panel { padding-top: 16px; }
   .grid { display: grid; gap: 16px; grid-template-columns: 1fr; align-items: start; }
   .panel .kpis + .grid, .panel .banner + .grid { margin-top: 16px; }
-  @media (min-width: 1000px) { .grid.two { grid-template-columns: 1fr 1fr; } .grid.two > :first-child { grid-row: span 1; } }
+  /* Inicio en compu: zona y resultados apilados a la izquierda, próximos ocupa toda la columna derecha. */
+  @media (min-width: 1000px) {
+    .grid.home { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; }
+    .grid.home > :nth-child(1) { grid-column: 1; grid-row: 1; }
+    .grid.home > :nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
+    .grid.home > :nth-child(3) { grid-column: 1; grid-row: 2; }
+  }
   @media (min-width: 1180px) { .grid.two-wide { grid-template-columns: 1.45fr 1fr; } }
   .grid.narrow { max-width: 760px; margin: 0 auto; }
   .more-link { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--accent); text-decoration: none; }
@@ -385,7 +391,7 @@
       <span class="kpi-sub center">vie, 30 oct, 18:00 · <span class="countdown" data-date="2026-10-31T00:00Z"></span></span>
     </div></section>
     
-    <div class="grid two">
+    <div class="grid home">
       <section class="card"><div class="sec-head" id="zona"><span class="kicker">Apertura 2026</span><h2>Zona de semifinales</h2></div>
     <ol class="scorer-list mini">
       <li><span class="pos-badge zone-badge">1</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="26" height="26" loading="lazy" onerror="this.style.visibility='hidden'">
