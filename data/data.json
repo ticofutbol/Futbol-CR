@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-28T21:51:43.975Z",
-  "lastSuccessAt": "2026-10-28T21:51:43.975Z",
+  "generatedAt": "2026-10-28T21:52:06.970Z",
+  "lastSuccessAt": "2026-10-28T21:52:06.970Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-28T21:51:43.214Z",
+    "updatedAt": "2026-10-28T21:52:05.579Z",
     "stale": false
   },
   "results": {
@@ -2077,7 +2077,7 @@
         }
       }
     },
-    "updatedAt": "2026-10-28T21:51:43.456Z",
+    "updatedAt": "2026-10-28T21:52:05.949Z",
     "stale": false
   },
   "upcoming": {
@@ -2925,7 +2925,7 @@
         }
       }
     ],
-    "updatedAt": "2026-10-28T21:51:43.777Z",
+    "updatedAt": "2026-10-28T21:52:06.673Z",
     "stale": false
   },
   "scorers": {
@@ -3608,7 +3608,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-28T21:51:43.781Z",
+    "updatedAt": "2026-10-28T21:52:06.680Z",
     "stale": false
   },
   "squads": {
@@ -4095,7 +4095,7 @@
             "name": "Luis Olivas",
             "position": "D",
             "age": 26,
-            "country": "Mexico",
+            "country": "México",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "goals": 0,
             "penalties": 0
@@ -4139,7 +4139,7 @@
             "name": "Diego Gonzalez",
             "position": "D",
             "age": 30,
-            "country": "Mexico",
+            "country": "México",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "goals": 0,
             "penalties": 0
@@ -4160,9 +4160,9 @@
             "jersey": "21",
             "name": "Johan Enrique Cortés Alfaro",
             "position": "D",
-            "age": null,
-            "country": null,
-            "flag": null,
+            "age": 26,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -4204,22 +4204,11 @@
             "jersey": null,
             "name": "José Joaquín Huertas Cruz",
             "position": "D",
-            "age": null,
-            "country": null,
-            "flag": null,
-            "goals": 0,
-            "penalties": 0
-          },
-          {
-            "id": "360070",
-            "jersey": "6",
-            "name": "Claudio Alvarado",
-            "position": "M",
-            "age": 20,
+            "age": 31,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 1,
-            "penalties": 1
+            "goals": 0,
+            "penalties": 0
           },
           {
             "id": "276951",
@@ -4238,6 +4227,17 @@
             "name": "Leonardo Alfaro",
             "position": "M",
             "age": 19,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0
+          },
+          {
+            "id": "302969",
+            "jersey": "14",
+            "name": "Jose Andres Rodriguez Chiroldes",
+            "position": "M",
+            "age": 26,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -4278,12 +4278,12 @@
           },
           {
             "id": "3097994",
-            "jersey": "27",
+            "jersey": "30",
             "name": "Andrey Gerardo Mora Matarrita",
             "position": "M",
-            "age": null,
-            "country": null,
-            "flag": null,
+            "age": 30,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -4292,9 +4292,9 @@
             "jersey": "31",
             "name": "Gian Mauro Morera Alvarado",
             "position": "M",
-            "age": null,
-            "country": null,
-            "flag": null,
+            "age": 21,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -4306,17 +4306,6 @@
             "age": null,
             "country": null,
             "flag": null,
-            "goals": 0,
-            "penalties": 0
-          },
-          {
-            "id": "293665",
-            "jersey": "39",
-            "name": "Mauricio Villalobos",
-            "position": "M",
-            "age": 27,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0
           },
@@ -4343,17 +4332,6 @@
             "penalties": 0
           },
           {
-            "id": "302969",
-            "jersey": null,
-            "name": "Jose Andres Rodriguez Chiroldes",
-            "position": "M",
-            "age": 26,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0
-          },
-          {
             "id": "3119923",
             "jersey": null,
             "name": "Sebastián Dario Fallas Chacón",
@@ -4365,12 +4343,23 @@
             "penalties": 0
           },
           {
+            "id": "360070",
+            "jersey": "6",
+            "name": "Claudio Alvarado",
+            "position": "F",
+            "age": 20,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 1,
+            "penalties": 1
+          },
+          {
             "id": "155960",
             "jersey": "7",
             "name": "Manuel Morán",
             "position": "F",
             "age": 28,
-            "country": "Panama",
+            "country": "Panamá",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
             "goals": 0,
             "penalties": 0
@@ -4381,7 +4370,7 @@
             "name": "José De Jesús González",
             "position": "F",
             "age": 27,
-            "country": "Mexico",
+            "country": "México",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "goals": 2,
             "penalties": 0
@@ -4414,14 +4403,14 @@
             "name": "Alonso Hernández",
             "position": "F",
             "age": 32,
-            "country": "USA",
+            "country": "Estados Unidos",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
             "goals": 6,
             "penalties": 0
           },
           {
             "id": "403546",
-            "jersey": "31",
+            "jersey": "27",
             "name": "José Mora",
             "position": "F",
             "age": 22,
@@ -4432,10 +4421,21 @@
           },
           {
             "id": "168482",
-            "jersey": null,
+            "jersey": "29",
             "name": "Nicolás Vargas",
             "position": "F",
             "age": 19,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0
+          },
+          {
+            "id": "293665",
+            "jersey": "39",
+            "name": "Mauricio Villalobos",
+            "position": "F",
+            "age": 27,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -7840,7 +7840,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-28T21:51:43.975Z",
+    "updatedAt": "2026-10-28T21:52:06.970Z",
     "stale": false
   },
   "history": {

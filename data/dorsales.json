@@ -2790,6 +2790,310 @@
           ]
         }
       ]
+    },
+    "Cartaginés": {
+      "updated": "2026-10-28",
+      "source": "Transfermarkt (copiado a mano)",
+      "players": [
+        {
+          "jersey": 1,
+          "name": "Kevin Briceño",
+          "position": "G",
+          "positionText": "Portero",
+          "age": 35,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 34,
+          "name": "Darién Hidalgo",
+          "position": "G",
+          "positionText": "Portero",
+          "age": 22,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 33,
+          "name": "Christopher Moya",
+          "position": "G",
+          "positionText": "Portero",
+          "age": 22,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 38,
+          "name": "Emmanuel Brenes",
+          "position": "D",
+          "positionText": "Defensa",
+          "age": 18,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 4,
+          "name": "Luis Olivas",
+          "position": "D",
+          "positionText": "Defensa central",
+          "age": 26,
+          "countries": [
+            "México"
+          ]
+        },
+        {
+          "jersey": 21,
+          "name": "Johan Cortés",
+          "position": "D",
+          "positionText": "Defensa central",
+          "age": 26,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 2,
+          "name": "Randal Cordero",
+          "position": "D",
+          "positionText": "Defensa central",
+          "age": 30,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": null,
+          "name": "Joaquín Huertas",
+          "position": "D",
+          "positionText": "Defensa central",
+          "age": 31,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 20,
+          "name": "Diego Mesén",
+          "position": "D",
+          "positionText": "Defensa central",
+          "age": 27,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 19,
+          "name": "Diego González",
+          "position": "D",
+          "positionText": "Lateral izquierdo",
+          "age": 30,
+          "countries": [
+            "México",
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 12,
+          "name": "José Luis Quirós",
+          "position": "D",
+          "positionText": "Lateral derecho",
+          "age": 27,
+          "countries": [
+            "Costa Rica",
+            "Ecuador"
+          ]
+        },
+        {
+          "jersey": 18,
+          "name": "Carlos Barahona",
+          "position": "D",
+          "positionText": "Lateral derecho",
+          "age": 24,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 17,
+          "name": "Yael López",
+          "position": "D",
+          "positionText": "Lateral derecho",
+          "age": 27,
+          "countries": [
+            "Costa Rica",
+            "Colombia"
+          ]
+        },
+        {
+          "jersey": 15,
+          "name": "Luis Flores",
+          "position": "M",
+          "positionText": "Pivote",
+          "age": 32,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 30,
+          "name": "Andrey Mora",
+          "position": "M",
+          "positionText": "Pivote",
+          "age": 30,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 26,
+          "name": "Bernald Alfaro",
+          "position": "M",
+          "positionText": "Pivote",
+          "age": 29,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 14,
+          "name": "Andrés Rodríguez",
+          "position": "M",
+          "positionText": "Mediocentro",
+          "age": 26,
+          "countries": [
+            "Costa Rica",
+            "Cuba"
+          ]
+        },
+        {
+          "jersey": 8,
+          "name": "Douglas López",
+          "position": "M",
+          "positionText": "Mediocentro",
+          "age": 28,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 31,
+          "name": "Gian Mauro Morera",
+          "position": "M",
+          "positionText": "Mediocentro",
+          "age": 21,
+          "countries": [
+            "Costa Rica",
+            "Italia"
+          ]
+        },
+        {
+          "jersey": 11,
+          "name": "Leonardo Alfaro",
+          "position": "M",
+          "positionText": "Mediocentro ofensivo",
+          "age": 19,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 13,
+          "name": "Juan Carlos Gaete",
+          "position": "F",
+          "positionText": "Extremo izquierdo",
+          "age": 29,
+          "countries": [
+            "Chile"
+          ]
+        },
+        {
+          "jersey": 39,
+          "name": "Mauricio Villalobos",
+          "position": "F",
+          "positionText": "Extremo izquierdo",
+          "age": 27,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 7,
+          "name": "Manuel Morán",
+          "position": "F",
+          "positionText": "Extremo derecho",
+          "age": 29,
+          "countries": [
+            "Panamá"
+          ]
+        },
+        {
+          "jersey": 27,
+          "name": "José Mora",
+          "position": "F",
+          "positionText": "Extremo derecho",
+          "age": 22,
+          "countries": [
+            "Costa Rica",
+            "Nicaragua"
+          ]
+        },
+        {
+          "jersey": 16,
+          "name": "Geancarlo Castro",
+          "position": "F",
+          "positionText": "Extremo derecho",
+          "age": 24,
+          "countries": [
+            "Costa Rica"
+          ]
+        },
+        {
+          "jersey": 6,
+          "name": "Claudio Montero",
+          "position": "F",
+          "positionText": "Extremo derecho",
+          "age": 20,
+          "countries": [
+            "Costa Rica"
+          ],
+          "espn": "Claudio Alvarado"
+        },
+        {
+          "jersey": 9,
+          "name": "José González",
+          "position": "F",
+          "positionText": "Delantero centro",
+          "age": 27,
+          "countries": [
+            "México"
+          ]
+        },
+        {
+          "jersey": 22,
+          "name": "Alonso Hernández",
+          "position": "F",
+          "positionText": "Delantero centro",
+          "age": 32,
+          "countries": [
+            "Estados Unidos",
+            "México"
+          ]
+        },
+        {
+          "jersey": 29,
+          "name": "Nicolás Vargas",
+          "position": "F",
+          "positionText": "Delantero",
+          "age": 19,
+          "countries": [
+            "Costa Rica"
+          ]
+        }
+      ]
     }
   }
 }
