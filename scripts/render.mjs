@@ -336,8 +336,6 @@ function historySection(h) {
 
 /* ---------- Página ---------- */
 
-const PITCH = encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300' fill='none' stroke='white' stroke-opacity='.10' stroke-width='2'><rect x='10' y='10' width='580' height='280'/><line x1='300' y1='10' x2='300' y2='290'/><circle cx='300' cy='150' r='50'/><rect x='10' y='80' width='70' height='140'/><rect x='520' y='80' width='70' height='140'/></svg>`);
-
 export function buildHtml(data) {
   const s = data.standings;
   shortCounts = new Map();
@@ -435,8 +433,9 @@ export function buildHtml(data) {
   .hero {
     color: #fff; position: relative; overflow: hidden;
     background:
-      url("data:image/svg+xml,${PITCH}") center/cover no-repeat,
-      radial-gradient(1200px 400px at 85% -10%, rgb(255 255 255 / .14), transparent 60%),
+      linear-gradient(90deg, rgb(2 22 14 / .88) 0%, rgb(2 22 14 / .55) 55%, rgb(2 22 14 / .35) 100%),
+      linear-gradient(180deg, transparent 55%, rgb(2 22 14 / .6) 100%),
+      url("cancha.webp") center 40% / cover no-repeat,
       linear-gradient(135deg, var(--hero-1), var(--hero-2));
     padding: 18px 0 64px;
   }
