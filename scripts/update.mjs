@@ -359,6 +359,20 @@ async function main() {
   const nameById = new Map((squads?.teams ?? []).flatMap(t => t.players.map(p => [p.id, p.name])));
   for (const r of [...(scorers?.rows ?? []), ...(scorers?.all ?? [])]) if (nameById.has(r.playerId)) r.player = nameById.get(r.playerId);
 
+  // Asistencias: ESPN no las trae; se copian a mano de Transfermarkt (data/asistencias.json).
+  const assistsFile = await readJson(new URL('data/asistencias.json', ROOT), null);
+  let assists = null;
+  if (assistsFile?.teams) {
+    const all = Object.entries(assistsFile.teams).flatMap(([team, players]) => Object.entries(players).map(([player, n]) => ({ player, team, assists: n })))
+      .filter(r => r.assists > 0).sort((a, b) => b.assists - a.assists || a.player.localeCompare(b.player, 'es'));
+    const cut = all[9]?.assists ?? 0;
+    assists = { updated: assistsFile.updated, source: assistsFile.source, total: all.reduce((n, r) => n + r.assists, 0), rows: all.filter(r => r.assists >= cut).slice(0, 15) };
+    for (const t of squads?.teams ?? []) {
+      const byName = new Map(Object.entries(assistsFile.teams[t.name] ?? {}).map(([n, a]) => [normName(n), a]));
+      for (const p of t.players) p.assists = byName.get(normName(p.name)) ?? 0;
+    }
+  }
+
   const data = {
     source: 'ESPN (site.api.espn.com, liga crc.1)',
     generatedAt: new Date().toISOString(),
@@ -370,6 +384,7 @@ async function main() {
     results,
     upcoming,
     scorers,
+    assists,
     squads,
     history,
   };

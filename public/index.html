@@ -34,7 +34,7 @@
 <script>
   try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
   // Se decide la pestaña antes de pintar la página, para que no parpadee.
-  var TAB_OF = {"inicio":"inicio","tabla":"tabla","goleadores":"goleadores","plantillas":"plantillas","historia":"historia","zona":"inicio","resultados":"inicio","proximos":"inicio","posiciones":"tabla","puntos":"tabla","top10":"goleadores","jugadores":"plantillas","palmares":"historia"};
+  var TAB_OF = {"inicio":"inicio","tabla":"tabla","goleadores":"goleadores","plantillas":"plantillas","historia":"historia","zona":"inicio","resultados":"inicio","proximos":"inicio","posiciones":"tabla","puntos":"tabla","top10":"goleadores","asistencias":"goleadores","jugadores":"plantillas","palmares":"historia"};
   document.documentElement.dataset.tab = TAB_OF[location.hash.slice(1)] || 'inicio';
 </script>
 <style>
@@ -303,6 +303,7 @@
   .squad-table td.country span { vertical-align: middle; }
   .flag { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
   .goal-badge { display: inline-grid; place-items: center; min-width: 24px; height: 24px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; font-family: var(--display); font-weight: 800; font-size: .95rem; padding: 0 6px; }
+  .assist-badge { display: inline-grid; place-items: center; min-width: 24px; height: 24px; border-radius: 999px; border: 2px solid var(--accent); color: var(--accent); font-family: var(--display); font-weight: 800; font-size: .9rem; padding: 0 5px; }
   .squad-table tr.group th { text-align: left; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; color: var(--accent); padding-top: 16px; }
 
   /* Historia */
@@ -353,7 +354,7 @@
     <div class="hero-chips">
       <span class="hchip accent">Apertura 2026</span>
       <span class="hchip">Jornada <b>13</b></span>
-      <span class="hchip">Actualizado <b><time datetime="2026-10-29T00:29:20.703Z">28 oct, 18:29</time></b></span>
+      <span class="hchip">Actualizado <b><time datetime="2026-10-29T00:32:04.693Z">28 oct, 18:32</time></b></span>
     </div>
     <nav class="tabbar" aria-label="Secciones">
       <a class="tab-link" data-tab="inicio" href="#inicio"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Inicio</span></a><a class="tab-link" data-tab="tabla" href="#tabla"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><path d="M9 3v18"/></svg><span>Tabla</span></a><a class="tab-link" data-tab="goleadores" href="#goleadores"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m12 7 3.5 2.5-1.3 4h-4.4l-1.3-4z"/><path d="M12 3v4M20.5 9.5l-5 0M17 19.5l-2.8-6M7 19.5l2.8-6M3.5 9.5l5 0"/></svg><span>Goleadores</span></a><a class="tab-link" data-tab="plantillas" href="#plantillas"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 3 6l2 4 3-1v12h8V9l3 1 2-4-5-3a4 4 0 0 1-8 0z"/></svg><span>Plantillas</span></a><a class="tab-link" data-tab="historia" href="#historia"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg><span>Historia</span></a>
@@ -789,7 +790,46 @@
         <span class="who"><b>Mayron George</b><span class="muted">Sporting San José</span></span>
         <span class="goals">4</span></li></ol>
     <p class="note">Calculado a partir de los goles registrados por ESPN en 65 partidos (sin autogoles), con 4 goles corregidos a mano según las crónicas de los medios. Puede diferir levemente del conteo oficial.</p>
-    </section></div>
+    </section>
+    <section class="card"><div class="sec-head" id="asistencias"><span class="kicker">Top 10</span><h2>Asistencias</h2></div>
+    <ol class="scorer-list">
+      <li><span class="rank">1</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Luis Paradela</b><span class="muted">Saprissa</span></span>
+        <span class="goals">7</span></li>
+      <li><span class="rank">2</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Manuel Morán</b><span class="muted">Cartaginés</span></span>
+        <span class="goals">5</span></li>
+      <li><span class="rank">3</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>José González</b><span class="muted">Cartaginés</span></span>
+        <span class="goals">4</span></li>
+      <li><span class="rank">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Adrián Chévez</b><span class="muted">Sporting San José</span></span>
+        <span class="goals">3</span></li>
+      <li><span class="rank">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Creichel Pérez</b><span class="muted">Alajuelense</span></span>
+        <span class="goals">3</span></li>
+      <li><span class="rank">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Jefry Valverde</b><span class="muted">AD San Carlos</span></span>
+        <span class="goals">3</span></li>
+      <li><span class="rank">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131790.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Joel Campbell</b><span class="muted">Inter de San Carlos</span></span>
+        <span class="goals">3</span></li>
+      <li><span class="rank">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Juanpi</b><span class="muted">Alajuelense</span></span>
+        <span class="goals">3</span></li>
+      <li><span class="rank">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Kenneth Cerdas</b><span class="muted">AD San Carlos</span></span>
+        <span class="goals">3</span></li>
+      <li><span class="rank">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Mariano Torres</b><span class="muted">Saprissa</span></span>
+        <span class="goals">3</span></li>
+      <li><span class="rank">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Mayron George</b><span class="muted">Sporting San José</span></span>
+        <span class="goals">3</span></li>
+      <li><span class="rank">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'">
+        <span class="who"><b>Newton Williams</b><span class="muted">Saprissa</span></span>
+        <span class="goals">3</span></li></ol>
+    <p class="note">ESPN no registra asistencias: estas vienen de Transfermarkt y se cargan a mano (última vez: 28/10/2026), así que pueden ir atrasadas respecto a los goles.</p></section></div>
   </div>
   <div class="panel" data-tab="plantillas">
     <section class="card"><div class="sec-head" id="jugadores"><span class="kicker">Jugadores</span><h2>Plantillas</h2></div>
@@ -798,19 +838,20 @@
     
       <div class="squad" data-team="858">
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>Saprissa</strong>
-          <div class="squad-stats"><span><b>33</b> jugadores</span><span><b>26.1</b> edad prom.</span><span><b>5</b> extranjeros</span><span><b>23</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>33</b> jugadores</span><span><b>26.1</b> edad prom.</span><span><b>5</b> extranjeros</span><span><b>23</b> goles</span><span><b>20</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(4)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(4)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">13</span></td>
             <td class="player">Isaac Alfaro</td>
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -819,12 +860,14 @@
             <td>36</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">35</span></td>
             <td class="player">Ian O&#39;rourke</td>
             <td>18</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -833,16 +876,18 @@
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(13)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(13)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">3</span></td>
             <td class="player">Pablo Arboine</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -851,12 +896,14 @@
             <td>38</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">5</span></td>
             <td class="player">Joseph Mora</td>
             <td>33</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -865,12 +912,14 @@
             <td>37</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">15</span></td>
             <td class="player">Douglas Sequeira</td>
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -879,12 +928,14 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">21</span></td>
             <td class="player">Fidel Escobar</td>
             <td>31</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -893,6 +944,7 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">27</span></td>
@@ -900,12 +952,14 @@
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">42</span></td>
             <td class="player">Julián González</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -914,12 +968,14 @@
             <td>17</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">53</span></td>
             <td class="player">José Carvajal</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -928,16 +984,18 @@
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(8)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(8)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">8</span></td>
             <td class="player">David Guzmán</td>
             <td>36</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -946,6 +1004,7 @@
             <td>39</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina" title="Argentina" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Argentina</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">3</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">25</span></td>
@@ -953,6 +1012,7 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">26</span></td>
@@ -960,12 +1020,14 @@
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">3</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">31</span></td>
             <td class="player">Sebastián Padilla</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -974,6 +1036,7 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">41</span></td>
@@ -981,6 +1044,7 @@
             <td>17</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">50</span></td>
@@ -988,10 +1052,11 @@
             <td>18</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(8)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(8)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">7</span></td>
@@ -999,6 +1064,7 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
             <td class="pts"><span class="goal-badge">3</span></td>
+            <td class="pts"><span class="assist-badge">3</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">11</span></td>
@@ -1006,6 +1072,7 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">14</span></td>
@@ -1013,6 +1080,7 @@
             <td>37</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">19</span></td>
@@ -1020,6 +1088,7 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">23</span></td>
@@ -1027,6 +1096,7 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">7</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">24</span></td>
@@ -1034,6 +1104,7 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">4</span></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">28</span></td>
@@ -1041,12 +1112,14 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">49</span></td>
             <td class="player">Johnny Myrie</td>
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
         </tbody>
@@ -1055,13 +1128,13 @@
       </div>
       <div class="squad" data-team="7239" hidden>
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>Cartaginés</strong>
-          <div class="squad-stats"><span><b>29</b> jugadores</span><span><b>26.1</b> edad prom.</span><span><b>6</b> extranjeros</span><span><b>22</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>29</b> jugadores</span><span><b>26.1</b> edad prom.</span><span><b>6</b> extranjeros</span><span><b>22</b> goles</span><span><b>19</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(3)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(3)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">1</span></td>
@@ -1069,12 +1142,14 @@
             <td>35</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">33</span></td>
             <td class="player">Christopher Moya</td>
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1083,16 +1158,18 @@
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(10)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(10)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">2</span></td>
             <td class="player">Randal Cordero</td>
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1101,12 +1178,14 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">12</span></td>
             <td class="player">José Luis Quirós</td>
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1115,6 +1194,7 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">18</span></td>
@@ -1122,6 +1202,7 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">19</span></td>
@@ -1129,12 +1210,14 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">20</span></td>
             <td class="player">Diego Mesén</td>
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1143,12 +1226,14 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">38</span></td>
             <td class="player">Emmanuel Brenes</td>
             <td>18</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1157,10 +1242,11 @@
             <td>31</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(7)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(7)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">8</span></td>
@@ -1168,12 +1254,14 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">11</span></td>
             <td class="player">Leonardo Alfaro</td>
             <td>19</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1182,6 +1270,7 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">15</span></td>
@@ -1189,6 +1278,7 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">26</span></td>
@@ -1196,12 +1286,14 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">30</span></td>
             <td class="player">Andrey Mora</td>
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1210,10 +1302,11 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(9)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(9)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">6</span></td>
@@ -1221,6 +1314,7 @@
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">7</span></td>
@@ -1228,6 +1322,7 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">5</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">9</span></td>
@@ -1235,6 +1330,7 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">4</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">13</span></td>
@@ -1242,6 +1338,7 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/chi.png" alt="Chile" title="Chile" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Chile</span></td>
             <td class="pts"><span class="goal-badge">5</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">16</span></td>
@@ -1249,6 +1346,7 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">5</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">22</span></td>
@@ -1256,12 +1354,14 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="Estados Unidos" title="Estados Unidos" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Estados Unidos</span></td>
             <td class="pts"><span class="goal-badge">6</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">27</span></td>
             <td class="player">José Mora</td>
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1270,12 +1370,14 @@
             <td>19</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">39</span></td>
             <td class="player">Mauricio Villalobos</td>
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
         </tbody>
@@ -1284,19 +1386,20 @@
       </div>
       <div class="squad" data-team="20705" hidden>
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>Sporting San José</strong>
-          <div class="squad-stats"><span><b>25</b> jugadores</span><span><b>28.8</b> edad prom.</span><span><b>5</b> extranjeros</span><span><b>26</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>25</b> jugadores</span><span><b>28.8</b> edad prom.</span><span><b>5</b> extranjeros</span><span><b>26</b> goles</span><span><b>19</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(2)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(2)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">23</span></td>
             <td class="player">Leonel Moreira</td>
             <td>36</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1305,16 +1408,18 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(9)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(9)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">2</span></td>
             <td class="player">Yostin Salinas</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1323,12 +1428,14 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">4</span></td>
             <td class="player">Fabio Coronado</td>
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1337,12 +1444,14 @@
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">20</span></td>
             <td class="player">Ryan Bolaños</td>
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1351,6 +1460,7 @@
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">3</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">33</span></td>
@@ -1358,6 +1468,7 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">98</span></td>
@@ -1365,6 +1476,7 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">–</span></td>
@@ -1372,10 +1484,11 @@
             <td>36</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(5)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(5)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">6</span></td>
@@ -1383,6 +1496,7 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">5</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">8</span></td>
@@ -1390,6 +1504,7 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">10</span></td>
@@ -1397,6 +1512,7 @@
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
             <td class="pts"><span class="goal-badge">3</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">22</span></td>
@@ -1404,6 +1520,7 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">24</span></td>
@@ -1411,10 +1528,11 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(9)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(9)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">7</span></td>
@@ -1422,6 +1540,7 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">9</span></td>
@@ -1429,6 +1548,7 @@
             <td>33</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">4</span></td>
+            <td class="pts"><span class="assist-badge">3</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">11</span></td>
@@ -1436,6 +1556,7 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="Paraguay" title="Paraguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Paraguay</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">14</span></td>
@@ -1443,12 +1564,14 @@
             <td>41</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">16</span></td>
             <td class="player">Randy Ramírez</td>
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1457,6 +1580,7 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">21</span></td>
@@ -1464,12 +1588,14 @@
             <td>36</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">25</span></td>
             <td class="player">Kaden Farrier</td>
             <td>17</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1478,6 +1604,7 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">4</span></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
         </tbody>
           </table>
@@ -1485,19 +1612,20 @@
       </div>
       <div class="squad" data-team="2057" hidden>
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>Alajuelense</strong>
-          <div class="squad-stats"><span><b>30</b> jugadores</span><span><b>26.0</b> edad prom.</span><span><b>6</b> extranjeros</span><span><b>21</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>30</b> jugadores</span><span><b>26.0</b> edad prom.</span><span><b>6</b> extranjeros</span><span><b>21</b> goles</span><span><b>17</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(2)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(2)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">1</span></td>
             <td class="player">Bayron Mora</td>
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1506,16 +1634,18 @@
             <td>31</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/uru.png" alt="Uruguay" title="Uruguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Uruguay</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(13)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(13)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">2</span></td>
             <td class="player">Deylan Paz</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1524,12 +1654,14 @@
             <td>38</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">4</span></td>
             <td class="player">Guillermo Villalobos</td>
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1538,12 +1670,14 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">15</span></td>
             <td class="player">Farbod Samadian</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1552,6 +1686,7 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">21</span></td>
@@ -1559,6 +1694,7 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">22</span></td>
@@ -1566,12 +1702,14 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">24</span></td>
             <td class="player">Aarón Salazar</td>
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1580,12 +1718,14 @@
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">26</span></td>
             <td class="player">Fernando Piñar</td>
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1594,6 +1734,7 @@
             <td>18</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">42</span></td>
@@ -1601,10 +1742,11 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(7)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(7)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">5</span></td>
@@ -1612,12 +1754,14 @@
             <td>38</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">8</span></td>
             <td class="player">Malcom Pilone</td>
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina" title="Argentina" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Argentina</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1626,6 +1770,7 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/ven.png" alt="Venezuela" title="Venezuela" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Venezuela</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">3</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">14</span></td>
@@ -1633,12 +1778,14 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">29</span></td>
             <td class="player">Deylan Aguilar</td>
             <td>19</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1647,6 +1794,7 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">3</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">35</span></td>
@@ -1654,10 +1802,11 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(8)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(8)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">7</span></td>
@@ -1665,12 +1814,14 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">9</span></td>
             <td class="player">Ángel Zaldívar</td>
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1679,6 +1830,7 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">18</span></td>
@@ -1686,6 +1838,7 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"><span class="goal-badge">6</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">33</span></td>
@@ -1693,12 +1846,14 @@
             <td>31</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia" title="Colombia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Colombia</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">36</span></td>
             <td class="player">Isaac Badilla</td>
             <td>18</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1707,6 +1862,7 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">99</span></td>
@@ -1714,6 +1870,7 @@
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">6</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
         </tbody>
           </table>
@@ -1721,19 +1878,20 @@
       </div>
       <div class="squad" data-team="859" hidden>
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>AD San Carlos</strong>
-          <div class="squad-stats"><span><b>28</b> jugadores</span><span><b>26.8</b> edad prom.</span><span><b>9</b> extranjeros</span><span><b>15</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>28</b> jugadores</span><span><b>26.8</b> edad prom.</span><span><b>9</b> extranjeros</span><span><b>15</b> goles</span><span><b>12</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(3)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(3)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">23</span></td>
             <td class="player">José Vega</td>
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1742,6 +1900,7 @@
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">77</span></td>
@@ -1749,10 +1908,11 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(8)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(8)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">2</span></td>
@@ -1760,12 +1920,14 @@
             <td>31</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">3</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">4</span></td>
             <td class="player">Pablo Fonseca</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1774,12 +1936,14 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">16</span></td>
             <td class="player">Gerardo Castillo</td>
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1788,12 +1952,14 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">22</span></td>
             <td class="player">Jean Carlo Agüero</td>
             <td>33</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1802,6 +1968,7 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">92</span></td>
@@ -1809,16 +1976,18 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia" title="Colombia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Colombia</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(8)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(8)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">5</span></td>
             <td class="player">Christian Martínez</td>
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/slv.png" alt="El Salvador" title="El Salvador" width="20" height="14" loading="lazy" onerror="this.remove()"><span>El Salvador</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1827,12 +1996,14 @@
             <td>37</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">8</span></td>
             <td class="player">Emmanuel Hernández</td>
             <td>19</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1841,6 +2012,7 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">3</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">11</span></td>
@@ -1848,12 +2020,14 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">26</span></td>
             <td class="player">Osvaldo Rojas</td>
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1862,6 +2036,7 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">41</span></td>
@@ -1869,10 +2044,11 @@
             <td>17</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(9)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(9)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">9</span></td>
@@ -1880,12 +2056,14 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"><span class="goal-badge">5</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">15</span></td>
             <td class="player">Abraham Carmona</td>
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1894,12 +2072,14 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">20</span></td>
             <td class="player">Camilo Agualimpia</td>
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia" title="Colombia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Colombia</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1908,12 +2088,14 @@
             <td>38</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">27</span></td>
             <td class="player">Dylan Masís</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1922,12 +2104,14 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">38</span></td>
             <td class="player">Kendall Gómez</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1936,6 +2120,7 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
         </tbody>
           </table>
@@ -1943,19 +2128,20 @@
       </div>
       <div class="squad" data-team="7237" hidden>
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7237.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>Puntarenas FC</strong>
-          <div class="squad-stats"><span><b>29</b> jugadores</span><span><b>26.4</b> edad prom.</span><span><b>7</b> extranjeros</span><span><b>16</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>29</b> jugadores</span><span><b>26.4</b> edad prom.</span><span><b>7</b> extranjeros</span><span><b>16</b> goles</span><span><b>9</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(2)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(2)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">35</span></td>
             <td class="player">Daniel Rojas</td>
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1964,10 +2150,11 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(7)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(7)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">2</span></td>
@@ -1975,12 +2162,14 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">3</span></td>
             <td class="player">Kevin Fajardo</td>
             <td>37</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -1989,6 +2178,7 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">15</span></td>
@@ -1996,6 +2186,7 @@
             <td>31</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">17</span></td>
@@ -2003,6 +2194,7 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">25</span></td>
@@ -2010,6 +2202,7 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">41</span></td>
@@ -2017,10 +2210,11 @@
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(11)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(11)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">5</span></td>
@@ -2028,6 +2222,7 @@
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">6</span></td>
@@ -2035,12 +2230,14 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">7</span></td>
             <td class="player">Lucas Comachi</td>
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina" title="Argentina" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Argentina</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2049,6 +2246,7 @@
             <td>33</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">14</span></td>
@@ -2056,12 +2254,14 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">20</span></td>
             <td class="player">Berny Segura</td>
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2070,6 +2270,7 @@
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">33</span></td>
@@ -2077,12 +2278,14 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">50</span></td>
             <td class="player">Jaret Hernández</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2091,6 +2294,7 @@
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">–</span></td>
@@ -2098,10 +2302,11 @@
             <td>–</td>
             <td class="country"><span>–</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(9)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(9)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">10</span></td>
@@ -2109,12 +2314,14 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">11</span></td>
             <td class="player">Randy Taylor</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá" title="Panamá" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Panamá</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2123,6 +2330,7 @@
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">4</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">22</span></td>
@@ -2130,12 +2338,14 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">4</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">26</span></td>
             <td class="player">Jordy Hernández</td>
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2144,12 +2354,14 @@
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">36</span></td>
             <td class="player">Dylan Rivera</td>
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2158,6 +2370,7 @@
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">77</span></td>
@@ -2165,6 +2378,7 @@
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
         </tbody>
           </table>
@@ -2172,19 +2386,20 @@
       </div>
       <div class="squad" data-team="131790" hidden>
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131790.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>Inter de San Carlos</strong>
-          <div class="squad-stats"><span><b>31</b> jugadores</span><span><b>26.2</b> edad prom.</span><span><b>7</b> extranjeros</span><span><b>13</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>31</b> jugadores</span><span><b>26.2</b> edad prom.</span><span><b>7</b> extranjeros</span><span><b>13</b> goles</span><span><b>8</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(4)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(4)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">1</span></td>
             <td class="player">Aaron Cruz</td>
             <td>35</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2193,12 +2408,14 @@
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">30</span></td>
             <td class="player">Antonny Monreal</td>
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2207,16 +2424,18 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(9)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(9)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">2</span></td>
             <td class="player">Jonathan Chacón</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina" title="Argentina" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Argentina</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2225,12 +2444,14 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">13</span></td>
             <td class="player">Armando Rodríguez</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2239,6 +2460,7 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">19</span></td>
@@ -2246,12 +2468,14 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">27</span></td>
             <td class="player">José Arias</td>
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2260,12 +2484,14 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">42</span></td>
             <td class="player">Wilson González</td>
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia" title="Colombia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Colombia</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2274,16 +2500,18 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(9)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(9)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">5</span></td>
             <td class="player">Nendali Mendoza</td>
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2292,12 +2520,14 @@
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">7</span></td>
             <td class="player">Sebastián Castro</td>
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2306,6 +2536,7 @@
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina" title="Argentina" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Argentina</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">10</span></td>
@@ -2313,12 +2544,14 @@
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">5</span></td>
+            <td class="pts"><span class="assist-badge">3</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">12</span></td>
             <td class="player">Óscar Leal</td>
             <td>19</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2327,6 +2560,7 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">20</span></td>
@@ -2334,6 +2568,7 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">70</span></td>
@@ -2341,10 +2576,11 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(9)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(9)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">9</span></td>
@@ -2352,6 +2588,7 @@
             <td>33</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"><span class="goal-badge">3</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">11</span></td>
@@ -2359,12 +2596,14 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">17</span></td>
             <td class="player">Carlos Villegas</td>
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2373,12 +2612,14 @@
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">33</span></td>
             <td class="player">Andrés Gómez</td>
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2387,12 +2628,14 @@
             <td>19</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">43</span></td>
             <td class="player">Jefferson Sánchez</td>
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2401,12 +2644,14 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">79</span></td>
             <td class="player">Joseph Bolaños</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
         </tbody>
@@ -2415,19 +2660,20 @@
       </div>
       <div class="squad" data-team="862" hidden>
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/862.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>Herediano</strong>
-          <div class="squad-stats"><span><b>30</b> jugadores</span><span><b>27.2</b> edad prom.</span><span><b>6</b> extranjeros</span><span><b>13</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>30</b> jugadores</span><span><b>27.2</b> edad prom.</span><span><b>6</b> extranjeros</span><span><b>13</b> goles</span><span><b>7</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(3)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(3)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">1</span></td>
             <td class="player">Dany Carvajal</td>
             <td>37</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2436,6 +2682,7 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">92</span></td>
@@ -2443,16 +2690,18 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(7)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(7)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">5</span></td>
             <td class="player">Haxzel Quirós</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2461,12 +2710,14 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">20</span></td>
             <td class="player">Reggy Rivera</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2475,6 +2726,7 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">38</span></td>
@@ -2482,6 +2734,7 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">55</span></td>
@@ -2489,6 +2742,7 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">99</span></td>
@@ -2496,10 +2750,11 @@
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(10)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(10)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">8</span></td>
@@ -2507,6 +2762,7 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">10</span></td>
@@ -2514,12 +2770,14 @@
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">22</span></td>
             <td class="player">Aarón Murillo</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2528,12 +2786,14 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">26</span></td>
             <td class="player">Eduardo Juárez</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2542,6 +2802,7 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">28</span></td>
@@ -2549,6 +2810,7 @@
             <td>18</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">42</span></td>
@@ -2556,6 +2818,7 @@
             <td>–</td>
             <td class="country"><span>–</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">45</span></td>
@@ -2563,6 +2826,7 @@
             <td>18</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">88</span></td>
@@ -2570,10 +2834,11 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(10)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(10)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">11</span></td>
@@ -2581,12 +2846,14 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">25</span></td>
             <td class="player">Emerson Bravo</td>
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2595,6 +2862,7 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">33</span></td>
@@ -2602,12 +2870,14 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="Paraguay" title="Paraguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Paraguay</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">34</span></td>
             <td class="player">Jesús Henestrosa</td>
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2616,12 +2886,14 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">41</span></td>
             <td class="player">Joyfer Chal</td>
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2630,12 +2902,14 @@
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">97</span></td>
             <td class="player">Randall Leal</td>
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2644,6 +2918,7 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
           </table>
@@ -2651,19 +2926,20 @@
       </div>
       <div class="squad" data-team="132447" hidden>
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/132447.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>Escorpiones Belén</strong>
-          <div class="squad-stats"><span><b>37</b> jugadores</span><span><b>27.1</b> edad prom.</span><span><b>7</b> extranjeros</span><span><b>11</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>37</b> jugadores</span><span><b>27.1</b> edad prom.</span><span><b>7</b> extranjeros</span><span><b>11</b> goles</span><span><b>6</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(3)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(3)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">1</span></td>
             <td class="player">Ricardo Montenegro</td>
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2672,6 +2948,7 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nca.png" alt="Nicaragua" title="Nicaragua" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Nicaragua</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">76</span></td>
@@ -2679,16 +2956,18 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(12)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(12)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">4</span></td>
             <td class="player">Abraham Solera</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2697,12 +2976,14 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">6</span></td>
             <td class="player">Leandro Mena</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2711,12 +2992,14 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">12</span></td>
             <td class="player">Waylon Francis</td>
             <td>36</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2725,12 +3008,14 @@
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">16</span></td>
             <td class="player">Emanuel Salazar</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2739,12 +3024,14 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">23</span></td>
             <td class="player">Preston Kilwien</td>
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="Estados Unidos" title="Estados Unidos" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Estados Unidos</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2753,12 +3040,14 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">71</span></td>
             <td class="player">Carlos Ordóñez</td>
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia" title="Colombia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Colombia</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2767,16 +3056,18 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(9)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(9)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">3</span></td>
             <td class="player">José Arturo Tello</td>
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2785,6 +3076,7 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">10</span></td>
@@ -2792,12 +3084,14 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">18</span></td>
             <td class="player">Ricardo Peña</td>
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2806,12 +3100,14 @@
             <td>37</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">30</span></td>
             <td class="player">Néstor Monge</td>
             <td>36</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2820,6 +3116,7 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/cub.png" alt="Cuba" title="Cuba" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Cuba</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">80</span></td>
@@ -2827,6 +3124,7 @@
             <td>33</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">–</span></td>
@@ -2834,10 +3132,11 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(13)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(13)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">7</span></td>
@@ -2845,6 +3144,7 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">9</span></td>
@@ -2852,12 +3152,14 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">14</span></td>
             <td class="player">Elian Morales</td>
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2866,12 +3168,14 @@
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">19</span></td>
             <td class="player">Josué Serrano</td>
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2880,12 +3184,14 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">70</span></td>
             <td class="player">Esthuar Dávila</td>
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2894,6 +3200,7 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">77</span></td>
@@ -2901,6 +3208,7 @@
             <td>18</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">94</span></td>
@@ -2908,6 +3216,7 @@
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">99</span></td>
@@ -2915,12 +3224,14 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/bra.png" alt="Brasil" title="Brasil" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Brasil</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">–</span></td>
             <td class="player">Anderson Núñez</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2929,6 +3240,7 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
           </table>
@@ -2936,19 +3248,20 @@
       </div>
       <div class="squad" data-team="7234" hidden>
         <div class="squad-head"><img class="squad-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7234.png" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'"><div><strong>Pérez Zeledón</strong>
-          <div class="squad-stats"><span><b>30</b> jugadores</span><span><b>26.4</b> edad prom.</span><span><b>6</b> extranjeros</span><span><b>9</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>30</b> jugadores</span><span><b>26.4</b> edad prom.</span><span><b>6</b> extranjeros</span><span><b>9</b> goles</span><span><b>7</b> asist.</span></div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             
         <tbody>
-          <tr class="group"><th colspan="5">Porteros <span class="muted">(2)</span></th></tr>
+          <tr class="group"><th colspan="6">Porteros <span class="muted">(2)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">1</span></td>
             <td class="player">Bryan Segura</td>
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2957,16 +3270,18 @@
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Defensas <span class="muted">(11)</span></th></tr>
+          <tr class="group"><th colspan="6">Defensas <span class="muted">(11)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">3</span></td>
             <td class="player">Keymar McLean</td>
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2975,12 +3290,14 @@
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">5</span></td>
             <td class="player">William Fernández</td>
             <td>32</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -2989,6 +3306,7 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">11</span></td>
@@ -2996,12 +3314,14 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">12</span></td>
             <td class="player">Manuel Aguilar</td>
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -3010,12 +3330,14 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">17</span></td>
             <td class="player">Kenneth Carvajal</td>
             <td>29</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -3024,6 +3346,7 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">28</span></td>
@@ -3031,6 +3354,7 @@
             <td>33</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">31</span></td>
@@ -3038,10 +3362,11 @@
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Mediocampistas <span class="muted">(11)</span></th></tr>
+          <tr class="group"><th colspan="6">Mediocampistas <span class="muted">(11)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">10</span></td>
@@ -3049,12 +3374,14 @@
             <td>40</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"><span class="assist-badge">2</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">13</span></td>
             <td class="player">Luis Vega</td>
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México" title="México" width="20" height="14" loading="lazy" onerror="this.remove()"><span>México</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -3063,12 +3390,14 @@
             <td>30</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">19</span></td>
             <td class="player">Wílber Rentería</td>
             <td>34</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia" title="Colombia" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Colombia</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -3077,12 +3406,14 @@
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">21</span></td>
             <td class="player">Pablo Gamboa</td>
             <td>23</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -3091,12 +3422,14 @@
             <td>31</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/uru.png" alt="Uruguay" title="Uruguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Uruguay</span></td>
             <td class="pts"><span class="goal-badge">1</span></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">26</span></td>
             <td class="player">Ethan Drummond</td>
             <td>21</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -3105,12 +3438,14 @@
             <td>20</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">32</span></td>
             <td class="player">Joshua Canales</td>
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/hon.png" alt="Honduras" title="Honduras" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Honduras</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -3119,16 +3454,18 @@
             <td>22</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
         </tbody>
         <tbody>
-          <tr class="group"><th colspan="5">Delanteros <span class="muted">(6)</span></th></tr>
+          <tr class="group"><th colspan="6">Delanteros <span class="muted">(6)</span></th></tr>
           
           <tr>
             <td class="num"><span class="jersey">8</span></td>
             <td class="player">Erick Marín</td>
             <td>24</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -3137,6 +3474,7 @@
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">3</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">62</span></td>
@@ -3144,12 +3482,14 @@
             <td>25</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"><span class="goal-badge">2</span></td>
+            <td class="pts"><span class="assist-badge">1</span></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">70</span></td>
             <td class="player">Cristopher Solano</td>
             <td>28</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
           <tr>
@@ -3158,12 +3498,14 @@
             <td>27</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica" title="Costa Rica" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Costa Rica</span></td>
             <td class="pts"></td>
+            <td class="pts"></td>
           </tr>
           <tr>
             <td class="num"><span class="jersey">–</span></td>
             <td class="player">Nicolás Morínigo</td>
             <td>26</td>
             <td class="country"><img class="flag" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="Paraguay" title="Paraguay" width="20" height="14" loading="lazy" onerror="this.remove()"><span>Paraguay</span></td>
+            <td class="pts"></td>
             <td class="pts"></td>
           </tr>
         </tbody>
@@ -3212,7 +3554,7 @@
 </main>
 <footer class="wrap">
   <p><a class="wa-link" href="https://wa.me/?text=Tabla%2C%20resultados%2C%20goleadores%20y%20plantillas%20de%20la%20Primera%20Divisi%C3%B3n%20de%20Costa%20Rica%20%F0%9F%87%A8%F0%9F%87%B7%E2%9A%BD%0Ahttps%3A%2F%2Fticofutbol.github.io%2FFutbol-CR%2F" target="_blank" rel="noopener">Compartir por WhatsApp</a></p>
-  Fuente: ESPN (site.api.espn.com, liga crc.1). Última actualización: 28 de octubre de 2026 a las 18:29 (hora de Costa Rica).
+  Fuente: ESPN (site.api.espn.com, liga crc.1). Última actualización: 28 de octubre de 2026 a las 18:32 (hora de Costa Rica).
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>

@@ -21,7 +21,7 @@ const TABS = [
 const TAB_OF = {
   ...Object.fromEntries(TABS.map(([id]) => [id, id])),
   zona: 'inicio', resultados: 'inicio', proximos: 'inicio',
-  posiciones: 'tabla', puntos: 'tabla', top10: 'goleadores', jugadores: 'plantillas', palmares: 'historia',
+  posiciones: 'tabla', puntos: 'tabla', top10: 'goleadores', asistencias: 'goleadores', jugadores: 'plantillas', palmares: 'historia',
 };
 const SHARE_TEXT ='Tabla, resultados, goleadores y plantillas de la Primera División de Costa Rica 🇨🇷⚽';
 
@@ -230,6 +230,22 @@ function scorersSection(s, teamsByName) {
     ${staleNote(s)}`;
 }
 
+function assistsSection(a, teamsByName) {
+  if (!a?.rows?.length) return empty('Asistencias no disponibles.');
+  let rank = 0, prev = null;
+  const rows = a.rows.map((r, i) => {
+    if (r.assists !== prev) { rank = i + 1; prev = r.assists; }
+    return `
+      <li><span class="rank">${rank}</span>${logo(teamsByName.get(r.team), 22)}
+        <span class="who"><b>${esc(r.player)}</b><span class="muted">${esc(r.team)}</span></span>
+        <span class="goals">${r.assists}</span></li>`;
+  }).join('');
+  const [y, m, d] = a.updated.split('-');
+  return `
+    <ol class="scorer-list">${rows}</ol>
+    <p class="note">ESPN no registra asistencias: estas vienen de ${esc(a.source)} y se cargan a mano (última vez: ${d}/${m}/${y}), así que pueden ir atrasadas respecto a los goles.</p>`;
+}
+
 /* ---------- Plantillas ---------- */
 
 const POSITION_NAMES = { G: 'Porteros', D: 'Defensas', M: 'Mediocampistas', F: 'Delanteros' };
@@ -258,24 +274,26 @@ function squadsSection(sq) {
             <td>${p.age ?? '–'}</td>
             <td class="country">${p.flag ? `<img class="flag" src="${esc(p.flag)}" alt="${esc(country(p.country))}" title="${esc(country(p.country))}" width="20" height="14" loading="lazy" onerror="this.remove()">` : ''}<span>${esc(country(p.country) ?? '–')}</span></td>
             <td class="pts">${p.goals ? `<span class="goal-badge">${p.goals}</span>` : ''}</td>
+            <td class="pts">${p.assists ? `<span class="assist-badge">${p.assists}</span>` : ''}</td>
           </tr>`).join('');
       return `
         <tbody>
-          <tr class="group"><th colspan="5">${title} <span class="muted">(${players.length})</span></th></tr>
+          <tr class="group"><th colspan="6">${title} <span class="muted">(${players.length})</span></th></tr>
           ${rows}
         </tbody>`;
     }).join('');
     const goals = t.players.reduce((n, p) => n + p.goals, 0);
+    const assists = t.players.reduce((n, p) => n + (p.assists ?? 0), 0);
     const ages = t.players.filter(p => p.age).map(p => p.age);
     const avgAge = ages.length ? (ages.reduce((a, b) => a + b, 0) / ages.length).toFixed(1) : '–';
     const foreign = t.players.filter(p => p.country && p.country !== 'Costa Rica').length;
     return `
       <div class="squad" data-team="${esc(t.id)}"${i === 0 ? '' : ' hidden'}>
         <div class="squad-head">${logo(t, 48, 'squad-logo')}<div><strong>${esc(t.name)}</strong>
-          <div class="squad-stats"><span><b>${t.players.length}</b> jugadores</span><span><b>${avgAge}</b> edad prom.</span><span><b>${foreign}</b> extranjeros</span><span><b>${goals}</b> goles</span></div></div></div>
+          <div class="squad-stats"><span><b>${t.players.length}</b> jugadores</span><span><b>${avgAge}</b> edad prom.</span><span><b>${foreign}</b> extranjeros</span><span><b>${goals}</b> goles</span>${assists ? `<span><b>${assists}</b> asist.</span>` : ''}</div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
-            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th></tr></thead>
+            <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
             ${groups}
           </table>
         </div>
@@ -636,6 +654,7 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   .squad-table td.country span { vertical-align: middle; }
   .flag { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
   .goal-badge { display: inline-grid; place-items: center; min-width: 24px; height: 24px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; font-family: var(--display); font-weight: 800; font-size: .95rem; padding: 0 6px; }
+  .assist-badge { display: inline-grid; place-items: center; min-width: 24px; height: 24px; border-radius: 999px; border: 2px solid var(--accent); color: var(--accent); font-family: var(--display); font-weight: 800; font-size: .9rem; padding: 0 5px; }
   .squad-table tr.group th { text-align: left; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; color: var(--accent); padding-top: 16px; }
 
   /* Historia */
@@ -710,7 +729,8 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
     </div>
   </div>
   <div class="panel" data-tab="goleadores">
-    <div class="grid narrow"><section class="card">${sectionHead('top10', 'Top 10', 'Goleadores')}${scorersSection(data.scorers, teamsByName)}</section></div>
+    <div class="grid narrow"><section class="card">${sectionHead('top10', 'Top 10', 'Goleadores')}${scorersSection(data.scorers, teamsByName)}</section>
+    <section class="card">${sectionHead('asistencias', 'Top 10', 'Asistencias')}${assistsSection(data.assists, teamsByName)}</section></div>
   </div>
   <div class="panel" data-tab="plantillas">
     <section class="card">${sectionHead('jugadores', 'Jugadores', 'Plantillas')}${squadsSection(data.squads)}</section>

@@ -1,0 +1,110 @@
+{
+  "_info": "Asistencias copiadas a mano de Transfermarkt; ESPN no las trae. No se actualizan solas: hay que volver a copiarlas. Nombres como en Transfermarkt.",
+  "updated": "2026-10-28",
+  "source": "Transfermarkt",
+  "teams": {
+    "Saprissa": {
+      "Luis Paradela": 7,
+      "Orlando Sinclair": 2,
+      "Newton Williams": 3,
+      "Jefferson Brenes": 1,
+      "Mariano Torres": 3,
+      "Gerson Torres": 1,
+      "Kendall Waston": 1,
+      "Keyshwen Arboine": 1,
+      "Gerald Taylor": 1,
+      "Samir Taylor": 1
+    },
+    "Inter de San Carlos": {
+      "Joel Campbell": 3,
+      "Wilmer Azofeifa": 1,
+      "Rachid Chirino": 1,
+      "Randy Vega": 1,
+      "Carlos Martínez": 1,
+      "Yamir Villan": 1
+    },
+    "Alajuelense": {
+      "Ronaldo Cisneros": 1,
+      "Kenyel Michel": 1,
+      "Juanpi": 3,
+      "Creichel Pérez": 3,
+      "John Ruiz": 1,
+      "Celso Borges": 2,
+      "Ronald Matarrita": 2,
+      "Giancarlo González": 1,
+      "Roan Wilson": 1,
+      "Yeison Molina": 1,
+      "Ethan Barley": 1,
+      "Yerlan Sosa": 1
+    },
+    "Sporting San José": {
+      "Mayron George": 3,
+      "Joshua Navarro": 2,
+      "José Pinto": 2,
+      "Daniel Colindres": 1,
+      "Marcos Ureña": 2,
+      "Youstin Salas": 2,
+      "Adrián Chévez": 3,
+      "Ariel Soto": 1,
+      "Carlos Pineda": 1,
+      "Eduardo Pastrana": 1,
+      "Ignacio Gómez": 1
+    },
+    "Cartaginés": {
+      "Juan Carlos Gaete": 1,
+      "Geancarlo Castro": 1,
+      "José González": 4,
+      "Manuel Morán": 5,
+      "Douglas López": 2,
+      "Bernald Alfaro": 1,
+      "Carlos Barahona": 1,
+      "Kevin Briceño": 1,
+      "Luis Flores": 1,
+      "Diego González": 1,
+      "Gian Mauro Morera": 1
+    },
+    "Puntarenas FC": {
+      "Doryan Rodríguez": 1,
+      "Dariel Castrillo": 1,
+      "Pablo Álvarez": 1,
+      "Raheem Cole": 2,
+      "Ulises Segura": 1,
+      "Wesly Decas": 1,
+      "Walter Cortés": 1,
+      "Kliver Gómez": 1,
+      "Ismael Mairena": 1
+    },
+    "AD San Carlos": {
+      "Kenneth Cerdas": 3,
+      "Roberto Córdoba": 1,
+      "Jeikel Venegas": 2,
+      "Jefry Valverde": 3,
+      "Raúl Vidal": 1,
+      "Jordy Evans": 2
+    },
+    "Pérez Zeledón": {
+      "José Alvarado": 1,
+      "Axel Amador": 1,
+      "Marvin Angulo": 2,
+      "Luis José Hernández": 1,
+      "Barlon Sequeira": 1,
+      "Alejandro Porras": 1
+    },
+    "Herediano": {
+      "Ronaldo Araya": 2,
+      "Elías Aguilar": 1,
+      "Darril Araya": 2,
+      "Marcel Hernández": 1,
+      "Getsel Montes": 1,
+      "Abner Hudson": 1
+    },
+    "Escorpiones Belén": {
+      "Deyver Vega": 1,
+      "Danilo Pimpinati": 1,
+      "Christian Muñoz": 1,
+      "Dylan Flores": 1,
+      "Greivin Fonseca": 1,
+      "Abner Hidalgo": 1
+    }
+  }
+}
