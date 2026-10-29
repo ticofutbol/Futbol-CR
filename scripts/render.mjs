@@ -435,7 +435,7 @@ export function buildHtml(data) {
     background:
       linear-gradient(90deg, rgb(2 22 14 / .88) 0%, rgb(2 22 14 / .55) 55%, rgb(2 22 14 / .35) 100%),
       linear-gradient(180deg, transparent 55%, rgb(2 22 14 / .6) 100%),
-      url("cancha.webp") center 40% / cover no-repeat,
+      url("cancha.jpg") center 40% / cover no-repeat,
       linear-gradient(135deg, var(--hero-1), var(--hero-2));
     padding: 18px 0 64px;
   }
