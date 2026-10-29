@@ -281,18 +281,29 @@ function applyManualSquad(players, manualTeam, scorers, teamName) {
     let p = findEspn(m);
     if (p) {
       used.add(p);
+      p.name = m.name; // ESPN suele traer el nombre completo con apellidos; se muestra el conocido
       if (m.jersey != null) p.jersey = String(m.jersey);
       if (m.position) p.position = m.position;
       if (country) { p.country = country; p.flag = flagUrl(country) ?? p.flag; }
       p.age ??= m.age;
     } else {
       const g = goalsByName.get(normName(m.name));
-      players.push({
+      used.add(players[players.push({
         id: `tm-${normName(m.name).replace(/[^a-z0-9]+/g, '-')}`, jersey: m.jersey != null ? String(m.jersey) : null, name: m.name,
         position: m.position ?? 'F', age: m.age, country, flag: flagUrl(country),
         goals: g?.goals ?? 0, penalties: g?.penalties ?? 0, added: true,
-      });
+      }) - 1]);
     }
+  }
+  // La lista de Transfermarkt manda: los de ESPN que no están en ella (casi siempre juveniles)
+  // solo se quedan si ya anotaron en el torneo.
+  // Nombre y primer apellido, como en Transfermarkt ("Wilson Alberto Hernández González" → "Wilson Hernández").
+  for (let i = players.length - 1; i >= 0; i--) {
+    const p = players[i];
+    if (used.has(p)) continue;
+    if (!p.goals) { players.splice(i, 1); continue; }
+    const w = p.name.split(' ');
+    if (w.length >= 4) p.name = `${w[0]} ${w[2]}`;
   }
 }
 
