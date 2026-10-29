@@ -295,6 +295,17 @@
           "countries": [
             "Costa Rica"
           ]
+        },
+        {
+          "jersey": 38,
+          "name": "Ismael Mairena",
+          "espn": "Ismael André Mairena Jiménez",
+          "position": "D",
+          "positionText": "Defensa",
+          "age": 18,
+          "countries": [
+            "Costa Rica"
+          ]
         }
       ]
     },
@@ -2167,6 +2178,15 @@
             "Costa Rica",
             "Nicaragua"
           ]
+        },
+        {
+          "jersey": 44,
+          "name": "Ethan Barley",
+          "espn": "Ethan Barley",
+          "position": "F",
+          "positionText": "Delantero centro",
+          "age": 17,
+          "countries": []
         }
       ]
     },

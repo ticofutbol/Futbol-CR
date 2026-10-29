@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-29T00:33:05.896Z",
-  "lastSuccessAt": "2026-10-29T00:33:05.896Z",
+  "generatedAt": "2026-10-29T00:36:38.631Z",
+  "lastSuccessAt": "2026-10-29T00:36:38.632Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-29T00:33:04.752Z",
+    "updatedAt": "2026-10-29T00:36:35.964Z",
     "stale": false
   },
   "results": {
@@ -2077,7 +2077,7 @@
         }
       }
     },
-    "updatedAt": "2026-10-29T00:33:04.920Z",
+    "updatedAt": "2026-10-29T00:36:36.439Z",
     "stale": false
   },
   "upcoming": {
@@ -2925,7 +2925,7 @@
         }
       }
     ],
-    "updatedAt": "2026-10-29T00:33:05.749Z",
+    "updatedAt": "2026-10-29T00:36:38.089Z",
     "stale": false
   },
   "scorers": {
@@ -3622,7 +3622,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-29T00:33:05.752Z",
+    "updatedAt": "2026-10-29T00:36:38.098Z",
     "stale": false
   },
   "assists": {
@@ -5118,6 +5118,18 @@
             "assists": 0
           },
           {
+            "id": "404042",
+            "jersey": "44",
+            "name": "Ethan Barley",
+            "position": "F",
+            "age": 17,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
             "id": "352169",
             "jersey": "99",
             "name": "Kenyel Michel",
@@ -5573,6 +5585,18 @@
             "name": "Kliver Gómez",
             "position": "D",
             "age": 26,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "3099997",
+            "jersey": "38",
+            "name": "Ismael Mairena",
+            "position": "D",
+            "age": 18,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -7406,7 +7430,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-29T00:33:05.892Z",
+    "updatedAt": "2026-10-29T00:36:38.627Z",
     "stale": false
   },
   "history": {
