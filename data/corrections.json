@@ -1,5 +1,5 @@
 {
-  "_info": "Correcciones manuales a los goles de ESPN. Cada una se aplica solo si ESPN sigue mostrando al jugador 'from' en ese partido y minuto; si ESPN lo corrige, se ignora sola.",
+  "_info": "Correcciones manuales a los goles de ESPN. Cada una se aplica solo si ESPN sigue mostrando al jugador 'from' en ese partido y minuto; si ESPN lo corrige, se ignora sola. En 'notes' van aclaraciones que se muestran debajo de un partido.",
   "goals": [
     {
       "event": "401876870",
@@ -57,5 +57,8 @@
       },
       "source": "Diario Extra y La Nación: el 1-1 al 15' fue de Ian Fernández en su debut."
     }
-  ]
+  ],
+  "notes": {
+    "401876883": "Ganado en la mesa: San Carlos no pudo jugar porque tenía la licencia suspendida."
+  }
 }

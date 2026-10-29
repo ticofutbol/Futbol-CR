@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-29T12:26:18.837Z",
-  "lastSuccessAt": "2026-10-29T12:26:18.837Z",
+  "generatedAt": "2026-10-29T20:37:35.054Z",
+  "lastSuccessAt": "2026-10-29T20:37:35.054Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-29T12:26:17.804Z",
+    "updatedAt": "2026-10-29T20:37:31.233Z",
     "stale": false
   },
   "results": {
@@ -196,7 +196,15 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "90'+4'",
+            "player": "Anthony Hernández",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876835",
@@ -220,7 +228,25 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "1"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "39'",
+            "player": "Kenneth Cerdas",
+            "side": "home"
+          },
+          {
+            "minute": "43'",
+            "player": "Raúl Vidal",
+            "side": "home"
+          },
+          {
+            "minute": "69'",
+            "player": "Mariano Torres",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876834",
@@ -244,7 +270,31 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "1"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "1'",
+            "player": "Nick Bennette",
+            "side": "home"
+          },
+          {
+            "minute": "52'",
+            "player": "Allan Cruz",
+            "side": "home"
+          },
+          {
+            "minute": "62'",
+            "player": "Geancarlo Castro",
+            "side": "away"
+          },
+          {
+            "minute": "73'",
+            "player": "Elías Aguilar",
+            "side": "home",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876891",
@@ -268,7 +318,30 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "1"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "31'",
+            "player": "Érick Torres",
+            "side": "away"
+          },
+          {
+            "minute": "72'",
+            "player": "Kevin Cabezas",
+            "side": "home"
+          },
+          {
+            "minute": "75'",
+            "player": "Wilson Hernández",
+            "side": "home"
+          },
+          {
+            "minute": "90'",
+            "player": "Pablo Álvarez",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876832",
@@ -292,7 +365,40 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "4"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "31'",
+            "player": "Mayron George",
+            "side": "away"
+          },
+          {
+            "minute": "45'+1'",
+            "player": "Deyver Vega",
+            "side": "home"
+          },
+          {
+            "minute": "57'",
+            "player": "Mayron George",
+            "side": "away"
+          },
+          {
+            "minute": "61'",
+            "player": "Mayron George",
+            "side": "away"
+          },
+          {
+            "minute": "90'+2'",
+            "player": "Josimar Méndez",
+            "side": "away"
+          },
+          {
+            "minute": "90'+5'",
+            "player": "Raúl López",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876838",
@@ -316,7 +422,25 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "2"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "1'",
+            "player": "Doryan Rodríguez",
+            "side": "away"
+          },
+          {
+            "minute": "15'",
+            "player": "Ian Fernández",
+            "side": "home"
+          },
+          {
+            "minute": "86'",
+            "player": "Doryan Rodríguez",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876836",
@@ -340,7 +464,41 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "3"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "8'",
+            "player": "Alexander López",
+            "side": "home"
+          },
+          {
+            "minute": "25'",
+            "player": "Joshua Navarro",
+            "side": "home"
+          },
+          {
+            "minute": "27'",
+            "player": "Jeikel Venegas",
+            "side": "away"
+          },
+          {
+            "minute": "31'",
+            "player": "Joshua Navarro",
+            "side": "home"
+          },
+          {
+            "minute": "54'",
+            "player": "Yosel Piedra",
+            "side": "away"
+          },
+          {
+            "minute": "80'",
+            "player": "Roberto Córdoba",
+            "side": "away",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876837",
@@ -364,7 +522,26 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "3"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "69'",
+            "player": "Daniel González",
+            "side": "away"
+          },
+          {
+            "minute": "71'",
+            "player": "Allan Cruz",
+            "side": "away"
+          },
+          {
+            "minute": "75'",
+            "player": "Elías Aguilar",
+            "side": "away",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876839",
@@ -388,7 +565,16 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "44'",
+            "player": "Sebastián Acuña",
+            "side": "home",
+            "og": true
+          }
+        ]
       },
       {
         "id": "401876892",
@@ -412,7 +598,35 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "3"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "16'",
+            "player": "Juanpi",
+            "side": "away"
+          },
+          {
+            "minute": "21'",
+            "player": "Rachid Chirino",
+            "side": "home"
+          },
+          {
+            "minute": "23'",
+            "player": "Juanpi",
+            "side": "away"
+          },
+          {
+            "minute": "59'",
+            "player": "Wilmer Azofeifa",
+            "side": "home"
+          },
+          {
+            "minute": "70'",
+            "player": "Kenyel Michel",
+            "side": "away"
+          }
+        ]
       }
     ],
     "all": [
@@ -438,7 +652,15 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "90'+4'",
+            "player": "Anthony Hernández",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876835",
@@ -462,7 +684,25 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "1"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "39'",
+            "player": "Kenneth Cerdas",
+            "side": "home"
+          },
+          {
+            "minute": "43'",
+            "player": "Raúl Vidal",
+            "side": "home"
+          },
+          {
+            "minute": "69'",
+            "player": "Mariano Torres",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876834",
@@ -486,7 +726,31 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "1"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "1'",
+            "player": "Nick Bennette",
+            "side": "home"
+          },
+          {
+            "minute": "52'",
+            "player": "Allan Cruz",
+            "side": "home"
+          },
+          {
+            "minute": "62'",
+            "player": "Geancarlo Castro",
+            "side": "away"
+          },
+          {
+            "minute": "73'",
+            "player": "Elías Aguilar",
+            "side": "home",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876891",
@@ -510,7 +774,30 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "1"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "31'",
+            "player": "Érick Torres",
+            "side": "away"
+          },
+          {
+            "minute": "72'",
+            "player": "Kevin Cabezas",
+            "side": "home"
+          },
+          {
+            "minute": "75'",
+            "player": "Wilson Hernández",
+            "side": "home"
+          },
+          {
+            "minute": "90'",
+            "player": "Pablo Álvarez",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876832",
@@ -534,7 +821,40 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "4"
-        }
+        },
+        "round": 13,
+        "goals": [
+          {
+            "minute": "31'",
+            "player": "Mayron George",
+            "side": "away"
+          },
+          {
+            "minute": "45'+1'",
+            "player": "Deyver Vega",
+            "side": "home"
+          },
+          {
+            "minute": "57'",
+            "player": "Mayron George",
+            "side": "away"
+          },
+          {
+            "minute": "61'",
+            "player": "Mayron George",
+            "side": "away"
+          },
+          {
+            "minute": "90'+2'",
+            "player": "Josimar Méndez",
+            "side": "away"
+          },
+          {
+            "minute": "90'+5'",
+            "player": "Raúl López",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876838",
@@ -558,7 +878,25 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "2"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "1'",
+            "player": "Doryan Rodríguez",
+            "side": "away"
+          },
+          {
+            "minute": "15'",
+            "player": "Ian Fernández",
+            "side": "home"
+          },
+          {
+            "minute": "86'",
+            "player": "Doryan Rodríguez",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876836",
@@ -582,7 +920,41 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "3"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "8'",
+            "player": "Alexander López",
+            "side": "home"
+          },
+          {
+            "minute": "25'",
+            "player": "Joshua Navarro",
+            "side": "home"
+          },
+          {
+            "minute": "27'",
+            "player": "Jeikel Venegas",
+            "side": "away"
+          },
+          {
+            "minute": "31'",
+            "player": "Joshua Navarro",
+            "side": "home"
+          },
+          {
+            "minute": "54'",
+            "player": "Yosel Piedra",
+            "side": "away"
+          },
+          {
+            "minute": "80'",
+            "player": "Roberto Córdoba",
+            "side": "away",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876837",
@@ -606,7 +978,26 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "3"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "69'",
+            "player": "Daniel González",
+            "side": "away"
+          },
+          {
+            "minute": "71'",
+            "player": "Allan Cruz",
+            "side": "away"
+          },
+          {
+            "minute": "75'",
+            "player": "Elías Aguilar",
+            "side": "away",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876839",
@@ -630,7 +1021,16 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "44'",
+            "player": "Sebastián Acuña",
+            "side": "home",
+            "og": true
+          }
+        ]
       },
       {
         "id": "401876892",
@@ -654,7 +1054,35 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "3"
-        }
+        },
+        "round": 12,
+        "goals": [
+          {
+            "minute": "16'",
+            "player": "Juanpi",
+            "side": "away"
+          },
+          {
+            "minute": "21'",
+            "player": "Rachid Chirino",
+            "side": "home"
+          },
+          {
+            "minute": "23'",
+            "player": "Juanpi",
+            "side": "away"
+          },
+          {
+            "minute": "59'",
+            "player": "Wilmer Azofeifa",
+            "side": "home"
+          },
+          {
+            "minute": "70'",
+            "player": "Kenyel Michel",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876842",
@@ -678,7 +1106,40 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
-        }
+        },
+        "round": 11,
+        "goals": [
+          {
+            "minute": "17'",
+            "player": "Sebastián Acuña",
+            "side": "home"
+          },
+          {
+            "minute": "26'",
+            "player": "Andrey Soto",
+            "side": "home"
+          },
+          {
+            "minute": "38'",
+            "player": "Jorkaeff Azofeifa",
+            "side": "home"
+          },
+          {
+            "minute": "55'",
+            "player": "Gerson Torres",
+            "side": "home"
+          },
+          {
+            "minute": "69'",
+            "player": "Kendall Waston",
+            "side": "home"
+          },
+          {
+            "minute": "78'",
+            "player": "Orlando Sinclair",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876841",
@@ -702,7 +1163,20 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "1"
-        }
+        },
+        "round": 11,
+        "goals": [
+          {
+            "minute": "8'",
+            "player": "Ronaldo Cisneros",
+            "side": "home"
+          },
+          {
+            "minute": "45'+6'",
+            "player": "Fernando Lesme",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876840",
@@ -726,7 +1200,35 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "4"
-        }
+        },
+        "round": 11,
+        "goals": [
+          {
+            "minute": "11'",
+            "player": "Deyver Vega",
+            "side": "away"
+          },
+          {
+            "minute": "21'",
+            "player": "Danilo Pimpinati",
+            "side": "away"
+          },
+          {
+            "minute": "28'",
+            "player": "Mauricio Núñez",
+            "side": "home"
+          },
+          {
+            "minute": "29'",
+            "player": "Danilo Pimpinati",
+            "side": "away"
+          },
+          {
+            "minute": "86'",
+            "player": "Rodolfo Montiel",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876893",
@@ -750,7 +1252,26 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "2"
-        }
+        },
+        "round": 11,
+        "goals": [
+          {
+            "minute": "31'",
+            "player": "Wilmer Azofeifa",
+            "side": "away"
+          },
+          {
+            "minute": "51'",
+            "player": "Yosel Piedra",
+            "side": "away",
+            "og": true
+          },
+          {
+            "minute": "56'",
+            "player": "Roberto Córdoba",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876843",
@@ -774,7 +1295,30 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "1"
-        }
+        },
+        "round": 11,
+        "goals": [
+          {
+            "minute": "29'",
+            "player": "José González",
+            "side": "home"
+          },
+          {
+            "minute": "45'+2'",
+            "player": "Yeltsin Tejeda",
+            "side": "away"
+          },
+          {
+            "minute": "68'",
+            "player": "Juan Carlos Gaete",
+            "side": "home"
+          },
+          {
+            "minute": "90'+5'",
+            "player": "Geancarlo Castro",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876846",
@@ -798,7 +1342,15 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
-        }
+        },
+        "round": 10,
+        "goals": [
+          {
+            "minute": "35'",
+            "player": "John Jairo Ruiz",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876847",
@@ -822,7 +1374,15 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "1"
-        }
+        },
+        "round": 10,
+        "goals": [
+          {
+            "minute": "5'",
+            "player": "Brian Martínez",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876845",
@@ -846,7 +1406,20 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "1"
-        }
+        },
+        "round": 10,
+        "goals": [
+          {
+            "minute": "45'",
+            "player": "Ronaldo Cisneros",
+            "side": "away"
+          },
+          {
+            "minute": "90'",
+            "player": "Dariel Castrillo",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876894",
@@ -870,7 +1443,20 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "1"
-        }
+        },
+        "round": 10,
+        "goals": [
+          {
+            "minute": "43'",
+            "player": "Joaquín Aguirre",
+            "side": "away"
+          },
+          {
+            "minute": "51'",
+            "player": "Érick Torres",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876844",
@@ -894,7 +1480,30 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "1"
-        }
+        },
+        "round": 10,
+        "goals": [
+          {
+            "minute": "10'",
+            "player": "Gabriel Leiva",
+            "side": "home"
+          },
+          {
+            "minute": "58'",
+            "player": "Alonso Hernández",
+            "side": "away"
+          },
+          {
+            "minute": "72'",
+            "player": "Joshua Navarro",
+            "side": "home"
+          },
+          {
+            "minute": "90'+1'",
+            "player": "Daniel Colindres",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876851",
@@ -918,7 +1527,15 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
-        }
+        },
+        "round": 9,
+        "goals": [
+          {
+            "minute": "28'",
+            "player": "Jefferson Rivera",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876895",
@@ -942,7 +1559,36 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
-        }
+        },
+        "round": 9,
+        "goals": [
+          {
+            "minute": "14'",
+            "player": "Ronaldo Cisneros",
+            "side": "home"
+          },
+          {
+            "minute": "20'",
+            "player": "Kenyel Michel",
+            "side": "home"
+          },
+          {
+            "minute": "64'",
+            "player": "Kenyel Michel",
+            "side": "home"
+          },
+          {
+            "minute": "80'",
+            "player": "Ronaldo Cisneros",
+            "side": "home",
+            "pen": true
+          },
+          {
+            "minute": "84'",
+            "player": "John Ruiz",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876850",
@@ -966,7 +1612,21 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
-        }
+        },
+        "round": 9,
+        "goals": [
+          {
+            "minute": "7'",
+            "player": "Orlando Sinclair",
+            "side": "home"
+          },
+          {
+            "minute": "90'+1'",
+            "player": "Mariano Torres",
+            "side": "home",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876848",
@@ -990,7 +1650,15 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
-        }
+        },
+        "round": 9,
+        "goals": [
+          {
+            "minute": "42'",
+            "player": "Kevin Cabezas",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876849",
@@ -1014,7 +1682,25 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "2"
-        }
+        },
+        "round": 9,
+        "goals": [
+          {
+            "minute": "25'",
+            "player": "José Pinto",
+            "side": "away"
+          },
+          {
+            "minute": "36'",
+            "player": "Axel Amador",
+            "side": "home"
+          },
+          {
+            "minute": "47'",
+            "player": "Gabriel Leiva",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876855",
@@ -1038,7 +1724,32 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "1"
-        }
+        },
+        "round": 8,
+        "goals": [
+          {
+            "minute": "12'",
+            "player": "Claudio Montero",
+            "side": "home",
+            "pen": true
+          },
+          {
+            "minute": "22'",
+            "player": "Farbod Samadian",
+            "side": "home",
+            "og": true
+          },
+          {
+            "minute": "72'",
+            "player": "Douglas López",
+            "side": "home"
+          },
+          {
+            "minute": "74'",
+            "player": "Ronaldo Cisneros",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876852",
@@ -1062,7 +1773,41 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "2"
-        }
+        },
+        "round": 8,
+        "goals": [
+          {
+            "minute": "2'",
+            "player": "Gabriel Leiva",
+            "side": "home"
+          },
+          {
+            "minute": "29'",
+            "player": "Andrey Soto",
+            "side": "away"
+          },
+          {
+            "minute": "30'",
+            "player": "Youstin Salas",
+            "side": "home"
+          },
+          {
+            "minute": "42'",
+            "player": "Mayron George",
+            "side": "home",
+            "pen": true
+          },
+          {
+            "minute": "64'",
+            "player": "Gabriel Leiva",
+            "side": "home"
+          },
+          {
+            "minute": "82'",
+            "player": "Ariel Rodríguez",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876854",
@@ -1086,7 +1831,20 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "2"
-        }
+        },
+        "round": 8,
+        "goals": [
+          {
+            "minute": "82'",
+            "player": "Keyner Brown",
+            "side": "away"
+          },
+          {
+            "minute": "89'",
+            "player": "Ronaldo Araya",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876896",
@@ -1110,7 +1868,20 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "1"
-        }
+        },
+        "round": 8,
+        "goals": [
+          {
+            "minute": "11'",
+            "player": "Dariel Castrillo",
+            "side": "away"
+          },
+          {
+            "minute": "90'",
+            "player": "Juan Luis Pérez",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876853",
@@ -1134,7 +1905,20 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "2"
-        }
+        },
+        "round": 8,
+        "goals": [
+          {
+            "minute": "11'",
+            "player": "Brian Martínez",
+            "side": "away"
+          },
+          {
+            "minute": "19'",
+            "player": "Brian Martínez",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876859",
@@ -1158,7 +1942,15 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
-        }
+        },
+        "round": 7,
+        "goals": [
+          {
+            "minute": "40'",
+            "player": "Brian Martínez",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876856",
@@ -1182,7 +1974,30 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "3"
-        }
+        },
+        "round": 7,
+        "goals": [
+          {
+            "minute": "7'",
+            "player": "Alonso Hernández",
+            "side": "away"
+          },
+          {
+            "minute": "35'",
+            "player": "Hiram Muñoz",
+            "side": "home"
+          },
+          {
+            "minute": "65'",
+            "player": "Geancarlo Castro",
+            "side": "away"
+          },
+          {
+            "minute": "73'",
+            "player": "Geancarlo Castro",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876857",
@@ -1206,7 +2021,20 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "2"
-        }
+        },
+        "round": 7,
+        "goals": [
+          {
+            "minute": "45'+3'",
+            "player": "Orlando Sinclair",
+            "side": "away"
+          },
+          {
+            "minute": "52'",
+            "player": "Sebastián Acuña",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876858",
@@ -1230,7 +2058,36 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "3"
-        }
+        },
+        "round": 7,
+        "goals": [
+          {
+            "minute": "5'",
+            "player": "José Alvarado",
+            "side": "away"
+          },
+          {
+            "minute": "33'",
+            "player": "Fernando Lesme",
+            "side": "home",
+            "pen": true
+          },
+          {
+            "minute": "67'",
+            "player": "Ronaldo Araya",
+            "side": "home"
+          },
+          {
+            "minute": "79'",
+            "player": "Axel Amador",
+            "side": "away"
+          },
+          {
+            "minute": "90'",
+            "player": "Marvin Angulo",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876897",
@@ -1254,7 +2111,21 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "2"
-        }
+        },
+        "round": 7,
+        "goals": [
+          {
+            "minute": "45'+2'",
+            "player": "Joel Campbell",
+            "side": "away",
+            "pen": true
+          },
+          {
+            "minute": "73'",
+            "player": "Joel Campbell",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876861",
@@ -1278,7 +2149,25 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "1"
-        }
+        },
+        "round": 6,
+        "goals": [
+          {
+            "minute": "34'",
+            "player": "Gerson Torres",
+            "side": "home"
+          },
+          {
+            "minute": "55'",
+            "player": "Andrey Soto",
+            "side": "home"
+          },
+          {
+            "minute": "58'",
+            "player": "Christian Muñoz",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876863",
@@ -1302,7 +2191,25 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "2"
-        }
+        },
+        "round": 6,
+        "goals": [
+          {
+            "minute": "39'",
+            "player": "Dariel Castrillo",
+            "side": "away"
+          },
+          {
+            "minute": "46'",
+            "player": "Jorman Aguilar",
+            "side": "home"
+          },
+          {
+            "minute": "90'+3'",
+            "player": "Amferny Sinclair",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876862",
@@ -1326,7 +2233,15 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
-        }
+        },
+        "round": 6,
+        "goals": [
+          {
+            "minute": "44'",
+            "player": "Alonso Hernández",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876860",
@@ -1350,7 +2265,20 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "1"
-        }
+        },
+        "round": 6,
+        "goals": [
+          {
+            "minute": "45'",
+            "player": "Ronaldo Cisneros",
+            "side": "away"
+          },
+          {
+            "minute": "49'",
+            "player": "Elián Quesada",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876898",
@@ -1374,7 +2302,20 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
-        }
+        },
+        "round": 6,
+        "goals": [
+          {
+            "minute": "5'",
+            "player": "Gabriel Leiva",
+            "side": "home"
+          },
+          {
+            "minute": "88'",
+            "player": "Joshua Navarro",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876866",
@@ -1398,7 +2339,15 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "1"
-        }
+        },
+        "round": 5,
+        "goals": [
+          {
+            "minute": "71'",
+            "player": "Jefferson Rivera",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876899",
@@ -1422,7 +2371,16 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
-        }
+        },
+        "round": 5,
+        "goals": [
+          {
+            "minute": "78'",
+            "player": "Joel Campbell",
+            "side": "home",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876867",
@@ -1446,7 +2404,25 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "3"
-        }
+        },
+        "round": 5,
+        "goals": [
+          {
+            "minute": "53'",
+            "player": "José Pinto",
+            "side": "away"
+          },
+          {
+            "minute": "67'",
+            "player": "Alexander López",
+            "side": "away"
+          },
+          {
+            "minute": "88'",
+            "player": "Daniel Colindres",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876865",
@@ -1470,7 +2446,36 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "4"
-        }
+        },
+        "round": 5,
+        "goals": [
+          {
+            "minute": "23'",
+            "player": "Rodolfo Montiel",
+            "side": "home",
+            "pen": true
+          },
+          {
+            "minute": "45'+2'",
+            "player": "Alonso Hernández",
+            "side": "away"
+          },
+          {
+            "minute": "70'",
+            "player": "Alonso Hernández",
+            "side": "away"
+          },
+          {
+            "minute": "79'",
+            "player": "Juan Carlos Gaete",
+            "side": "away"
+          },
+          {
+            "minute": "85'",
+            "player": "Juan Carlos Gaete",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876864",
@@ -1494,7 +2499,15 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
-        }
+        },
+        "round": 5,
+        "goals": [
+          {
+            "minute": "81'",
+            "player": "Doryan Rodríguez",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876868",
@@ -1518,7 +2531,20 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
-        }
+        },
+        "round": 4,
+        "goals": [
+          {
+            "minute": "2'",
+            "player": "Josimar Méndez",
+            "side": "home"
+          },
+          {
+            "minute": "4'",
+            "player": "Marcos Ureña",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876900",
@@ -1542,7 +2568,15 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "1"
-        }
+        },
+        "round": 4,
+        "goals": [
+          {
+            "minute": "9'",
+            "player": "Randy Vega",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876870",
@@ -1566,7 +2600,35 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "2"
-        }
+        },
+        "round": 4,
+        "goals": [
+          {
+            "minute": "13'",
+            "player": "Jefferson Brenes",
+            "side": "home"
+          },
+          {
+            "minute": "31'",
+            "player": "Alonso Hernández",
+            "side": "away"
+          },
+          {
+            "minute": "34'",
+            "player": "Jefferson Brenes",
+            "side": "home"
+          },
+          {
+            "minute": "77'",
+            "player": "Bancy Hernández",
+            "side": "home"
+          },
+          {
+            "minute": "88'",
+            "player": "Carlos Barahona",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876869",
@@ -1590,7 +2652,25 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "1"
-        }
+        },
+        "round": 4,
+        "goals": [
+          {
+            "minute": "28'",
+            "player": "Doryan Rodríguez",
+            "side": "away"
+          },
+          {
+            "minute": "41'",
+            "player": "Alexis Gamboa",
+            "side": "home"
+          },
+          {
+            "minute": "69'",
+            "player": "Kenyel Michel",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876871",
@@ -1614,7 +2694,16 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
-        }
+        },
+        "round": 4,
+        "goals": [
+          {
+            "minute": "62'",
+            "player": "Brian Martínez",
+            "side": "home",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876874",
@@ -1638,7 +2727,25 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "3"
-        }
+        },
+        "round": 3,
+        "goals": [
+          {
+            "minute": "33'",
+            "player": "Rashir Parkins",
+            "side": "away"
+          },
+          {
+            "minute": "66'",
+            "player": "Jeison Lucumi",
+            "side": "away"
+          },
+          {
+            "minute": "84'",
+            "player": "Kenyel Michel",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876901",
@@ -1662,7 +2769,21 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
-        }
+        },
+        "round": 3,
+        "goals": [
+          {
+            "minute": "13'",
+            "player": "Érick Torres",
+            "side": "home"
+          },
+          {
+            "minute": "65'",
+            "player": "Joel Campbell",
+            "side": "home",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876872",
@@ -1686,7 +2807,20 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "2"
-        }
+        },
+        "round": 3,
+        "goals": [
+          {
+            "minute": "35'",
+            "player": "Jefferson Brenes",
+            "side": "away"
+          },
+          {
+            "minute": "73'",
+            "player": "Jefferson Brenes",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876873",
@@ -1710,7 +2844,9 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
-        }
+        },
+        "round": 3,
+        "goals": []
       },
       {
         "id": "401876875",
@@ -1734,7 +2870,25 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "1"
-        }
+        },
+        "round": 3,
+        "goals": [
+          {
+            "minute": "52'",
+            "player": "José González",
+            "side": "home"
+          },
+          {
+            "minute": "62'",
+            "player": "Alexander López",
+            "side": "away"
+          },
+          {
+            "minute": "86'",
+            "player": "Geancarlo Castro",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876877",
@@ -1758,7 +2912,15 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
-        }
+        },
+        "round": 2,
+        "goals": [
+          {
+            "minute": "27'",
+            "player": "José Alvarado",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876885",
@@ -1782,7 +2944,21 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "1"
-        }
+        },
+        "round": 2,
+        "goals": [
+          {
+            "minute": "9'",
+            "player": "Yurguin Román",
+            "side": "away"
+          },
+          {
+            "minute": "22'",
+            "player": "Joel Campbell",
+            "side": "home",
+            "pen": true
+          }
+        ]
       },
       {
         "id": "401876879",
@@ -1806,7 +2982,25 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "1"
-        }
+        },
+        "round": 2,
+        "goals": [
+          {
+            "minute": "65'",
+            "player": "Newton Williams",
+            "side": "home"
+          },
+          {
+            "minute": "69'",
+            "player": "Newton Williams",
+            "side": "home"
+          },
+          {
+            "minute": "83'",
+            "player": "Kenneth Cerdas",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876878",
@@ -1830,7 +3024,25 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "1"
-        }
+        },
+        "round": 2,
+        "goals": [
+          {
+            "minute": "72'",
+            "player": "Anthony Hernández",
+            "side": "home"
+          },
+          {
+            "minute": "75'",
+            "player": "Raúl López",
+            "side": "away"
+          },
+          {
+            "minute": "90'+4'",
+            "player": "Alexis Gamboa",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876876",
@@ -1854,7 +3066,20 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "1"
-        }
+        },
+        "round": 2,
+        "goals": [
+          {
+            "minute": "37'",
+            "player": "Jaylon Hadden",
+            "side": "home"
+          },
+          {
+            "minute": "45'+6'",
+            "player": "Renzo Carballo",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876883",
@@ -1878,7 +3103,10 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "3"
-        }
+        },
+        "round": 1,
+        "goals": [],
+        "note": "Ganado en la mesa: San Carlos no pudo jugar porque tenía la licencia suspendida."
       },
       {
         "id": "401876880",
@@ -1902,7 +3130,20 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "1"
-        }
+        },
+        "round": 1,
+        "goals": [
+          {
+            "minute": "30'",
+            "player": "Renzo Carballo",
+            "side": "home"
+          },
+          {
+            "minute": "87'",
+            "player": "Kenyel Michel",
+            "side": "away"
+          }
+        ]
       },
       {
         "id": "401876884",
@@ -1926,7 +3167,31 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "1"
-        }
+        },
+        "round": 1,
+        "goals": [
+          {
+            "minute": "30'",
+            "player": "Juan Carlos Gaete",
+            "side": "home"
+          },
+          {
+            "minute": "47'",
+            "player": "Juan Carlos Gaete",
+            "side": "home"
+          },
+          {
+            "minute": "58'",
+            "player": "Kevin Briceño",
+            "side": "away",
+            "og": true
+          },
+          {
+            "minute": "78'",
+            "player": "Bernald Alfaro",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876881",
@@ -1950,7 +3215,40 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "1"
-        }
+        },
+        "round": 1,
+        "goals": [
+          {
+            "minute": "47'",
+            "player": "Orlando Sinclair",
+            "side": "home"
+          },
+          {
+            "minute": "55'",
+            "player": "José Alvarado",
+            "side": "away"
+          },
+          {
+            "minute": "59'",
+            "player": "Luis Paradela",
+            "side": "home"
+          },
+          {
+            "minute": "67'",
+            "player": "Luis Paradela",
+            "side": "home"
+          },
+          {
+            "minute": "70'",
+            "player": "Newton Williams",
+            "side": "home"
+          },
+          {
+            "minute": "82'",
+            "player": "Fabricio Urbina",
+            "side": "home"
+          }
+        ]
       },
       {
         "id": "401876882",
@@ -1974,7 +3272,20 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "1"
-        }
+        },
+        "round": 1,
+        "goals": [
+          {
+            "minute": "30'",
+            "player": "Dariel Castrillo",
+            "side": "away"
+          },
+          {
+            "minute": "45'+2'",
+            "player": "Santiago Vargas",
+            "side": "home"
+          }
+        ]
       }
     ],
     "form": {
@@ -2074,10 +3385,43 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
-        }
+        },
+        "round": 11,
+        "goals": [
+          {
+            "minute": "17'",
+            "player": "Sebastián Acuña",
+            "side": "home"
+          },
+          {
+            "minute": "26'",
+            "player": "Andrey Soto",
+            "side": "home"
+          },
+          {
+            "minute": "38'",
+            "player": "Jorkaeff Azofeifa",
+            "side": "home"
+          },
+          {
+            "minute": "55'",
+            "player": "Gerson Torres",
+            "side": "home"
+          },
+          {
+            "minute": "69'",
+            "player": "Kendall Waston",
+            "side": "home"
+          },
+          {
+            "minute": "78'",
+            "player": "Orlando Sinclair",
+            "side": "home"
+          }
+        ]
       }
     },
-    "updatedAt": "2026-10-29T12:26:18.018Z",
+    "updatedAt": "2026-10-29T20:37:32.057Z",
     "stale": false
   },
   "upcoming": {
@@ -2104,7 +3448,8 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876829",
@@ -2128,7 +3473,8 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876828",
@@ -2152,7 +3498,8 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876831",
@@ -2176,7 +3523,8 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876830",
@@ -2200,7 +3548,8 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876824",
@@ -2224,7 +3573,8 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
-        }
+        },
+        "round": 15
       },
       {
         "id": "401876825",
@@ -2248,7 +3598,8 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
-        }
+        },
+        "round": 15
       },
       {
         "id": "401876826",
@@ -2272,7 +3623,8 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
-        }
+        },
+        "round": 15
       },
       {
         "id": "401876889",
@@ -2296,7 +3648,8 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
-        }
+        },
+        "round": 15
       },
       {
         "id": "401876827",
@@ -2320,7 +3673,8 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
-        }
+        },
+        "round": 15
       }
     ],
     "all": [
@@ -2346,7 +3700,8 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876829",
@@ -2370,7 +3725,8 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876828",
@@ -2394,7 +3750,8 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876831",
@@ -2418,7 +3775,8 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876830",
@@ -2442,7 +3800,8 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
-        }
+        },
+        "round": 14
       },
       {
         "id": "401876824",
@@ -2466,7 +3825,8 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
-        }
+        },
+        "round": 15
       },
       {
         "id": "401876825",
@@ -2490,7 +3850,8 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
-        }
+        },
+        "round": 15
       },
       {
         "id": "401876826",
@@ -2514,7 +3875,8 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
-        }
+        },
+        "round": 15
       },
       {
         "id": "401876889",
@@ -2538,7 +3900,8 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
-        }
+        },
+        "round": 15
       },
       {
         "id": "401876827",
@@ -2562,7 +3925,8 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
-        }
+        },
+        "round": 15
       },
       {
         "id": "401876823",
@@ -2586,7 +3950,8 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
-        }
+        },
+        "round": 16
       },
       {
         "id": "401876820",
@@ -2610,7 +3975,8 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
-        }
+        },
+        "round": 16
       },
       {
         "id": "401876822",
@@ -2634,7 +4000,8 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
-        }
+        },
+        "round": 16
       },
       {
         "id": "401876821",
@@ -2658,7 +4025,8 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
-        }
+        },
+        "round": 16
       },
       {
         "id": "401876888",
@@ -2682,7 +4050,8 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
-        }
+        },
+        "round": 16
       },
       {
         "id": "401876819",
@@ -2706,7 +4075,8 @@
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
-        }
+        },
+        "round": 17
       },
       {
         "id": "401876818",
@@ -2730,7 +4100,8 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
-        }
+        },
+        "round": 17
       },
       {
         "id": "401876887",
@@ -2754,7 +4125,8 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
-        }
+        },
+        "round": 17
       },
       {
         "id": "401876817",
@@ -2778,7 +4150,8 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
-        }
+        },
+        "round": 17
       },
       {
         "id": "401876816",
@@ -2802,7 +4175,8 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
-        }
+        },
+        "round": 17
       },
       {
         "id": "401876815",
@@ -2826,7 +4200,8 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
-        }
+        },
+        "round": 18
       },
       {
         "id": "401876814",
@@ -2850,7 +4225,8 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
-        }
+        },
+        "round": 18
       },
       {
         "id": "401876813",
@@ -2874,7 +4250,8 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
-        }
+        },
+        "round": 18
       },
       {
         "id": "401876886",
@@ -2898,7 +4275,8 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
-        }
+        },
+        "round": 18
       },
       {
         "id": "401876812",
@@ -2922,10 +4300,11 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
-        }
+        },
+        "round": 18
       }
     ],
-    "updatedAt": "2026-10-29T12:26:18.553Z",
+    "updatedAt": "2026-10-29T20:37:34.248Z",
     "stale": false
   },
   "scorers": {
@@ -3622,7 +5001,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-29T12:26:18.556Z",
+    "updatedAt": "2026-10-29T20:37:34.256Z",
     "stale": false
   },
   "assists": {
@@ -7430,7 +8809,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-29T12:26:18.833Z",
+    "updatedAt": "2026-10-29T20:37:35.038Z",
     "stale": false
   },
   "history": {

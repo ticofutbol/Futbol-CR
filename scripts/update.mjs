@@ -210,6 +210,7 @@ async function fetchScorers(played) {
     corrections: played.reduce((n, m) => n + goalsOf(m.id).filter(g => g.corrected).length, 0),
     rows: rows.filter((r, i) => i < 10 || r.goals === cut).slice(0, 15),
     all: rows, // para cruzar con las plantillas
+    byMatch: Object.fromEntries(played.map(m => [m.id, goalsOf(m.id)])), // se pasa a cada partido y se borra en main()
   };
 }
 
@@ -358,6 +359,25 @@ async function main() {
   // Goleadores con el mismo nombre que en las plantillas (el de Transfermarkt, no el completo de ESPN).
   const nameById = new Map((squads?.teams ?? []).flatMap(t => t.players.map(p => [p.id, p.name])));
   for (const r of [...(scorers?.rows ?? []), ...(scorers?.all ?? [])]) if (nameById.has(r.playerId)) r.player = nameById.get(r.playerId);
+
+  // Jornadas: ESPN no las numera. Se deducen en orden de fecha: cada equipo juega una vez por jornada.
+  const allMatches = [...(results?.all ?? []), ...(upcoming?.all ?? [])].sort((a, b) => a.date.localeCompare(b.date));
+  const nextRound = {};
+  for (const m of allMatches) {
+    m.round = Math.max(nextRound[m.home.id] ?? 1, nextRound[m.away.id] ?? 1);
+    nextRound[m.home.id] = nextRound[m.away.id] = m.round + 1;
+  }
+  // Goles de cada partido (con las correcciones y los nombres de las plantillas) y notas como "ganado en la mesa".
+  const goalsByMatch = scorers?.byMatch;
+  if (scorers) delete scorers.byMatch;
+  const { notes = {} } = await readJson(CORRECTIONS, {});
+  for (const m of results?.all ?? []) {
+    if (goalsByMatch?.[m.id]) m.goals = goalsByMatch[m.id].map(g => ({
+      minute: g.minute, player: nameById.get(g.playerId) ?? g.player, side: g.team === m.home.name ? 'home' : 'away',
+      ...(/own/i.test(g.type) && { og: true }), ...(/penalty/i.test(g.type) && { pen: true }),
+    }));
+    if (notes[m.id]) m.note = notes[m.id];
+  }
 
   // Asistencias: ESPN no las trae; se copian a mano de Transfermarkt (data/asistencias.json).
   const assistsFile = await readJson(new URL('data/asistencias.json', ROOT), null);

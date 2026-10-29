@@ -13,6 +13,7 @@ const OG_VERSION = 1; // súbelo si cambias public/og.jpg, para que WhatsApp no 
 const TABS = [
   ['inicio', 'Inicio', '<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>'],
   ['tabla', 'Tabla', '<path d="M4 6h16M4 12h16M4 18h16"/><path d="M9 3v18"/>'],
+  ['jornadas', 'Jornadas', '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'],
   ['goleadores', 'Goleadores', '<circle cx="12" cy="12" r="9"/><path d="m12 7 3.5 2.5-1.3 4h-4.4l-1.3-4z"/><path d="M12 3v4M20.5 9.5l-5 0M17 19.5l-2.8-6M7 19.5l2.8-6M3.5 9.5l5 0"/>'],
   ['plantillas', 'Plantillas', '<path d="M8 3 3 6l2 4 3-1v12h8V9l3 1 2-4-5-3a4 4 0 0 1-8 0z"/>'],
   ['historia', 'Historia', '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>'],
@@ -20,7 +21,7 @@ const TABS = [
 // Cada #hash (pestaña o sección) apunta a la pestaña que lo contiene; incluye los links viejos de antes de las pestañas.
 const TAB_OF = {
   ...Object.fromEntries(TABS.map(([id]) => [id, id])),
-  zona: 'inicio', resultados: 'inicio', proximos: 'inicio', envivo: 'inicio',
+  zona: 'inicio', resultados: 'inicio', proximos: 'inicio', envivo: 'inicio', calendario: 'jornadas',
   posiciones: 'tabla', puntos: 'tabla', top10: 'goleadores', asistencias: 'goleadores', jugadores: 'plantillas', palmares: 'historia',
 };
 const SHARE_TEXT ='Tabla, resultados, goleadores y plantillas de la Primera División de Costa Rica 🇨🇷⚽';
@@ -59,7 +60,7 @@ const formPills = (form = []) => form.length
 /* ---------- Tarjetas destacadas ---------- */
 
 function kpis(data, teamsByName) {
-  const s = data.standings, sc = data.scorers, st = data.results?.stats, next = data.upcoming?.matches?.[0];
+  const s = data.standings, sc = data.scorers, next = data.upcoming?.matches?.[0];
   const cards = [];
   const leader = s?.rows?.[0];
   if (leader) cards.push(`
@@ -80,14 +81,15 @@ function kpis(data, teamsByName) {
       <span class="kpi-big">${top.goals}<small>goles</small></span>
     </div>`);
   }
-  if (st?.matches) {
-    const b = st.biggest;
+  const as = data.assists?.rows?.[0];
+  if (as) {
+    const tied = data.assists.rows.filter(r => r.assists === as.assists).length;
     cards.push(`
     <div class="kpi">
-      <span class="kpi-label">Goles del torneo</span>
-      <div class="kpi-main"><div><strong class="kpi-name">${(st.goals / st.matches).toFixed(2)} por partido</strong>
-      <span class="kpi-sub">${st.matches} partidos jugados${b ? ` · Mayor goleada: ${esc(label(b.home))} ${esc(b.home.score)}–${esc(b.away.score)} ${esc(label(b.away))}` : ''}</span></div></div>
-      <span class="kpi-big">${st.goals}<small>goles</small></span>
+      <span class="kpi-label">Máximo asistidor</span>
+      <div class="kpi-main">${logo(teamsByName.get(as.team), 44, 'kpi-logo')}<div><strong class="kpi-name">${esc(as.player)}</strong>
+      <span class="kpi-sub">${esc(as.team)}${tied > 1 ? ` · empatado con ${tied - 1} más` : ''}</span></div></div>
+      <span class="kpi-big">${as.assists}<small>asist.</small></span>
     </div>`);
   }
   if (next) cards.push(`
@@ -164,24 +166,63 @@ function pointsChart(s) {
 function matchList(sec, kind) {
   const list = sec?.matches ?? [];
   if (!list.length) return empty(kind === 'results' ? 'Sin resultados recientes.' : 'No hay partidos programados.');
-  const items = list.map(m => {
-    const played = kind === 'results';
-    const hs = Number(m.home.score), as = Number(m.away.score);
-    const cls = side => !played ? '' : (side === 'home' ? hs > as : as > hs) ? ' win' : hs === as ? ' draw' : ' lose';
-    const center = played || m.state === 'in'
-      ? `<span class="score${m.state === 'in' ? ' live-score' : ''}">${esc(m.home.score)}<span class="dash">–</span>${esc(m.away.score)}</span>`
-      : `<span class="kick">${esc(fmt(m.date, { hour: '2-digit', minute: '2-digit', hour12: false }))}</span>`;
-    return `
-      <li class="match">
-        <div class="match-meta"><span class="date-chip">${esc(fmt(m.date, { weekday: 'short', day: 'numeric', month: 'short' }))}</span>${m.state === 'in' ? '<strong class="live">● En vivo</strong>' : ''}${m.venue ? `<span class="venue">${esc(m.venue)}</span>` : ''}</div>
-        <div class="match-line">
-          <span class="side home${cls('home')}"><span class="name">${esc(label(m.home))}</span><span class="name-abbr">${esc(m.home.abbr)}</span>${logo(m.home, 28)}</span>
-          ${center}
-          <span class="side away${cls('away')}">${logo(m.away, 28)}<span class="name">${esc(label(m.away))}</span><span class="name-abbr">${esc(m.away.abbr)}</span></span>
-        </div>
-      </li>`;
-  }).join('');
+  const items = list.map(m => matchItem(m, kind === 'results')).join('');
   return `<ul class="matches">${items}</ul>${staleNote(sec)}`;
+}
+
+function matchItem(m, played, { goals = false } = {}) {
+  const hs = Number(m.home.score), as = Number(m.away.score);
+  const cls = side => !played ? '' : (side === 'home' ? hs > as : as > hs) ? ' win' : hs === as ? ' draw' : ' lose';
+  const center = played || m.state === 'in'
+    ? `<span class="score${m.state === 'in' ? ' live-score' : ''}">${esc(m.home.score)}<span class="dash">–</span>${esc(m.away.score)}</span>`
+    : `<span class="kick">${esc(fmt(m.date, { hour: '2-digit', minute: '2-digit', hour12: false }))}</span>`;
+  return `
+    <li class="match">
+      <div class="match-meta"><span class="date-chip">${esc(fmt(m.date, { weekday: 'short', day: 'numeric', month: 'short' }))}</span>${m.state === 'in' ? '<strong class="live">● En vivo</strong>' : ''}${m.venue ? `<span class="venue">${esc(m.venue)}</span>` : ''}</div>
+      <div class="match-line">
+        <span class="side home${cls('home')}"><span class="name">${esc(label(m.home))}</span><span class="name-abbr">${esc(m.home.abbr)}</span>${logo(m.home, 28)}</span>
+        ${center}
+        <span class="side away${cls('away')}">${logo(m.away, 28)}<span class="name">${esc(label(m.away))}</span><span class="name-abbr">${esc(m.away.abbr)}</span></span>
+      </div>${goals ? goalList(m) : ''}
+    </li>`;
+}
+
+// Goleadores de un partido: los del local a la izquierda y los del visitante a la derecha.
+function goalList(m) {
+  const items = (m.goals ?? []).map(g => `<li class="g-${g.side}">⚽ ${esc(g.minute)} ${esc(g.player)}${g.og ? ' (a.g.)' : g.pen ? ' (pen.)' : ''}</li>`).join('');
+  return (items ? `<ul class="goal-list">${items}</ul>` : '') + (m.note ? `<p class="match-note">${esc(m.note)}</p>` : '');
+}
+
+/* ---------- Jornadas ---------- */
+
+function roundsSection(data) {
+  const byRound = new Map();
+  for (const m of [...(data.results?.all ?? []), ...(data.upcoming?.all ?? [])].filter(m => m.round))
+    byRound.set(m.round, [...(byRound.get(m.round) ?? []), m]);
+  const rounds = [...byRound.keys()].sort((a, b) => a - b);
+  if (!rounds.length) return empty('Jornadas no disponibles.');
+  // Se abre en la última jornada que ya empezó.
+  const current = rounds.filter(r => byRound.get(r).some(m => m.completed)).at(-1) ?? rounds[0];
+  const span = list => {
+    const days = [...new Set(list.map(m => fmt(m.date, { day: 'numeric', month: 'short' })))];
+    return days.length > 1 ? `${days[0]} – ${days.at(-1)}` : days[0];
+  };
+  const options = rounds.map(r => `<option value="${r}"${r === current ? ' selected' : ''}>Jornada ${r}${byRound.get(r).every(m => m.completed) ? '' : byRound.get(r).some(m => m.completed) ? ' (en curso)' : ' (por jugar)'}</option>`).join('');
+  const panels = rounds.map(r => {
+    const list = byRound.get(r).sort((a, b) => a.date.localeCompare(b.date));
+    const goals = list.reduce((n, m) => n + (m.completed ? Number(m.home.score) + Number(m.away.score) : 0), 0);
+    const played = list.filter(m => m.completed).length;
+    return `
+      <div class="round" data-round="${r}"${r === current ? '' : ' hidden'}>
+        <p class="round-head"><strong>Jornada ${r}</strong> · ${esc(span(list))}${played ? ` · ${goals} goles en ${played} partido${played === 1 ? '' : 's'}` : ''}</p>
+        <ul class="matches">${list.map(m => matchItem(m, m.completed, { goals: true })).join('')}</ul>
+      </div>`;
+  }).join('');
+  return `
+    <div class="select-wrap"><label class="select-label" for="round-select">Elige una jornada</label>
+    <select id="round-select" class="select">${options}</select></div>
+    ${panels}
+    <p class="note">ESPN no numera las jornadas: se calculan por fecha (cada equipo juega una vez por jornada). Los goles son los registrados por ESPN, con las correcciones hechas a mano.</p>`;
 }
 
 function calendarBox() {
@@ -629,9 +670,13 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--live); margin-right: 5px; vertical-align: 1px; animation: pulse 1.4s ease-in-out infinite; }
   @keyframes pulse { 50% { opacity: .25; } }
   @media (prefers-reduced-motion: reduce) { .pulse { animation: none; } }
+  .match-note { margin: 8px 0 0; font-size: .8rem; color: var(--muted); font-style: italic; text-align: center; }
+  .round-head { margin: 14px 0 10px; color: var(--muted); font-size: .9rem; }
+  .round-head strong { color: var(--text); }
   .goal-list { list-style: none; margin: 8px 0 0; padding: 6px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; font-size: .8rem; color: var(--muted); }
   .goal-list .g-home { grid-column: 1; text-align: right; }
   .goal-list .g-away { grid-column: 2; }
+  @media (max-width: 420px) { .goal-list { gap: 2px 12px; font-size: .75rem; } }
   .name-abbr { display: none; font-weight: inherit; }
   @media (max-width: 420px) {
     .side .name { display: none; }
@@ -749,8 +794,11 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
     <div class="grid home">
       <section class="card">${sectionHead('zona', 'Apertura ' + year, 'Zona de semifinales')}${miniStandings(s, form)}</section>
       <section class="card">${sectionHead('proximos', 'Calendario', 'Próximos partidos')}${calendarBox()}${matchList(data.upcoming, 'upcoming')}</section>
-      <section class="card">${sectionHead('resultados', 'Últimas 2 jornadas', 'Resultados')}${matchList(data.results, 'results')}</section>
+      <section class="card">${sectionHead('resultados', 'Últimas 2 jornadas', 'Resultados')}${matchList(data.results, 'results')}<a class="more-link" href="#jornadas">Ver todas las jornadas con goleadores →</a></section>
     </div>
+  </div>
+  <div class="panel" data-tab="jornadas">
+    <div class="grid narrow"><section class="card">${sectionHead('calendario', 'Apertura ' + year, 'Jornadas')}${roundsSection(data)}</section></div>
   </div>
   <div class="panel" data-tab="tabla">
     <div class="grid two-wide">
@@ -807,6 +855,15 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
           sel.dispatchEvent(new Event('change'));
         });
       });
+    }
+
+    var roundSel = document.getElementById('round-select');
+    if (roundSel) {
+      var showRound = function () {
+        document.querySelectorAll('.round').forEach(function (el) { el.hidden = el.dataset.round !== roundSel.value; });
+      };
+      showRound(); // al recargar, el navegador puede restaurar otra jornada en el selector
+      roundSel.addEventListener('change', showRound);
     }
 
     // Compartir: usa el menú nativo del celular; si no existe (compu), copia el link.
