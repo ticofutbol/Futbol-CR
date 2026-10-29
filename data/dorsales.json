@@ -512,7 +512,8 @@
           "age": 25,
           "countries": [
             "Costa Rica"
-          ]
+          ],
+          "espn": "Erson Méndez"
         },
         {
           "jersey": 6,
@@ -933,7 +934,8 @@
           "countries": [
             "Nicaragua",
             "Costa Rica"
-          ]
+          ],
+          "espn": "Juan Rodriguez"
         },
         {
           "jersey": 42,

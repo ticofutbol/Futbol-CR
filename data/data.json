@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-29T00:19:35.316Z",
-  "lastSuccessAt": "2026-10-29T00:19:35.316Z",
+  "generatedAt": "2026-10-29T00:23:13.817Z",
+  "lastSuccessAt": "2026-10-29T00:23:13.817Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-29T00:19:34.230Z",
+    "updatedAt": "2026-10-29T00:23:09.901Z",
     "stale": false
   },
   "results": {
@@ -2077,7 +2077,7 @@
         }
       }
     },
-    "updatedAt": "2026-10-29T00:19:34.522Z",
+    "updatedAt": "2026-10-29T00:23:10.639Z",
     "stale": false
   },
   "upcoming": {
@@ -2925,7 +2925,7 @@
         }
       }
     ],
-    "updatedAt": "2026-10-29T00:19:35.134Z",
+    "updatedAt": "2026-10-29T00:23:12.971Z",
     "stale": false
   },
   "scorers": {
@@ -3608,7 +3608,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-29T00:19:35.137Z",
+    "updatedAt": "2026-10-29T00:23:12.979Z",
     "stale": false
   },
   "squads": {
@@ -4550,16 +4550,15 @@
             "penalties": 0
           },
           {
-            "id": "tm-josimar-mendez",
+            "id": "324450",
             "jersey": "19",
             "name": "Josimar Méndez",
             "position": "F",
             "age": 25,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "added": true
+            "goals": 2,
+            "penalties": 0
           },
           {
             "id": "148141",
@@ -4592,17 +4591,6 @@
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 4,
-            "penalties": 0
-          },
-          {
-            "id": "324450",
-            "jersey": null,
-            "name": "Erson Méndez",
-            "position": "F",
-            "age": 25,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 2,
             "penalties": 0
           }
         ]
@@ -5685,16 +5673,15 @@
             "penalties": 0
           },
           {
-            "id": "tm-juan-luis-perez",
+            "id": "305948",
             "jersey": "19",
             "name": "Juan Luis Pérez",
             "position": "D",
             "age": 27,
             "country": "Nicaragua",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nca.png",
-            "goals": 0,
-            "penalties": 0,
-            "added": true
+            "goals": 1,
+            "penalties": 0
           },
           {
             "id": "3099962",
@@ -5738,17 +5725,6 @@
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
-            "penalties": 0
-          },
-          {
-            "id": "305948",
-            "jersey": null,
-            "name": "Juan Rodriguez",
-            "position": "D",
-            "age": 27,
-            "country": "Nicaragua",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nca.png",
-            "goals": 1,
             "penalties": 0
           },
           {
@@ -7047,7 +7023,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-29T00:19:35.316Z",
+    "updatedAt": "2026-10-29T00:23:13.817Z",
     "stale": false
   },
   "history": {
