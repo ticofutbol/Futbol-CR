@@ -355,6 +355,10 @@ async function main() {
     return fetchSquads(standings.rows, scorers);
   }, warnings);
 
+  // Goleadores con el mismo nombre que en las plantillas (el de Transfermarkt, no el completo de ESPN).
+  const nameById = new Map((squads?.teams ?? []).flatMap(t => t.players.map(p => [p.id, p.name])));
+  for (const r of [...(scorers?.rows ?? []), ...(scorers?.all ?? [])]) if (nameById.has(r.playerId)) r.player = nameById.get(r.playerId);
+
   const data = {
     source: 'ESPN (site.api.espn.com, liga crc.1)',
     generatedAt: new Date().toISOString(),

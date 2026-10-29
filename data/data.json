@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-29T00:23:32.667Z",
-  "lastSuccessAt": "2026-10-29T00:23:32.667Z",
+  "generatedAt": "2026-10-29T00:29:00.273Z",
+  "lastSuccessAt": "2026-10-29T00:29:00.273Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-29T00:23:31.792Z",
+    "updatedAt": "2026-10-29T00:28:57.531Z",
     "stale": false
   },
   "results": {
@@ -2077,7 +2077,7 @@
         }
       }
     },
-    "updatedAt": "2026-10-29T00:23:31.989Z",
+    "updatedAt": "2026-10-29T00:28:58.059Z",
     "stale": false
   },
   "upcoming": {
@@ -2925,13 +2925,13 @@
         }
       }
     ],
-    "updatedAt": "2026-10-29T00:23:32.522Z",
+    "updatedAt": "2026-10-29T00:28:59.537Z",
     "stale": false
   },
   "scorers": {
     "matchesCounted": 65,
     "goalsCounted": 177,
-    "corrections": 2,
+    "corrections": 4,
     "rows": [
       {
         "playerId": "185890",
@@ -2970,7 +2970,7 @@
       },
       {
         "playerId": "205163",
-        "player": "Juan Gaete",
+        "player": "Juan Carlos Gaete",
         "team": "Cartaginés",
         "goals": 5,
         "penalties": 0
@@ -2998,7 +2998,7 @@
       },
       {
         "playerId": "328392",
-        "player": "Doryan Rodriguez",
+        "player": "Doryan Rodríguez",
         "team": "Puntarenas FC",
         "goals": 4,
         "penalties": 0
@@ -3070,7 +3070,7 @@
       },
       {
         "playerId": "205163",
-        "player": "Juan Gaete",
+        "player": "Juan Carlos Gaete",
         "team": "Cartaginés",
         "goals": 5,
         "penalties": 0
@@ -3098,7 +3098,7 @@
       },
       {
         "playerId": "328392",
-        "player": "Doryan Rodriguez",
+        "player": "Doryan Rodríguez",
         "team": "Puntarenas FC",
         "goals": 4,
         "penalties": 0
@@ -3146,22 +3146,8 @@
         "penalties": 0
       },
       {
-        "playerId": "277201",
-        "player": "Axel Amador",
-        "team": "Pérez Zeledón",
-        "goals": 3,
-        "penalties": 0
-      },
-      {
-        "playerId": "3100022",
-        "player": "Danilo Pimpinati Rocha",
-        "team": "Escorpiones Belén",
-        "goals": 3,
-        "penalties": 0
-      },
-      {
         "playerId": "153727",
-        "player": "Erick Torres",
+        "player": "Érick Torres",
         "team": "Inter de San Carlos",
         "goals": 3,
         "penalties": 0
@@ -3202,6 +3188,13 @@
         "penalties": 0
       },
       {
+        "playerId": "277201",
+        "player": "Axel Amador",
+        "team": "Pérez Zeledón",
+        "goals": 2,
+        "penalties": 0
+      },
+      {
         "playerId": "151184",
         "player": "Daniel Colindres",
         "team": "Sporting San José",
@@ -3209,15 +3202,22 @@
         "penalties": 0
       },
       {
+        "playerId": "3100022",
+        "player": "Danilo Pimpinati",
+        "team": "Escorpiones Belén",
+        "goals": 2,
+        "penalties": 0
+      },
+      {
         "playerId": "3145692",
-        "player": "Deyver Antonio Vega Álvarez",
+        "player": "Deyver Vega",
         "team": "Escorpiones Belén",
         "goals": 2,
         "penalties": 0
       },
       {
         "playerId": "324450",
-        "player": "Erson Méndez",
+        "player": "Josimar Méndez",
         "team": "Sporting San José",
         "goals": 2,
         "penalties": 0
@@ -3238,7 +3238,7 @@
       },
       {
         "playerId": "280546",
-        "player": "José De Jesús González",
+        "player": "José González",
         "team": "Cartaginés",
         "goals": 2,
         "penalties": 0
@@ -3280,7 +3280,7 @@
       },
       {
         "playerId": "3118776",
-        "player": "Raúl Yulian López Orellana",
+        "player": "Raúl López",
         "team": "Escorpiones Belén",
         "goals": 2,
         "penalties": 0
@@ -3301,7 +3301,7 @@
       },
       {
         "playerId": "302973",
-        "player": "Sebastian Acuna Murillo",
+        "player": "Sebastián Acuña",
         "team": "Saprissa",
         "goals": 2,
         "penalties": 0
@@ -3350,7 +3350,7 @@
       },
       {
         "playerId": "265900",
-        "player": "Amferny Arias",
+        "player": "Amferny Sinclair",
         "team": "Puntarenas FC",
         "goals": 1,
         "penalties": 0
@@ -3385,14 +3385,14 @@
       },
       {
         "playerId": "265899",
-        "player": "Cristian Muñoz",
+        "player": "Christian Muñoz",
         "team": "Escorpiones Belén",
         "goals": 1,
         "penalties": 0
       },
       {
         "playerId": "3097949",
-        "player": "Daniel Alberto González Pérez",
+        "player": "Daniel González",
         "team": "Herediano",
         "goals": 1,
         "penalties": 0
@@ -3406,7 +3406,7 @@
       },
       {
         "playerId": "350672",
-        "player": "Elián Quesada Thorn",
+        "player": "Elián Quesada",
         "team": "Pérez Zeledón",
         "goals": 1,
         "penalties": 0
@@ -3422,6 +3422,13 @@
         "playerId": "239562",
         "player": "Hiram Muñoz",
         "team": "Puntarenas FC",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
+        "playerId": "3124956",
+        "player": "Ian Fernández",
+        "team": "Escorpiones Belén",
         "goals": 1,
         "penalties": 0
       },
@@ -3448,7 +3455,7 @@
       },
       {
         "playerId": "194438",
-        "player": "Joaquin Aguirre",
+        "player": "Joaquín Aguirre",
         "team": "Pérez Zeledón",
         "goals": 1,
         "penalties": 0
@@ -3483,7 +3490,7 @@
       },
       {
         "playerId": "305948",
-        "player": "Juan Rodriguez",
+        "player": "Juan Luis Pérez",
         "team": "Inter de San Carlos",
         "goals": 1,
         "penalties": 0
@@ -3504,7 +3511,7 @@
       },
       {
         "playerId": "148141",
-        "player": "Marco Ureña",
+        "player": "Marcos Ureña",
         "team": "Sporting San José",
         "goals": 1,
         "penalties": 0
@@ -3512,6 +3519,13 @@
       {
         "playerId": "92511",
         "player": "Marvin Angulo",
+        "team": "Pérez Zeledón",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
+        "playerId": "217143",
+        "player": "Mauricio Núñez",
         "team": "Pérez Zeledón",
         "goals": 1,
         "penalties": 0
@@ -3525,7 +3539,7 @@
       },
       {
         "playerId": "3099939",
-        "player": "Pablo Manuel Álvarez Hodgson",
+        "player": "Pablo Álvarez",
         "team": "Puntarenas FC",
         "goals": 1,
         "penalties": 0
@@ -3539,7 +3553,7 @@
       },
       {
         "playerId": "291003",
-        "player": "Rashid Chirino",
+        "player": "Rachid Chirino",
         "team": "Inter de San Carlos",
         "goals": 1,
         "penalties": 0
@@ -3553,7 +3567,7 @@
       },
       {
         "playerId": "176491",
-        "player": "Raul Vidal",
+        "player": "Raúl Vidal",
         "team": "AD San Carlos",
         "goals": 1,
         "penalties": 0
@@ -3567,7 +3581,7 @@
       },
       {
         "playerId": "3136517",
-        "player": "Wilson Alberto Hernández González",
+        "player": "Wilson Hernández",
         "team": "Puntarenas FC",
         "goals": 1,
         "penalties": 0
@@ -3581,7 +3595,7 @@
       },
       {
         "playerId": "246984",
-        "player": "Yoisel Piedra",
+        "player": "Yosel Piedra",
         "team": "AD San Carlos",
         "goals": 1,
         "penalties": 0
@@ -3602,13 +3616,13 @@
       },
       {
         "playerId": "360070",
-        "player": "Claudio Alvarado",
+        "player": "Claudio Montero",
         "team": "Cartaginés",
         "goals": 1,
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-29T00:23:32.524Z",
+    "updatedAt": "2026-10-29T00:28:59.549Z",
     "stale": false
   },
   "squads": {
@@ -6633,7 +6647,7 @@
             "age": 18,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0
           },
           {
@@ -6655,7 +6669,7 @@
             "age": 26,
             "country": "Brasil",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-            "goals": 3,
+            "goals": 2,
             "penalties": 0
           },
           {
@@ -6817,7 +6831,7 @@
             "age": 33,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0
           },
           {
@@ -6983,7 +6997,7 @@
             "age": 25,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 3,
+            "goals": 2,
             "penalties": 0
           },
           {
@@ -7023,7 +7037,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-29T00:23:32.667Z",
+    "updatedAt": "2026-10-29T00:29:00.273Z",
     "stale": false
   },
   "history": {

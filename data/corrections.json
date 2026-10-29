@@ -5,17 +5,57 @@
       "event": "401876870",
       "match": "Saprissa 3-2 Cartaginés (15 ago 2026)",
       "minute": "31'",
-      "from": { "id": "276951", "name": "Douglas López" },
-      "to": { "id": "185890", "name": "Alonso Hernández" },
+      "from": {
+        "id": "276951",
+        "name": "Douglas López"
+      },
+      "to": {
+        "id": "185890",
+        "name": "Alonso Hernández"
+      },
       "source": "Diario Extra y La Nación: el gol del 31' fue de Joaquín Alonso Hernández, con pase de Douglas López."
     },
     {
       "event": "401876843",
       "match": "Cartaginés 3-1 Puntarenas FC (13 oct 2026)",
       "minute": "90'+5'",
-      "from": { "id": "205163", "name": "Juan Gaete" },
-      "to": { "id": "310005", "name": "Geancarlo Castro" },
+      "from": {
+        "id": "205163",
+        "name": "Juan Gaete"
+      },
+      "to": {
+        "id": "310005",
+        "name": "Geancarlo Castro"
+      },
       "source": "CRHoy y La Teja: los goles fueron de José de Jesús González, Gaete (68') y Geancarlo Castro."
+    },
+    {
+      "event": "401876840",
+      "match": "Pérez Zeledón 1-4 Escorpiones Belén (14 oct 2026)",
+      "minute": "28'",
+      "from": {
+        "id": "277201",
+        "name": "Axel Amador"
+      },
+      "to": {
+        "id": "217143",
+        "name": "Mauricio Núñez"
+      },
+      "source": "Teletica y La Nación: el descuento de Pérez Zeledón fue de Mauricio Núñez."
+    },
+    {
+      "event": "401876838",
+      "match": "Escorpiones Belén 1-2 Puntarenas FC (20 oct 2026)",
+      "minute": "15'",
+      "from": {
+        "id": "3100022",
+        "name": "Danilo Pimpinati Rocha"
+      },
+      "to": {
+        "id": "3124956",
+        "name": "Ian Fernández"
+      },
+      "source": "Diario Extra y La Nación: el 1-1 al 15' fue de Ian Fernández en su debut."
     }
   ]
 }
