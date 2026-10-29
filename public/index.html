@@ -98,6 +98,16 @@
   .wa-link { color: var(--accent); font-weight: 600; }
   .eyebrow { margin: 26px 0 0; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; color: #a7f3d0; }
   h1 { margin: 2px 0 0; font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: .92; letter-spacing: .01em; text-transform: uppercase; }
+  .crests { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .crest { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgb(255 255 255 / .92); box-shadow: 0 2px 8px rgb(0 0 0 / .25); transition: transform .15s; }
+  .crest img { width: 26px; height: 26px; object-fit: contain; }
+  .crest:hover, .crest:focus-visible { transform: translateY(-2px) scale(1.08); }
+  @media (max-width: 420px) {
+    .crests { gap: 4px; }
+    .crest { width: 30px; height: 30px; }
+    .crest img { width: 21px; height: 21px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .crest { transition: none; } }
   .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
   .hchip { background: rgb(255 255 255 / .12); border: 1px solid rgb(255 255 255 / .18); border-radius: 999px; padding: 5px 12px; font-size: .82rem; backdrop-filter: blur(6px); }
   .hchip b { font-weight: 700; }
@@ -125,6 +135,7 @@
   html[data-tab]:not([data-tab="inicio"]) h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); margin-top: 14px; }
   html[data-tab]:not([data-tab="inicio"]) h1 br { display: none; }
   html[data-tab]:not([data-tab="inicio"]) .hero-chips { margin-top: 10px; }
+  html[data-tab]:not([data-tab="inicio"]) .crests { margin-top: 10px; }
   @media (max-width: 760px) {
     .tabbar {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; margin: 0; gap: 0; flex-wrap: nowrap;
@@ -361,6 +372,18 @@
     </div>
     <p class="eyebrow">Costa Rica · Liga FPD</p>
     <h1>Primera <br>División</h1>
+    <nav class="crests" aria-label="Plantillas por equipo">
+      <a class="crest" href="#jugadores" data-team="859" title="AD San Carlos" aria-label="Plantilla de AD San Carlos"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/859.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+      <a class="crest" href="#jugadores" data-team="2057" title="Alajuelense" aria-label="Plantilla de Alajuelense"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+      <a class="crest" href="#jugadores" data-team="7239" title="Cartaginés" aria-label="Plantilla de Cartaginés"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+      <a class="crest" href="#jugadores" data-team="132447" title="Escorpiones Belén" aria-label="Plantilla de Escorpiones Belén"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/132447.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+      <a class="crest" href="#jugadores" data-team="862" title="Herediano" aria-label="Plantilla de Herediano"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/862.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+      <a class="crest" href="#jugadores" data-team="131790" title="Inter de San Carlos" aria-label="Plantilla de Inter de San Carlos"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/131790.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+      <a class="crest" href="#jugadores" data-team="7234" title="Pérez Zeledón" aria-label="Plantilla de Pérez Zeledón"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/7234.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+      <a class="crest" href="#jugadores" data-team="7237" title="Puntarenas FC" aria-label="Plantilla de Puntarenas FC"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/7237.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+      <a class="crest" href="#jugadores" data-team="858" title="Saprissa" aria-label="Plantilla de Saprissa"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+      <a class="crest" href="#jugadores" data-team="20705" title="Sporting San José" aria-label="Plantilla de Sporting San José"><img src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>
+    </nav>
     <div class="hero-chips">
       <span class="hchip accent">Apertura 2026</span>
       <span class="hchip">Jornada <b>13</b></span>
@@ -3609,6 +3632,13 @@
       sel.addEventListener('change', function () {
         showSquad(sel.value);
         try { localStorage.setItem('squad', sel.value); } catch (e) {}
+      });
+      // Escudos de la portada: eligen el equipo; el cambio de pestaña lo hace el manejador de links "#".
+      document.querySelectorAll('.crest').forEach(function (a) {
+        a.addEventListener('click', function () {
+          sel.value = a.dataset.team;
+          sel.dispatchEvent(new Event('change'));
+        });
       });
     }
 

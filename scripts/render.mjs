@@ -246,6 +246,15 @@ function assistsSection(a, teamsByName) {
     <p class="note">ESPN no registra asistencias: estas vienen de ${esc(a.source)} y se cargan a mano (última vez: ${d}/${m}/${y}), así que pueden ir atrasadas respecto a los goles.</p>`;
 }
 
+// Escudos de los 10 equipos en la portada: cada uno abre la plantilla de su equipo.
+function crestRow(sq) {
+  const teams = [...(sq?.teams ?? [])].filter(t => t.logo).sort((a, b) => a.name.localeCompare(b.name, 'es'));
+  if (!teams.length) return '';
+  return `<nav class="crests" aria-label="Plantillas por equipo">${teams.map(t => `
+      <a class="crest" href="#jugadores" data-team="${esc(t.id)}" title="${esc(t.name)}" aria-label="Plantilla de ${esc(t.name)}"><img src="${esc(t.logo)}" alt="" width="26" height="26" onerror="this.parentNode.remove()"></a>`).join('')}
+    </nav>`;
+}
+
 /* ---------- Plantillas ---------- */
 
 const POSITION_NAMES = { G: 'Porteros', D: 'Defensas', M: 'Mediocampistas', F: 'Delanteros' };
@@ -459,6 +468,16 @@ export function buildHtml(data) {
   .wa-link { color: var(--accent); font-weight: 600; }
   .eyebrow { margin: 26px 0 0; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; color: #a7f3d0; }
   h1 { margin: 2px 0 0; font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: .92; letter-spacing: .01em; text-transform: uppercase; }
+  .crests { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .crest { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgb(255 255 255 / .92); box-shadow: 0 2px 8px rgb(0 0 0 / .25); transition: transform .15s; }
+  .crest img { width: 26px; height: 26px; object-fit: contain; }
+  .crest:hover, .crest:focus-visible { transform: translateY(-2px) scale(1.08); }
+  @media (max-width: 420px) {
+    .crests { gap: 4px; }
+    .crest { width: 30px; height: 30px; }
+    .crest img { width: 21px; height: 21px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .crest { transition: none; } }
   .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
   .hchip { background: rgb(255 255 255 / .12); border: 1px solid rgb(255 255 255 / .18); border-radius: 999px; padding: 5px 12px; font-size: .82rem; backdrop-filter: blur(6px); }
   .hchip b { font-weight: 700; }
@@ -478,6 +497,7 @@ ${TABS.map(([id]) => `  html[data-tab="${id}"] .tab-link[data-tab="${id}"] { bac
   html[data-tab]:not([data-tab="inicio"]) h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); margin-top: 14px; }
   html[data-tab]:not([data-tab="inicio"]) h1 br { display: none; }
   html[data-tab]:not([data-tab="inicio"]) .hero-chips { margin-top: 10px; }
+  html[data-tab]:not([data-tab="inicio"]) .crests { margin-top: 10px; }
   @media (max-width: 760px) {
     .tabbar {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; margin: 0; gap: 0; flex-wrap: nowrap;
@@ -710,6 +730,7 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
     </div>
     <p class="eyebrow">Costa Rica · Liga FPD</p>
     <h1>Primera <br>División</h1>
+    ${crestRow(data.squads)}
     <div class="hero-chips">
       <span class="hchip accent">${esc(s?.tournament ?? 'Apertura')} ${year}</span>
       ${jornada ? `<span class="hchip">Jornada <b>${jornada}</b></span>` : ''}
@@ -778,6 +799,13 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
       sel.addEventListener('change', function () {
         showSquad(sel.value);
         try { localStorage.setItem('squad', sel.value); } catch (e) {}
+      });
+      // Escudos de la portada: eligen el equipo; el cambio de pestaña lo hace el manejador de links "#".
+      document.querySelectorAll('.crest').forEach(function (a) {
+        a.addEventListener('click', function () {
+          sel.value = a.dataset.team;
+          sel.dispatchEvent(new Event('change'));
+        });
       });
     }
 
