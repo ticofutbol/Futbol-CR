@@ -20,7 +20,7 @@ const TABS = [
 // Cada #hash (pestaña o sección) apunta a la pestaña que lo contiene; incluye los links viejos de antes de las pestañas.
 const TAB_OF = {
   ...Object.fromEntries(TABS.map(([id]) => [id, id])),
-  zona: 'inicio', resultados: 'inicio', proximos: 'inicio',
+  zona: 'inicio', resultados: 'inicio', proximos: 'inicio', envivo: 'inicio',
   posiciones: 'tabla', puntos: 'tabla', top10: 'goleadores', asistencias: 'goleadores', jugadores: 'plantillas', palmares: 'historia',
 };
 const SHARE_TEXT ='Tabla, resultados, goleadores y plantillas de la Primera División de Costa Rica 🇨🇷⚽';
@@ -526,7 +526,7 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   main.wrap { padding-bottom: 28px; }
   .panel { padding-top: 16px; }
   .grid { display: grid; gap: 16px; grid-template-columns: 1fr; align-items: start; }
-  .panel .kpis + .grid, .panel .banner + .grid { margin-top: 16px; }
+  .panel .kpis ~ .grid { margin-top: 16px; }
   /* Inicio en compu: zona y resultados apilados a la izquierda, próximos ocupa toda la columna derecha. */
   @media (min-width: 1000px) {
     .grid.home { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; }
@@ -604,6 +604,15 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   .dash { margin: 0 4px; color: var(--muted); }
   .kick { font-family: var(--display); font-weight: 700; font-size: 1.1rem; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; padding: 2px 10px; border-radius: 10px; min-width: 72px; text-align: center; }
   .live { color: var(--live); }
+  .live-card { margin-top: 16px; border-color: color-mix(in srgb, var(--live) 40%, var(--border)); }
+  .live-card .date-chip { text-transform: none; }
+  .match.is-live { box-shadow: inset 3px 0 0 var(--live); }
+  .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--live); margin-right: 5px; vertical-align: 1px; animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .25; } }
+  @media (prefers-reduced-motion: reduce) { .pulse { animation: none; } }
+  .goal-list { list-style: none; margin: 8px 0 0; padding: 6px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; font-size: .8rem; color: var(--muted); }
+  .goal-list .g-home { grid-column: 1; text-align: right; }
+  .goal-list .g-away { grid-column: 2; }
   .name-abbr { display: none; font-weight: inherit; }
   @media (max-width: 420px) {
     .side .name { display: none; }
@@ -716,6 +725,7 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   <div class="panel" data-tab="inicio">
     ${kpis(data, teamsByName)}
     ${warnings}
+    <section class="card live-card" hidden>${sectionHead('envivo', 'Se actualiza solo', 'Partidos de hoy')}<ul class="matches" id="live-list"></ul><p class="note" id="live-note"></p></section>
     <div class="grid home">
       <section class="card">${sectionHead('zona', 'Apertura ' + year, 'Zona de semifinales')}${miniStandings(s, form)}</section>
       <section class="card">${sectionHead('proximos', 'Calendario', 'Próximos partidos')}${calendarBox()}${matchList(data.upcoming, 'upcoming')}</section>
@@ -797,6 +807,73 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
     if ('serviceWorker' in navigator && location.protocol === 'https:') {
       navigator.serviceWorker.register('sw.js').catch(function () {});
     }
+
+    // Partidos de hoy en vivo: el navegador le pregunta directo a ESPN, cada minuto mientras se juega.
+    (function () {
+      var card = document.querySelector('.live-card');
+      if (!card || !window.fetch || !window.Intl) return;
+      var TEAMS = ${JSON.stringify(Object.fromEntries((s?.rows ?? []).map(r => [r.id, { n: label(r), a: r.abbr, l: r.logo }]))).replace(/</g, '\\u003c')};
+      var API = 'https://site.api.espn.com/apis/site/v2/sports/soccer/crc.1/scoreboard?dates=';
+      var TZ = 'America/Costa_Rica', DAY = 864e5, timer = null;
+      var list = document.getElementById('live-list'), note = document.getElementById('live-note');
+      function ymd(d) { return new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(d).replace(/-/g, ''); }
+      function hhmm(d) { return new Intl.DateTimeFormat('es-CR', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false }).format(d); }
+      function esc(v) { return String(v == null ? '' : v).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+      function side(c, cls, home) {
+        var t = TEAMS[c.team.id] || { n: c.team.shortDisplayName || c.team.displayName, a: c.team.abbreviation, l: c.team.logo };
+        var img = t.l ? '<img class="logo" src="' + esc(t.l) + '" alt="" width="28" height="28">' : '';
+        var name = '<span class="name">' + esc(t.n) + '</span><span class="name-abbr">' + esc(t.a) + '</span>';
+        return '<span class="side ' + (home ? 'home' : 'away') + cls + '">' + (home ? name + img : img + name) + '</span>';
+      }
+      function item(e) {
+        var st = e.status.type, comp = e.competitions[0], live = st.state === 'in';
+        var h = comp.competitors.filter(function (c) { return c.homeAway === 'home'; })[0];
+        var a = comp.competitors.filter(function (c) { return c.homeAway === 'away'; })[0];
+        var off = /POSTPONED|CANCELED|SUSPENDED|DELAYED/.test(st.name);
+        var hs = Number(h.score), as = Number(a.score), done = st.state === 'post' && !off;
+        function res(x, y) { return !done ? '' : x > y ? ' win' : x === y ? ' draw' : ' lose'; }
+        var meta = off ? '<strong class="live">Aplazado</strong>'
+          : live ? '<strong class="live"><i class="pulse"></i>En vivo · ' + (st.name === 'STATUS_HALFTIME' ? 'Medio tiempo' : esc(e.status.displayClock)) + '</strong>'
+          : done ? '<strong>Final</strong>' : 'Hoy';
+        var center = live || done
+          ? '<span class="score' + (live ? ' live-score' : '') + '">' + esc(h.score) + '<span class="dash">–</span>' + esc(a.score) + '</span>'
+          : '<span class="kick">' + hhmm(new Date(e.date)) + '</span>';
+        var goals = (comp.details || []).filter(function (d) { return d.scoringPlay; }).map(function (d) {
+          var who = (d.athletesInvolved || [])[0];
+          return '<li class="' + (d.team && d.team.id === h.team.id ? 'g-home' : 'g-away') + '">⚽ ' + esc(d.clock && d.clock.displayValue) + ' ' + esc(who ? who.displayName : 'Gol') + (d.ownGoal ? ' (a.g.)' : d.penaltyKick ? ' (pen.)' : '') + '</li>';
+        }).join('');
+        var venue = comp.venue && comp.venue.fullName ? '<span class="venue">' + esc(comp.venue.fullName) + '</span>' : '';
+        return '<li class="match' + (live ? ' is-live' : '') + '"><div class="match-meta"><span class="date-chip">' + meta + '</span>' + venue + '</div>'
+          + '<div class="match-line">' + side(h, res(hs, as), true) + center + side(a, res(as, hs), false) + '</div>'
+          + (goals ? '<ul class="goal-list">' + goals + '</ul>' : '') + '</li>';
+      }
+      function load() {
+        clearTimeout(timer);
+        var now = Date.now(), today = ymd(new Date(now));
+        // ESPN agrupa los días con otra zona horaria: se piden ayer, hoy y mañana y se filtra por la fecha de Costa Rica.
+        Promise.all([now - DAY, now, now + DAY].map(function (t) {
+          return fetch(API + ymd(new Date(t)), { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : { events: [] }; });
+        })).then(function (days) {
+          var seen = {}, events = [];
+          days.forEach(function (d) { (d.events || []).forEach(function (e) {
+            if (seen[e.id]) return; seen[e.id] = 1;
+            if (ymd(new Date(e.date)) === today || e.status.type.state === 'in') events.push(e);
+          }); });
+          if (!events.length) { card.hidden = true; return; }
+          events.sort(function (x, y) { return new Date(x.date) - new Date(y.date); });
+          list.innerHTML = events.map(item).join('');
+          card.hidden = false;
+          var live = events.some(function (e) { return e.status.type.state === 'in'; });
+          var next = events.filter(function (e) { return e.status.type.name === 'STATUS_SCHEDULED'; })[0];
+          note.textContent = 'Marcadores de ESPN, revisados a las ' + hhmm(new Date()) + (live ? ' (se refresca cada minuto)' : '') + '. La tabla y los goleadores se recalculan cada día a las 6:00 a.m.';
+          // Mientras se juega, cada minuto; si falta un partido, se vuelve a mirar cerca de la hora de inicio.
+          var wait = live ? 60e3 : next ? Math.min(10 * 60e3, Math.max(60e3, new Date(next.date) - Date.now())) : 0;
+          if (wait) timer = setTimeout(load, wait);
+        }).catch(function () { timer = setTimeout(load, 2 * 60e3); });
+      }
+      document.addEventListener('visibilitychange', function () { if (document.hidden) clearTimeout(timer); else load(); });
+      load();
+    })();
 
     // Cuenta regresiva del próximo partido (se calcula al abrir la página).
     document.querySelectorAll('.countdown').forEach(function (el) {
