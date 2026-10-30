@@ -2,6 +2,7 @@
 // Cada sección se descarga por separado: si una falla, se reutiliza la versión guardada.
 import { readFile, writeFile, rename, mkdir } from 'node:fs/promises';
 import { render } from './render.mjs';
+import { phaseOf, seasonYear, currentTournament, buildPlayoffs, accumulatedTable } from './fase-final.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const DATA_FILE = new URL('data/data.json', ROOT);
@@ -14,6 +15,7 @@ const STANDINGS_URL = `https://site.api.espn.com/apis/v2/sports/soccer/${LEAGUE}
 const RECENT_COUNT = 10;    // 2 jornadas de 5 partidos (10 equipos)
 const UPCOMING_COUNT = 10;
 const UPCOMING_DAYS = 45;   // también define cuántos días a futuro cubre el calendario .ics
+const SEASON_TYPE = { Apertura: 1, Clausura: 6 }; // ids de ESPN para pedir la tabla de cada torneo
 
 async function getJson(url, tries = 2) {
   for (let i = 1; ; i++) {
@@ -77,13 +79,16 @@ function match(ev) {
     venue: c.venue?.fullName ?? null,
     home: side('home'),
     away: side('away'),
+    ...phaseOf(ev.season?.slug ?? ev.seasonType?.name ?? ev.season?.name ?? ''),
+    leg: c.leg?.value ?? null,
+    seriesWinner: c.series?.competitors?.find(x => x.winner)?.id ?? null,
   };
 }
 
-async function fetchStandings() {
-  const json = await getJson(STANDINGS_URL);
+async function fetchStandings(tournament) {
+  const json = await getJson(`${STANDINGS_URL}?season=${seasonYear()}&seasontype=${SEASON_TYPE[tournament]}`);
   const group = json.children?.[0];
-  if (!group?.standings?.entries?.length) throw new Error('Tabla vacía');
+  if (!group?.standings?.entries?.length) return null; // torneo que todavía no empieza
   const rows = group.standings.entries.map(e => ({
     ...team(e.team),
     rank: statValue(e.stats, 'rank'),
@@ -106,7 +111,7 @@ async function fetchStandings() {
 
 // Partidos jugados de la temporada: se juntan los calendarios de cada equipo.
 async function fetchPlayedMatches(teamIds) {
-  const schedules = await mapLimit(teamIds, 5, id => getJson(`${SITE}/teams/${id}/schedule`));
+  const schedules = await mapLimit(teamIds, 5, id => getJson(`${SITE}/teams/${id}/schedule?season=${seasonYear()}`));
   const byId = new Map();
   for (const s of schedules) for (const ev of s.events ?? []) {
     const m = match(ev);
@@ -330,21 +335,31 @@ async function main() {
   const history = await readJson(new URL('data/history.json', ROOT), { clubs: [] });
   const warnings = [];
 
-  const standings = await section('Tabla de posiciones', prev.standings, fetchStandings, warnings);
-  const teamIds = standings?.rows.map(r => r.id) ?? [];
-
-  let played = null;
-  const results = await section('Últimos resultados', prev.results, async () => {
-    if (!teamIds.length) throw new Error('Sin lista de equipos');
-    played = await fetchPlayedMatches(teamIds);
-    // `all` alimenta el calendario .ics con los resultados de la temporada.
-    return { matches: played.slice(0, RECENT_COUNT), all: played, form: teamForm(played, teamIds), stats: seasonStats(played) };
+  // Tablas oficiales de los dos torneos de la temporada (la del Clausura viene vacía hasta enero).
+  const tables = await section('Tabla de posiciones', prev.tables, async () => {
+    const [apertura, clausura] = await Promise.all([fetchStandings('Apertura'), fetchStandings('Clausura')]);
+    if (!apertura) throw new Error('Tabla vacía');
+    return { Apertura: apertura, Clausura: clausura };
   }, warnings);
+  const teamIds = tables?.Apertura.rows.map(r => r.id) ?? [];
 
   const upcoming = await section('Próximos partidos', prev.upcoming, async () => {
     const all = await fetchUpcomingMatches();
     return { matches: all.slice(0, UPCOMING_COUNT), all };
   }, warnings);
+
+  let played = null;
+  const results = await section('Últimos resultados', prev.results, async () => {
+    if (!teamIds.length) throw new Error('Sin lista de equipos');
+    const seasonPlayed = await fetchPlayedMatches(teamIds);
+    const tournament = currentTournament(seasonPlayed, upcoming?.all ?? []);
+    played = seasonPlayed.filter(m => m.tournament === tournament);
+    // `all` alimenta el calendario .ics y las jornadas.
+    return { tournament, matches: played.slice(0, RECENT_COUNT), all: played, form: teamForm(played, teamIds), stats: seasonStats(played) };
+  }, warnings);
+
+  const tournament = results?.tournament ?? 'Apertura';
+  const standings = tables && { ...(tables[tournament] ?? tables.Apertura), updatedAt: tables.updatedAt, stale: tables.stale };
 
   const scorers = await section('Goleadores', prev.scorers, async () => {
     if (!played) throw new Error('Sin lista de partidos jugados');
@@ -361,7 +376,8 @@ async function main() {
   for (const r of [...(scorers?.rows ?? []), ...(scorers?.all ?? [])]) if (nameById.has(r.playerId)) r.player = nameById.get(r.playerId);
 
   // Jornadas: ESPN no las numera. Se deducen en orden de fecha: cada equipo juega una vez por jornada.
-  const allMatches = [...(results?.all ?? []), ...(upcoming?.all ?? [])].sort((a, b) => a.date.localeCompare(b.date));
+  const allMatches = [...(results?.all ?? []), ...(upcoming?.all ?? [])]
+    .filter(m => m.tournament === tournament && m.stage === 'regular').sort((a, b) => a.date.localeCompare(b.date));
   const nextRound = {};
   for (const m of allMatches) {
     m.round = Math.max(nextRound[m.home.id] ?? 1, nextRound[m.away.id] ?? 1);
@@ -393,14 +409,22 @@ async function main() {
     }
   }
 
+  // Fase final del torneo en curso (proyectada con la tabla mientras se juega la fase regular).
+  const playoffs = buildPlayoffs([...(results?.all ?? []), ...(upcoming?.all ?? [])].filter(m => m.tournament === tournament), standings?.rows);
+  // Tabla acumulada: solo tiene sentido cuando ya empezó el Clausura (antes es igual a la del Apertura).
+  const accumulated = tables?.Clausura ? { rows: accumulatedTable(tables.Apertura.rows, tables.Clausura.rows), year: seasonYear() } : null;
+
   const data = {
     source: 'ESPN (site.api.espn.com, liga crc.1)',
     generatedAt: new Date().toISOString(),
-    lastSuccessAt: [standings, results, upcoming, scorers, squads].some(s => s && !s.stale)
+    lastSuccessAt: [tables, results, upcoming, scorers, squads].some(s => s && !s.stale)
       ? new Date().toISOString()
       : prev.lastSuccessAt ?? null,
     warnings,
     standings,
+    tables,
+    playoffs,
+    accumulated,
     results,
     upcoming,
     scorers,

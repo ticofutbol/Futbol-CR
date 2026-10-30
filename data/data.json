@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-30T12:26:07.992Z",
-  "lastSuccessAt": "2026-10-30T12:26:07.992Z",
+  "generatedAt": "2026-10-30T20:11:40.745Z",
+  "lastSuccessAt": "2026-10-30T20:11:40.745Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,10 +169,240 @@
         "pts": 9
       }
     ],
-    "updatedAt": "2026-10-30T12:26:06.818Z",
+    "updatedAt": "2026-10-30T20:11:37.244Z",
     "stale": false
   },
+  "tables": {
+    "Apertura": {
+      "league": "Costa Rican Primera Division",
+      "season": "2026-27 Primera División de Costa Rica",
+      "tournament": "Apertura",
+      "rows": [
+        {
+          "id": "858",
+          "name": "Saprissa",
+          "short": "Saprissa",
+          "abbr": "SAP",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+          "rank": 1,
+          "pj": 13,
+          "g": 8,
+          "e": 0,
+          "p": 5,
+          "gf": 27,
+          "gc": 14,
+          "dg": 13,
+          "pts": 24
+        },
+        {
+          "id": "7239",
+          "name": "Cartaginés",
+          "short": "Cartaginés",
+          "abbr": "CAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
+          "rank": 2,
+          "pj": 13,
+          "g": 8,
+          "e": 0,
+          "p": 5,
+          "gf": 24,
+          "gc": 17,
+          "dg": 7,
+          "pts": 24
+        },
+        {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "rank": 3,
+          "pj": 13,
+          "g": 7,
+          "e": 3,
+          "p": 3,
+          "gf": 26,
+          "gc": 20,
+          "dg": 6,
+          "pts": 24
+        },
+        {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "rank": 4,
+          "pj": 13,
+          "g": 6,
+          "e": 4,
+          "p": 3,
+          "gf": 21,
+          "gc": 14,
+          "dg": 7,
+          "pts": 22
+        },
+        {
+          "id": "859",
+          "name": "AD San Carlos",
+          "short": "San Carlos",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
+          "rank": 5,
+          "pj": 13,
+          "g": 7,
+          "e": 1,
+          "p": 5,
+          "gf": 15,
+          "gc": 15,
+          "dg": 0,
+          "pts": 22
+        },
+        {
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "rank": 6,
+          "pj": 13,
+          "g": 5,
+          "e": 3,
+          "p": 5,
+          "gf": 15,
+          "gc": 19,
+          "dg": -4,
+          "pts": 18
+        },
+        {
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "rank": 7,
+          "pj": 13,
+          "g": 5,
+          "e": 3,
+          "p": 5,
+          "gf": 15,
+          "gc": 20,
+          "dg": -5,
+          "pts": 18
+        },
+        {
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "rank": 8,
+          "pj": 13,
+          "g": 4,
+          "e": 2,
+          "p": 7,
+          "gf": 15,
+          "gc": 17,
+          "dg": -2,
+          "pts": 14
+        },
+        {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "rank": 9,
+          "pj": 13,
+          "g": 3,
+          "e": 1,
+          "p": 9,
+          "gf": 14,
+          "gc": 22,
+          "dg": -8,
+          "pts": 10
+        },
+        {
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "rank": 10,
+          "pj": 13,
+          "g": 2,
+          "e": 3,
+          "p": 8,
+          "gf": 9,
+          "gc": 23,
+          "dg": -14,
+          "pts": 9
+        }
+      ]
+    },
+    "Clausura": null,
+    "updatedAt": "2026-10-30T20:11:37.244Z",
+    "stale": false
+  },
+  "playoffs": {
+    "projected": true,
+    "semis": [
+      {
+        "stage": "semifinal",
+        "teams": [
+          {
+            "id": "858",
+            "name": "Saprissa",
+            "short": "Saprissa",
+            "abbr": "SAP",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+            "seed": 1,
+            "aggregate": null
+          },
+          {
+            "id": "2057",
+            "name": "Alajuelense",
+            "short": "Alajuelense",
+            "abbr": "ALA",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+            "seed": 4,
+            "aggregate": null
+          }
+        ],
+        "legs": [],
+        "winner": null
+      },
+      {
+        "stage": "semifinal",
+        "teams": [
+          {
+            "id": "7239",
+            "name": "Cartaginés",
+            "short": "Cartaginés",
+            "abbr": "CAR",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
+            "seed": 2,
+            "aggregate": null
+          },
+          {
+            "id": "20705",
+            "name": "Sporting San José",
+            "short": "Spr. San José",
+            "abbr": "SSJ",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+            "seed": 3,
+            "aggregate": null
+          }
+        ],
+        "legs": [],
+        "winner": null
+      }
+    ],
+    "final": null
+  },
+  "accumulated": null,
   "results": {
+    "tournament": "Apertura",
     "matches": [
       {
         "id": "401876833",
@@ -197,6 +427,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -229,6 +463,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -271,6 +509,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -319,6 +561,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -366,6 +612,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "4"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -423,6 +673,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -465,6 +719,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -523,6 +781,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -566,6 +828,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -599,6 +865,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -653,6 +923,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -685,6 +959,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -727,6 +1005,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -775,6 +1057,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -822,6 +1108,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "4"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 13,
         "goals": [
           {
@@ -879,6 +1169,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -921,6 +1215,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -979,6 +1277,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -1022,6 +1324,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -1055,6 +1361,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 12,
         "goals": [
           {
@@ -1107,6 +1417,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 11,
         "goals": [
           {
@@ -1164,6 +1478,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 11,
         "goals": [
           {
@@ -1201,6 +1519,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "4"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 11,
         "goals": [
           {
@@ -1253,6 +1575,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 11,
         "goals": [
           {
@@ -1296,6 +1622,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 11,
         "goals": [
           {
@@ -1343,6 +1673,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 10,
         "goals": [
           {
@@ -1375,6 +1709,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 10,
         "goals": [
           {
@@ -1407,6 +1745,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 10,
         "goals": [
           {
@@ -1444,6 +1786,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 10,
         "goals": [
           {
@@ -1481,6 +1827,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 10,
         "goals": [
           {
@@ -1528,6 +1878,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 9,
         "goals": [
           {
@@ -1560,6 +1914,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 9,
         "goals": [
           {
@@ -1613,6 +1971,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 9,
         "goals": [
           {
@@ -1651,6 +2013,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 9,
         "goals": [
           {
@@ -1683,6 +2049,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 9,
         "goals": [
           {
@@ -1725,6 +2095,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 8,
         "goals": [
           {
@@ -1774,6 +2148,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 8,
         "goals": [
           {
@@ -1832,6 +2210,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 8,
         "goals": [
           {
@@ -1869,6 +2251,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 8,
         "goals": [
           {
@@ -1906,6 +2292,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 8,
         "goals": [
           {
@@ -1943,6 +2333,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 7,
         "goals": [
           {
@@ -1975,6 +2369,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 7,
         "goals": [
           {
@@ -2022,6 +2420,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 7,
         "goals": [
           {
@@ -2059,6 +2461,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 7,
         "goals": [
           {
@@ -2112,6 +2518,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 7,
         "goals": [
           {
@@ -2150,6 +2560,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 6,
         "goals": [
           {
@@ -2192,6 +2606,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 6,
         "goals": [
           {
@@ -2234,6 +2652,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 6,
         "goals": [
           {
@@ -2266,6 +2688,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 6,
         "goals": [
           {
@@ -2303,6 +2729,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 6,
         "goals": [
           {
@@ -2340,6 +2770,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 5,
         "goals": [
           {
@@ -2372,6 +2806,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 5,
         "goals": [
           {
@@ -2405,6 +2843,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 5,
         "goals": [
           {
@@ -2447,6 +2889,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "4"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 5,
         "goals": [
           {
@@ -2500,6 +2946,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 5,
         "goals": [
           {
@@ -2532,6 +2982,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 4,
         "goals": [
           {
@@ -2569,6 +3023,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 4,
         "goals": [
           {
@@ -2601,6 +3059,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 4,
         "goals": [
           {
@@ -2653,6 +3115,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 4,
         "goals": [
           {
@@ -2695,6 +3161,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 4,
         "goals": [
           {
@@ -2728,6 +3198,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 3,
         "goals": [
           {
@@ -2770,6 +3244,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 3,
         "goals": [
           {
@@ -2808,6 +3286,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "2"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 3,
         "goals": [
           {
@@ -2845,6 +3327,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 3,
         "goals": []
       },
@@ -2871,6 +3357,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 3,
         "goals": [
           {
@@ -2913,6 +3403,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 2,
         "goals": [
           {
@@ -2945,6 +3439,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 2,
         "goals": [
           {
@@ -2983,6 +3481,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 2,
         "goals": [
           {
@@ -3025,6 +3527,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 2,
         "goals": [
           {
@@ -3067,6 +3573,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 2,
         "goals": [
           {
@@ -3104,6 +3614,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "3"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 1,
         "goals": [],
         "note": "Ganado en la mesa: San Carlos no pudo jugar porque tenía la licencia suspendida."
@@ -3131,6 +3645,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 1,
         "goals": [
           {
@@ -3168,6 +3686,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 1,
         "goals": [
           {
@@ -3216,6 +3738,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 1,
         "goals": [
           {
@@ -3273,6 +3799,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "1"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 1,
         "goals": [
           {
@@ -3285,7 +3815,8 @@
             "player": "Santiago Vargas",
             "side": "home"
           }
-        ]
+        ],
+        "note": "Herediano ganó 3-0 en la mesa: Puntarenas alineó a Walter Cortés, que tenía una suspensión pendiente."
       }
     ],
     "form": {
@@ -3386,6 +3917,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 11,
         "goals": [
           {
@@ -3421,7 +3956,7 @@
         ]
       }
     },
-    "updatedAt": "2026-10-30T12:26:07.129Z",
+    "updatedAt": "2026-10-30T20:11:39.898Z",
     "stale": false
   },
   "upcoming": {
@@ -3449,6 +3984,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3474,6 +4013,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3499,6 +4042,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3524,6 +4071,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3549,6 +4100,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3574,6 +4129,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       },
       {
@@ -3599,6 +4158,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       },
       {
@@ -3624,6 +4187,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       },
       {
@@ -3649,6 +4216,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       },
       {
@@ -3674,6 +4245,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       }
     ],
@@ -3701,6 +4276,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3726,6 +4305,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3751,6 +4334,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3776,6 +4363,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3801,6 +4392,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 14
       },
       {
@@ -3826,6 +4421,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       },
       {
@@ -3851,6 +4450,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       },
       {
@@ -3876,6 +4479,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       },
       {
@@ -3901,6 +4508,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       },
       {
@@ -3926,6 +4537,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 15
       },
       {
@@ -3951,6 +4566,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 16
       },
       {
@@ -3976,6 +4595,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 16
       },
       {
@@ -4001,6 +4624,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 16
       },
       {
@@ -4026,6 +4653,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 16
       },
       {
@@ -4051,6 +4682,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 16
       },
       {
@@ -4076,6 +4711,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 17
       },
       {
@@ -4101,6 +4740,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 17
       },
       {
@@ -4126,6 +4769,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 17
       },
       {
@@ -4151,6 +4798,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 17
       },
       {
@@ -4176,6 +4827,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 17
       },
       {
@@ -4201,6 +4856,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 18
       },
       {
@@ -4226,6 +4885,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 18
       },
       {
@@ -4251,6 +4914,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 18
       },
       {
@@ -4276,6 +4943,10 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 18
       },
       {
@@ -4301,10 +4972,14 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
         "round": 18
       }
     ],
-    "updatedAt": "2026-10-30T12:26:07.844Z",
+    "updatedAt": "2026-10-30T20:11:39.332Z",
     "stale": false
   },
   "scorers": {
@@ -5001,7 +5676,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-30T12:26:07.847Z",
+    "updatedAt": "2026-10-30T20:11:39.915Z",
     "stale": false
   },
   "assists": {
@@ -8787,7 +9462,7 @@
             "jersey": "90",
             "name": "José Pablo Córdoba",
             "position": "F",
-            "age": 27,
+            "age": 25,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -8809,7 +9484,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-30T12:26:07.989Z",
+    "updatedAt": "2026-10-30T20:11:40.733Z",
     "stale": false
   },
   "history": {

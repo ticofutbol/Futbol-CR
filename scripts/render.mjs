@@ -21,7 +21,7 @@ const TABS = [
 // Cada #hash (pestaña o sección) apunta a la pestaña que lo contiene; incluye los links viejos de antes de las pestañas.
 const TAB_OF = {
   ...Object.fromEntries(TABS.map(([id]) => [id, id])),
-  zona: 'inicio', resultados: 'inicio', proximos: 'inicio', envivo: 'inicio', calendario: 'jornadas',
+  zona: 'inicio', 'fase-final': 'tabla', acumulada: 'tabla', resultados: 'inicio', proximos: 'inicio', envivo: 'inicio', calendario: 'jornadas',
   posiciones: 'tabla', puntos: 'tabla', top10: 'goleadores', asistencias: 'goleadores', jugadores: 'plantillas', palmares: 'historia',
 };
 const SHARE_TEXT ='Tabla, resultados, goleadores y plantillas de la Primera División de Costa Rica 🇨🇷⚽';
@@ -178,7 +178,7 @@ function matchItem(m, played, { goals = false } = {}) {
     : `<span class="kick">${esc(fmt(m.date, { hour: '2-digit', minute: '2-digit', hour12: false }))}</span>`;
   return `
     <li class="match">
-      <div class="match-meta"><span class="date-chip">${esc(fmt(m.date, { weekday: 'short', day: 'numeric', month: 'short' }))}</span>${m.state === 'in' ? '<strong class="live">● En vivo</strong>' : ''}${m.venue ? `<span class="venue">${esc(m.venue)}</span>` : ''}</div>
+      <div class="match-meta"><span class="date-chip">${esc(fmt(m.date, { weekday: 'short', day: 'numeric', month: 'short' }))}</span>${stageChip(m)}${m.state === 'in' ? '<strong class="live">● En vivo</strong>' : ''}${m.venue ? `<span class="venue">${esc(m.venue)}</span>` : ''}</div>
       <div class="match-line">
         <span class="side home${cls('home')}"><span class="name">${esc(label(m.home))}</span><span class="name-abbr">${esc(m.home.abbr)}</span>${logo(m.home, 28)}</span>
         ${center}
@@ -191,6 +191,72 @@ function matchItem(m, played, { goals = false } = {}) {
 function goalList(m) {
   const items = (m.goals ?? []).map(g => `<li class="g-${g.side}">⚽ ${esc(g.minute)} ${esc(g.player)}${g.og ? ' (a.g.)' : g.pen ? ' (pen.)' : ''}</li>`).join('');
   return (items ? `<ul class="goal-list">${items}</ul>` : '') + (m.note ? `<p class="match-note">${esc(m.note)}</p>` : '');
+}
+
+const STAGE_NAMES = { semifinal: 'Semifinal', final: 'Final' };
+const LEG_NAMES = { 1: 'Ida', 2: 'Vuelta' };
+const stageChip = m => STAGE_NAMES[m.stage]
+  ? `<span class="stage-chip">${STAGE_NAMES[m.stage]}${LEG_NAMES[m.leg] ? ` · ${LEG_NAMES[m.leg]}` : ''}</span>` : '';
+
+/* ---------- Fase final ---------- */
+
+function seriesBox(sr, title) {
+  const done = !!sr.winner;
+  const teams = sr.teams.map(t => `
+        <div class="s-team${done ? (t.id === sr.winner ? ' win' : ' lose') : ''}">
+          ${t.seed ? `<span class="pos-badge zone-badge">${t.seed}</span>` : ''}${logo(t, 26)}
+          <span class="s-name">${esc(t.name)}</span>
+          ${t.aggregate != null && sr.legs.some(l => l.completed) ? `<b class="s-agg">${t.aggregate}</b>` : ''}
+        </div>`).join('');
+  const abbr = id => esc(sr.teams.find(t => t.id === id)?.abbr ?? '');
+  const legs = sr.legs.map(l => `<span>${LEG_NAMES[l.leg] ?? 'Partido'}: ${l.completed || l.state === 'in'
+    ? `${abbr(l.home)} ${esc(l.homeScore)}–${esc(l.awayScore)} ${abbr(l.away)}${l.state === 'in' ? ' <strong class="live">● en vivo</strong>' : ''}`
+    : esc(fmt(l.date, { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', hour12: false }))}</span>`).join('');
+  return `
+      <div class="series">
+        <span class="s-title">${esc(title)}</span>${teams}
+        ${legs ? `<div class="s-legs">${legs}</div>` : ''}
+      </div>`;
+}
+
+function bracketSection(po) {
+  if (!po?.semis?.length) return empty('Fase final no disponible.');
+  const semis = po.semis.map((sr, i) => seriesBox(sr, `Semifinal ${i + 1}`)).join('');
+  const final = po.final ? seriesBox(po.final, 'Final')
+    : `<div class="series pending"><span class="s-title">Final</span><p class="muted">Ganador semifinal 1 vs ganador semifinal 2</p></div>`;
+  const champ = po.final?.winner && po.final.teams.find(t => t.id === po.final.winner);
+  return `
+    ${champ ? `<div class="champion">${logo(champ, 40)}<div><span class="kicker">Campeón</span><strong>${esc(champ.name)}</strong></div></div>` : ''}
+    <div class="bracket">
+      <div class="br-col">${semis}</div>
+      <div class="br-col br-final">${final}</div>
+    </div>
+    <p class="note">${po.projected ? '<b>Si el torneo terminara hoy.</b> ' : ''}Clasifican los 4 primeros de la fase regular: 1.º contra 4.º y 2.º contra 3.º, a ida y vuelta, y el mejor ubicado cierra de local. La final también es a ida y vuelta.</p>`;
+}
+
+/* ---------- Tabla acumulada ---------- */
+
+function accumulatedSection(acc) {
+  const rows = acc.rows.map((r, i) => `
+      <tr class="${i === acc.rows.length - 1 ? 'relegation' : ''}">
+        <td class="pos"><span class="pos-badge">${i + 1}</span></td>
+        <td class="team">${logo(r, 24)}<span class="full">${esc(r.name)}</span><span class="abbr">${esc(r.abbr)}</span></td>
+        <td class="opt">${r.apertura}</td><td class="opt">${r.clausura}</td>
+        <td>${r.pj}</td><td class="dg ${r.dg > 0 ? 'pos-dg' : r.dg < 0 ? 'neg-dg' : ''}">${signed(r.dg)}</td>
+        <td class="pts">${r.pts}</td>
+      </tr>`).join('');
+  return `
+    <div class="table-wrap">
+      <table class="standings">
+        <thead><tr>
+          <th class="pos">#</th><th class="team">Equipo</th>
+          <th class="opt" title="Puntos en el Apertura">Apert.</th><th class="opt" title="Puntos en el Clausura">Claus.</th>
+          <th title="Partidos jugados">PJ</th><th title="Diferencia de gol">DG</th><th title="Puntos">Pts</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+    <p class="legend"><span class="swatch danger"></span>Zona de descenso · Suma de las tablas oficiales del Apertura ${acc.year} y el Clausura ${acc.year + 1} (fase regular)</p>`;
 }
 
 /* ---------- Jornadas ---------- */
@@ -395,6 +461,7 @@ export function buildHtml(data) {
   const jornada = Math.max(0, ...(s?.rows ?? []).map(r => r.pj));
   const stamp = data.lastSuccessAt ?? data.generatedAt;
   const form = data.results?.form;
+  const tLabel = `${s?.tournament ?? 'Apertura'} ${year}`;
   const warnings = (data.warnings ?? []).length
     ? `<div class="banner" role="status">Algunas fuentes fallaron en la última actualización; se muestran los últimos datos guardados.</div>`
     : '';
@@ -670,6 +737,25 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--live); margin-right: 5px; vertical-align: 1px; animation: pulse 1.4s ease-in-out infinite; }
   @keyframes pulse { 50% { opacity: .25; } }
   @media (prefers-reduced-motion: reduce) { .pulse { animation: none; } }
+  .stage-chip { flex: none; font-weight: 700; color: #b45309; background: color-mix(in srgb, #fbbf24 22%, transparent); padding: 0 6px; border-radius: 6px; }
+  .bracket { display: grid; gap: 12px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 700px) { .bracket { grid-template-columns: 1fr 1fr; } }
+  .br-col { display: grid; gap: 12px; }
+  .series { display: grid; gap: 6px; padding: 12px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--border); }
+  .br-final .series { border-color: color-mix(in srgb, #fbbf24 60%, var(--border)); }
+  .series.pending p { margin: 4px 0 0; font-size: .9rem; }
+  .s-title { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .s-team { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .s-name { flex: 1; min-width: 0; font-weight: 600; overflow-wrap: anywhere; }
+  .s-team.win .s-name { font-weight: 800; }
+  .s-team.lose { opacity: .55; }
+  .s-agg { font-family: var(--display); font-size: 1.3rem; font-weight: 800; }
+  .s-legs { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: .78rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 6px; }
+  .champion { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding: 12px 14px; border-radius: 14px; background: color-mix(in srgb, #fbbf24 18%, var(--surface)); border: 1px solid #fbbf24; }
+  .champion strong { display: block; font-family: var(--display); font-size: 1.5rem; text-transform: uppercase; }
+  tr.relegation td { background: color-mix(in srgb, var(--live) 12%, transparent); }
+  .swatch.danger { background: color-mix(in srgb, var(--live) 45%, transparent); }
+  .grid + .grid { margin-top: 16px; }
   .match-note { margin: 8px 0 0; font-size: .8rem; color: var(--muted); font-style: italic; text-align: center; }
   .round-head { margin: 14px 0 10px; color: var(--muted); font-size: .9rem; }
   .round-head strong { color: var(--text); }
@@ -792,19 +878,23 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
     ${warnings}
     <section class="card live-card" hidden>${sectionHead('envivo', 'Se actualiza solo', 'Partidos de hoy')}<ul class="matches" id="live-list"></ul><p class="note" id="live-note"></p></section>
     <div class="grid home">
-      <section class="card">${sectionHead('zona', 'Apertura ' + year, 'Zona de semifinales')}${miniStandings(s, form)}</section>
+      ${data.playoffs && !data.playoffs.projected
+        ? `<section class="card">${sectionHead('zona', tLabel, 'Fase final')}${bracketSection(data.playoffs)}</section>`
+        : `<section class="card">${sectionHead('zona', tLabel, 'Zona de semifinales')}${miniStandings(s, form)}<a class="more-link" href="#fase-final">Ver cómo quedarían las semifinales →</a></section>`}
       <section class="card">${sectionHead('proximos', 'Calendario', 'Próximos partidos')}${calendarBox()}${matchList(data.upcoming, 'upcoming')}</section>
       <section class="card">${sectionHead('resultados', 'Últimas 2 jornadas', 'Resultados')}${matchList(data.results, 'results')}<a class="more-link" href="#jornadas">Ver todas las jornadas con goleadores →</a></section>
     </div>
   </div>
   <div class="panel" data-tab="jornadas">
-    <div class="grid narrow"><section class="card">${sectionHead('calendario', 'Apertura ' + year, 'Jornadas')}${roundsSection(data)}</section></div>
+    <div class="grid narrow"><section class="card">${sectionHead('calendario', tLabel, 'Jornadas')}${roundsSection(data)}</section></div>
   </div>
   <div class="panel" data-tab="tabla">
     <div class="grid two-wide">
-      <section class="card">${sectionHead('posiciones', 'Apertura ' + year, 'Tabla de posiciones')}${standingsSection(s, form)}</section>
+      <section class="card">${sectionHead('posiciones', tLabel, 'Tabla de posiciones')}${standingsSection(s, form)}</section>
       <section class="card">${sectionHead('puntos', 'Comparativo', 'Puntos por equipo')}${pointsChart(s)}</section>
     </div>
+    <div class="grid"><section class="card">${sectionHead('fase-final', tLabel, data.playoffs?.projected ? 'Fase final (proyección)' : 'Fase final')}${bracketSection(data.playoffs)}</section></div>
+    ${data.accumulated?.rows?.length ? `<div class="grid narrow"><section class="card">${sectionHead('acumulada', `Temporada ${data.accumulated.year}-${String(data.accumulated.year + 1).slice(2)}`, 'Tabla acumulada')}${accumulatedSection(data.accumulated)}</section></div>` : ''}
   </div>
   <div class="panel" data-tab="goleadores">
     <div class="grid narrow"><section class="card">${sectionHead('top10', 'Top 10', 'Goleadores')}${scorersSection(data.scorers, teamsByName)}</section>
