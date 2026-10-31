@@ -1,4 +1,20 @@
 {
+  "401876829": [
+    {
+      "minute": "68'",
+      "playerId": "328392",
+      "player": "Doryan Rodriguez",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "minute": "82'",
+      "playerId": "419947",
+      "player": "José Alvarado",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    }
+  ],
   "401876832": [
     {
       "minute": "31'",
@@ -1139,6 +1155,43 @@
       "player": "Joel Campbell",
       "team": "Inter de San Carlos",
       "type": "Penalty - Scored"
+    }
+  ],
+  "401876890": [
+    {
+      "minute": "30'",
+      "playerId": "166669",
+      "player": "Joel Campbell",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "minute": "42'",
+      "playerId": "3099892",
+      "player": "Elian Andrés Morales Traña",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    },
+    {
+      "minute": "78'",
+      "playerId": "291026",
+      "player": "Fabricio Alemán",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "minute": "84'",
+      "playerId": "201917",
+      "player": "Johan Venegas",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    },
+    {
+      "minute": "89'",
+      "playerId": "3109143",
+      "player": "José Arturo Tello Salas",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
     }
   ],
   "401876891": [

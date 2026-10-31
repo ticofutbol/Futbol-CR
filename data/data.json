@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-10-30T20:14:30.920Z",
-  "lastSuccessAt": "2026-10-30T20:14:30.920Z",
+  "generatedAt": "2026-10-31T12:22:52.868Z",
+  "lastSuccessAt": "2026-10-31T12:22:52.868Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -95,14 +95,14 @@
         "abbr": "PUN",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
         "rank": 6,
-        "pj": 13,
+        "pj": 14,
         "g": 5,
-        "e": 3,
+        "e": 4,
         "p": 5,
-        "gf": 15,
-        "gc": 19,
+        "gf": 16,
+        "gc": 20,
         "dg": -4,
-        "pts": 18
+        "pts": 19
       },
       {
         "id": "131790",
@@ -111,13 +111,13 @@
         "abbr": "ISC",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
         "rank": 7,
-        "pj": 13,
+        "pj": 14,
         "g": 5,
         "e": 3,
-        "p": 5,
-        "gf": 15,
-        "gc": 20,
-        "dg": -5,
+        "p": 6,
+        "gf": 17,
+        "gc": 23,
+        "dg": -6,
         "pts": 18
       },
       {
@@ -143,14 +143,14 @@
         "abbr": "BEL",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
         "rank": 9,
-        "pj": 13,
-        "g": 3,
+        "pj": 14,
+        "g": 4,
         "e": 1,
         "p": 9,
-        "gf": 14,
-        "gc": 22,
-        "dg": -8,
-        "pts": 10
+        "gf": 17,
+        "gc": 24,
+        "dg": -7,
+        "pts": 13
       },
       {
         "id": "7234",
@@ -159,17 +159,17 @@
         "abbr": "ZEL",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
         "rank": 10,
-        "pj": 13,
+        "pj": 14,
         "g": 2,
-        "e": 3,
+        "e": 4,
         "p": 8,
-        "gf": 9,
-        "gc": 23,
+        "gf": 10,
+        "gc": 24,
         "dg": -14,
-        "pts": 9
+        "pts": 10
       }
     ],
-    "updatedAt": "2026-10-30T20:14:30.028Z",
+    "updatedAt": "2026-10-31T12:22:47.421Z",
     "stale": false
   },
   "tables": {
@@ -265,14 +265,14 @@
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "rank": 6,
-          "pj": 13,
+          "pj": 14,
           "g": 5,
-          "e": 3,
+          "e": 4,
           "p": 5,
-          "gf": 15,
-          "gc": 19,
+          "gf": 16,
+          "gc": 20,
           "dg": -4,
-          "pts": 18
+          "pts": 19
         },
         {
           "id": "131790",
@@ -281,13 +281,13 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "rank": 7,
-          "pj": 13,
+          "pj": 14,
           "g": 5,
           "e": 3,
-          "p": 5,
-          "gf": 15,
-          "gc": 20,
-          "dg": -5,
+          "p": 6,
+          "gf": 17,
+          "gc": 23,
+          "dg": -6,
           "pts": 18
         },
         {
@@ -313,14 +313,14 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "rank": 9,
-          "pj": 13,
-          "g": 3,
+          "pj": 14,
+          "g": 4,
           "e": 1,
           "p": 9,
-          "gf": 14,
-          "gc": 22,
-          "dg": -8,
-          "pts": 10
+          "gf": 17,
+          "gc": 24,
+          "dg": -7,
+          "pts": 13
         },
         {
           "id": "7234",
@@ -329,19 +329,19 @@
           "abbr": "ZEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "rank": 10,
-          "pj": 13,
+          "pj": 14,
           "g": 2,
-          "e": 3,
+          "e": 4,
           "p": 8,
-          "gf": 9,
-          "gc": 23,
+          "gf": 10,
+          "gc": 24,
           "dg": -14,
-          "pts": 9
+          "pts": 10
         }
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-10-30T20:14:30.028Z",
+    "updatedAt": "2026-10-31T12:22:47.421Z",
     "stale": false
   },
   "playoffs": {
@@ -404,6 +404,103 @@
   "results": {
     "tournament": "Apertura",
     "matches": [
+      {
+        "id": "401876829",
+        "date": "2026-10-31T02:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Municipal de Pérez Zeledón",
+        "home": {
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "score": "1"
+        },
+        "away": {
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "score": "1"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 14,
+        "goals": [
+          {
+            "minute": "68'",
+            "player": "Doryan Rodríguez",
+            "side": "away"
+          },
+          {
+            "minute": "82'",
+            "player": "José Alvarado",
+            "side": "home"
+          }
+        ]
+      },
+      {
+        "id": "401876890",
+        "date": "2026-10-31T00:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Carlos Ugalde Álvarez",
+        "home": {
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "score": "2"
+        },
+        "away": {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "3"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 14,
+        "goals": [
+          {
+            "minute": "30'",
+            "player": "Joel Campbell",
+            "side": "home"
+          },
+          {
+            "minute": "42'",
+            "player": "Elian Morales",
+            "side": "away"
+          },
+          {
+            "minute": "78'",
+            "player": "Fabricio Alemán",
+            "side": "home"
+          },
+          {
+            "minute": "84'",
+            "player": "Johan Venegas",
+            "side": "away"
+          },
+          {
+            "minute": "89'",
+            "player": "José Arturo Tello",
+            "side": "away"
+          }
+        ]
+      },
       {
         "id": "401876833",
         "date": "2026-10-26T00:00Z",
@@ -804,47 +901,53 @@
             "pen": true
           }
         ]
-      },
+      }
+    ],
+    "all": [
       {
-        "id": "401876839",
-        "date": "2026-10-18T17:00Z",
+        "id": "401876829",
+        "date": "2026-10-31T02:00Z",
         "state": "post",
         "completed": true,
         "statusText": "FT",
-        "venue": "Estadio José Rafael \"Fello\" Meza Ivankovich",
+        "venue": "Estadio Municipal de Pérez Zeledón",
         "home": {
-          "id": "7239",
-          "name": "Cartaginés",
-          "short": "Cartaginés",
-          "abbr": "CAR",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "1"
         },
         "away": {
-          "id": "858",
-          "name": "Saprissa",
-          "short": "Saprissa",
-          "abbr": "SAP",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
-          "score": "0"
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "score": "1"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 12,
+        "round": 14,
         "goals": [
           {
-            "minute": "44'",
-            "player": "Sebastián Acuña",
-            "side": "home",
-            "og": true
+            "minute": "68'",
+            "player": "Doryan Rodríguez",
+            "side": "away"
+          },
+          {
+            "minute": "82'",
+            "player": "José Alvarado",
+            "side": "home"
           }
         ]
       },
       {
-        "id": "401876892",
-        "date": "2026-10-18T02:00Z",
+        "id": "401876890",
+        "date": "2026-10-31T00:00Z",
         "state": "post",
         "completed": true,
         "statusText": "FT",
@@ -858,48 +961,46 @@
           "score": "2"
         },
         "away": {
-          "id": "2057",
-          "name": "Alajuelense",
-          "short": "Alajuelense",
-          "abbr": "ALA",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "3"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 12,
+        "round": 14,
         "goals": [
           {
-            "minute": "16'",
-            "player": "Juanpi",
-            "side": "away"
-          },
-          {
-            "minute": "21'",
-            "player": "Rachid Chirino",
+            "minute": "30'",
+            "player": "Joel Campbell",
             "side": "home"
           },
           {
-            "minute": "23'",
-            "player": "Juanpi",
+            "minute": "42'",
+            "player": "Elian Morales",
             "side": "away"
           },
           {
-            "minute": "59'",
-            "player": "Wilmer Azofeifa",
+            "minute": "78'",
+            "player": "Fabricio Alemán",
             "side": "home"
           },
           {
-            "minute": "70'",
-            "player": "Kenyel Michel",
+            "minute": "84'",
+            "player": "Johan Venegas",
+            "side": "away"
+          },
+          {
+            "minute": "89'",
+            "player": "José Arturo Tello",
             "side": "away"
           }
         ]
-      }
-    ],
-    "all": [
+      },
       {
         "id": "401876833",
         "date": "2026-10-26T00:00Z",
@@ -3849,18 +3950,18 @@
         "G"
       ],
       "7234": [
-        "P",
-        "P",
-        "P",
         "E",
-        "P"
+        "P",
+        "P",
+        "P",
+        "E"
       ],
       "7237": [
+        "E",
         "G",
         "G",
         "P",
-        "E",
-        "G"
+        "E"
       ],
       "7239": [
         "P",
@@ -3879,21 +3980,21 @@
       "131790": [
         "P",
         "P",
+        "P",
         "G",
-        "E",
-        "P"
+        "E"
       ],
       "132447": [
+        "G",
         "P",
         "P",
         "G",
-        "G",
-        "P"
+        "G"
       ]
     },
     "stats": {
-      "matches": 65,
-      "goals": 180,
+      "matches": 67,
+      "goals": 187,
       "biggest": {
         "id": "401876842",
         "date": "2026-10-16T02:00Z",
@@ -3956,69 +4057,11 @@
         ]
       }
     },
-    "updatedAt": "2026-10-30T20:14:30.761Z",
+    "updatedAt": "2026-10-31T12:22:48.838Z",
     "stale": false
   },
   "upcoming": {
     "matches": [
-      {
-        "id": "401876890",
-        "date": "2026-10-31T00:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Carlos Ugalde Álvarez",
-        "home": {
-          "id": "131790",
-          "name": "Inter de San Carlos",
-          "short": "San Carlos",
-          "abbr": "ISC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 14
-      },
-      {
-        "id": "401876829",
-        "date": "2026-10-31T02:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Municipal de Pérez Zeledón",
-        "home": {
-          "id": "7234",
-          "name": "Pérez Zeledón",
-          "short": "Pérez Zeledón",
-          "abbr": "ZEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "7237",
-          "name": "Puntarenas FC",
-          "short": "Puntarenas",
-          "abbr": "PUN",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 14
-      },
       {
         "id": "401876828",
         "date": "2026-11-01T02:00Z",
@@ -4250,46 +4293,23 @@
         "leg": null,
         "seriesWinner": null,
         "round": 15
-      }
-    ],
-    "all": [
+      },
       {
-        "id": "401876890",
-        "date": "2026-10-31T00:00Z",
+        "id": "401876823",
+        "date": "2026-11-08T00:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
         "venue": "Estadio Carlos Ugalde Álvarez",
         "home": {
-          "id": "131790",
-          "name": "Inter de San Carlos",
+          "id": "859",
+          "name": "AD San Carlos",
           "short": "San Carlos",
-          "abbr": "ISC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "0"
         },
         "away": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 14
-      },
-      {
-        "id": "401876829",
-        "date": "2026-10-31T02:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Municipal de Pérez Zeledón",
-        "home": {
           "id": "7234",
           "name": "Pérez Zeledón",
           "short": "Pérez Zeledón",
@@ -4297,20 +4317,43 @@
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 16
+      },
+      {
+        "id": "401876820",
+        "date": "2026-11-08T02:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Alejandro Morera Soto",
+        "home": {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "0"
+        },
         "away": {
-          "id": "7237",
-          "name": "Puntarenas FC",
-          "short": "Puntarenas",
-          "abbr": "PUN",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "score": "0"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 14
-      },
+        "round": 16
+      }
+    ],
+    "all": [
       {
         "id": "401876828",
         "date": "2026-11-01T02:00Z",
@@ -4979,12 +5022,12 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-10-30T20:14:30.628Z",
+    "updatedAt": "2026-10-31T12:22:48.618Z",
     "stale": false
   },
   "scorers": {
-    "matchesCounted": 65,
-    "goalsCounted": 177,
+    "matchesCounted": 67,
+    "goalsCounted": 184,
     "corrections": 4,
     "rows": [
       {
@@ -5007,6 +5050,20 @@
         "team": "Alajuelense",
         "goals": 6,
         "penalties": 1
+      },
+      {
+        "playerId": "166669",
+        "player": "Joel Campbell",
+        "team": "Inter de San Carlos",
+        "goals": 6,
+        "penalties": 4
+      },
+      {
+        "playerId": "328392",
+        "player": "Doryan Rodríguez",
+        "team": "Puntarenas FC",
+        "goals": 5,
+        "penalties": 0
       },
       {
         "playerId": "227608",
@@ -5037,22 +5094,8 @@
         "penalties": 1
       },
       {
-        "playerId": "166669",
-        "player": "Joel Campbell",
-        "team": "Inter de San Carlos",
-        "goals": 5,
-        "penalties": 4
-      },
-      {
         "playerId": "407914",
         "player": "Dariel Castrillo",
-        "team": "Puntarenas FC",
-        "goals": 4,
-        "penalties": 0
-      },
-      {
-        "playerId": "328392",
-        "player": "Doryan Rodríguez",
         "team": "Puntarenas FC",
         "goals": 4,
         "penalties": 0
@@ -5061,6 +5104,13 @@
         "playerId": "290955",
         "player": "Jefferson Brenes",
         "team": "Saprissa",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
+        "playerId": "419947",
+        "player": "José Alvarado",
+        "team": "Pérez Zeledón",
         "goals": 4,
         "penalties": 0
       },
@@ -5109,6 +5159,20 @@
         "penalties": 1
       },
       {
+        "playerId": "166669",
+        "player": "Joel Campbell",
+        "team": "Inter de San Carlos",
+        "goals": 6,
+        "penalties": 4
+      },
+      {
+        "playerId": "328392",
+        "player": "Doryan Rodríguez",
+        "team": "Puntarenas FC",
+        "goals": 5,
+        "penalties": 0
+      },
+      {
         "playerId": "227608",
         "player": "Gabriel Leiva",
         "team": "Sporting San José",
@@ -5137,22 +5201,8 @@
         "penalties": 1
       },
       {
-        "playerId": "166669",
-        "player": "Joel Campbell",
-        "team": "Inter de San Carlos",
-        "goals": 5,
-        "penalties": 4
-      },
-      {
         "playerId": "407914",
         "player": "Dariel Castrillo",
-        "team": "Puntarenas FC",
-        "goals": 4,
-        "penalties": 0
-      },
-      {
-        "playerId": "328392",
-        "player": "Doryan Rodríguez",
         "team": "Puntarenas FC",
         "goals": 4,
         "penalties": 0
@@ -5161,6 +5211,13 @@
         "playerId": "290955",
         "player": "Jefferson Brenes",
         "team": "Saprissa",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
+        "playerId": "419947",
+        "player": "José Alvarado",
+        "team": "Pérez Zeledón",
         "goals": 4,
         "penalties": 0
       },
@@ -5203,13 +5260,6 @@
         "playerId": "153727",
         "player": "Érick Torres",
         "team": "Inter de San Carlos",
-        "goals": 3,
-        "penalties": 0
-      },
-      {
-        "playerId": "419947",
-        "player": "José Alvarado",
-        "team": "Pérez Zeledón",
         "goals": 3,
         "penalties": 0
       },
@@ -5459,9 +5509,23 @@
         "penalties": 0
       },
       {
+        "playerId": "3099892",
+        "player": "Elian Morales",
+        "team": "Escorpiones Belén",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
         "playerId": "350672",
         "player": "Elián Quesada",
         "team": "Pérez Zeledón",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
+        "playerId": "291026",
+        "player": "Fabricio Alemán",
+        "team": "Inter de San Carlos",
         "goals": 1,
         "penalties": 0
       },
@@ -5515,6 +5579,13 @@
         "penalties": 0
       },
       {
+        "playerId": "201917",
+        "player": "Johan Venegas",
+        "team": "Escorpiones Belén",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
         "playerId": "190944",
         "player": "John Jairo Ruiz",
         "team": "Escorpiones Belén",
@@ -5539,6 +5610,13 @@
         "playerId": "159210",
         "player": "Jorman Aguilar",
         "team": "AD San Carlos",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
+        "playerId": "3109143",
+        "player": "José Arturo Tello",
+        "team": "Escorpiones Belén",
         "goals": 1,
         "penalties": 0
       },
@@ -5676,7 +5754,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-10-30T20:14:30.764Z",
+    "updatedAt": "2026-10-31T12:22:52.689Z",
     "stale": false
   },
   "assists": {
@@ -7833,7 +7911,7 @@
             "age": 23,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 4,
+            "goals": 5,
             "penalties": 0,
             "assists": 1
           },
@@ -8129,7 +8207,7 @@
             "age": 34,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 5,
+            "goals": 6,
             "penalties": 4,
             "assists": 3
           },
@@ -8225,7 +8303,7 @@
             "age": 23,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0,
             "assists": 0
           },
@@ -8854,7 +8932,7 @@
             "age": 24,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0,
             "assists": 0
           },
@@ -8902,7 +8980,7 @@
             "age": 37,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0,
             "assists": 0
           },
@@ -8987,7 +9065,7 @@
             "age": 26,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0,
             "assists": 0
           },
@@ -9428,7 +9506,7 @@
             "age": 28,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 3,
+            "goals": 4,
             "penalties": 0,
             "assists": 1
           },
@@ -9484,7 +9562,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-10-30T20:14:30.916Z",
+    "updatedAt": "2026-10-31T12:22:52.865Z",
     "stale": false
   },
   "history": {
