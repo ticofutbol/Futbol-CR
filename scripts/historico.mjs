@@ -41,6 +41,12 @@ function tournamentOf(typeName, seasonYear) {
   return { name: `${half[1]} ${seasonYear + half[2]}`, stage };
 }
 
+// Ganadores de etapa de la época de un solo campeón por temporada (no están en data/campeones.json).
+// Fuente: Wikipedia, temporada 2006-07.
+const STAGE_WINNERS = {
+  'Apertura 2006': { campeon: 'Saprissa', nota: 'Ganó el Apertura y también el Clausura, y fue campeón de la temporada 2006-07.' },
+};
+
 // Todos los equipos que aparecen en alguna tabla desde `from` (ESPN no da la lista de equipos de años viejos).
 const teamIds = new Set();
 for (let y = from; y <= to; y++) {
@@ -80,8 +86,8 @@ for (let y = from; y <= to; y++) {
     await writeFile(new URL(`${slug}.json`, OUT), JSON.stringify({ torneo: name, partidos: matches }) + '\n');
     // Hasta 2006-07 hubo un solo campeón por temporada: se muestra en el torneo que la cerró.
     const season = `${y}-${String(y + 1).slice(2)}`;
-    const champ = champions.find(c => c.torneo === name) ?? (/2007$/.test(name) && champions.find(c => c.torneo === season));
-    index.push({ torneo: name, slug, partidos: matches.length, fin: matches.at(-1).d, ...(champ && { campeon: champ.campeon, subcampeon: champ.subcampeon, goleador: champ.goleador, ...(champ.torneo !== name && { temporada: champ.torneo }) }) });
+    const champ = champions.find(c => c.torneo === name) ?? STAGE_WINNERS[name] ?? (/2007$/.test(name) && champions.find(c => c.torneo === season));
+    index.push({ torneo: name, slug, partidos: matches.length, fin: matches.at(-1).d, ...(champ && { campeon: champ.campeon, subcampeon: champ.subcampeon, goleador: champ.goleador, ...(champ.torneo && champ.torneo !== name && { temporada: champ.torneo }), ...(champ.nota && { nota: champ.nota }) }) });
     console.log(`  ${name}: ${matches.length} partidos${champ ? ` (campeón: ${champ.campeon})` : ''}`);
   }
 }

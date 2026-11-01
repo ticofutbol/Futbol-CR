@@ -450,7 +450,7 @@ function championsSection(list, teamsByName) {
 function archivesSection(archives, oldTournaments, teamsByName) {
   const slug = a => a.torneo.toLowerCase().replace(/\s+/g, '-');
   // Los torneos viejos se cargan al elegirlos (public/historico/), para no hacer pesada la página.
-  const oldOptions = oldTournaments.map((t, i) => `<option value="h:${esc(t.slug)}"${!archives.length && i === 0 ? ' selected' : ''} data-campeon="${esc(t.campeon ?? '')}" data-subcampeon="${esc(t.subcampeon ?? '')}" data-goleador="${esc(t.goleador ?? '')}" data-temporada="${esc(t.temporada ?? '')}">${esc(t.torneo)}</option>`).join('');
+  const oldOptions = oldTournaments.map((t, i) => `<option value="h:${esc(t.slug)}"${!archives.length && i === 0 ? ' selected' : ''} data-campeon="${esc(t.campeon ?? '')}" data-subcampeon="${esc(t.subcampeon ?? '')}" data-goleador="${esc(t.goleador ?? '')}" data-temporada="${esc(t.temporada ?? '')}" data-nota="${esc(t.nota ?? '')}">${esc(t.torneo)}</option>`).join('');
   const options = (archives.length ? `<optgroup label="Con goleadores por partido">${archives.map((a, i) => `<option value="${slug(a)}"${i === 0 ? ' selected' : ''}>${esc(a.torneo)}</option>`).join('')}</optgroup>` : '')
     + (oldOptions ? `<optgroup label="Solo resultados">${oldOptions}</optgroup>` : '');
   const panels = archives.map((a, i) => {
@@ -1039,8 +1039,8 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
             last.items.push(m);
           });
           var d = opt.dataset;
-          histBody.innerHTML = (d.campeon ? '<div class="hist-champ"><span class="kicker">Campeón' + (d.temporada ? ' de la temporada ' + e(d.temporada) : '') + '</span><br><strong>' + e(d.campeon) + '</strong>'
-              + (d.subcampeon ? ' · subcampeón: ' + e(d.subcampeon) : '') + (d.goleador ? '<br>Goleador: ' + e(d.goleador) : '') + '</div>' : '')
+          histBody.innerHTML = (d.campeon ? '<div class="hist-champ"><span class="kicker">' + (d.nota ? 'Ganador del torneo' : 'Campeón' + (d.temporada ? ' de la temporada ' + e(d.temporada) : '')) + '</span><br><strong>' + e(d.campeon) + '</strong>'
+              + (d.subcampeon ? ' · subcampeón: ' + e(d.subcampeon) : '') + (d.goleador ? '<br>Goleador: ' + e(d.goleador) : '') + (d.nota ? '<br>' + e(d.nota) : '') + '</div>' : '')
             + '<p class="round-head"><strong>' + e(t.torneo) + '</strong> · ' + t.partidos.length + ' partidos</p>'
             + groups.map(function (g) { return '<h4>' + e(g.key) + '</h4><ul class="arch-matches">' + g.items.map(line).join('') + '</ul>'; }).join('');
         }).catch(function () { histBody.innerHTML = '<p class="muted">No se pudo cargar este torneo.</p>'; });

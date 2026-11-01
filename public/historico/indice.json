@@ -357,7 +357,9 @@
       "torneo": "Apertura 2006",
       "slug": "apertura-2006",
       "partidos": 99,
-      "fin": "2006-12-23"
+      "fin": "2006-12-23",
+      "campeon": "Saprissa",
+      "nota": "Ganó el Apertura y también el Clausura, y fue campeón de la temporada 2006-07."
     }
   ]
 }
