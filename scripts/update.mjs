@@ -1,6 +1,6 @@
 // Descarga los datos de ESPN, los guarda en data/data.json y genera public/index.html.
 // Cada sección se descarga por separado: si una falla, se reutiliza la versión guardada.
-import { readFile, writeFile, rename, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, rename, mkdir, readdir } from 'node:fs/promises';
 import { render } from './render.mjs';
 import { phaseOf, seasonYear, currentTournament, buildPlayoffs, accumulatedTable } from './fase-final.mjs';
 
@@ -8,6 +8,9 @@ const ROOT = new URL('../', import.meta.url);
 const DATA_FILE = new URL('data/data.json', ROOT);
 const GOALS_CACHE = new URL('data/goals-cache.json', ROOT);
 const CORRECTIONS = new URL('data/corrections.json', ROOT);
+const ARCHIVE_DIR = new URL('data/archivo/', ROOT);
+const CHAMPIONS = new URL('data/campeones.json', ROOT);
+const HISTORY = new URL('data/history.json', ROOT);
 
 const LEAGUE = 'crc.1';
 const SITE = `https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUE}`;
@@ -319,6 +322,63 @@ function applyManualSquad(players, manualTeam, scorers, teamName) {
   }
 }
 
+// Nombres de ESPN que en la lista de títulos aparecen distinto.
+const HISTORY_NAMES = { 'AD San Carlos': 'San Carlos' };
+const historyName = name => HISTORY_NAMES[name] ?? name;
+
+// "Juan Pérez y Ana Mora (8)": el goleador del torneo, con los empatados.
+function topScorerText(rows = []) {
+  const top = rows.filter(r => r.goals === rows[0]?.goals).map(r => r.player);
+  if (!top.length) return null;
+  return `${top.length > 1 ? `${top.slice(0, -1).join(', ')} y ${top.at(-1)}` : top[0]} (${rows[0].goals})`;
+}
+
+// Al terminar la final, el torneo se guarda completo en data/archivo/. La primera vez, además,
+// su campeón se agrega a data/campeones.json y suma un título en data/history.json.
+async function archiveTournament({ name, standings, playoffs, scorers, assists, matches }) {
+  const final = playoffs.final;
+  const champion = final.teams.find(t => t.id === final.winner);
+  const runnerUp = final.teams.find(t => t.id !== final.winner);
+  const file = new URL(`${name.toLowerCase().replace(/\s+/g, '-')}.json`, ARCHIVE_DIR);
+  const isNew = !(await readJson(file, null));
+  await mkdir(ARCHIVE_DIR, { recursive: true });
+  await writeJson(file, {
+    torneo: name,
+    guardado: new Date().toISOString(),
+    campeon: champion,
+    subcampeon: runnerUp,
+    playoffs,
+    tabla: standings?.rows ?? [],
+    goleadores: scorers?.rows ?? [],
+    asistencias: assists?.rows ?? [],
+    partidos: matches.map(m => ({
+      date: m.date, round: m.round ?? null, stage: m.stage, leg: m.leg,
+      home: { name: m.home.name, abbr: m.home.abbr, score: m.home.score },
+      away: { name: m.away.name, abbr: m.away.abbr, score: m.away.score },
+      goals: m.goals ?? [], ...(m.note && { note: m.note }),
+    })),
+  });
+  if (!isNew) return;
+  console.log(`🏆 ${name}: campeón ${champion.name} (guardado en data/archivo/)`);
+  const champs = await readJson(CHAMPIONS, { campeones: [] });
+  if (!champs.campeones.some(c => c.torneo === name)) {
+    champs.campeones.push({ torneo: name, campeon: historyName(champion.name), subcampeon: historyName(runnerUp.name), goleador: topScorerText(scorers?.rows) });
+    await writeJson(CHAMPIONS, champs);
+    const history = await readJson(HISTORY, { clubs: [] });
+    const club = history.clubs.find(c => c.club === historyName(champion.name));
+    if (club) club.titles++; else history.clubs.push({ club: historyName(champion.name), titles: 1 });
+    history.clubs.sort((a, b) => b.titles - a.titles);
+    await writeJson(HISTORY, history);
+  }
+}
+
+async function readArchives() {
+  let files = [];
+  try { files = (await readdir(ARCHIVE_DIR)).filter(n => n.endsWith('.json')); } catch { return []; }
+  const all = await Promise.all(files.map(n => readJson(new URL(n, ARCHIVE_DIR), null)));
+  return all.filter(Boolean).sort((a, b) => (b.partidos.at(-1)?.date ?? '').localeCompare(a.partidos.at(-1)?.date ?? ''));
+}
+
 async function section(name, prev, fn, warnings) {
   try {
     const data = await fn();
@@ -338,7 +398,6 @@ async function section(name, prev, fn, warnings) {
 async function main() {
   await mkdir(new URL('data/', ROOT), { recursive: true });
   const prev = await readJson(DATA_FILE, {});
-  const history = await readJson(new URL('data/history.json', ROOT), { clubs: [] });
   const warnings = [];
 
   // Tablas oficiales de los dos torneos de la temporada (la del Clausura viene vacía hasta enero).
@@ -420,6 +479,15 @@ async function main() {
   // Tabla acumulada: solo tiene sentido cuando ya empezó el Clausura (antes es igual a la del Apertura).
   const accumulated = tables?.Clausura ? { rows: accumulatedTable(tables.Apertura.rows, tables.Clausura.rows), year: seasonYear() } : null;
 
+  if (playoffs?.final?.winner) {
+    const year = tournament === 'Clausura' ? seasonYear() + 1 : seasonYear();
+    const all = [...(results?.all ?? [])].sort((a, b) => a.date.localeCompare(b.date));
+    await archiveTournament({ name: `${tournament} ${year}`, standings, playoffs, scorers, assists, matches: all });
+  }
+  const history = await readJson(HISTORY, { clubs: [] });
+  const champions = (await readJson(CHAMPIONS, { campeones: [] })).campeones;
+  const archives = await readArchives();
+
   const data = {
     source: 'ESPN (site.api.espn.com, liga crc.1)',
     generatedAt: new Date().toISOString(),
@@ -437,6 +505,8 @@ async function main() {
     assists,
     squads,
     history,
+    champions,
+    archives,
   };
 
   await writeJson(DATA_FILE, data);

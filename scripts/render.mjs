@@ -22,7 +22,7 @@ const TABS = [
 const TAB_OF = {
   ...Object.fromEntries(TABS.map(([id]) => [id, id])),
   zona: 'inicio', 'fase-final': 'tabla', acumulada: 'tabla', resultados: 'inicio', proximos: 'inicio', envivo: 'inicio', calendario: 'jornadas',
-  posiciones: 'tabla', puntos: 'tabla', top10: 'goleadores', asistencias: 'goleadores', jugadores: 'plantillas', palmares: 'historia',
+  posiciones: 'tabla', puntos: 'tabla', top10: 'goleadores', asistencias: 'goleadores', jugadores: 'plantillas', palmares: 'historia', campeones: 'historia', torneos: 'historia',
 };
 const SHARE_TEXT ='Tabla, resultados, goleadores y plantillas de la Primera División de Costa Rica 🇨🇷⚽';
 
@@ -425,6 +425,59 @@ function squadsSection(sq) {
 
 /* ---------- Historia ---------- */
 
+// Campeones desde 1999-00, del más reciente al más viejo. Se ven los últimos 10; el resto, al abrir "Ver todos".
+const CLUB_ESPN = { 'San Carlos': 'AD San Carlos' }; // nombres de la lista de títulos que en ESPN son distintos
+function championsSection(list, teamsByName) {
+  if (!list?.length) return empty('Sin lista de campeones.');
+  const team = name => teamsByName.get(CLUB_ESPN[name] ?? name);
+  const row = c => `
+        <tr>
+          <td class="t-name">${esc(c.torneo)}</td>
+          <td class="team">${team(c.campeon) ? logo(team(c.campeon), 22) : '<span class="logo" style="width:22px;height:22px"></span>'}<b>${esc(c.campeon)}</b></td>
+          <td class="opt muted">${esc(c.subcampeon ?? '')}</td>
+          <td class="scorer-cell">${esc(c.goleador ?? '')}</td>
+        </tr>`;
+  const recent = [...list].reverse();
+  const head = `<thead><tr><th>Torneo</th><th class="team">Campeón</th><th class="opt">Subcampeón</th><th>Goleador (goles)</th></tr></thead>`;
+  return `
+    <div class="table-wrap"><table class="standings champs">${head}<tbody>${recent.slice(0, 10).map(row).join('')}</tbody></table></div>
+    ${recent.length > 10 ? `<details class="more"><summary>Ver todos (${recent.length} torneos desde ${esc(list[0].torneo)})</summary>
+      <div class="table-wrap"><table class="standings champs">${head}<tbody>${recent.slice(10).map(row).join('')}</tbody></table></div></details>` : ''}
+    <p class="note">Hasta 2006-07 hubo un campeón por temporada; desde 2007, dos por año. Fuente: Wikipedia; los torneos nuevos se agregan solos al terminar la final.</p>`;
+}
+
+// Torneos terminados y guardados (data/archivo/): campeón, llave, tabla final, goleadores y todas las jornadas.
+function archivesSection(archives, teamsByName) {
+  const slug = a => a.torneo.toLowerCase().replace(/\s+/g, '-');
+  const options = archives.map((a, i) => `<option value="${slug(a)}"${i === 0 ? ' selected' : ''}>${esc(a.torneo)}</option>`).join('');
+  const panels = archives.map((a, i) => {
+    const scorers = a.goleadores.slice(0, 10).map(r => `<li><span class="rank">${r.goals}</span>${logo(teamsByName.get(r.team), 20)}<span class="who"><b>${esc(r.player)}</b><span class="muted">${esc(r.team)}</span></span></li>`).join('');
+    const assists = a.asistencias.slice(0, 5).map(r => `${esc(r.player)} (${r.assists})`).join(', ');
+    const byRound = new Map();
+    for (const m of a.partidos) {
+      const key = m.round ? `Jornada ${m.round}` : `${STAGE_NAMES[m.stage] ?? 'Fase final'}${LEG_NAMES[m.leg] ? ` · ${LEG_NAMES[m.leg]}` : ''}`;
+      byRound.set(key, [...(byRound.get(key) ?? []), m]);
+    }
+    const rounds = [...byRound].map(([title, ms]) => `
+          <h4>${esc(title)}</h4>
+          <ul class="arch-matches">${ms.map(m => `<li><b>${esc(m.home.abbr)} ${esc(m.home.score)}–${esc(m.away.score)} ${esc(m.away.abbr)}</b>${m.goals.length ? ` · ${m.goals.map(g => `${esc(g.player)} ${esc(g.minute)}${g.og ? ' (a.g.)' : g.pen ? ' (pen.)' : ''}`).join(', ')}` : ''}${m.note ? ` <i class="muted">(${esc(m.note)})</i>` : ''}</li>`).join('')}</ul>`).join('');
+    return `
+      <div class="archive" data-archive="${slug(a)}"${i === 0 ? '' : ' hidden'}>
+        ${bracketSection(a.playoffs)}
+        <h3 class="arch-title">Tabla final de la fase regular</h3>
+        ${standingsSection({ rows: a.tabla }, null)}
+        <h3 class="arch-title">Goleadores</h3>
+        <ol class="scorer-list arch-scorers">${scorers}</ol>
+        ${assists ? `<p class="note">Más asistencias: ${assists}.</p>` : ''}
+        <details class="more"><summary>Ver todas las jornadas con goleadores</summary>${rounds}</details>
+      </div>`;
+  }).join('');
+  return `
+    <div class="select-wrap"><label class="select-label" for="archive-select">Elige un torneo</label>
+    <select id="archive-select" class="select">${options}</select></div>
+    ${panels}`;
+}
+
 function historySection(h) {
   const clubs = [...(h?.clubs ?? [])].sort((a, b) => b.titles - a.titles);
   if (!clubs.length) return empty('Sin datos históricos.');
@@ -756,6 +809,15 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   tr.relegation td { background: color-mix(in srgb, var(--live) 12%, transparent); }
   .swatch.danger { background: color-mix(in srgb, var(--live) 45%, transparent); }
   .grid + .grid { margin-top: 16px; }
+  .champs td, .champs th { text-align: left; }
+  .champs .t-name { white-space: nowrap; font-weight: 600; }
+  .champs .scorer-cell { font-size: .82rem; color: var(--muted); white-space: normal; min-width: 150px; }
+  details.more { margin-top: 12px; }
+  details.more summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+  .arch-title { margin: 20px 0 8px; font-family: var(--display); font-size: 1.15rem; text-transform: uppercase; }
+  .archive h4 { margin: 14px 0 4px; font-size: .85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .arch-matches { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; font-size: .85rem; }
+  .arch-scorers .rank { font-family: var(--display); font-weight: 800; }
   .match-note { margin: 8px 0 0; font-size: .8rem; color: var(--muted); font-style: italic; text-align: center; }
   .round-head { margin: 14px 0 10px; color: var(--muted); font-size: .9rem; }
   .round-head strong { color: var(--text); }
@@ -905,6 +967,8 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   </div>
   <div class="panel" data-tab="historia">
     <div class="grid narrow"><section class="card">${sectionHead('palmares', 'Palmarés', esc(data.history?.title ?? 'Historia'))}${historySection(data.history)}</section></div>
+    ${data.archives?.length ? `<div class="grid narrow"><section class="card">${sectionHead('torneos', 'Archivo', 'Torneos anteriores')}${archivesSection(data.archives, teamsByName)}</section></div>` : ''}
+    <div class="grid narrow"><section class="card">${sectionHead('campeones', 'Desde el 2000', 'Campeones')}${championsSection(data.champions, teamsByName)}</section></div>
   </div>
 </main>
 <footer class="wrap">
@@ -945,6 +1009,15 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
           sel.dispatchEvent(new Event('change'));
         });
       });
+    }
+
+    var archSel = document.getElementById('archive-select');
+    if (archSel) {
+      var showArchive = function () {
+        document.querySelectorAll('.archive').forEach(function (el) { el.hidden = el.dataset.archive !== archSel.value; });
+      };
+      showArchive();
+      archSel.addEventListener('change', showArchive);
     }
 
     var roundSel = document.getElementById('round-select');
