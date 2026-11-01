@@ -487,6 +487,9 @@ async function main() {
   const history = await readJson(HISTORY, { clubs: [] });
   const champions = (await readJson(CHAMPIONS, { campeones: [] })).campeones;
   const archives = await readArchives();
+  // Torneos viejos (solo resultados), descargados una vez con scripts/historico.mjs; los ya archivados no se repiten.
+  const oldTournaments = (await readJson(new URL('public/historico/indice.json', ROOT), { torneos: [] })).torneos
+    .filter(t => !archives.some(a => a.torneo === t.torneo));
 
   const data = {
     source: 'ESPN (site.api.espn.com, liga crc.1)',
@@ -507,6 +510,7 @@ async function main() {
     history,
     champions,
     archives,
+    oldTournaments,
   };
 
   await writeJson(DATA_FILE, data);

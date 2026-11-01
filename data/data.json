@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-01T20:05:29.974Z",
-  "lastSuccessAt": "2026-11-01T20:05:29.974Z",
+  "generatedAt": "2026-11-01T20:15:22.521Z",
+  "lastSuccessAt": "2026-11-01T20:15:22.521Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-01T20:05:27.901Z",
+    "updatedAt": "2026-11-01T20:15:17.784Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-01T20:05:27.901Z",
+    "updatedAt": "2026-11-01T20:15:17.784Z",
     "stale": false
   },
   "playoffs": {
@@ -4112,7 +4112,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-01T20:05:29.416Z",
+    "updatedAt": "2026-11-01T20:15:21.441Z",
     "stale": false
   },
   "upcoming": {
@@ -5019,7 +5019,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-01T20:05:28.901Z",
+    "updatedAt": "2026-11-01T20:15:20.531Z",
     "stale": false
   },
   "scorers": {
@@ -5758,7 +5758,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-01T20:05:29.614Z",
+    "updatedAt": "2026-11-01T20:15:21.755Z",
     "stale": false
   },
   "assists": {
@@ -9566,7 +9566,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-01T20:05:29.972Z",
+    "updatedAt": "2026-11-01T20:15:22.512Z",
     "stale": false
   },
   "history": {
@@ -9908,5 +9908,365 @@
       "goleador": "Marcel Hernández (12)"
     }
   ],
-  "archives": []
+  "archives": [],
+  "oldTournaments": [
+    {
+      "torneo": "Clausura 2026",
+      "slug": "clausura-2026",
+      "partidos": 96,
+      "fin": "2026-05-16",
+      "campeon": "Herediano",
+      "subcampeon": "Saprissa",
+      "goleador": "Marcel Hernández (12)"
+    },
+    {
+      "torneo": "Apertura 2025",
+      "slug": "apertura-2025",
+      "partidos": 96,
+      "fin": "2025-12-20",
+      "campeon": "Alajuelense",
+      "subcampeon": "Saprissa",
+      "goleador": "Marcel Hernández (8)"
+    },
+    {
+      "torneo": "Clausura 2025",
+      "slug": "clausura-2025",
+      "partidos": 140,
+      "fin": "2025-05-28",
+      "campeon": "Herediano",
+      "subcampeon": "Alajuelense",
+      "goleador": "Emanuel Casado (9)"
+    },
+    {
+      "torneo": "Apertura 2024",
+      "slug": "apertura-2024",
+      "partidos": 140,
+      "fin": "2024-12-27",
+      "campeon": "Herediano",
+      "subcampeon": "Alajuelense",
+      "goleador": "Javon East y Marcel Hernández (10)"
+    },
+    {
+      "torneo": "Clausura 2024",
+      "slug": "clausura-2024",
+      "partidos": 138,
+      "fin": "2024-05-26",
+      "campeon": "Saprissa",
+      "subcampeon": "Alajuelense",
+      "goleador": "Steven Cárdenas (13)"
+    },
+    {
+      "torneo": "Apertura 2023",
+      "slug": "apertura-2023",
+      "partidos": 138,
+      "fin": "2023-12-17",
+      "campeon": "Saprissa",
+      "subcampeon": "Herediano",
+      "goleador": "José de Jesús Godínez (14)"
+    },
+    {
+      "torneo": "Clausura 2023",
+      "slug": "clausura-2023",
+      "partidos": 140,
+      "fin": "2023-05-28",
+      "campeon": "Saprissa",
+      "subcampeon": "Alajuelense",
+      "goleador": "Johan Venegas (16)"
+    },
+    {
+      "torneo": "Apertura 2022",
+      "slug": "apertura-2022",
+      "partidos": 104,
+      "fin": "2022-11-05",
+      "campeon": "Saprissa",
+      "subcampeon": "Herediano",
+      "goleador": "Fernando Lesme (8)"
+    },
+    {
+      "torneo": "Clausura 2022",
+      "slug": "clausura-2022",
+      "partidos": 140,
+      "fin": "2022-07-06",
+      "campeon": "Cartaginés",
+      "subcampeon": "Alajuelense",
+      "goleador": "Marcel Hernández (16)"
+    },
+    {
+      "torneo": "Apertura 2021",
+      "slug": "apertura-2021",
+      "partidos": 140,
+      "fin": "2021-12-19",
+      "campeon": "Herediano",
+      "subcampeon": "Saprissa",
+      "goleador": "Yendrick Ruiz (10)"
+    },
+    {
+      "torneo": "Clausura 2021",
+      "slug": "clausura-2021",
+      "partidos": 140,
+      "fin": "2021-05-26",
+      "campeon": "Saprissa",
+      "subcampeon": "Herediano",
+      "goleador": "Javon East y Johan Venegas (13)"
+    },
+    {
+      "torneo": "Apertura 2020",
+      "slug": "apertura-2020",
+      "partidos": 104,
+      "fin": "2020-12-20",
+      "campeon": "Alajuelense",
+      "subcampeon": "Herediano",
+      "goleador": "Marcel Hernández (13)"
+    },
+    {
+      "torneo": "Clausura 2020",
+      "slug": "clausura-2020",
+      "partidos": 137,
+      "fin": "2020-06-29",
+      "campeon": "Saprissa",
+      "subcampeon": "Alajuelense",
+      "goleador": "Christian Bolaños (18)"
+    },
+    {
+      "torneo": "Apertura 2019",
+      "slug": "apertura-2019",
+      "partidos": 140,
+      "fin": "2019-12-21",
+      "campeon": "Herediano",
+      "subcampeon": "Alajuelense",
+      "goleador": "Álvaro Saborío (13)"
+    },
+    {
+      "torneo": "Clausura 2019",
+      "slug": "clausura-2019",
+      "partidos": 138,
+      "fin": "2019-05-15",
+      "campeon": "San Carlos",
+      "subcampeon": "Saprissa",
+      "goleador": "Álvaro Saborío (12)"
+    },
+    {
+      "torneo": "Apertura 2018",
+      "slug": "apertura-2018",
+      "partidos": 128,
+      "fin": "2018-12-23",
+      "campeon": "Herediano",
+      "subcampeon": "Saprissa",
+      "goleador": "Álvaro Saborío (16)"
+    },
+    {
+      "torneo": "Clausura 2018",
+      "slug": "clausura-2018",
+      "partidos": 146,
+      "fin": "2018-05-20",
+      "campeon": "Saprissa",
+      "subcampeon": "Herediano",
+      "goleador": "Roger Rojas (20)"
+    },
+    {
+      "torneo": "Apertura 2017",
+      "slug": "apertura-2017",
+      "partidos": 144,
+      "fin": "2017-12-23",
+      "campeon": "Pérez Zeledón",
+      "subcampeon": "Herediano",
+      "goleador": "Jonathan McDonald (15)"
+    },
+    {
+      "torneo": "Verano 2017",
+      "slug": "verano-2017",
+      "partidos": 146,
+      "fin": "2017-05-21",
+      "campeon": "Herediano",
+      "subcampeon": "Saprissa",
+      "goleador": "Erick Scott (22)"
+    },
+    {
+      "torneo": "Invierno 2016",
+      "slug": "invierno-2016",
+      "partidos": 120,
+      "fin": "2016-12-15",
+      "campeon": "Saprissa",
+      "subcampeon": "Herediano",
+      "goleador": "Yendrick Ruiz (13)"
+    },
+    {
+      "torneo": "Verano 2016",
+      "slug": "verano-2016",
+      "partidos": 136,
+      "fin": "2016-05-14",
+      "campeon": "Herediano",
+      "subcampeon": "Alajuelense",
+      "goleador": "José Ortiz, Yendrick Ruiz y José Cordero (11)"
+    },
+    {
+      "torneo": "Invierno 2015",
+      "slug": "invierno-2015",
+      "partidos": 138,
+      "fin": "2015-12-23",
+      "campeon": "Saprissa",
+      "subcampeon": "Alajuelense",
+      "goleador": "Ariel Rodríguez (20)"
+    },
+    {
+      "torneo": "Verano 2015",
+      "slug": "verano-2015",
+      "partidos": 136,
+      "fin": "2015-05-23",
+      "campeon": "Herediano",
+      "subcampeon": "Alajuelense",
+      "goleador": "Jonathan McDonald (19)"
+    },
+    {
+      "torneo": "Invierno 2014",
+      "slug": "invierno-2014",
+      "partidos": 138,
+      "fin": "2014-12-20",
+      "campeon": "Saprissa",
+      "subcampeon": "Herediano",
+      "goleador": "Yendrick Ruiz (15)"
+    },
+    {
+      "torneo": "Verano 2014",
+      "slug": "verano-2014",
+      "partidos": 138,
+      "fin": "2014-05-10",
+      "campeon": "Saprissa",
+      "subcampeon": "Alajuelense",
+      "goleador": "Fabrizio Ronchetti, Lucas Gómez y Jonathan Moya (10)"
+    },
+    {
+      "torneo": "Invierno 2013",
+      "slug": "invierno-2013",
+      "partidos": 136,
+      "fin": "2013-12-22",
+      "campeon": "Alajuelense",
+      "subcampeon": "Herediano",
+      "goleador": "Cristhian Lagos (13)"
+    },
+    {
+      "torneo": "Verano 2013",
+      "slug": "verano-2013",
+      "partidos": 138,
+      "fin": "2013-05-25",
+      "campeon": "Herediano",
+      "subcampeon": "Cartaginés",
+      "goleador": "Víctor Núñez (13)"
+    },
+    {
+      "torneo": "Invierno 2012",
+      "slug": "invierno-2012",
+      "partidos": 128,
+      "fin": "2012-12-22",
+      "campeon": "Alajuelense",
+      "subcampeon": "Herediano",
+      "goleador": "Cristhian Lagos (18)"
+    },
+    {
+      "torneo": "Verano 2012",
+      "slug": "verano-2012",
+      "partidos": 116,
+      "fin": "2012-05-19",
+      "campeon": "Herediano",
+      "subcampeon": "Santos de Guápiles",
+      "goleador": "José Cancela y Cristhian Lagos (10)"
+    },
+    {
+      "torneo": "Invierno 2011",
+      "slug": "invierno-2011",
+      "partidos": 110,
+      "fin": "2011-12-18",
+      "campeon": "Alajuelense",
+      "subcampeon": "Herediano",
+      "goleador": "Randall Brenes (13)"
+    },
+    {
+      "torneo": "Verano 2011",
+      "slug": "verano-2011",
+      "partidos": 108,
+      "fin": "2011-05-14",
+      "campeon": "Alajuelense",
+      "subcampeon": "San Carlos",
+      "goleador": "Minor Díaz (12)"
+    },
+    {
+      "torneo": "Invierno 2010",
+      "slug": "invierno-2010",
+      "partidos": 104,
+      "fin": "2010-12-19",
+      "campeon": "Alajuelense",
+      "subcampeon": "Herediano",
+      "goleador": "Randall Brenes y Éver Alfaro (10)"
+    },
+    {
+      "torneo": "Verano 2010",
+      "slug": "verano-2010",
+      "partidos": 106,
+      "fin": "2010-05-15",
+      "campeon": "Saprissa",
+      "subcampeon": "San Carlos",
+      "goleador": "Alejandro Sequeira (11)"
+    },
+    {
+      "torneo": "Invierno 2009",
+      "slug": "invierno-2009",
+      "partidos": 100,
+      "fin": "2009-12-28",
+      "campeon": "Brujas",
+      "subcampeon": "Puntarenas FC",
+      "goleador": "Víctor Núñez (10)"
+    },
+    {
+      "torneo": "Verano 2009",
+      "slug": "verano-2009",
+      "partidos": 105,
+      "fin": "2009-05-26",
+      "campeon": "Municipal Liberia",
+      "subcampeon": "Herediano",
+      "goleador": "Mario Camacho y Andy Herron (10)"
+    },
+    {
+      "torneo": "Invierno 2008",
+      "slug": "invierno-2008",
+      "partidos": 101,
+      "fin": "2008-12-20",
+      "campeon": "Saprissa",
+      "subcampeon": "Alajuelense",
+      "goleador": "Víctor Núñez (12)"
+    },
+    {
+      "torneo": "Verano 2008",
+      "slug": "verano-2008",
+      "partidos": 81,
+      "fin": "2008-06-01",
+      "campeon": "Saprissa",
+      "subcampeon": "Alajuelense",
+      "goleador": "Alejandro Alpízar (13)"
+    },
+    {
+      "torneo": "Invierno 2007",
+      "slug": "invierno-2007",
+      "partidos": 99,
+      "fin": "2007-12-23",
+      "campeon": "Saprissa",
+      "subcampeon": "Herediano",
+      "goleador": "Víctor Núñez (11)"
+    },
+    {
+      "torneo": "Clausura 2007",
+      "slug": "clausura-2007",
+      "partidos": 109,
+      "fin": "2007-05-14",
+      "campeon": "Saprissa",
+      "subcampeon": "Alajuelense",
+      "goleador": "Alonso Solís (16)",
+      "temporada": "2006-07"
+    },
+    {
+      "torneo": "Apertura 2006",
+      "slug": "apertura-2006",
+      "partidos": 99,
+      "fin": "2006-12-23"
+    }
+  ]
 }
