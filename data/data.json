@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-01T20:34:45.272Z",
-  "lastSuccessAt": "2026-11-01T20:34:45.272Z",
+  "generatedAt": "2026-11-01T20:40:14.118Z",
+  "lastSuccessAt": "2026-11-01T20:40:14.118Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-01T20:34:44.182Z",
+    "updatedAt": "2026-11-01T20:40:12.638Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-01T20:34:44.182Z",
+    "updatedAt": "2026-11-01T20:40:12.638Z",
     "stale": false
   },
   "playoffs": {
@@ -4112,7 +4112,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-01T20:34:44.908Z",
+    "updatedAt": "2026-11-01T20:40:13.783Z",
     "stale": false
   },
   "upcoming": {
@@ -5019,7 +5019,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-01T20:34:44.744Z",
+    "updatedAt": "2026-11-01T20:40:13.420Z",
     "stale": false
   },
   "scorers": {
@@ -5758,7 +5758,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-01T20:34:44.992Z",
+    "updatedAt": "2026-11-01T20:40:13.882Z",
     "stale": false
   },
   "assists": {
@@ -9566,7 +9566,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-01T20:34:45.268Z",
+    "updatedAt": "2026-11-01T20:40:14.115Z",
     "stale": false
   },
   "history": {
