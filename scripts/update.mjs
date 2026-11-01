@@ -164,7 +164,9 @@ async function fetchUpcomingMatches() {
 async function fetchScorers(played) {
   const cache = await readJson(GOALS_CACHE, {});
   // Entradas sin playerId o minute vienen de una versión anterior: se vuelven a descargar una vez.
-  const missing = played.filter(m => !cache[m.id] || cache[m.id].some(g => !('playerId' in g) || !('minute' in g)));
+  // Los partidos de las últimas 36 horas también: justo después del pitazo ESPN puede no tener todos los goles cargados.
+  const recent = m => Date.now() - new Date(m.date) < 36 * 3600e3;
+  const missing = played.filter(m => !cache[m.id] || recent(m) || cache[m.id].some(g => !('playerId' in g) || !('minute' in g)));
   const failed = [];
   await mapLimit(missing, 6, async m => {
     try {

@@ -3,6 +3,10 @@ name: Actualizar dashboard
 on:
   schedule:
     - cron: '0 12 * * *'   # 12:00 UTC = 6:00 a.m. hora de Costa Rica (UTC-6, sin horario de verano)
+    # Revisiones cada 15 min en horario de partidos (11:00 a.m. a 11:59 p.m. en Costa Rica = 17:00 a 05:59 UTC).
+    # Solo actualizan si terminó un partido nuevo; si no, se detienen en segundos.
+    - cron: '*/15 17-23 * * *'
+    - cron: '*/15 0-5 * * *'
   workflow_dispatch:        # botón "Run workflow" para correrlo a mano
   push:
     branches: [main]
@@ -19,6 +23,8 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    outputs:
+      cambios: ${{ steps.check.outputs.cambios }}
     steps:
       - uses: actions/checkout@v5
 
@@ -26,13 +32,21 @@ jobs:
         with:
           node-version: 24
 
+      # Las revisiones de cada 15 min solo siguen si terminó un partido; la de las 6:00, los push y el botón siempre actualizan.
+      - name: ¿Terminó algún partido?
+        id: check
+        if: github.event_name == 'schedule' && github.event.schedule != '0 12 * * *'
+        run: node scripts/hay-partido-nuevo.mjs
+
       - name: Descargar datos y generar la página
+        if: steps.check.outputs.cambios != 'false'
         run: npm run update
         env:
           TZ: America/Costa_Rica
           API_KEY: ${{ secrets.API_KEY }}   # solo se usa si se agrega API-Football; puede no existir
 
       - name: Guardar los datos nuevos
+        if: steps.check.outputs.cambios != 'false'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -47,13 +61,16 @@ jobs:
           fi
 
       - uses: actions/configure-pages@v5
+        if: steps.check.outputs.cambios != 'false'
 
       - uses: actions/upload-pages-artifact@v4
+        if: steps.check.outputs.cambios != 'false'
         with:
           path: public
 
   deploy:
     needs: update
+    if: needs.update.outputs.cambios != 'false'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

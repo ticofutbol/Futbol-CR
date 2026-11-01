@@ -1039,7 +1039,7 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
           card.hidden = false;
           var live = events.some(function (e) { return e.status.type.state === 'in'; });
           var next = events.filter(function (e) { return e.status.type.name === 'STATUS_SCHEDULED'; })[0];
-          note.textContent = 'Marcadores de ESPN, revisados a las ' + hhmm(new Date()) + (live ? ' (se refresca cada minuto)' : '') + '. La tabla y los goleadores se recalculan cada día a las 6:00 a.m.';
+          note.textContent = 'Marcadores de ESPN, revisados a las ' + hhmm(new Date()) + (live ? ' (se refresca cada minuto)' : '') + '. La tabla, las jornadas y los goleadores se actualizan entre 15 y 30 minutos después de que termina cada partido.';
           // Mientras se juega, cada minuto; si falta un partido, se vuelve a mirar cerca de la hora de inicio.
           var wait = live ? 60e3 : next ? Math.min(10 * 60e3, Math.max(60e3, new Date(next.date) - Date.now())) : 0;
           if (wait) timer = setTimeout(load, wait);
