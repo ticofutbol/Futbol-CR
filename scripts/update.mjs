@@ -112,10 +112,14 @@ async function fetchStandings(tournament) {
 // Partidos jugados de la temporada: se juntan los calendarios de cada equipo.
 async function fetchPlayedMatches(teamIds) {
   const schedules = await mapLimit(teamIds, 5, id => getJson(`${SITE}/teams/${id}/schedule?season=${seasonYear()}`));
+  // El calendario de cada equipo tarda casi una hora en sumar un partido recién terminado;
+  // el scoreboard de ayer y hoy lo trae apenas suena el pitazo.
+  const today = Date.now() - 6 * 3600e3; // hora de Costa Rica
+  const boards = await mapLimit([today - 864e5, today], 2, t => getJson(`${SITE}/scoreboard?dates=${new Date(t).toISOString().slice(0, 10).replace(/-/g, '')}`));
   const byId = new Map();
-  for (const s of schedules) for (const ev of s.events ?? []) {
+  for (const ev of [...schedules, ...boards].flatMap(s => s.events ?? [])) {
     const m = match(ev);
-    if (m.completed) byId.set(m.id, m);
+    if (m.completed && [m.home.id, m.away.id].every(id => teamIds.includes(id))) byId.set(m.id, m);
   }
   return [...byId.values()].sort((a, b) => b.date.localeCompare(a.date));
 }

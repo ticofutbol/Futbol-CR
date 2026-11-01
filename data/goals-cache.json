@@ -24,6 +24,29 @@
       "type": "Goal"
     }
   ],
+  "401876831": [
+    {
+      "minute": "10'",
+      "playerId": "185890",
+      "player": "Alonso Hernández",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "minute": "19'",
+      "playerId": "228454",
+      "player": "Diego Mesén",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "minute": "86'",
+      "playerId": "276951",
+      "player": "Douglas López",
+      "team": "Cartaginés",
+      "type": "Goal"
+    }
+  ],
   "401876832": [
     {
       "minute": "31'",
