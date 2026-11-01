@@ -427,13 +427,19 @@ function squadsSection(sq) {
 
 // Campeones desde 1999-00, del más reciente al más viejo. Se ven los últimos 10; el resto, al abrir "Ver todos".
 const CLUB_ESPN = { 'San Carlos': 'AD San Carlos' }; // nombres de la lista de títulos que en ESPN son distintos
+// Escudos de campeones que ya no están en Primera (ESPN no los tiene): public/escudos/.
+const OLD_CRESTS = { 'Municipal Liberia': 'escudos/municipal-liberia.png', Brujas: 'escudos/brujas.png' };
 function championsSection(list, teamsByName) {
   if (!list?.length) return empty('Sin lista de campeones.');
-  const team = name => teamsByName.get(CLUB_ESPN[name] ?? name);
+  // En círculo blanco, para que se vean los escudos oscuros (Brujas, Liberia) en el tema oscuro.
+  const crest = name => {
+    const src = teamsByName.get(CLUB_ESPN[name] ?? name)?.logo ?? OLD_CRESTS[name];
+    return `<span class="mini-crest">${src ? `<img src="${esc(src)}" alt="" width="18" height="18" loading="lazy" onerror="this.remove()">` : ''}</span>`;
+  };
   const row = c => `
         <tr>
           <td class="t-name">${esc(c.torneo)}</td>
-          <td class="team">${team(c.campeon) ? logo(team(c.campeon), 22) : '<span class="logo" style="width:22px;height:22px"></span>'}<b>${esc(c.campeon)}</b></td>
+          <td class="team">${crest(c.campeon)}<b>${esc(c.campeon)}</b></td>
           <td class="opt muted">${esc(c.subcampeon ?? '')}</td>
           <td class="scorer-cell">${esc(c.goleador ?? '')}</td>
         </tr>`;
@@ -815,6 +821,8 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   .swatch.danger { background: color-mix(in srgb, var(--live) 45%, transparent); }
   .grid + .grid { margin-top: 16px; }
   .champs td, .champs th { text-align: left; }
+  .mini-crest { display: inline-grid; place-items: center; flex: none; width: 26px; height: 26px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / .2); }
+  .mini-crest img { width: 18px; height: 18px; object-fit: contain; }
   .champs .t-name { white-space: nowrap; font-weight: 600; }
   .champs .scorer-cell { font-size: .82rem; color: var(--muted); white-space: normal; min-width: 150px; }
   details.more { margin-top: 12px; }
