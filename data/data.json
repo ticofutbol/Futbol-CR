@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-01T20:40:14.118Z",
-  "lastSuccessAt": "2026-11-01T20:40:14.118Z",
+  "generatedAt": "2026-11-02T00:13:08.590Z",
+  "lastSuccessAt": "2026-11-02T00:13:08.590Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-01T20:40:12.638Z",
+    "updatedAt": "2026-11-02T00:13:06.910Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-01T20:40:12.638Z",
+    "updatedAt": "2026-11-02T00:13:06.910Z",
     "stale": false
   },
   "playoffs": {
@@ -404,6 +404,36 @@
   "results": {
     "tournament": "Apertura",
     "matches": [
+      {
+        "id": "401876830",
+        "date": "2026-11-01T22:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Ricardo Saprissa",
+        "home": {
+          "id": "858",
+          "name": "Saprissa",
+          "short": "Saprissa",
+          "abbr": "SAP",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "0"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 14,
+        "goals": []
+      },
       {
         "id": "401876831",
         "date": "2026-11-01T17:00Z",
@@ -828,55 +858,39 @@
             "side": "home"
           }
         ]
-      },
+      }
+    ],
+    "all": [
       {
-        "id": "401876838",
-        "date": "2026-10-20T02:00Z",
+        "id": "401876830",
+        "date": "2026-11-01T22:00Z",
         "state": "post",
         "completed": true,
         "statusText": "FT",
         "venue": "Estadio Ricardo Saprissa",
         "home": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "1"
+          "id": "858",
+          "name": "Saprissa",
+          "short": "Saprissa",
+          "abbr": "SAP",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+          "score": "0"
         },
         "away": {
-          "id": "7237",
-          "name": "Puntarenas FC",
-          "short": "Puntarenas",
-          "abbr": "PUN",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
-          "score": "2"
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "0"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 12,
-        "goals": [
-          {
-            "minute": "1'",
-            "player": "Doryan Rodríguez",
-            "side": "away"
-          },
-          {
-            "minute": "15'",
-            "player": "Ian Fernández",
-            "side": "home"
-          },
-          {
-            "minute": "86'",
-            "player": "Doryan Rodríguez",
-            "side": "away"
-          }
-        ]
-      }
-    ],
-    "all": [
+        "round": 14,
+        "goals": []
+      },
       {
         "id": "401876831",
         "date": "2026-11-01T17:00Z",
@@ -3977,11 +3991,11 @@
     ],
     "form": {
       "858": [
+        "E",
         "P",
         "P",
         "G",
-        "P",
-        "G"
+        "P"
       ],
       "859": [
         "P",
@@ -3998,11 +4012,11 @@
         "P"
       ],
       "2057": [
+        "E",
         "G",
         "G",
         "E",
-        "E",
-        "G"
+        "E"
       ],
       "7234": [
         "E",
@@ -4048,7 +4062,7 @@
       ]
     },
     "stats": {
-      "matches": 69,
+      "matches": 70,
       "goals": 191,
       "biggest": {
         "id": "401876842",
@@ -4112,40 +4126,11 @@
         ]
       }
     },
-    "updatedAt": "2026-11-01T20:40:13.783Z",
+    "updatedAt": "2026-11-02T00:13:08.230Z",
     "stale": false
   },
   "upcoming": {
     "matches": [
-      {
-        "id": "401876830",
-        "date": "2026-11-01T22:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Ricardo Saprissa",
-        "home": {
-          "id": "858",
-          "name": "Saprissa",
-          "short": "Saprissa",
-          "abbr": "SAP",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "2057",
-          "name": "Alajuelense",
-          "short": "Alajuelense",
-          "abbr": "ALA",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 14
-      },
       {
         "id": "401876824",
         "date": "2026-11-04T01:00Z",
@@ -4406,38 +4391,38 @@
         "leg": null,
         "seriesWinner": null,
         "round": 16
-      }
-    ],
-    "all": [
+      },
       {
-        "id": "401876830",
-        "date": "2026-11-01T22:00Z",
+        "id": "401876888",
+        "date": "2026-11-09T00:30Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Estadio Ricardo Saprissa",
+        "venue": "Estadio Carlos Alvarado",
         "home": {
-          "id": "858",
-          "name": "Saprissa",
-          "short": "Saprissa",
-          "abbr": "SAP",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
         },
         "away": {
-          "id": "2057",
-          "name": "Alajuelense",
-          "short": "Alajuelense",
-          "abbr": "ALA",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 14
-      },
+        "round": 16
+      }
+    ],
+    "all": [
       {
         "id": "401876824",
         "date": "2026-11-04T01:00Z",
@@ -5019,11 +5004,11 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-01T20:40:13.420Z",
+    "updatedAt": "2026-11-02T00:13:07.906Z",
     "stale": false
   },
   "scorers": {
-    "matchesCounted": 69,
+    "matchesCounted": 70,
     "goalsCounted": 188,
     "corrections": 4,
     "rows": [
@@ -5758,7 +5743,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-01T20:40:13.882Z",
+    "updatedAt": "2026-11-02T00:13:08.326Z",
     "stale": false
   },
   "assists": {
@@ -9566,7 +9551,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-01T20:40:14.115Z",
+    "updatedAt": "2026-11-02T00:13:08.587Z",
     "stale": false
   },
   "history": {
