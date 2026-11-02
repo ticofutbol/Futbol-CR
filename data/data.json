@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-02T00:13:08.590Z",
-  "lastSuccessAt": "2026-11-02T00:13:08.590Z",
+  "generatedAt": "2026-11-02T12:42:13.013Z",
+  "lastSuccessAt": "2026-11-02T12:42:13.013Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -47,14 +47,14 @@
         "abbr": "SAP",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
         "rank": 3,
-        "pj": 13,
+        "pj": 14,
         "g": 8,
-        "e": 0,
+        "e": 1,
         "p": 5,
         "gf": 27,
         "gc": 14,
         "dg": 13,
-        "pts": 24
+        "pts": 25
       },
       {
         "id": "2057",
@@ -63,14 +63,14 @@
         "abbr": "ALA",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
         "rank": 4,
-        "pj": 13,
+        "pj": 14,
         "g": 6,
-        "e": 4,
+        "e": 5,
         "p": 3,
         "gf": 21,
         "gc": 14,
         "dg": 7,
-        "pts": 22
+        "pts": 23
       },
       {
         "id": "859",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-02T00:13:06.910Z",
+    "updatedAt": "2026-11-02T12:42:11.771Z",
     "stale": false
   },
   "tables": {
@@ -217,14 +217,14 @@
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
           "rank": 3,
-          "pj": 13,
+          "pj": 14,
           "g": 8,
-          "e": 0,
+          "e": 1,
           "p": 5,
           "gf": 27,
           "gc": 14,
           "dg": 13,
-          "pts": 24
+          "pts": 25
         },
         {
           "id": "2057",
@@ -233,14 +233,14 @@
           "abbr": "ALA",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "rank": 4,
-          "pj": 13,
+          "pj": 14,
           "g": 6,
-          "e": 4,
+          "e": 5,
           "p": 3,
           "gf": 21,
           "gc": 14,
           "dg": 7,
-          "pts": 22
+          "pts": 23
         },
         {
           "id": "859",
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-02T00:13:06.910Z",
+    "updatedAt": "2026-11-02T12:42:11.771Z",
     "stale": false
   },
   "playoffs": {
@@ -4126,7 +4126,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-02T00:13:08.230Z",
+    "updatedAt": "2026-11-02T12:42:12.734Z",
     "stale": false
   },
   "upcoming": {
@@ -5004,7 +5004,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-02T00:13:07.906Z",
+    "updatedAt": "2026-11-02T12:42:12.478Z",
     "stale": false
   },
   "scorers": {
@@ -5743,7 +5743,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-02T00:13:08.326Z",
+    "updatedAt": "2026-11-02T12:42:12.821Z",
     "stale": false
   },
   "assists": {
@@ -9551,7 +9551,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-02T00:13:08.587Z",
+    "updatedAt": "2026-11-02T12:42:13.009Z",
     "stale": false
   },
   "history": {
