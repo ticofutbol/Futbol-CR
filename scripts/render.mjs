@@ -426,7 +426,8 @@ function squadsSection(sq, coaches) {
 
 /* ---------- Historia ---------- */
 
-// Campeones desde 1999-00, del más reciente al más viejo. Se ven los últimos 10; el resto, al abrir "Ver todos".
+// Campeones desde 1999-00, del más reciente al más viejo. Se ven los últimos 5; el resto, al abrir "Ver todos".
+const CHAMPS_SHOWN = 5;
 const CLUB_ESPN = { 'San Carlos': 'AD San Carlos' }; // nombres de la lista de títulos que en ESPN son distintos
 // Escudos de campeones que ya no están en Primera (ESPN no los tiene): public/escudos/.
 const OLD_CRESTS = { 'Municipal Liberia': 'escudos/municipal-liberia.png', Brujas: 'escudos/brujas.png' };
@@ -447,9 +448,9 @@ function championsSection(list, teamsByName) {
   const recent = [...list].reverse();
   const head = `<thead><tr><th>Torneo</th><th class="team">Campeón</th><th class="opt">Subcampeón</th><th>Goleador (goles)</th></tr></thead>`;
   return `
-    <div class="table-wrap"><table class="standings champs">${head}<tbody>${recent.slice(0, 10).map(row).join('')}</tbody></table></div>
-    ${recent.length > 10 ? `<details class="more"><summary>Ver todos (${recent.length} torneos desde ${esc(list[0].torneo)})</summary>
-      <div class="table-wrap"><table class="standings champs">${head}<tbody>${recent.slice(10).map(row).join('')}</tbody></table></div></details>` : ''}
+    <div class="table-wrap"><table class="standings champs">${head}<tbody>${recent.slice(0, CHAMPS_SHOWN).map(row).join('')}</tbody></table></div>
+    ${recent.length > CHAMPS_SHOWN ? `<details class="more"><summary>Ver todos (${recent.length} torneos desde ${esc(list[0].torneo)})</summary>
+      <div class="table-wrap"><table class="standings champs">${head}<tbody>${recent.slice(CHAMPS_SHOWN).map(row).join('')}</tbody></table></div></details>` : ''}
     <p class="note">Hasta 2006-07 hubo un campeón por temporada; desde 2007, dos por año. Fuente: Wikipedia; los torneos nuevos se agregan solos al terminar la final.</p>`;
 }
 
