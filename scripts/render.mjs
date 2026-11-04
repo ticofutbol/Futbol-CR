@@ -388,7 +388,7 @@ function squadsSection(sq, coaches) {
       const rows = players.map(p => `
           <tr>
             <td class="num"><span class="jersey">${esc(p.jersey ?? '–')}</span></td>
-            <td class="player">${esc(p.name)}</td>
+            <td class="player">${esc(p.name)}${p.injury ? `<span class="injury" title="Lesionado">🩹</span><span class="injury-text">${esc(p.injury.lesion)}${p.injury.regreso ? ` · regreso estimado: ${esc(fmt(p.injury.regreso + 'T12:00:00Z', { day: 'numeric', month: 'short' }))}` : ''}</span>` : ''}</td>
             <td>${p.age ?? '–'}</td>
             <td class="country">${p.flag ? `<img class="flag" src="${esc(p.flag)}" alt="${esc(country(p.country))}" title="${esc(country(p.country))}" width="20" height="14" loading="lazy" onerror="this.remove()">` : ''}<span>${esc(country(p.country) ?? '–')}</span></td>
             <td class="pts">${p.goals ? `<span class="goal-badge">${p.goals}</span>` : ''}</td>
@@ -402,6 +402,7 @@ function squadsSection(sq, coaches) {
     }).join('');
     const goals = t.players.reduce((n, p) => n + p.goals, 0);
     const assists = t.players.reduce((n, p) => n + (p.assists ?? 0), 0);
+    const injuredCount = t.players.filter(p => p.injury).length;
     const ages = t.players.filter(p => p.age).map(p => p.age);
     const avgAge = ages.length ? (ages.reduce((a, b) => a + b, 0) / ages.length).toFixed(1) : '–';
     const foreign = t.players.filter(p => p.country && p.country !== 'Costa Rica').length;
@@ -409,7 +410,7 @@ function squadsSection(sq, coaches) {
       <div class="squad" data-team="${esc(t.id)}"${i === 0 ? '' : ' hidden'}>
         <div class="squad-head">${logo(t, 48, 'squad-logo')}<div><strong>${esc(t.name)}</strong>
           ${coaches?.equipos?.[t.name] ? `<span class="coach">Entrenador: <b>${esc(coaches.equipos[t.name])}</b></span>` : ''}
-          <div class="squad-stats"><span><b>${t.players.length}</b> jugadores</span><span><b>${avgAge}</b> edad prom.</span><span><b>${foreign}</b> extranjeros</span><span><b>${goals}</b> goles</span>${assists ? `<span><b>${assists}</b> asist.</span>` : ''}</div></div></div>
+          <div class="squad-stats"><span><b>${t.players.length}</b> jugadores</span><span><b>${avgAge}</b> edad prom.</span><span><b>${foreign}</b> extranjeros</span><span><b>${goals}</b> goles</span>${assists ? `<span><b>${assists}</b> asist.</span>` : ''}${injuredCount ? `<span>🩹 <b>${injuredCount}</b> lesionado${injuredCount === 1 ? '' : 's'}</span>` : ''}</div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
             <thead><tr><th class="num">#</th><th class="player">Jugador</th><th>Edad</th><th class="country">Nac.</th><th title="Goles en el torneo">Goles</th><th title="Asistencias (Transfermarkt)">Asist.</th></tr></thead>
@@ -886,6 +887,8 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   .squad-head { display: flex; align-items: center; gap: 14px; margin: 16px 0 8px; padding: 14px; border-radius: 16px; background: linear-gradient(135deg, var(--accent-soft), transparent); }
   .squad-head strong { font-family: var(--display); font-weight: 800; font-size: 1.5rem; text-transform: uppercase; }
   .squad-logo { width: 48px; height: 48px; object-fit: contain; flex: none; }
+  .injury { margin-left: 6px; font-size: .85rem; }
+  .injury-text { display: block; font-size: .75rem; color: var(--live); font-weight: 500; }
   .coach { display: block; font-size: .85rem; color: var(--muted); margin: 1px 0 3px; }
   .coach b { color: var(--text); }
   .squad-stats { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .8rem; color: var(--muted); }

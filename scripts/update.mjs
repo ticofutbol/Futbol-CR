@@ -474,6 +474,16 @@ async function main() {
     }
   }
 
+  // Lesionados (data/lesionados.json, a mano): desde la fecha de regreso estimada dejan de mostrarse.
+  const today = new Date(Date.now() - 6 * 3600e3).toISOString().slice(0, 10); // fecha en Costa Rica
+  const injured = (await readJson(new URL('data/lesionados.json', ROOT), { jugadores: [] })).jugadores
+    .filter(l => !l.regreso || l.regreso > today);
+  for (const t of squads?.teams ?? []) for (const p of t.players) {
+    const l = injured.find(l => l.equipo === t.name && normName(l.nombre) === normName(p.name));
+    if (l) p.injury = { lesion: l.lesion, regreso: l.regreso ?? null };
+    else delete p.injury;
+  }
+
   // Fase final del torneo en curso (proyectada con la tabla mientras se juega la fase regular).
   const playoffs = buildPlayoffs([...(results?.all ?? []), ...(upcoming?.all ?? [])].filter(m => m.tournament === tournament), standings?.rows);
   // Tabla acumulada: solo tiene sentido cuando ya empezó el Clausura (antes es igual a la del Apertura).
