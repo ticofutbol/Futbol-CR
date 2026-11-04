@@ -457,10 +457,10 @@ function championsSection(list, teamsByName) {
 function archivesSection(archives, oldTournaments, teamsByName) {
   const slug = a => a.torneo.toLowerCase().replace(/\s+/g, '-');
   // Los torneos viejos se cargan al elegirlos (public/historico/), para no hacer pesada la página.
-  const oldOptions = oldTournaments.map((t, i) => `<option value="h:${esc(t.slug)}"${!archives.length && i === 0 ? ' selected' : ''} data-campeon="${esc(t.campeon ?? '')}" data-subcampeon="${esc(t.subcampeon ?? '')}" data-goleador="${esc(t.goleador ?? '')}" data-temporada="${esc(t.temporada ?? '')}" data-nota="${esc(t.nota ?? '')}">${esc(t.torneo)}</option>`).join('');
-  const options = (archives.length ? `<optgroup label="Con goleadores por partido">${archives.map((a, i) => `<option value="${slug(a)}"${i === 0 ? ' selected' : ''}>${esc(a.torneo)}</option>`).join('')}</optgroup>` : '')
+  const oldOptions = oldTournaments.map((t, i) => `<option value="h:${esc(t.slug)}" data-campeon="${esc(t.campeon ?? '')}" data-subcampeon="${esc(t.subcampeon ?? '')}" data-goleador="${esc(t.goleador ?? '')}" data-temporada="${esc(t.temporada ?? '')}" data-nota="${esc(t.nota ?? '')}">${esc(t.torneo)}</option>`).join('');
+  const options = '<option value="" selected>Elige un torneo…</option>' + (archives.length ? `<optgroup label="Con goleadores por partido">${archives.map(a => `<option value="${slug(a)}">${esc(a.torneo)}</option>`).join('')}</optgroup>` : '')
     + (oldOptions ? `<optgroup label="Solo resultados">${oldOptions}</optgroup>` : '');
-  const panels = archives.map((a, i) => {
+  const panels = archives.map(a => {
     const scorers = a.goleadores.slice(0, 10).map(r => `<li><span class="rank">${r.goals}</span>${logo(teamsByName.get(r.team), 20)}<span class="who"><b>${esc(r.player)}</b><span class="muted">${esc(r.team)}</span></span></li>`).join('');
     const assists = a.asistencias.slice(0, 5).map(r => `${esc(r.player)} (${r.assists})`).join(', ');
     const byRound = new Map();
@@ -472,7 +472,7 @@ function archivesSection(archives, oldTournaments, teamsByName) {
           <h4>${esc(title)}</h4>
           <ul class="arch-matches">${ms.map(m => `<li><b>${esc(m.home.abbr)} ${esc(m.home.score)}–${esc(m.away.score)} ${esc(m.away.abbr)}</b>${m.goals.length ? ` · ${m.goals.map(g => `${esc(g.player)} ${esc(g.minute)}${g.og ? ' (a.g.)' : g.pen ? ' (pen.)' : ''}`).join(', ')}` : ''}${m.note ? ` <i class="muted">(${esc(m.note)})</i>` : ''}</li>`).join('')}</ul>`).join('');
     return `
-      <div class="archive" data-archive="${slug(a)}"${i === 0 ? '' : ' hidden'}>
+      <div class="archive" data-archive="${slug(a)}" hidden>
         ${bracketSection(a.playoffs)}
         <h3 class="arch-title">Tabla final de la fase regular</h3>
         ${standingsSection({ rows: a.tabla }, null)}
