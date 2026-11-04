@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-04T04:30:42.284Z",
-  "lastSuccessAt": "2026-11-04T04:30:42.284Z",
+  "generatedAt": "2026-11-04T05:00:11.905Z",
+  "lastSuccessAt": "2026-11-04T05:00:11.905Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-04T04:30:40.277Z",
+    "updatedAt": "2026-11-04T05:00:08.020Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-04T04:30:40.277Z",
+    "updatedAt": "2026-11-04T05:00:08.020Z",
     "stale": false
   },
   "playoffs": {
@@ -4167,7 +4167,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-04T04:30:41.992Z",
+    "updatedAt": "2026-11-04T05:00:10.893Z",
     "stale": false
   },
   "upcoming": {
@@ -5016,7 +5016,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-04T04:30:41.031Z",
+    "updatedAt": "2026-11-04T05:00:10.158Z",
     "stale": false
   },
   "scorers": {
@@ -5769,7 +5769,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-04T04:30:42.048Z",
+    "updatedAt": "2026-11-04T05:00:11.226Z",
     "stale": false
   },
   "assists": {
@@ -7227,18 +7227,6 @@
             "goals": 6,
             "penalties": 1,
             "assists": 1
-          },
-          {
-            "id": "184787",
-            "jersey": "33",
-            "name": "Jeison Lucumi",
-            "position": "F",
-            "age": 31,
-            "country": "Colombia",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-            "goals": 1,
-            "penalties": 0,
-            "assists": 0
           },
           {
             "id": "403544",
@@ -9577,7 +9565,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-04T04:30:42.279Z",
+    "updatedAt": "2026-11-04T05:00:11.898Z",
     "stale": false
   },
   "coaches": {

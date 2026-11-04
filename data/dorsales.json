@@ -1881,6 +1881,9 @@
     "Alajuelense": {
       "updated": "2026-10-28",
       "source": "Transfermarkt (copiado a mano)",
+      "excluir": [
+        "Jeison Lucumi"
+      ],
       "players": [
         {
           "jersey": 23,
