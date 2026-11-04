@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-04T05:06:46.819Z",
-  "lastSuccessAt": "2026-11-04T05:06:46.820Z",
+  "generatedAt": "2026-11-04T05:08:59.766Z",
+  "lastSuccessAt": "2026-11-04T05:08:59.766Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-04T05:06:45.085Z",
+    "updatedAt": "2026-11-04T05:08:57.258Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-04T05:06:45.085Z",
+    "updatedAt": "2026-11-04T05:08:57.258Z",
     "stale": false
   },
   "playoffs": {
@@ -4167,7 +4167,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-04T05:06:46.383Z",
+    "updatedAt": "2026-11-04T05:08:59.092Z",
     "stale": false
   },
   "upcoming": {
@@ -5016,7 +5016,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-04T05:06:46.043Z",
+    "updatedAt": "2026-11-04T05:08:58.337Z",
     "stale": false
   },
   "scorers": {
@@ -5769,7 +5769,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-04T05:06:46.548Z",
+    "updatedAt": "2026-11-04T05:08:59.233Z",
     "stale": false
   },
   "assists": {
@@ -5908,6 +5908,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-03-19",
               "regreso": null
             }
           },
@@ -6317,6 +6318,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Fractura de tibia y peroné",
+              "desde": "2026-07-24",
               "regreso": null
             }
           },
@@ -6357,6 +6359,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Lesión del ligamento cruzado",
+              "desde": "2026-01-29",
               "regreso": null
             }
           },
@@ -6505,6 +6508,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-03-21",
               "regreso": null
             }
           },
@@ -6733,6 +6737,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Lesión desconocida",
+              "desde": "2026-07-23",
               "regreso": null
             }
           },
@@ -6997,6 +7002,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-04-22",
               "regreso": null
             }
           },
@@ -7037,6 +7043,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-08-08",
               "regreso": null
             }
           },
@@ -7089,6 +7096,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-03-22",
               "regreso": null
             }
           },
@@ -7153,6 +7161,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-03-07",
               "regreso": null
             }
           },
@@ -7277,6 +7286,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Lesión en el pie",
+              "desde": "2026-04-24",
               "regreso": null
             }
           },
@@ -7530,6 +7540,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-09-05",
               "regreso": null
             }
           },
@@ -7999,6 +8010,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Lesión desconocida",
+              "desde": "2025-08-18",
               "regreso": null
             }
           },
@@ -8667,6 +8679,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-01-20",
               "regreso": null
             }
           },
@@ -8792,6 +8805,7 @@
             "assists": 0,
             "injury": {
               "lesion": "Lesión de rodilla",
+              "desde": "2025-01-23",
               "regreso": null
             }
           }
@@ -9621,7 +9635,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-04T05:06:46.815Z",
+    "updatedAt": "2026-11-04T05:08:59.761Z",
     "stale": false
   },
   "coaches": {

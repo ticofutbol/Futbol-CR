@@ -1,5 +1,5 @@
 {
-  "_info": "Lesionados (ESPN no los trae para esta liga). \"regreso\" es la fecha estimada (AAAA-MM-DD): desde ese día el jugador deja de mostrarse como lesionado. Con null, se muestra hasta quitarlo de la lista. Equipo y nombre como en las plantillas.",
+  "_info": "Lesionados (ESPN no los trae para esta liga). \"desde\" es cuándo se lesionó; \"regreso\" es la fecha estimada (AAAA-MM-DD): desde ese día el jugador deja de mostrarse como lesionado. Con null, se muestra hasta quitarlo de la lista. Equipo y nombre como en las plantillas.",
   "actualizado": "2026-11-04",
   "fuente": "Transfermarkt (copiado a mano)",
   "jugadores": [
@@ -7,84 +7,98 @@
       "equipo": "AD San Carlos",
       "nombre": "Osvaldo Rojas",
       "lesion": "Rotura del ligamento cruzado",
+      "desde": "2026-09-05",
       "regreso": null
     },
     {
       "equipo": "Alajuelense",
       "nombre": "Daniel Chacón",
       "lesion": "Rotura del ligamento cruzado",
+      "desde": "2026-08-08",
       "regreso": null
     },
     {
       "equipo": "Cartaginés",
       "nombre": "Joaquín Huertas",
       "lesion": "Fractura de tibia y peroné",
+      "desde": "2026-07-24",
       "regreso": null
     },
     {
       "equipo": "Saprissa",
       "nombre": "Shawn Johnson",
       "lesion": "Lesión desconocida",
+      "desde": "2026-07-23",
       "regreso": null
     },
     {
       "equipo": "Alajuelense",
       "nombre": "Isaac Badilla",
       "lesion": "Lesión en el pie",
+      "desde": "2026-04-24",
       "regreso": null
     },
     {
       "equipo": "Alajuelense",
       "nombre": "Guillermo Villalobos",
       "lesion": "Rotura del ligamento cruzado",
+      "desde": "2026-04-22",
       "regreso": null
     },
     {
       "equipo": "Alajuelense",
       "nombre": "Santiago van der Putten",
       "lesion": "Rotura del ligamento cruzado",
+      "desde": "2026-03-22",
       "regreso": null
     },
     {
       "equipo": "Cartaginés",
       "nombre": "Nicolás Vargas",
       "lesion": "Rotura del ligamento cruzado",
+      "desde": "2026-03-21",
       "regreso": null
     },
     {
       "equipo": "Sporting San José",
       "nombre": "Fabio Coronado",
       "lesion": "Rotura del ligamento cruzado",
+      "desde": "2026-03-19",
       "regreso": null
     },
     {
       "equipo": "Alajuelense",
       "nombre": "Malcom Pilone",
       "lesion": "Rotura del ligamento cruzado",
+      "desde": "2026-03-07",
       "regreso": null
     },
     {
       "equipo": "Cartaginés",
       "nombre": "Andrés Rodríguez",
       "lesion": "Lesión del ligamento cruzado",
+      "desde": "2026-01-29",
       "regreso": null
     },
     {
       "equipo": "Herediano",
       "nombre": "Ariel Arauz",
       "lesion": "Rotura del ligamento cruzado",
+      "desde": "2026-01-20",
       "regreso": null
     },
     {
       "equipo": "Puntarenas FC",
       "nombre": "Chris Villalobos",
       "lesion": "Lesión desconocida",
+      "desde": "2025-08-18",
       "regreso": null
     },
     {
       "equipo": "Herediano",
       "nombre": "Arturo Campos",
       "lesion": "Lesión de rodilla",
+      "desde": "2025-01-23",
       "regreso": null
     }
   ]

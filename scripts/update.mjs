@@ -480,7 +480,7 @@ async function main() {
     .filter(l => !l.regreso || l.regreso > today);
   for (const t of squads?.teams ?? []) for (const p of t.players) {
     const l = injured.find(l => l.equipo === t.name && normName(l.nombre) === normName(p.name));
-    if (l) p.injury = { lesion: l.lesion, regreso: l.regreso ?? null };
+    if (l) p.injury = { lesion: l.lesion, desde: l.desde ?? null, regreso: l.regreso ?? null };
     else delete p.injury;
   }
 

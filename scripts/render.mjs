@@ -388,7 +388,7 @@ function squadsSection(sq, coaches) {
       const rows = players.map(p => `
           <tr>
             <td class="num"><span class="jersey">${esc(p.jersey ?? '–')}</span></td>
-            <td class="player">${esc(p.name)}${p.injury ? `<span class="injury" title="Lesionado">🩹</span><span class="injury-text">${esc(p.injury.lesion)}${p.injury.regreso ? ` · regreso estimado: ${esc(fmt(p.injury.regreso + 'T12:00:00Z', { day: 'numeric', month: 'short' }))}` : ''}</span>` : ''}</td>
+            <td class="player">${esc(p.name)}${p.injury ? `<span class="injury" title="Lesionado">🩹</span><span class="injury-text">${esc(p.injury.lesion)}${p.injury.desde ? ` · desde ${esc(fmt(p.injury.desde + 'T12:00:00Z', { day: 'numeric', month: 'short', year: 'numeric' }))}` : ''}${p.injury.regreso ? ` · regreso estimado: ${esc(fmt(p.injury.regreso + 'T12:00:00Z', { day: 'numeric', month: 'short' }))}` : ''}</span>` : ''}</td>
             <td>${p.age ?? '–'}</td>
             <td class="country">${p.flag ? `<img class="flag" src="${esc(p.flag)}" alt="${esc(country(p.country))}" title="${esc(country(p.country))}" width="20" height="14" loading="lazy" onerror="this.remove()">` : ''}<span>${esc(country(p.country) ?? '–')}</span></td>
             <td class="pts">${p.goals ? `<span class="goal-badge">${p.goals}</span>` : ''}</td>
