@@ -375,7 +375,7 @@ const COUNTRY_ES = {
 };
 const country = c => COUNTRY_ES[c] ?? c;
 
-function squadsSection(sq) {
+function squadsSection(sq, coaches) {
   const teams = sq?.teams ?? [];
   if (!teams.length) return empty('Plantillas no disponibles.');
   const options = teams.map((t, i) => `<option value="${esc(t.id)}"${i === 0 ? ' selected' : ''}>${esc(t.name)}</option>`).join('');
@@ -406,6 +406,7 @@ function squadsSection(sq) {
     return `
       <div class="squad" data-team="${esc(t.id)}"${i === 0 ? '' : ' hidden'}>
         <div class="squad-head">${logo(t, 48, 'squad-logo')}<div><strong>${esc(t.name)}</strong>
+          ${coaches?.equipos?.[t.name] ? `<span class="coach">Entrenador: <b>${esc(coaches.equipos[t.name])}</b></span>` : ''}
           <div class="squad-stats"><span><b>${t.players.length}</b> jugadores</span><span><b>${avgAge}</b> edad prom.</span><span><b>${foreign}</b> extranjeros</span><span><b>${goals}</b> goles</span>${assists ? `<span><b>${assists}</b> asist.</span>` : ''}</div></div></div>
         <div class="table-wrap">
           <table class="squad-table">
@@ -882,6 +883,8 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   .squad-head { display: flex; align-items: center; gap: 14px; margin: 16px 0 8px; padding: 14px; border-radius: 16px; background: linear-gradient(135deg, var(--accent-soft), transparent); }
   .squad-head strong { font-family: var(--display); font-weight: 800; font-size: 1.5rem; text-transform: uppercase; }
   .squad-logo { width: 48px; height: 48px; object-fit: contain; flex: none; }
+  .coach { display: block; font-size: .85rem; color: var(--muted); margin: 1px 0 3px; }
+  .coach b { color: var(--text); }
   .squad-stats { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .8rem; color: var(--muted); }
   .squad-stats b { color: var(--text); }
   .squad-table td.player { white-space: normal; font-weight: 500; }
@@ -979,7 +982,7 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
     <section class="card">${sectionHead('asistencias', 'Top 10', 'Asistencias')}${assistsSection(data.assists, teamsByName)}</section></div>
   </div>
   <div class="panel" data-tab="plantillas">
-    <section class="card">${sectionHead('jugadores', 'Jugadores', 'Plantillas')}${squadsSection(data.squads)}</section>
+    <section class="card">${sectionHead('jugadores', 'Jugadores', 'Plantillas')}${squadsSection(data.squads, data.coaches)}</section>
   </div>
   <div class="panel" data-tab="historia">
     <div class="grid narrow"><section class="card">${sectionHead('palmares', 'Palmarés', esc(data.history?.title ?? 'Historia'))}${historySection(data.history)}</section></div>

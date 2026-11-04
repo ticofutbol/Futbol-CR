@@ -1,0 +1,17 @@
+{
+  "_info": "Entrenador de cada equipo (ESPN no lo trae). Cuando haya un cambio, se edita el nombre y la fecha. Nombres de equipo como en ESPN.",
+  "actualizado": "2026-11-03",
+  "fuente": "Wikipedia (Campeonato de Apertura 2026)",
+  "equipos": {
+    "Alajuelense": "Óscar Ramírez",
+    "Cartaginés": "Amarini Villatoro",
+    "Herediano": "Jafet Soto",
+    "Escorpiones Belén": "Andrés Arias",
+    "Inter de San Carlos": "Douglas Sequeira",
+    "Puntarenas FC": "César Alpízar",
+    "Pérez Zeledón": "Ronald Gómez",
+    "AD San Carlos": "Walter Centeno",
+    "Saprissa": "Hernán Medford",
+    "Sporting San José": "Andrés Carevic"
+  }
+}

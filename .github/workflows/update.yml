@@ -3,8 +3,9 @@ name: Actualizar dashboard
 on:
   schedule:
     - cron: '0 12 * * *'   # 12:00 UTC = 6:00 a.m. hora de Costa Rica (UTC-6, sin horario de verano)
-    # Revisiones cada 15 min en horario de partidos (11:00 a.m. a 11:59 p.m. en Costa Rica = 17:00 a 05:59 UTC).
-    # Solo actualizan si terminó un partido nuevo; si no, se detienen en segundos.
+    # Revisiones en horario de partidos (11:00 a.m. a 11:59 p.m. en Costa Rica = 17:00 a 05:59 UTC).
+    # GitHub las corre cada 40-70 min aunque se pida cada 15: por eso, si hay un partido en juego, la revisión
+    # se queda esperando hasta que termine y actualiza enseguida. Si no hay partido, se detiene en segundos.
     - cron: '*/15 17-23 * * *'
     - cron: '*/15 0-5 * * *'
   workflow_dispatch:        # botón "Run workflow" para correrlo a mano
@@ -23,6 +24,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 190   # la espera de un partido dura como mucho 170 min
     outputs:
       cambios: ${{ steps.check.outputs.cambios }}
     steps:

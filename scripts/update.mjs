@@ -485,6 +485,7 @@ async function main() {
     await archiveTournament({ name: `${tournament} ${year}`, standings, playoffs, scorers, assists, matches: all });
   }
   const history = await readJson(HISTORY, { clubs: [] });
+  const coaches = await readJson(new URL('data/entrenadores.json', ROOT), null);
   const champions = (await readJson(CHAMPIONS, { campeones: [] })).campeones;
   const archives = await readArchives();
   // Torneos viejos (solo resultados), descargados una vez con scripts/historico.mjs; los ya archivados no se repiten.
@@ -507,6 +508,7 @@ async function main() {
     scorers,
     assists,
     squads,
+    coaches,
     history,
     champions,
     archives,
