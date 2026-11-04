@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-04T05:09:18.127Z",
-  "lastSuccessAt": "2026-11-04T05:09:18.127Z",
+  "generatedAt": "2026-11-04T12:38:30.471Z",
+  "lastSuccessAt": "2026-11-04T12:38:30.471Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-04T05:09:16.715Z",
+    "updatedAt": "2026-11-04T12:38:29.305Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-04T05:09:16.715Z",
+    "updatedAt": "2026-11-04T12:38:29.305Z",
     "stale": false
   },
   "playoffs": {
@@ -4167,7 +4167,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-04T05:09:17.770Z",
+    "updatedAt": "2026-11-04T12:38:30.273Z",
     "stale": false
   },
   "upcoming": {
@@ -5016,7 +5016,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-04T05:09:17.400Z",
+    "updatedAt": "2026-11-04T12:38:30.056Z",
     "stale": false
   },
   "scorers": {
@@ -5769,7 +5769,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-04T05:09:17.916Z",
+    "updatedAt": "2026-11-04T12:38:30.324Z",
     "stale": false
   },
   "assists": {
@@ -9596,7 +9596,7 @@
             "assists": 1
           },
           {
-            "id": "tm-cristopher-solano",
+            "id": "5328245",
             "jersey": "70",
             "name": "Cristopher Solano",
             "position": "F",
@@ -9605,7 +9605,6 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0,
-            "added": true,
             "assists": 0
           },
           {
@@ -9635,7 +9634,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-04T05:09:18.122Z",
+    "updatedAt": "2026-11-04T12:38:30.466Z",
     "stale": false
   },
   "coaches": {
