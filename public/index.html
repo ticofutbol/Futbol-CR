@@ -398,6 +398,7 @@
     .bar-row { grid-template-columns: minmax(96px, 8.5em) 1fr 2.2em; }
   }
 </style>
+
 </head>
 <body>
 <header class="hero">
@@ -4971,6 +4972,8 @@
       var tab = TAB_OF[id] || 'inicio';
       root.dataset.tab = tab;
       if (push) history.pushState(null, '', '#' + tab);
+      // Cada pestaña abierta se cuenta como un evento en GoatCounter (si está activado), para saber qué se mira más.
+      if (push && window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'pestaña-' + tab, title: 'Pestaña ' + tab, event: true });
       var target = id && id !== tab ? document.getElementById(id) : null;
       if (target) target.scrollIntoView();
       else window.scrollTo(0, 0);

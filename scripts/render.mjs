@@ -8,6 +8,8 @@ const TZ = 'America/Costa_Rica';
 const SEMIFINAL_SPOTS = 4;
 const PAGE_URL = 'https://ticofutbol.github.io/Futbol-CR/';
 const OG_TITLE = 'Primera División de Costa Rica ⚽ Fútbol CR';
+// Contador de visitas de goatcounter.com (sin cookies). Va el código de la cuenta, p. ej. 'ticofutbol'; vacío = apagado.
+const GOATCOUNTER = '';
 const OG_VERSION = 1; // súbelo si cambias public/og.jpg, para que WhatsApp no use la imagen vieja
 // Pestañas: [id, nombre, ícono SVG]. El id es el #hash del link.
 const TABS = [
@@ -927,6 +929,7 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
     .bar-row { grid-template-columns: minmax(96px, 8.5em) 1fr 2.2em; }
   }
 </style>
+${GOATCOUNTER ? `<script data-goatcounter="https://${GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>` : ''}
 </head>
 <body>
 <header class="hero">
@@ -1183,6 +1186,8 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
       var tab = TAB_OF[id] || 'inicio';
       root.dataset.tab = tab;
       if (push) history.pushState(null, '', '#' + tab);
+      // Cada pestaña abierta se cuenta como un evento en GoatCounter (si está activado), para saber qué se mira más.
+      if (push && window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'pestaña-' + tab, title: 'Pestaña ' + tab, event: true });
       var target = id && id !== tab ? document.getElementById(id) : null;
       if (target) target.scrollIntoView();
       else window.scrollTo(0, 0);
