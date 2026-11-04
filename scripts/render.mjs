@@ -9,7 +9,7 @@ const SEMIFINAL_SPOTS = 4;
 const PAGE_URL = 'https://ticofutbol.github.io/Futbol-CR/';
 const OG_TITLE = 'Primera División de Costa Rica ⚽ Fútbol CR';
 // Contador de visitas de goatcounter.com (sin cookies). Va el código de la cuenta, p. ej. 'ticofutbol'; vacío = apagado.
-const GOATCOUNTER = '';
+const GOATCOUNTER = 'ticofutbol';
 const OG_VERSION = 1; // súbelo si cambias public/og.jpg, para que WhatsApp no use la imagen vieja
 // Pestañas: [id, nombre, ícono SVG]. El id es el #hash del link.
 const TABS = [
