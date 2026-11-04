@@ -1,4 +1,34 @@
 {
+  "401876824": [
+    {
+      "minute": "33'",
+      "playerId": "175969",
+      "player": "Alexander López",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "minute": "38'",
+      "playerId": "3099877",
+      "player": "Randy Ariel Ramírez Abrahams",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "minute": "40'",
+      "playerId": "324450",
+      "player": "Erson Méndez",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "minute": "45'+3'",
+      "playerId": "3100029",
+      "player": "Allan Fabián Fallas Sánchez",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    }
+  ],
   "401876828": [
     {
       "minute": "90'+7'",

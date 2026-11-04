@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-03T12:41:00.982Z",
-  "lastSuccessAt": "2026-11-03T12:41:00.982Z",
+  "generatedAt": "2026-11-04T03:17:19.801Z",
+  "lastSuccessAt": "2026-11-04T03:17:19.801Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-03T12:40:59.763Z",
+    "updatedAt": "2026-11-04T03:17:18.072Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-03T12:40:59.763Z",
+    "updatedAt": "2026-11-04T03:17:18.072Z",
     "stale": false
   },
   "playoffs": {
@@ -404,6 +404,57 @@
   "results": {
     "tournament": "Apertura",
     "matches": [
+      {
+        "id": "401876824",
+        "date": "2026-11-04T01:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Puente Piedra",
+        "home": {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "3"
+        },
+        "away": {
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "score": "1"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 15,
+        "goals": [
+          {
+            "minute": "33'",
+            "player": "Alexander López",
+            "side": "home"
+          },
+          {
+            "minute": "38'",
+            "player": "Randy Ramírez",
+            "side": "home"
+          },
+          {
+            "minute": "40'",
+            "player": "Josimar Méndez",
+            "side": "home"
+          },
+          {
+            "minute": "45'+3'",
+            "player": "Allan Fallas",
+            "side": "away"
+          }
+        ]
+      },
       {
         "id": "401876830",
         "date": "2026-11-01T22:00Z",
@@ -797,70 +848,60 @@
             "side": "home"
           }
         ]
-      },
+      }
+    ],
+    "all": [
       {
-        "id": "401876832",
-        "date": "2026-10-24T02:00Z",
+        "id": "401876824",
+        "date": "2026-11-04T01:00Z",
         "state": "post",
         "completed": true,
         "statusText": "FT",
-        "venue": "Estadio Ricardo Saprissa",
+        "venue": "Estadio Puente Piedra",
         "home": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "2"
-        },
-        "away": {
           "id": "20705",
           "name": "Sporting San José",
           "short": "Spr. San José",
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
-          "score": "4"
+          "score": "3"
+        },
+        "away": {
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "score": "1"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 13,
+        "round": 15,
         "goals": [
           {
-            "minute": "31'",
-            "player": "Mayron George",
-            "side": "away"
-          },
-          {
-            "minute": "45'+1'",
-            "player": "Deyver Vega",
+            "minute": "33'",
+            "player": "Alexander López",
             "side": "home"
           },
           {
-            "minute": "57'",
-            "player": "Mayron George",
-            "side": "away"
+            "minute": "38'",
+            "player": "Randy Ramírez",
+            "side": "home"
           },
           {
-            "minute": "61'",
-            "player": "Mayron George",
-            "side": "away"
-          },
-          {
-            "minute": "90'+2'",
+            "minute": "40'",
             "player": "Josimar Méndez",
-            "side": "away"
+            "side": "home"
           },
           {
-            "minute": "90'+5'",
-            "player": "Raúl López",
-            "side": "home"
+            "minute": "45'+3'",
+            "player": "Allan Fallas",
+            "side": "away"
           }
         ]
-      }
-    ],
-    "all": [
+      },
       {
         "id": "401876830",
         "date": "2026-11-01T22:00Z",
@@ -4019,11 +4060,11 @@
         "E"
       ],
       "7234": [
+        "P",
         "E",
         "P",
         "P",
-        "P",
-        "E"
+        "P"
       ],
       "7237": [
         "E",
@@ -4042,9 +4083,9 @@
       "20705": [
         "G",
         "G",
+        "G",
         "E",
-        "P",
-        "G"
+        "P"
       ],
       "131790": [
         "P",
@@ -4062,8 +4103,8 @@
       ]
     },
     "stats": {
-      "matches": 70,
-      "goals": 191,
+      "matches": 71,
+      "goals": 195,
       "biggest": {
         "id": "401876842",
         "date": "2026-10-16T02:00Z",
@@ -4126,40 +4167,11 @@
         ]
       }
     },
-    "updatedAt": "2026-11-03T12:41:00.751Z",
+    "updatedAt": "2026-11-04T03:17:19.485Z",
     "stale": false
   },
   "upcoming": {
     "matches": [
-      {
-        "id": "401876824",
-        "date": "2026-11-04T01:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Puente Piedra",
-        "home": {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "7234",
-          "name": "Pérez Zeledón",
-          "short": "Pérez Zeledón",
-          "abbr": "ZEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 15
-      },
       {
         "id": "401876825",
         "date": "2026-11-05T00:00Z",
@@ -4420,38 +4432,38 @@
         "leg": null,
         "seriesWinner": null,
         "round": 16
-      }
-    ],
-    "all": [
+      },
       {
-        "id": "401876824",
-        "date": "2026-11-04T01:00Z",
+        "id": "401876819",
+        "date": "2026-11-22T21:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Estadio Puente Piedra",
+        "venue": "Alejandro Morera Soto",
         "home": {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
           "score": "0"
         },
         "away": {
-          "id": "7234",
-          "name": "Pérez Zeledón",
-          "short": "Pérez Zeledón",
-          "abbr": "ZEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "id": "7239",
+          "name": "Cartaginés",
+          "short": "Cartaginés",
+          "abbr": "CAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 15
-      },
+        "round": 17
+      }
+    ],
+    "all": [
       {
         "id": "401876825",
         "date": "2026-11-05T00:00Z",
@@ -5004,12 +5016,12 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-03T12:41:00.409Z",
+    "updatedAt": "2026-11-04T03:17:19.126Z",
     "stale": false
   },
   "scorers": {
-    "matchesCounted": 70,
-    "goalsCounted": 188,
+    "matchesCounted": 71,
+    "goalsCounted": 192,
     "corrections": 4,
     "rows": [
       {
@@ -5076,6 +5088,13 @@
         "penalties": 1
       },
       {
+        "playerId": "175969",
+        "player": "Alexander López",
+        "team": "Sporting San José",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
         "playerId": "407914",
         "player": "Dariel Castrillo",
         "team": "Puntarenas FC",
@@ -5109,13 +5128,6 @@
         "team": "Saprissa",
         "goals": 4,
         "penalties": 0
-      },
-      {
-        "playerId": "212592",
-        "player": "Mayron George",
-        "team": "Sporting San José",
-        "goals": 4,
-        "penalties": 1
       }
     ],
     "all": [
@@ -5183,6 +5195,13 @@
         "penalties": 1
       },
       {
+        "playerId": "175969",
+        "player": "Alexander López",
+        "team": "Sporting San José",
+        "goals": 4,
+        "penalties": 0
+      },
+      {
         "playerId": "407914",
         "player": "Dariel Castrillo",
         "team": "Puntarenas FC",
@@ -5225,13 +5244,6 @@
         "penalties": 1
       },
       {
-        "playerId": "175969",
-        "player": "Alexander López",
-        "team": "Sporting San José",
-        "goals": 3,
-        "penalties": 0
-      },
-      {
         "playerId": "291004",
         "player": "Andrey Soto",
         "team": "Saprissa",
@@ -5242,6 +5254,13 @@
         "playerId": "153727",
         "player": "Érick Torres",
         "team": "Inter de San Carlos",
+        "goals": 3,
+        "penalties": 0
+      },
+      {
+        "playerId": "324450",
+        "player": "Josimar Méndez",
+        "team": "Sporting San José",
         "goals": 3,
         "penalties": 0
       },
@@ -5312,13 +5331,6 @@
         "playerId": "276951",
         "player": "Douglas López",
         "team": "Cartaginés",
-        "goals": 2,
-        "penalties": 0
-      },
-      {
-        "playerId": "324450",
-        "player": "Josimar Méndez",
-        "team": "Sporting San José",
         "goals": 2,
         "penalties": 0
       },
@@ -5440,6 +5452,13 @@
         "team": "Herediano",
         "goals": 2,
         "penalties": 2
+      },
+      {
+        "playerId": "3100029",
+        "player": "Allan Fallas",
+        "team": "Pérez Zeledón",
+        "goals": 1,
+        "penalties": 0
       },
       {
         "playerId": "265900",
@@ -5666,6 +5685,13 @@
         "penalties": 0
       },
       {
+        "playerId": "3099877",
+        "player": "Randy Ramírez",
+        "team": "Sporting San José",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
         "playerId": "399115",
         "player": "Randy Vega",
         "team": "Inter de San Carlos",
@@ -5743,7 +5769,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-03T12:41:00.754Z",
+    "updatedAt": "2026-11-04T03:17:19.572Z",
     "stale": false
   },
   "assists": {
@@ -6342,7 +6368,7 @@
             "age": 34,
             "country": "Honduras",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hon.png",
-            "goals": 3,
+            "goals": 4,
             "penalties": 0,
             "assists": 0
           },
@@ -6426,7 +6452,7 @@
             "age": 22,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0,
             "assists": 0
           },
@@ -6438,7 +6464,7 @@
             "age": 25,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 2,
+            "goals": 3,
             "penalties": 0,
             "assists": 0
           },
@@ -9447,7 +9473,7 @@
             "age": 20,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0,
             "assists": 0
           },
@@ -9551,7 +9577,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-03T12:41:00.978Z",
+    "updatedAt": "2026-11-04T03:17:19.798Z",
     "stale": false
   },
   "history": {
