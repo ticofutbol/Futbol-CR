@@ -231,6 +231,7 @@
   .logo { width: 20px; height: 20px; object-fit: contain; flex: none; display: inline-block; }
   .form { display: inline-flex; gap: 3px; }
   .form i { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 6px; font-style: normal; font-size: .68rem; font-weight: 800; color: #fff; }
+  .form i.last.f-G { box-shadow: 0 0 0 2px var(--surface, #fff), 0 0 0 3.5px var(--win); } .form i.last.f-E { box-shadow: 0 0 0 2px var(--surface, #fff), 0 0 0 3.5px var(--draw); } .form i.last.f-P { box-shadow: 0 0 0 2px var(--surface, #fff), 0 0 0 3.5px var(--loss); }
   .f-G { background: var(--win); } .f-E { background: var(--draw); } .f-P { background: var(--loss); }
   .legend, .note { margin: 12px 0 0; font-size: .8rem; color: var(--muted); }
   .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); vertical-align: -1px; margin-right: 6px; }
@@ -476,16 +477,16 @@
     <ol class="scorer-list mini">
       <li><span class="pos-badge zone-badge">1</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/20705.png" alt="" width="26" height="26" loading="lazy" onerror="this.style.visibility='hidden'">
         <span class="who"><b>Sporting San José</b><span class="muted">15 PJ · +9 DG</span></span>
-        <span class="form" aria-label="Últimos resultados: G, G, G, E, P"><i class="f-G">G</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-E">E</i><i class="f-P">P</i></span><span class="goals">30<small> pts</small></span></li>
+        <span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, E, G, G, G"><i class="f-P">P</i><i class="f-E">E</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-G last">G</i></span><span class="goals">30<small> pts</small></span></li>
       <li><span class="pos-badge zone-badge">2</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7239.png" alt="" width="26" height="26" loading="lazy" onerror="this.style.visibility='hidden'">
         <span class="who"><b>Cartaginés</b><span class="muted">14 PJ · +10 DG</span></span>
-        <span class="form" aria-label="Últimos resultados: G, P, G, G, P"><i class="f-G">G</i><i class="f-P">P</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-P">P</i></span><span class="goals">27<small> pts</small></span></li>
+        <span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, G, G, P, G"><i class="f-P">P</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-P">P</i><i class="f-G last">G</i></span><span class="goals">27<small> pts</small></span></li>
       <li><span class="pos-badge zone-badge">3</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2057.png" alt="" width="26" height="26" loading="lazy" onerror="this.style.visibility='hidden'">
         <span class="who"><b>Alajuelense</b><span class="muted">15 PJ · +10 DG</span></span>
-        <span class="form" aria-label="Últimos resultados: G, E, G, G, E"><i class="f-G">G</i><i class="f-E">E</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-E">E</i></span><span class="goals">26<small> pts</small></span></li>
+        <span class="form" aria-label="Últimos resultados, del más viejo al más reciente: E, G, G, E, G"><i class="f-E">E</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-E">E</i><i class="f-G last">G</i></span><span class="goals">26<small> pts</small></span></li>
       <li><span class="pos-badge zone-badge">4</span><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/858.png" alt="" width="26" height="26" loading="lazy" onerror="this.style.visibility='hidden'">
         <span class="who"><b>Saprissa</b><span class="muted">14 PJ · +13 DG</span></span>
-        <span class="form" aria-label="Últimos resultados: E, P, P, G, P"><i class="f-E">E</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-G">G</i><i class="f-P">P</i></span><span class="goals">25<small> pts</small></span></li></ol>
+        <span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, G, P, P, E"><i class="f-P">P</i><i class="f-G">G</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-E last">E</i></span><span class="goals">25<small> pts</small></span></li></ol>
     <p class="note">5.º lugar: AD San Carlos con 25 pts, igualado en puntos con el 4.º.</p>
     <a class="more-link" href="#tabla">Ver tabla completa →</a><a class="more-link" href="#fase-final">Ver cómo quedarían las semifinales →</a></section>
       <section class="card"><div class="sec-head" id="proximos"><span class="kicker">Calendario</span><h2>Próximos partidos</h2></div>
@@ -1469,7 +1470,7 @@
           <th class="pos">#</th><th class="team">Equipo</th>
           <th title="Partidos jugados">PJ</th><th title="Ganados">G</th><th title="Empatados">E</th><th title="Perdidos">P</th>
           <th class="opt" title="Goles a favor">GF</th><th class="opt" title="Goles en contra">GC</th>
-          <th title="Diferencia de gol">DG</th><th title="Puntos">Pts</th><th class="form-cell" title="Últimos 5 partidos, del más reciente al más viejo">Racha</th>
+          <th title="Diferencia de gol">DG</th><th title="Puntos">Pts</th><th class="form-cell" title="Últimos 5 partidos: el de la derecha es el más reciente">Racha</th>
         </tr></thead>
         <tbody>
       <tr class="zone">
@@ -1478,7 +1479,7 @@
         <td>15</td><td>9</td><td>3</td><td>3</td>
         <td class="opt">30</td><td class="opt">21</td><td class="dg pos-dg">+9</td>
         <td class="pts">30</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: G, G, G, E, P"><i class="f-G">G</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-E">E</i><i class="f-P">P</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, E, G, G, G"><i class="f-P">P</i><i class="f-E">E</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-G last">G</i></span></td>
       </tr>
       <tr class="zone">
         <td class="pos"><span class="pos-badge">2</span></td>
@@ -1486,7 +1487,7 @@
         <td>14</td><td>9</td><td>0</td><td>5</td>
         <td class="opt">27</td><td class="opt">17</td><td class="dg pos-dg">+10</td>
         <td class="pts">27</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: G, P, G, G, P"><i class="f-G">G</i><i class="f-P">P</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-P">P</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, G, G, P, G"><i class="f-P">P</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-P">P</i><i class="f-G last">G</i></span></td>
       </tr>
       <tr class="zone">
         <td class="pos"><span class="pos-badge">3</span></td>
@@ -1494,7 +1495,7 @@
         <td>15</td><td>7</td><td>5</td><td>3</td>
         <td class="opt">25</td><td class="opt">15</td><td class="dg pos-dg">+10</td>
         <td class="pts">26</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: G, E, G, G, E"><i class="f-G">G</i><i class="f-E">E</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-E">E</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: E, G, G, E, G"><i class="f-E">E</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-E">E</i><i class="f-G last">G</i></span></td>
       </tr>
       <tr class="zone">
         <td class="pos"><span class="pos-badge">4</span></td>
@@ -1502,7 +1503,7 @@
         <td>14</td><td>8</td><td>1</td><td>5</td>
         <td class="opt">27</td><td class="opt">14</td><td class="dg pos-dg">+13</td>
         <td class="pts">25</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: E, P, P, G, P"><i class="f-E">E</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-G">G</i><i class="f-P">P</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, G, P, P, E"><i class="f-P">P</i><i class="f-G">G</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-E last">E</i></span></td>
       </tr>
       <tr class="">
         <td class="pos"><span class="pos-badge">5</span></td>
@@ -1510,7 +1511,7 @@
         <td>15</td><td>8</td><td>1</td><td>6</td>
         <td class="opt">16</td><td class="opt">18</td><td class="dg neg-dg">-2</td>
         <td class="pts">25</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: G, P, G, E, P"><i class="f-G">G</i><i class="f-P">P</i><i class="f-G">G</i><i class="f-E">E</i><i class="f-P">P</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, E, G, P, G"><i class="f-P">P</i><i class="f-E">E</i><i class="f-G">G</i><i class="f-P">P</i><i class="f-G last">G</i></span></td>
       </tr>
       <tr class="">
         <td class="pos"><span class="pos-badge">6</span></td>
@@ -1518,7 +1519,7 @@
         <td>15</td><td>5</td><td>4</td><td>6</td>
         <td class="opt">16</td><td class="opt">21</td><td class="dg neg-dg">-5</td>
         <td class="pts">19</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: P, E, G, G, P"><i class="f-P">P</i><i class="f-E">E</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-P">P</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, G, G, E, P"><i class="f-P">P</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-E">E</i><i class="f-P last">P</i></span></td>
       </tr>
       <tr class="">
         <td class="pos"><span class="pos-badge">7</span></td>
@@ -1526,7 +1527,7 @@
         <td>14</td><td>5</td><td>3</td><td>6</td>
         <td class="opt">17</td><td class="opt">23</td><td class="dg neg-dg">-6</td>
         <td class="pts">18</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: P, P, P, G, E"><i class="f-P">P</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-G">G</i><i class="f-E">E</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: E, G, P, P, P"><i class="f-E">E</i><i class="f-G">G</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-P last">P</i></span></td>
       </tr>
       <tr class="">
         <td class="pos"><span class="pos-badge">8</span></td>
@@ -1534,7 +1535,7 @@
         <td>14</td><td>4</td><td>2</td><td>8</td>
         <td class="opt">15</td><td class="opt">18</td><td class="dg neg-dg">-3</td>
         <td class="pts">14</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: P, G, G, E, P"><i class="f-P">P</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-E">E</i><i class="f-P">P</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, E, G, G, P"><i class="f-P">P</i><i class="f-E">E</i><i class="f-G">G</i><i class="f-G">G</i><i class="f-P last">P</i></span></td>
       </tr>
       <tr class="">
         <td class="pos"><span class="pos-badge">9</span></td>
@@ -1542,7 +1543,7 @@
         <td>15</td><td>4</td><td>1</td><td>10</td>
         <td class="opt">18</td><td class="opt">28</td><td class="dg neg-dg">-10</td>
         <td class="pts">13</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: P, G, P, P, G"><i class="f-P">P</i><i class="f-G">G</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-G">G</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: G, P, P, G, P"><i class="f-G">G</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-G">G</i><i class="f-P last">P</i></span></td>
       </tr>
       <tr class="">
         <td class="pos"><span class="pos-badge">10</span></td>
@@ -1550,7 +1551,7 @@
         <td>15</td><td>2</td><td>4</td><td>9</td>
         <td class="opt">11</td><td class="opt">27</td><td class="dg neg-dg">-16</td>
         <td class="pts">10</td>
-        <td class="form-cell"><span class="form" aria-label="Últimos resultados: P, E, P, P, P"><i class="f-P">P</i><i class="f-E">E</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-P">P</i></span></td>
+        <td class="form-cell"><span class="form" aria-label="Últimos resultados, del más viejo al más reciente: P, P, P, E, P"><i class="f-P">P</i><i class="f-P">P</i><i class="f-P">P</i><i class="f-E">E</i><i class="f-P last">P</i></span></td>
       </tr></tbody>
       </table>
     </div>

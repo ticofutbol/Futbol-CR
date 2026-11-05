@@ -56,7 +56,7 @@ const sectionHead = (id, kicker, title) =>
   `<div class="sec-head" id="${id}"><span class="kicker">${esc(kicker)}</span><h2>${esc(title)}</h2></div>`;
 
 const formPills = (form = []) => form.length
-  ? `<span class="form" aria-label="Últimos resultados: ${form.join(', ')}">${form.map(f => `<i class="f-${f}">${f}</i>`).join('')}</span>`
+  ? `<span class="form" aria-label="Últimos resultados, del más viejo al más reciente: ${[...form].reverse().join(', ')}">${[...form].reverse().map((f, i, all) => `<i class="f-${f}${i === all.length - 1 ? ' last' : ''}">${f}</i>`).join('')}</span>`
   : '';
 
 /* ---------- Tarjetas destacadas ---------- */
@@ -127,7 +127,7 @@ function standingsSection(s, form) {
           <th class="pos">#</th><th class="team">Equipo</th>
           <th title="Partidos jugados">PJ</th><th title="Ganados">G</th><th title="Empatados">E</th><th title="Perdidos">P</th>
           <th class="opt" title="Goles a favor">GF</th><th class="opt" title="Goles en contra">GC</th>
-          <th title="Diferencia de gol">DG</th><th title="Puntos">Pts</th><th class="form-cell" title="Últimos 5 partidos, del más reciente al más viejo">Racha</th>
+          <th title="Diferencia de gol">DG</th><th title="Puntos">Pts</th><th class="form-cell" title="Últimos 5 partidos: el de la derecha es el más reciente">Racha</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>
@@ -763,6 +763,7 @@ ${TABS.map(([id]) => `    html[data-tab="${id}"] .tab-link[data-tab="${id}"] { b
   .logo { width: 20px; height: 20px; object-fit: contain; flex: none; display: inline-block; }
   .form { display: inline-flex; gap: 3px; }
   .form i { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 6px; font-style: normal; font-size: .68rem; font-weight: 800; color: #fff; }
+  .form i.last.f-G { box-shadow: 0 0 0 2px var(--surface, #fff), 0 0 0 3.5px var(--win); } .form i.last.f-E { box-shadow: 0 0 0 2px var(--surface, #fff), 0 0 0 3.5px var(--draw); } .form i.last.f-P { box-shadow: 0 0 0 2px var(--surface, #fff), 0 0 0 3.5px var(--loss); }
   .f-G { background: var(--win); } .f-E { background: var(--draw); } .f-P { background: var(--loss); }
   .legend, .note { margin: 12px 0 0; font-size: .8rem; color: var(--muted); }
   .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); vertical-align: -1px; margin-right: 6px; }
