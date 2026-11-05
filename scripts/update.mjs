@@ -88,6 +88,34 @@ function match(ev) {
   };
 }
 
+// La tabla de ESPN tarda (a veces más de una hora) en sumar un partido recién terminado, y a veces llega
+// una copia vieja. Si un equipo tiene más partidos jugados en los resultados que en la tabla, se suman
+// a mano sus partidos más recientes que faltan (solo cuando faltan para los dos equipos).
+function catchUpTable(rows, matches) {
+  const done = matches.filter(m => m.completed && m.stage === 'regular').sort((x, y) => y.date.localeCompare(x.date));
+  const byId = new Map(rows.map(r => [r.id, { ...r }]));
+  const missing = new Map();
+  for (const r of byId.values()) {
+    const mine = done.filter(m => m.home.id === r.id || m.away.id === r.id);
+    missing.set(r.id, new Set(mine.slice(0, Math.max(0, mine.length - r.pj)).map(m => m.id)));
+  }
+  let added = 0;
+  for (const m of done) {
+    if (!missing.get(m.home.id)?.has(m.id) || !missing.get(m.away.id)?.has(m.id)) continue;
+    const hs = Number(m.home.score), as = Number(m.away.score);
+    if (!Number.isFinite(hs) || !Number.isFinite(as)) continue;
+    for (const [id, f, c] of [[m.home.id, hs, as], [m.away.id, as, hs]]) {
+      const r = byId.get(id);
+      r.pj++; r.gf += f; r.gc += c; r.dg = r.gf - r.gc;
+      if (f > c) { r.g++; r.pts += 3; } else if (f === c) { r.e++; r.pts++; } else r.p++;
+    }
+    added++;
+  }
+  if (!added) return rows;
+  console.log(`Tabla: se sumaron ${added} partido(s) que ESPN todavía no tenía.`);
+  return [...byId.values()].sort((x, y) => y.pts - x.pts || y.dg - x.dg || y.gf - x.gf).map((r, i) => ({ ...r, rank: i + 1 }));
+}
+
 async function fetchStandings(tournament) {
   const json = await getJson(`${STANDINGS_URL}?season=${seasonYear()}&seasontype=${SEASON_TYPE[tournament]}`);
   const group = json.children?.[0];
@@ -424,6 +452,7 @@ async function main() {
   }, warnings);
 
   const tournament = results?.tournament ?? 'Apertura';
+  if (tables?.[tournament] && played) tables[tournament].rows = catchUpTable(tables[tournament].rows, played);
   const standings = tables && { ...(tables[tournament] ?? tables.Apertura), updatedAt: tables.updatedAt, stale: tables.stale };
 
   const scorers = await section('Goleadores', prev.scorers, async () => {
