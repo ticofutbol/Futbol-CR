@@ -31,10 +31,47 @@
   ],
   "401876825": [
     {
-      "minute": "29'",
+      "minute": "28'",
       "playerId": "176491",
       "player": "Raul Vidal",
       "team": "AD San Carlos",
+      "type": "Goal"
+    }
+  ],
+  "401876826": [
+    {
+      "minute": "24'",
+      "playerId": "379972",
+      "player": "Yeison Molina",
+      "team": "Escorpiones Belén",
+      "type": "Own Goal"
+    },
+    {
+      "minute": "25'",
+      "playerId": "208436",
+      "player": "Ronaldo Cisneros",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "minute": "77'",
+      "playerId": "186084",
+      "player": "Ángel Zaldívar",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "minute": "90'+3'",
+      "playerId": "207279",
+      "player": "Juanpi",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "minute": "90'+5'",
+      "playerId": "207279",
+      "player": "Juanpi",
+      "team": "Alajuelense",
       "type": "Goal"
     }
   ],
