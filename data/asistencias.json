@@ -1,6 +1,6 @@
 {
   "_info": "Asistencias copiadas a mano de Transfermarkt; ESPN no las trae. No se actualizan solas: hay que volver a copiarlas. Nombres como en Transfermarkt.",
-  "updated": "2026-10-28",
+  "updated": "2026-11-05",
   "source": "Transfermarkt",
   "teams": {
     "Saprissa": {
@@ -35,26 +35,29 @@
       "Roan Wilson": 1,
       "Yeison Molina": 1,
       "Ethan Barley": 1,
-      "Yerlan Sosa": 1
+      "Yerlan Sosa": 1,
+      "Luis Díaz": 1
     },
     "Sporting San José": {
       "Mayron George": 3,
       "Joshua Navarro": 2,
       "José Pinto": 2,
       "Daniel Colindres": 1,
-      "Marcos Ureña": 2,
+      "Marcos Ureña": 3,
       "Youstin Salas": 2,
       "Adrián Chévez": 3,
       "Ariel Soto": 1,
       "Carlos Pineda": 1,
       "Eduardo Pastrana": 1,
-      "Ignacio Gómez": 1
+      "Ignacio Gómez": 1,
+      "Renzo Carballo": 1,
+      "Josimar Méndez": 1
     },
     "Cartaginés": {
       "Juan Carlos Gaete": 1,
-      "Geancarlo Castro": 1,
+      "Geancarlo Castro": 3,
       "José González": 4,
-      "Manuel Morán": 5,
+      "Manuel Morán": 6,
       "Douglas López": 2,
       "Bernald Alfaro": 1,
       "Carlos Barahona": 1,
@@ -72,10 +75,11 @@
       "Wesly Decas": 1,
       "Walter Cortés": 1,
       "Kliver Gómez": 1,
-      "Ismael Mairena": 1
+      "Ismael Mairena": 1,
+      "Wilson Hernández": 1
     },
     "AD San Carlos": {
-      "Kenneth Cerdas": 3,
+      "Kenneth Cerdas": 4,
       "Roberto Córdoba": 1,
       "Jeikel Venegas": 2,
       "Jefry Valverde": 3,
@@ -88,7 +92,8 @@
       "Marvin Angulo": 2,
       "Luis José Hernández": 1,
       "Barlon Sequeira": 1,
-      "Alejandro Porras": 1
+      "Alejandro Porras": 1,
+      "Elián Quesada": 1
     },
     "Herediano": {
       "Ronaldo Araya": 2,
@@ -99,12 +104,12 @@
       "Abner Hudson": 1
     },
     "Escorpiones Belén": {
-      "Deyver Vega": 1,
+      "Deyver Vega": 2,
       "Danilo Pimpinati": 1,
       "Christian Muñoz": 1,
       "Dylan Flores": 1,
       "Greivin Fonseca": 1,
-      "Abner Hidalgo": 1
+      "Abner Hidalgo": 2
     }
   }
 }

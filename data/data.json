@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-05T04:46:12.960Z",
-  "lastSuccessAt": "2026-11-05T04:46:12.960Z",
+  "generatedAt": "2026-11-05T05:06:53.780Z",
+  "lastSuccessAt": "2026-11-05T05:06:53.780Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-05T04:46:11.439Z",
+    "updatedAt": "2026-11-05T05:06:50.197Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-05T04:46:11.439Z",
+    "updatedAt": "2026-11-05T05:06:50.197Z",
     "stale": false
   },
   "playoffs": {
@@ -4250,7 +4250,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-05T04:46:12.663Z",
+    "updatedAt": "2026-11-05T05:06:52.828Z",
     "stale": false
   },
   "upcoming": {
@@ -5041,7 +5041,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-05T04:46:12.510Z",
+    "updatedAt": "2026-11-05T05:06:52.184Z",
     "stale": false
   },
   "scorers": {
@@ -5801,13 +5801,13 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-05T04:46:12.792Z",
+    "updatedAt": "2026-11-05T05:06:53.184Z",
     "stale": false
   },
   "assists": {
-    "updated": "2026-10-28",
+    "updated": "2026-11-05",
     "source": "Transfermarkt",
-    "total": 128,
+    "total": 140,
     "rows": [
       {
         "player": "Luis Paradela",
@@ -5817,11 +5817,16 @@
       {
         "player": "Manuel Morán",
         "team": "Cartaginés",
-        "assists": 5
+        "assists": 6
       },
       {
         "player": "José González",
         "team": "Cartaginés",
+        "assists": 4
+      },
+      {
+        "player": "Kenneth Cerdas",
+        "team": "AD San Carlos",
         "assists": 4
       },
       {
@@ -5832,6 +5837,11 @@
       {
         "player": "Creichel Pérez",
         "team": "Alajuelense",
+        "assists": 3
+      },
+      {
+        "player": "Geancarlo Castro",
+        "team": "Cartaginés",
         "assists": 3
       },
       {
@@ -5850,8 +5860,8 @@
         "assists": 3
       },
       {
-        "player": "Kenneth Cerdas",
-        "team": "AD San Carlos",
+        "player": "Marcos Ureña",
+        "team": "Sporting San José",
         "assists": 3
       },
       {
@@ -6111,7 +6121,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
             "goals": 3,
             "penalties": 0,
-            "assists": 0
+            "assists": 1
           },
           {
             "id": "151184",
@@ -6147,7 +6157,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 3,
             "penalties": 0,
-            "assists": 0
+            "assists": 1
           },
           {
             "id": "148141",
@@ -6159,7 +6169,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 1,
             "penalties": 0,
-            "assists": 2
+            "assists": 3
           },
           {
             "id": "404051",
@@ -6465,7 +6475,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
             "goals": 0,
             "penalties": 0,
-            "assists": 5
+            "assists": 6
           },
           {
             "id": "280546",
@@ -6501,7 +6511,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 5,
             "penalties": 0,
-            "assists": 1
+            "assists": 3
           },
           {
             "id": "185890",
@@ -6882,7 +6892,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0,
-            "assists": 0
+            "assists": 1
           },
           {
             "id": "208436",
@@ -7545,7 +7555,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 2,
             "penalties": 0,
-            "assists": 3
+            "assists": 4
           },
           {
             "id": "228457",
@@ -7967,7 +7977,7 @@
             "flag": null,
             "goals": 1,
             "penalties": 0,
-            "assists": 0
+            "assists": 1
           },
           {
             "id": "302977",
@@ -8854,7 +8864,7 @@
             "jersey": "1",
             "name": "Ricardo Montenegro",
             "position": "G",
-            "age": 22,
+            "age": 26,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -9070,7 +9080,7 @@
             "jersey": "18",
             "name": "Ricardo Peña",
             "position": "M",
-            "age": 34,
+            "age": 22,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -9148,7 +9158,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
             "penalties": 0,
-            "assists": 1
+            "assists": 2
           },
           {
             "id": "407927",
@@ -9184,7 +9194,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 2,
             "penalties": 0,
-            "assists": 1
+            "assists": 2
           },
           {
             "id": "3109137",
@@ -9432,7 +9442,7 @@
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 1,
             "penalties": 0,
-            "assists": 0
+            "assists": 1
           },
           {
             "id": "217143",
@@ -9666,7 +9676,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-05T04:46:12.954Z",
+    "updatedAt": "2026-11-05T05:06:53.776Z",
     "stale": false
   },
   "coaches": {
