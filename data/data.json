@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-04T12:38:30.471Z",
-  "lastSuccessAt": "2026-11-04T12:38:30.471Z",
+  "generatedAt": "2026-11-05T02:03:49.627Z",
+  "lastSuccessAt": "2026-11-05T02:03:49.627Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-04T12:38:29.305Z",
+    "updatedAt": "2026-11-05T02:03:46.743Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-04T12:38:29.305Z",
+    "updatedAt": "2026-11-05T02:03:46.743Z",
     "stale": false
   },
   "playoffs": {
@@ -404,6 +404,42 @@
   "results": {
     "tournament": "Apertura",
     "matches": [
+      {
+        "id": "401876825",
+        "date": "2026-11-05T00:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Lito Pérez",
+        "home": {
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "859",
+          "name": "AD San Carlos",
+          "short": "San Carlos",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
+          "score": "1"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 15,
+        "goals": [
+          {
+            "minute": "29'",
+            "player": "Raúl Vidal",
+            "side": "away"
+          }
+        ]
+      },
       {
         "id": "401876824",
         "date": "2026-11-04T01:00Z",
@@ -797,10 +833,12 @@
             "pen": true
           }
         ]
-      },
+      }
+    ],
+    "all": [
       {
-        "id": "401876891",
-        "date": "2026-10-25T00:00Z",
+        "id": "401876825",
+        "date": "2026-11-05T00:00Z",
         "state": "post",
         "completed": true,
         "statusText": "FT",
@@ -811,46 +849,29 @@
           "short": "Puntarenas",
           "abbr": "PUN",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
-          "score": "3"
+          "score": "0"
         },
         "away": {
-          "id": "131790",
-          "name": "Inter de San Carlos",
+          "id": "859",
+          "name": "AD San Carlos",
           "short": "San Carlos",
-          "abbr": "ISC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "score": "1"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 13,
+        "round": 15,
         "goals": [
           {
-            "minute": "31'",
-            "player": "Érick Torres",
+            "minute": "29'",
+            "player": "Raúl Vidal",
             "side": "away"
-          },
-          {
-            "minute": "72'",
-            "player": "Kevin Cabezas",
-            "side": "home"
-          },
-          {
-            "minute": "75'",
-            "player": "Wilson Hernández",
-            "side": "home"
-          },
-          {
-            "minute": "90'",
-            "player": "Pablo Álvarez",
-            "side": "home"
           }
         ]
-      }
-    ],
-    "all": [
+      },
       {
         "id": "401876824",
         "date": "2026-11-04T01:00Z",
@@ -4039,11 +4060,11 @@
         "P"
       ],
       "859": [
+        "G",
         "P",
         "G",
         "E",
-        "P",
-        "G"
+        "P"
       ],
       "862": [
         "P",
@@ -4067,11 +4088,11 @@
         "P"
       ],
       "7237": [
+        "P",
         "E",
         "G",
         "G",
-        "P",
-        "E"
+        "P"
       ],
       "7239": [
         "G",
@@ -4103,8 +4124,8 @@
       ]
     },
     "stats": {
-      "matches": 71,
-      "goals": 195,
+      "matches": 72,
+      "goals": 196,
       "biggest": {
         "id": "401876842",
         "date": "2026-10-16T02:00Z",
@@ -4167,46 +4188,17 @@
         ]
       }
     },
-    "updatedAt": "2026-11-04T12:38:30.273Z",
+    "updatedAt": "2026-11-05T02:03:48.299Z",
     "stale": false
   },
   "upcoming": {
     "matches": [
       {
-        "id": "401876825",
-        "date": "2026-11-05T00:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Lito Pérez",
-        "home": {
-          "id": "7237",
-          "name": "Puntarenas FC",
-          "short": "Puntarenas",
-          "abbr": "PUN",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "859",
-          "name": "AD San Carlos",
-          "short": "San Carlos",
-          "abbr": "ADSC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 15
-      },
-      {
         "id": "401876826",
         "date": "2026-11-05T02:00Z",
-        "state": "pre",
+        "state": "in",
         "completed": false,
-        "statusText": "Scheduled",
+        "statusText": "3'",
         "venue": "Estadio Ricardo Saprissa",
         "home": {
           "id": "132447",
@@ -4461,22 +4453,20 @@
         "leg": null,
         "seriesWinner": null,
         "round": 17
-      }
-    ],
-    "all": [
+      },
       {
-        "id": "401876825",
-        "date": "2026-11-05T00:00Z",
+        "id": "401876818",
+        "date": "2026-11-22T21:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Estadio Lito Pérez",
+        "venue": "Estadio Ricardo Saprissa",
         "home": {
-          "id": "7237",
-          "name": "Puntarenas FC",
-          "short": "Puntarenas",
-          "abbr": "PUN",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "0"
         },
         "away": {
@@ -4491,14 +4481,16 @@
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 15
-      },
+        "round": 17
+      }
+    ],
+    "all": [
       {
         "id": "401876826",
         "date": "2026-11-05T02:00Z",
-        "state": "pre",
+        "state": "in",
         "completed": false,
-        "statusText": "Scheduled",
+        "statusText": "3'",
         "venue": "Estadio Ricardo Saprissa",
         "home": {
           "id": "132447",
@@ -5016,12 +5008,12 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-04T12:38:30.056Z",
+    "updatedAt": "2026-11-05T02:03:47.771Z",
     "stale": false
   },
   "scorers": {
-    "matchesCounted": 71,
-    "goalsCounted": 192,
+    "matchesCounted": 72,
+    "goalsCounted": 193,
     "corrections": 4,
     "rows": [
       {
@@ -5391,6 +5383,13 @@
         "penalties": 0
       },
       {
+        "playerId": "176491",
+        "player": "Raúl Vidal",
+        "team": "AD San Carlos",
+        "goals": 2,
+        "penalties": 0
+      },
+      {
         "playerId": "3118776",
         "player": "Raúl López",
         "team": "Escorpiones Belén",
@@ -5713,13 +5712,6 @@
         "penalties": 0
       },
       {
-        "playerId": "176491",
-        "player": "Raúl Vidal",
-        "team": "AD San Carlos",
-        "goals": 1,
-        "penalties": 0
-      },
-      {
         "playerId": "316864",
         "player": "Santiago Vargas",
         "team": "Herediano",
@@ -5769,7 +5761,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-04T12:38:30.324Z",
+    "updatedAt": "2026-11-05T02:03:48.908Z",
     "stale": false
   },
   "assists": {
@@ -7672,7 +7664,7 @@
             "age": 32,
             "country": "México",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-            "goals": 1,
+            "goals": 2,
             "penalties": 0,
             "assists": 1
           }
@@ -9634,7 +9626,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-04T12:38:30.466Z",
+    "updatedAt": "2026-11-05T02:03:49.622Z",
     "stale": false
   },
   "coaches": {
