@@ -9,12 +9,18 @@ on:
     - cron: '*/15 17-23 * * *'
     - cron: '*/15 0-5 * * *'
   workflow_dispatch:        # botón "Run workflow" para correrlo a mano
+    inputs:
+      esperar:
+        description: 'Esperar a que termine el partido en juego antes de actualizar'
+        type: boolean
+        default: false
   push:
     branches: [main]
 
 permissions:
   contents: write   # para hacer commit de los datos nuevos
   pages: write      # para publicar en GitHub Pages
+  actions: write    # para lanzar la siguiente revisión cuando quedan partidos del día
   id-token: write
 
 concurrency:
@@ -24,9 +30,10 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 190   # la espera de un partido dura como mucho 170 min
+    timeout-minutes: 350   # la espera de un partido dura como mucho 330 min (GitHub permite 360)
     outputs:
       cambios: ${{ steps.check.outputs.cambios }}
+      pendientes: ${{ steps.check.outputs.pendientes }}
     steps:
       - uses: actions/checkout@v5
 
@@ -37,7 +44,7 @@ jobs:
       # Las revisiones de cada 15 min solo siguen si terminó un partido; la de las 6:00, los push y el botón siempre actualizan.
       - name: ¿Terminó algún partido?
         id: check
-        if: github.event_name == 'schedule' && github.event.schedule != '0 12 * * *'
+        if: (github.event_name == 'schedule' && github.event.schedule != '0 12 * * *') || inputs.esperar
         run: node scripts/hay-partido-nuevo.mjs
 
       - name: Descargar datos y generar la página
@@ -80,3 +87,14 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Si después de actualizar quedan partidos de hoy por terminar, se lanza otra revisión que los espere
+  # (un workflow_dispatch hecho con el token del workflow sí inicia una ejecución nueva).
+  seguir:
+    needs: [update, deploy]
+    if: needs.update.outputs.pendientes == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh workflow run update.yml --repo "${{ github.repository }}" -f esperar=true
+        env:
+          GH_TOKEN: ${{ github.token }}
