@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-06T04:01:53.628Z",
-  "lastSuccessAt": "2026-11-06T04:01:53.628Z",
+  "generatedAt": "2026-11-06T12:41:56.833Z",
+  "lastSuccessAt": "2026-11-06T12:41:56.833Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-06T04:01:51.964Z",
+    "updatedAt": "2026-11-06T12:41:55.591Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-06T04:01:51.964Z",
+    "updatedAt": "2026-11-06T12:41:55.591Z",
     "stale": false
   },
   "playoffs": {
@@ -4334,7 +4334,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-06T04:01:53.224Z",
+    "updatedAt": "2026-11-06T12:41:56.570Z",
     "stale": false
   },
   "upcoming": {
@@ -5067,7 +5067,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-06T04:01:52.946Z",
+    "updatedAt": "2026-11-06T12:41:56.299Z",
     "stale": false
   },
   "scorers": {
@@ -5834,7 +5834,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-06T04:01:53.351Z",
+    "updatedAt": "2026-11-06T12:41:56.645Z",
     "stale": false
   },
   "assists": {
@@ -7439,7 +7439,7 @@
             "jersey": "77",
             "name": "Jason Vega",
             "position": "G",
-            "age": 30,
+            "age": 31,
             "country": "Nicaragua",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nca.png",
             "goals": 0,
@@ -9663,7 +9663,7 @@
             "jersey": "62",
             "name": "Axel Amador",
             "position": "F",
-            "age": 25,
+            "age": 26,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 2,
@@ -9709,7 +9709,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-06T04:01:53.624Z",
+    "updatedAt": "2026-11-06T12:41:56.828Z",
     "stale": false
   },
   "coaches": {
