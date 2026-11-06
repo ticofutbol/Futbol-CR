@@ -1266,6 +1266,22 @@
       "type": "Penalty - Scored"
     }
   ],
+  "401876889": [
+    {
+      "minute": "11'",
+      "playerId": "153727",
+      "player": "Erick Torres",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "minute": "79'",
+      "playerId": "280546",
+      "player": "José De Jesús González",
+      "team": "Cartaginés",
+      "type": "Penalty - Scored"
+    }
+  ],
   "401876890": [
     {
       "minute": "30'",
