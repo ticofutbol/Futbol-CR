@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-06T12:41:56.833Z",
-  "lastSuccessAt": "2026-11-06T12:41:56.833Z",
+  "generatedAt": "2026-11-07T12:27:09.183Z",
+  "lastSuccessAt": "2026-11-07T12:27:09.183Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 10
       }
     ],
-    "updatedAt": "2026-11-06T12:41:55.591Z",
+    "updatedAt": "2026-11-07T12:27:08.007Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-06T12:41:55.591Z",
+    "updatedAt": "2026-11-07T12:27:08.007Z",
     "stale": false
   },
   "playoffs": {
@@ -4334,7 +4334,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-06T12:41:56.570Z",
+    "updatedAt": "2026-11-07T12:27:08.973Z",
     "stale": false
   },
   "upcoming": {
@@ -4485,41 +4485,12 @@
         "round": 16
       },
       {
-        "id": "401876819",
-        "date": "2026-11-22T21:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Alejandro Morera Soto",
-        "home": {
-          "id": "2057",
-          "name": "Alajuelense",
-          "short": "Alajuelense",
-          "abbr": "ALA",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "7239",
-          "name": "Cartaginés",
-          "short": "Cartaginés",
-          "abbr": "CAR",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 17
-      },
-      {
         "id": "401876818",
-        "date": "2026-11-22T21:00Z",
+        "date": "2026-11-21T02:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Estadio Ricardo Saprissa",
+        "venue": "Estadio Rafael Bolaños",
         "home": {
           "id": "132447",
           "name": "Escorpiones Belén",
@@ -4543,26 +4514,26 @@
         "round": 17
       },
       {
-        "id": "401876887",
-        "date": "2026-11-22T21:00Z",
+        "id": "401876816",
+        "date": "2026-11-21T23:30Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Estadio Carlos Ugalde Álvarez",
+        "venue": "Estadio Lito Pérez",
         "home": {
-          "id": "131790",
-          "name": "Inter de San Carlos",
-          "short": "San Carlos",
-          "abbr": "ISC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
         },
         "away": {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
         },
         "tournament": "Apertura",
@@ -4573,7 +4544,7 @@
       },
       {
         "id": "401876817",
-        "date": "2026-11-22T21:00Z",
+        "date": "2026-11-22T02:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -4601,26 +4572,55 @@
         "round": 17
       },
       {
-        "id": "401876816",
-        "date": "2026-11-22T21:00Z",
+        "id": "401876887",
+        "date": "2026-11-22T22:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Estadio Lito Pérez",
+        "venue": "Estadio Carlos Ugalde Álvarez",
         "home": {
-          "id": "7237",
-          "name": "Puntarenas FC",
-          "short": "Puntarenas",
-          "abbr": "PUN",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
         },
         "away": {
-          "id": "862",
-          "name": "Herediano",
-          "short": "Herediano",
-          "abbr": "HER",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "0"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 17
+      },
+      {
+        "id": "401876819",
+        "date": "2026-11-24T02:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Alejandro Morera Soto",
+        "home": {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "7239",
+          "name": "Cartaginés",
+          "short": "Cartaginés",
+          "abbr": "CAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
         },
         "tournament": "Apertura",
@@ -4777,41 +4777,12 @@
         "round": 16
       },
       {
-        "id": "401876819",
-        "date": "2026-11-22T21:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Alejandro Morera Soto",
-        "home": {
-          "id": "2057",
-          "name": "Alajuelense",
-          "short": "Alajuelense",
-          "abbr": "ALA",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "7239",
-          "name": "Cartaginés",
-          "short": "Cartaginés",
-          "abbr": "CAR",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 17
-      },
-      {
         "id": "401876818",
-        "date": "2026-11-22T21:00Z",
+        "date": "2026-11-21T02:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Estadio Ricardo Saprissa",
+        "venue": "Estadio Rafael Bolaños",
         "home": {
           "id": "132447",
           "name": "Escorpiones Belén",
@@ -4835,26 +4806,26 @@
         "round": 17
       },
       {
-        "id": "401876887",
-        "date": "2026-11-22T21:00Z",
+        "id": "401876816",
+        "date": "2026-11-21T23:30Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Estadio Carlos Ugalde Álvarez",
+        "venue": "Estadio Lito Pérez",
         "home": {
-          "id": "131790",
-          "name": "Inter de San Carlos",
-          "short": "San Carlos",
-          "abbr": "ISC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "id": "7237",
+          "name": "Puntarenas FC",
+          "short": "Puntarenas",
+          "abbr": "PUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
           "score": "0"
         },
         "away": {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "score": "0"
         },
         "tournament": "Apertura",
@@ -4865,7 +4836,7 @@
       },
       {
         "id": "401876817",
-        "date": "2026-11-22T21:00Z",
+        "date": "2026-11-22T02:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -4893,26 +4864,55 @@
         "round": 17
       },
       {
-        "id": "401876816",
-        "date": "2026-11-22T21:00Z",
+        "id": "401876887",
+        "date": "2026-11-22T22:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Estadio Lito Pérez",
+        "venue": "Estadio Carlos Ugalde Álvarez",
         "home": {
-          "id": "7237",
-          "name": "Puntarenas FC",
-          "short": "Puntarenas",
-          "abbr": "PUN",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "score": "0"
         },
         "away": {
-          "id": "862",
-          "name": "Herediano",
-          "short": "Herediano",
-          "abbr": "HER",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "0"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 17
+      },
+      {
+        "id": "401876819",
+        "date": "2026-11-24T02:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Alejandro Morera Soto",
+        "home": {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "7239",
+          "name": "Cartaginés",
+          "short": "Cartaginés",
+          "abbr": "CAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
         },
         "tournament": "Apertura",
@@ -5067,7 +5067,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-06T12:41:56.299Z",
+    "updatedAt": "2026-11-07T12:27:08.719Z",
     "stale": false
   },
   "scorers": {
@@ -5834,7 +5834,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-06T12:41:56.645Z",
+    "updatedAt": "2026-11-07T12:27:09.018Z",
     "stale": false
   },
   "assists": {
@@ -8650,7 +8650,7 @@
             "jersey": "10",
             "name": "Elías Aguilar",
             "position": "M",
-            "age": 34,
+            "age": 35,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 2,
@@ -9687,7 +9687,7 @@
             "jersey": "90",
             "name": "José Pablo Córdoba",
             "position": "F",
-            "age": 27,
+            "age": 25,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -9709,7 +9709,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-06T12:41:56.828Z",
+    "updatedAt": "2026-11-07T12:27:09.179Z",
     "stale": false
   },
   "coaches": {
