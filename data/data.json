@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-08T04:05:23.763Z",
-  "lastSuccessAt": "2026-11-08T04:05:23.763Z",
+  "generatedAt": "2026-11-08T12:26:16.783Z",
+  "lastSuccessAt": "2026-11-08T12:26:16.783Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-08T04:05:21.731Z",
+    "updatedAt": "2026-11-08T12:26:15.704Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-08T04:05:21.731Z",
+    "updatedAt": "2026-11-08T12:26:15.704Z",
     "stale": false
   },
   "playoffs": {
@@ -4403,7 +4403,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-08T04:05:23.258Z",
+    "updatedAt": "2026-11-08T12:26:16.528Z",
     "stale": false
   },
   "upcoming": {
@@ -5078,7 +5078,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-08T04:05:22.809Z",
+    "updatedAt": "2026-11-08T12:26:16.357Z",
     "stale": false
   },
   "scorers": {
@@ -5852,7 +5852,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-08T04:05:23.409Z",
+    "updatedAt": "2026-11-08T12:26:16.594Z",
     "stale": false
   },
   "assists": {
@@ -8584,7 +8584,7 @@
             "jersey": "16",
             "name": "Darril Araya",
             "position": "D",
-            "age": 25,
+            "age": 26,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -9380,7 +9380,7 @@
             "jersey": "99",
             "name": "Miguel Ajú",
             "position": "G",
-            "age": 26,
+            "age": 27,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -9727,7 +9727,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-08T04:05:23.758Z",
+    "updatedAt": "2026-11-08T12:26:16.778Z",
     "stale": false
   },
   "coaches": {
