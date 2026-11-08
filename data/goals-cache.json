@@ -15,6 +15,50 @@
       "type": "Goal"
     }
   ],
+  "401876822": [
+    {
+      "minute": "13'",
+      "playerId": "155960",
+      "player": "Manuel Morán",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "minute": "20'",
+      "playerId": "185890",
+      "player": "Alonso Hernández",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "minute": "23'",
+      "playerId": "185890",
+      "player": "Alonso Hernández",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "minute": "73'",
+      "playerId": "3100022",
+      "player": "Danilo Pimpinati Rocha",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    },
+    {
+      "minute": "77'",
+      "playerId": "293665",
+      "player": "Mauricio Villalobos",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "minute": "90'+3'",
+      "playerId": "3100022",
+      "player": "Danilo Pimpinati Rocha",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    }
+  ],
   "401876823": [
     {
       "minute": "66'",
