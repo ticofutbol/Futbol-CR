@@ -1,4 +1,20 @@
 {
+  "401876823": [
+    {
+      "minute": "66'",
+      "playerId": "157487",
+      "player": "Wilber Renteria",
+      "team": "Pérez Zeledón",
+      "type": "Penalty - Scored"
+    },
+    {
+      "minute": "90'+3'",
+      "playerId": "176491",
+      "player": "Raul Vidal",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    }
+  ],
   "401876824": [
     {
       "minute": "33'",
