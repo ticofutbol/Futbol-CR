@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-08T01:59:55.212Z",
-  "lastSuccessAt": "2026-11-08T01:59:55.212Z",
+  "generatedAt": "2026-11-08T04:04:52.688Z",
+  "lastSuccessAt": "2026-11-08T04:04:52.688Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -15,14 +15,30 @@
         "abbr": "SSJ",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
         "rank": 1,
-        "pj": 15,
+        "pj": 16,
         "g": 9,
         "e": 3,
-        "p": 3,
+        "p": 4,
         "gf": 30,
-        "gc": 21,
-        "dg": 9,
+        "gc": 23,
+        "dg": 7,
         "pts": 30
+      },
+      {
+        "id": "2057",
+        "name": "Alajuelense",
+        "short": "Alajuelense",
+        "abbr": "ALA",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+        "rank": 2,
+        "pj": 16,
+        "g": 8,
+        "e": 5,
+        "p": 3,
+        "gf": 27,
+        "gc": 15,
+        "dg": 12,
+        "pts": 29
       },
       {
         "id": "858",
@@ -30,7 +46,7 @@
         "short": "Saprissa",
         "abbr": "SAP",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
-        "rank": 2,
+        "rank": 3,
         "pj": 15,
         "g": 9,
         "e": 1,
@@ -46,7 +62,7 @@
         "short": "Cartaginés",
         "abbr": "CAR",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
-        "rank": 3,
+        "rank": 4,
         "pj": 15,
         "g": 9,
         "e": 1,
@@ -55,22 +71,6 @@
         "gc": 18,
         "dg": 10,
         "pts": 28
-      },
-      {
-        "id": "2057",
-        "name": "Alajuelense",
-        "short": "Alajuelense",
-        "abbr": "ALA",
-        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
-        "rank": 4,
-        "pj": 15,
-        "g": 7,
-        "e": 5,
-        "p": 3,
-        "gf": 25,
-        "gc": 15,
-        "dg": 10,
-        "pts": 26
       },
       {
         "id": "859",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-08T01:59:50.742Z",
+    "updatedAt": "2026-11-08T04:04:51.149Z",
     "stale": false
   },
   "tables": {
@@ -185,14 +185,30 @@
           "abbr": "SSJ",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
           "rank": 1,
-          "pj": 15,
+          "pj": 16,
           "g": 9,
           "e": 3,
-          "p": 3,
+          "p": 4,
           "gf": 30,
-          "gc": 21,
-          "dg": 9,
+          "gc": 23,
+          "dg": 7,
           "pts": 30
+        },
+        {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "rank": 2,
+          "pj": 16,
+          "g": 8,
+          "e": 5,
+          "p": 3,
+          "gf": 27,
+          "gc": 15,
+          "dg": 12,
+          "pts": 29
         },
         {
           "id": "858",
@@ -200,7 +216,7 @@
           "short": "Saprissa",
           "abbr": "SAP",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
-          "rank": 2,
+          "rank": 3,
           "pj": 15,
           "g": 9,
           "e": 1,
@@ -216,7 +232,7 @@
           "short": "Cartaginés",
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
-          "rank": 3,
+          "rank": 4,
           "pj": 15,
           "g": 9,
           "e": 1,
@@ -225,22 +241,6 @@
           "gc": 18,
           "dg": 10,
           "pts": 28
-        },
-        {
-          "id": "2057",
-          "name": "Alajuelense",
-          "short": "Alajuelense",
-          "abbr": "ALA",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
-          "rank": 4,
-          "pj": 15,
-          "g": 7,
-          "e": 5,
-          "p": 3,
-          "gf": 25,
-          "gc": 15,
-          "dg": 10,
-          "pts": 26
         },
         {
           "id": "859",
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-08T01:59:50.742Z",
+    "updatedAt": "2026-11-08T04:04:51.149Z",
     "stale": false
   },
   "playoffs": {
@@ -360,11 +360,11 @@
             "aggregate": null
           },
           {
-            "id": "2057",
-            "name": "Alajuelense",
-            "short": "Alajuelense",
-            "abbr": "ALA",
-            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+            "id": "7239",
+            "name": "Cartaginés",
+            "short": "Cartaginés",
+            "abbr": "CAR",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
             "seed": 4,
             "aggregate": null
           }
@@ -376,20 +376,20 @@
         "stage": "semifinal",
         "teams": [
           {
+            "id": "2057",
+            "name": "Alajuelense",
+            "short": "Alajuelense",
+            "abbr": "ALA",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+            "seed": 2,
+            "aggregate": null
+          },
+          {
             "id": "858",
             "name": "Saprissa",
             "short": "Saprissa",
             "abbr": "SAP",
             "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/858.png",
-            "seed": 2,
-            "aggregate": null
-          },
-          {
-            "id": "7239",
-            "name": "Cartaginés",
-            "short": "Cartaginés",
-            "abbr": "CAR",
-            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
             "seed": 3,
             "aggregate": null
           }
@@ -404,6 +404,47 @@
   "results": {
     "tournament": "Apertura",
     "matches": [
+      {
+        "id": "401876820",
+        "date": "2026-11-08T02:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Alejandro Morera Soto",
+        "home": {
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "2"
+        },
+        "away": {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "0"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 16,
+        "goals": [
+          {
+            "minute": "57'",
+            "player": "Kenyel Michel",
+            "side": "home"
+          },
+          {
+            "minute": "88'",
+            "player": "Ángel Zaldívar",
+            "side": "home"
+          }
+        ]
+      },
       {
         "id": "401876823",
         "date": "2026-11-08T00:00Z",
@@ -784,50 +825,50 @@
             "side": "home"
           }
         ]
-      },
+      }
+    ],
+    "all": [
       {
-        "id": "401876829",
-        "date": "2026-10-31T02:00Z",
+        "id": "401876820",
+        "date": "2026-11-08T02:00Z",
         "state": "post",
         "completed": true,
         "statusText": "FT",
-        "venue": "Estadio Municipal de Pérez Zeledón",
+        "venue": "Alejandro Morera Soto",
         "home": {
-          "id": "7234",
-          "name": "Pérez Zeledón",
-          "short": "Pérez Zeledón",
-          "abbr": "ZEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
-          "score": "1"
+          "id": "2057",
+          "name": "Alajuelense",
+          "short": "Alajuelense",
+          "abbr": "ALA",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "score": "2"
         },
         "away": {
-          "id": "7237",
-          "name": "Puntarenas FC",
-          "short": "Puntarenas",
-          "abbr": "PUN",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7237.png",
-          "score": "1"
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "0"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 14,
+        "round": 16,
         "goals": [
           {
-            "minute": "68'",
-            "player": "Doryan Rodríguez",
-            "side": "away"
+            "minute": "57'",
+            "player": "Kenyel Michel",
+            "side": "home"
           },
           {
-            "minute": "82'",
-            "player": "José Alvarado",
+            "minute": "88'",
+            "player": "Ángel Zaldívar",
             "side": "home"
           }
         ]
-      }
-    ],
-    "all": [
+      },
       {
         "id": "401876823",
         "date": "2026-11-08T00:00Z",
@@ -4249,10 +4290,10 @@
       ],
       "2057": [
         "G",
+        "G",
         "E",
         "G",
-        "G",
-        "E"
+        "G"
       ],
       "7234": [
         "E",
@@ -4276,11 +4317,11 @@
         "G"
       ],
       "20705": [
+        "P",
         "G",
         "G",
         "G",
-        "E",
-        "P"
+        "E"
       ],
       "131790": [
         "E",
@@ -4298,8 +4339,8 @@
       ]
     },
     "stats": {
-      "matches": 76,
-      "goals": 207,
+      "matches": 77,
+      "goals": 209,
       "biggest": {
         "id": "401876842",
         "date": "2026-10-16T02:00Z",
@@ -4362,40 +4403,11 @@
         ]
       }
     },
-    "updatedAt": "2026-11-08T01:59:54.918Z",
+    "updatedAt": "2026-11-08T04:04:52.307Z",
     "stale": false
   },
   "upcoming": {
     "matches": [
-      {
-        "id": "401876820",
-        "date": "2026-11-08T02:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Alejandro Morera Soto",
-        "home": {
-          "id": "2057",
-          "name": "Alajuelense",
-          "short": "Alajuelense",
-          "abbr": "ALA",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 16
-      },
       {
         "id": "401876822",
         "date": "2026-11-08T17:00Z",
@@ -4656,38 +4668,38 @@
         "leg": null,
         "seriesWinner": null,
         "round": 18
-      }
-    ],
-    "all": [
+      },
       {
-        "id": "401876820",
-        "date": "2026-11-08T02:00Z",
+        "id": "401876814",
+        "date": "2026-11-29T21:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
-        "venue": "Alejandro Morera Soto",
+        "venue": "Estadio José Rafael \"Fello\" Meza Ivankovich",
         "home": {
-          "id": "2057",
-          "name": "Alajuelense",
-          "short": "Alajuelense",
-          "abbr": "ALA",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+          "id": "7239",
+          "name": "Cartaginés",
+          "short": "Cartaginés",
+          "abbr": "CAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
           "score": "0"
         },
         "away": {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "id": "7234",
+          "name": "Pérez Zeledón",
+          "short": "Pérez Zeledón",
+          "abbr": "ZEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
           "score": "0"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 16
-      },
+        "round": 18
+      }
+    ],
+    "all": [
       {
         "id": "401876822",
         "date": "2026-11-08T17:00Z",
@@ -5066,12 +5078,12 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-08T01:59:54.669Z",
+    "updatedAt": "2026-11-08T04:04:51.967Z",
     "stale": false
   },
   "scorers": {
-    "matchesCounted": 76,
-    "goalsCounted": 204,
+    "matchesCounted": 77,
+    "goalsCounted": 206,
     "corrections": 4,
     "rows": [
       {
@@ -5082,18 +5094,18 @@
         "penalties": 0
       },
       {
+        "playerId": "352169",
+        "player": "Kenyel Michel",
+        "team": "Alajuelense",
+        "goals": 7,
+        "penalties": 0
+      },
+      {
         "playerId": "208436",
         "player": "Ronaldo Cisneros",
         "team": "Alajuelense",
         "goals": 7,
         "penalties": 1
-      },
-      {
-        "playerId": "352169",
-        "player": "Kenyel Michel",
-        "team": "Alajuelense",
-        "goals": 6,
-        "penalties": 0
       },
       {
         "playerId": "166669",
@@ -5189,18 +5201,18 @@
         "penalties": 0
       },
       {
+        "playerId": "352169",
+        "player": "Kenyel Michel",
+        "team": "Alajuelense",
+        "goals": 7,
+        "penalties": 0
+      },
+      {
         "playerId": "208436",
         "player": "Ronaldo Cisneros",
         "team": "Alajuelense",
         "goals": 7,
         "penalties": 1
-      },
-      {
-        "playerId": "352169",
-        "player": "Kenyel Michel",
-        "team": "Alajuelense",
-        "goals": 6,
-        "penalties": 0
       },
       {
         "playerId": "166669",
@@ -5364,6 +5376,13 @@
         "penalties": 0
       },
       {
+        "playerId": "186084",
+        "player": "Ángel Zaldívar",
+        "team": "Alajuelense",
+        "goals": 2,
+        "penalties": 0
+      },
+      {
         "playerId": "201120",
         "player": "Anthony Hernández",
         "team": "Alajuelense",
@@ -5521,13 +5540,6 @@
         "playerId": "265900",
         "player": "Amferny Sinclair",
         "team": "Puntarenas FC",
-        "goals": 1,
-        "penalties": 0
-      },
-      {
-        "playerId": "186084",
-        "player": "Ángel Zaldívar",
-        "team": "Alajuelense",
         "goals": 1,
         "penalties": 0
       },
@@ -5840,7 +5852,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-08T01:59:55.001Z",
+    "updatedAt": "2026-11-08T04:04:52.466Z",
     "stale": false
   },
   "assists": {
@@ -6233,6 +6245,399 @@
             "goals": 4,
             "penalties": 0,
             "assists": 2
+          }
+        ]
+      },
+      {
+        "id": "2057",
+        "name": "Alajuelense",
+        "short": "Alajuelense",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+        "players": [
+          {
+            "id": "328394",
+            "jersey": "1",
+            "name": "Bayron Mora",
+            "position": "G",
+            "age": 23,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "333299",
+            "jersey": "23",
+            "name": "Washington Ortega",
+            "position": "G",
+            "age": 31,
+            "country": "Uruguay",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "407892",
+            "jersey": "2",
+            "name": "Deylan Paz",
+            "position": "D",
+            "age": 21,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "101846",
+            "jersey": "3",
+            "name": "Giancarlo González",
+            "position": "D",
+            "age": 38,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "362923",
+            "jersey": "4",
+            "name": "Guillermo Villalobos",
+            "position": "D",
+            "age": 25,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0,
+            "injury": {
+              "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-04-22",
+              "regreso": null
+            }
+          },
+          {
+            "id": "267307",
+            "jersey": "13",
+            "name": "Alexis Gamboa",
+            "position": "D",
+            "age": 27,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 2,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "406456",
+            "jersey": "15",
+            "name": "Farbod Samadian",
+            "position": "D",
+            "age": 21,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "265898",
+            "jersey": "17",
+            "name": "Daniel Chacón",
+            "position": "D",
+            "age": 25,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0,
+            "injury": {
+              "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-08-08",
+              "regreso": null
+            }
+          },
+          {
+            "id": "379972",
+            "jersey": "21",
+            "name": "Yeison Molina",
+            "position": "D",
+            "age": 30,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "201914",
+            "jersey": "22",
+            "name": "Ronald Matarrita",
+            "position": "D",
+            "age": 32,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 2
+          },
+          {
+            "id": "291007",
+            "jersey": "24",
+            "name": "Aarón Salazar",
+            "position": "D",
+            "age": 27,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "317947",
+            "jersey": "25",
+            "name": "Santiago van der Putten",
+            "position": "D",
+            "age": 22,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0,
+            "injury": {
+              "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-03-22",
+              "regreso": null
+            }
+          },
+          {
+            "id": "401125",
+            "jersey": "26",
+            "name": "Fernando Piñar",
+            "position": "D",
+            "age": 25,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "404036",
+            "jersey": "28",
+            "name": "Yerlan Sosa",
+            "position": "D",
+            "age": 18,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "170446",
+            "jersey": "42",
+            "name": "John Ruiz",
+            "position": "D",
+            "age": 21,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 1,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "183102",
+            "jersey": "5",
+            "name": "Celso Borges",
+            "position": "M",
+            "age": 38,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 2
+          },
+          {
+            "id": "419948",
+            "jersey": "8",
+            "name": "Malcom Pilone",
+            "position": "M",
+            "age": 29,
+            "country": "Argentina",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0,
+            "injury": {
+              "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-03-07",
+              "regreso": null
+            }
+          },
+          {
+            "id": "207279",
+            "jersey": "10",
+            "name": "Juanpi",
+            "position": "M",
+            "age": 32,
+            "country": "Venezuela",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ven.png",
+            "goals": 4,
+            "penalties": 0,
+            "assists": 3
+          },
+          {
+            "id": "341508",
+            "jersey": "14",
+            "name": "Roan Wilson",
+            "position": "M",
+            "age": 24,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "403543",
+            "jersey": "29",
+            "name": "Deylan Aguilar",
+            "position": "M",
+            "age": 19,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "360069",
+            "jersey": "34",
+            "name": "Creichel Pérez",
+            "position": "M",
+            "age": 21,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 3
+          },
+          {
+            "id": "293397",
+            "jersey": "35",
+            "name": "Rashir Parkins",
+            "position": "M",
+            "age": 25,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 1,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "201120",
+            "jersey": "7",
+            "name": "Anthony Hernández",
+            "position": "F",
+            "age": 25,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 2,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "186084",
+            "jersey": "9",
+            "name": "Ángel Zaldívar",
+            "position": "F",
+            "age": 32,
+            "country": "México",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+            "goals": 2,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "286319",
+            "jersey": "11",
+            "name": "Luis Díaz",
+            "position": "F",
+            "age": 27,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "208436",
+            "jersey": "18",
+            "name": "Ronaldo Cisneros",
+            "position": "F",
+            "age": 29,
+            "country": "México",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+            "goals": 7,
+            "penalties": 1,
+            "assists": 1
+          },
+          {
+            "id": "403544",
+            "jersey": "36",
+            "name": "Isaac Badilla",
+            "position": "F",
+            "age": 18,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0,
+            "injury": {
+              "lesion": "Lesión en el pie",
+              "desde": "2026-04-24",
+              "regreso": null
+            }
+          },
+          {
+            "id": "360075",
+            "jersey": "39",
+            "name": "Esteban Cruz",
+            "position": "F",
+            "age": 21,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "404042",
+            "jersey": "44",
+            "name": "Ethan Barley",
+            "position": "F",
+            "age": 17,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "352169",
+            "jersey": "99",
+            "name": "Kenyel Michel",
+            "position": "F",
+            "age": 22,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 7,
+            "penalties": 0,
+            "assists": 1
           }
         ]
       },
@@ -7013,399 +7418,6 @@
             "goals": 0,
             "penalties": 0,
             "assists": 0
-          }
-        ]
-      },
-      {
-        "id": "2057",
-        "name": "Alajuelense",
-        "short": "Alajuelense",
-        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
-        "players": [
-          {
-            "id": "328394",
-            "jersey": "1",
-            "name": "Bayron Mora",
-            "position": "G",
-            "age": 23,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "333299",
-            "jersey": "23",
-            "name": "Washington Ortega",
-            "position": "G",
-            "age": 31,
-            "country": "Uruguay",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "407892",
-            "jersey": "2",
-            "name": "Deylan Paz",
-            "position": "D",
-            "age": 21,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "101846",
-            "jersey": "3",
-            "name": "Giancarlo González",
-            "position": "D",
-            "age": 38,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "362923",
-            "jersey": "4",
-            "name": "Guillermo Villalobos",
-            "position": "D",
-            "age": 25,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0,
-            "injury": {
-              "lesion": "Rotura del ligamento cruzado",
-              "desde": "2026-04-22",
-              "regreso": null
-            }
-          },
-          {
-            "id": "267307",
-            "jersey": "13",
-            "name": "Alexis Gamboa",
-            "position": "D",
-            "age": 27,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 2,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "406456",
-            "jersey": "15",
-            "name": "Farbod Samadian",
-            "position": "D",
-            "age": 21,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "265898",
-            "jersey": "17",
-            "name": "Daniel Chacón",
-            "position": "D",
-            "age": 25,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0,
-            "injury": {
-              "lesion": "Rotura del ligamento cruzado",
-              "desde": "2026-08-08",
-              "regreso": null
-            }
-          },
-          {
-            "id": "379972",
-            "jersey": "21",
-            "name": "Yeison Molina",
-            "position": "D",
-            "age": 30,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "201914",
-            "jersey": "22",
-            "name": "Ronald Matarrita",
-            "position": "D",
-            "age": 32,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 2
-          },
-          {
-            "id": "291007",
-            "jersey": "24",
-            "name": "Aarón Salazar",
-            "position": "D",
-            "age": 27,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "317947",
-            "jersey": "25",
-            "name": "Santiago van der Putten",
-            "position": "D",
-            "age": 22,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0,
-            "injury": {
-              "lesion": "Rotura del ligamento cruzado",
-              "desde": "2026-03-22",
-              "regreso": null
-            }
-          },
-          {
-            "id": "401125",
-            "jersey": "26",
-            "name": "Fernando Piñar",
-            "position": "D",
-            "age": 25,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "404036",
-            "jersey": "28",
-            "name": "Yerlan Sosa",
-            "position": "D",
-            "age": 18,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "170446",
-            "jersey": "42",
-            "name": "John Ruiz",
-            "position": "D",
-            "age": 21,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 1,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "183102",
-            "jersey": "5",
-            "name": "Celso Borges",
-            "position": "M",
-            "age": 38,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 2
-          },
-          {
-            "id": "419948",
-            "jersey": "8",
-            "name": "Malcom Pilone",
-            "position": "M",
-            "age": 29,
-            "country": "Argentina",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0,
-            "injury": {
-              "lesion": "Rotura del ligamento cruzado",
-              "desde": "2026-03-07",
-              "regreso": null
-            }
-          },
-          {
-            "id": "207279",
-            "jersey": "10",
-            "name": "Juanpi",
-            "position": "M",
-            "age": 32,
-            "country": "Venezuela",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ven.png",
-            "goals": 4,
-            "penalties": 0,
-            "assists": 3
-          },
-          {
-            "id": "341508",
-            "jersey": "14",
-            "name": "Roan Wilson",
-            "position": "M",
-            "age": 24,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "403543",
-            "jersey": "29",
-            "name": "Deylan Aguilar",
-            "position": "M",
-            "age": 19,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "360069",
-            "jersey": "34",
-            "name": "Creichel Pérez",
-            "position": "M",
-            "age": 21,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 3
-          },
-          {
-            "id": "293397",
-            "jersey": "35",
-            "name": "Rashir Parkins",
-            "position": "M",
-            "age": 25,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 1,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "201120",
-            "jersey": "7",
-            "name": "Anthony Hernández",
-            "position": "F",
-            "age": 25,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 2,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "186084",
-            "jersey": "9",
-            "name": "Ángel Zaldívar",
-            "position": "F",
-            "age": 32,
-            "country": "México",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-            "goals": 1,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "286319",
-            "jersey": "11",
-            "name": "Luis Díaz",
-            "position": "F",
-            "age": 27,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "208436",
-            "jersey": "18",
-            "name": "Ronaldo Cisneros",
-            "position": "F",
-            "age": 29,
-            "country": "México",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-            "goals": 7,
-            "penalties": 1,
-            "assists": 1
-          },
-          {
-            "id": "403544",
-            "jersey": "36",
-            "name": "Isaac Badilla",
-            "position": "F",
-            "age": 18,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0,
-            "injury": {
-              "lesion": "Lesión en el pie",
-              "desde": "2026-04-24",
-              "regreso": null
-            }
-          },
-          {
-            "id": "360075",
-            "jersey": "39",
-            "name": "Esteban Cruz",
-            "position": "F",
-            "age": 21,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "404042",
-            "jersey": "44",
-            "name": "Ethan Barley",
-            "position": "F",
-            "age": 17,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "352169",
-            "jersey": "99",
-            "name": "Kenyel Michel",
-            "position": "F",
-            "age": 22,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 6,
-            "penalties": 0,
-            "assists": 1
           }
         ]
       },
@@ -9715,7 +9727,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-08T01:59:55.205Z",
+    "updatedAt": "2026-11-08T04:04:52.682Z",
     "stale": false
   },
   "coaches": {
