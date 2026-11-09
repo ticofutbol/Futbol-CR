@@ -15,6 +15,29 @@
       "type": "Goal"
     }
   ],
+  "401876821": [
+    {
+      "minute": "48'",
+      "playerId": "141888",
+      "player": "Gerson Torres",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "minute": "59'",
+      "playerId": "407914",
+      "player": "Dariel Castrillo",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "minute": "87'",
+      "playerId": "97888",
+      "player": "David Guzmán",
+      "team": "Saprissa",
+      "type": "Goal"
+    }
+  ],
   "401876822": [
     {
       "minute": "13'",
