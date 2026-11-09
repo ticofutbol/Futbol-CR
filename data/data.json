@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-09T02:27:32.180Z",
-  "lastSuccessAt": "2026-11-09T02:27:32.180Z",
+  "generatedAt": "2026-11-09T12:44:52.545Z",
+  "lastSuccessAt": "2026-11-09T12:44:52.545Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-09T02:27:30.255Z",
+    "updatedAt": "2026-11-09T12:44:51.301Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-09T02:27:30.255Z",
+    "updatedAt": "2026-11-09T12:44:51.301Z",
     "stale": false
   },
   "playoffs": {
@@ -4587,7 +4587,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-09T02:27:31.792Z",
+    "updatedAt": "2026-11-09T12:44:52.194Z",
     "stale": false
   },
   "upcoming": {
@@ -5175,7 +5175,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-09T02:27:31.432Z",
+    "updatedAt": "2026-11-09T12:44:51.934Z",
     "stale": false
   },
   "scorers": {
@@ -5935,7 +5935,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-09T02:27:31.918Z",
+    "updatedAt": "2026-11-09T12:44:52.358Z",
     "stale": false
   },
   "assists": {
@@ -7406,7 +7406,7 @@
             "jersey": "7",
             "name": "Anthony Hernández",
             "position": "F",
-            "age": 25,
+            "age": 23,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 2,
@@ -9810,7 +9810,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-09T02:27:32.174Z",
+    "updatedAt": "2026-11-09T12:44:52.541Z",
     "stale": false
   },
   "coaches": {
