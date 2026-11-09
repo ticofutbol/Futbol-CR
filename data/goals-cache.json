@@ -1381,6 +1381,22 @@
       "type": "Penalty - Scored"
     }
   ],
+  "401876888": [
+    {
+      "minute": "18'",
+      "playerId": "217135",
+      "player": "Keyner Brown",
+      "team": "Herediano",
+      "type": "Goal"
+    },
+    {
+      "minute": "64'",
+      "playerId": "399115",
+      "player": "Randy Vega",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    }
+  ],
   "401876889": [
     {
       "minute": "11'",
