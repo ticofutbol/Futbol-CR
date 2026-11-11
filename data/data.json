@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-10T12:41:49.958Z",
-  "lastSuccessAt": "2026-11-10T12:41:49.958Z",
+  "generatedAt": "2026-11-11T12:45:09.653Z",
+  "lastSuccessAt": "2026-11-11T12:45:09.653Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-10T12:41:49.199Z",
+    "updatedAt": "2026-11-11T12:45:08.479Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-10T12:41:49.199Z",
+    "updatedAt": "2026-11-11T12:45:08.479Z",
     "stale": false
   },
   "playoffs": {
@@ -4587,7 +4587,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-10T12:41:49.833Z",
+    "updatedAt": "2026-11-11T12:45:09.438Z",
     "stale": false
   },
   "upcoming": {
@@ -5175,7 +5175,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-10T12:41:49.701Z",
+    "updatedAt": "2026-11-11T12:45:09.194Z",
     "stale": false
   },
   "scorers": {
@@ -5935,7 +5935,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-10T12:41:49.837Z",
+    "updatedAt": "2026-11-11T12:45:09.441Z",
     "stale": false
   },
   "assists": {
@@ -7382,7 +7382,7 @@
             "jersey": "34",
             "name": "Creichel Pérez",
             "position": "M",
-            "age": 21,
+            "age": 22,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -9810,7 +9810,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-10T12:41:49.952Z",
+    "updatedAt": "2026-11-11T12:45:09.649Z",
     "stale": false
   },
   "coaches": {
