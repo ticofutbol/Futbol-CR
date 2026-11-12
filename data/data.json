@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-11T12:45:09.653Z",
-  "lastSuccessAt": "2026-11-11T12:45:09.653Z",
+  "generatedAt": "2026-11-12T12:46:34.359Z",
+  "lastSuccessAt": "2026-11-12T12:46:34.359Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-11T12:45:08.479Z",
+    "updatedAt": "2026-11-12T12:46:33.496Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-11T12:45:08.479Z",
+    "updatedAt": "2026-11-12T12:46:33.496Z",
     "stale": false
   },
   "playoffs": {
@@ -4587,7 +4587,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-11T12:45:09.438Z",
+    "updatedAt": "2026-11-12T12:46:34.199Z",
     "stale": false
   },
   "upcoming": {
@@ -4738,8 +4738,37 @@
         "round": 17
       },
       {
+        "id": "401876813",
+        "date": "2026-11-28T02:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Carlos Alvarado",
+        "home": {
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "0"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 18
+      },
+      {
         "id": "401876815",
-        "date": "2026-11-29T21:00Z",
+        "date": "2026-11-29T01:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -4768,7 +4797,7 @@
       },
       {
         "id": "401876814",
-        "date": "2026-11-29T21:00Z",
+        "date": "2026-11-29T01:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -4796,37 +4825,8 @@
         "round": 18
       },
       {
-        "id": "401876813",
-        "date": "2026-11-29T21:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Carlos Alvarado",
-        "home": {
-          "id": "862",
-          "name": "Herediano",
-          "short": "Herediano",
-          "abbr": "HER",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 18
-      },
-      {
         "id": "401876886",
-        "date": "2026-11-29T21:00Z",
+        "date": "2026-11-29T01:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -4855,7 +4855,7 @@
       },
       {
         "id": "401876812",
-        "date": "2026-11-29T21:00Z",
+        "date": "2026-11-29T01:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -5030,8 +5030,37 @@
         "round": 17
       },
       {
+        "id": "401876813",
+        "date": "2026-11-28T02:00Z",
+        "state": "pre",
+        "completed": false,
+        "statusText": "Scheduled",
+        "venue": "Estadio Carlos Alvarado",
+        "home": {
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "score": "0"
+        },
+        "away": {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "0"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 18
+      },
+      {
         "id": "401876815",
-        "date": "2026-11-29T21:00Z",
+        "date": "2026-11-29T01:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -5060,7 +5089,7 @@
       },
       {
         "id": "401876814",
-        "date": "2026-11-29T21:00Z",
+        "date": "2026-11-29T01:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -5088,37 +5117,8 @@
         "round": 18
       },
       {
-        "id": "401876813",
-        "date": "2026-11-29T21:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Carlos Alvarado",
-        "home": {
-          "id": "862",
-          "name": "Herediano",
-          "short": "Herediano",
-          "abbr": "HER",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 18
-      },
-      {
         "id": "401876886",
-        "date": "2026-11-29T21:00Z",
+        "date": "2026-11-29T01:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -5147,7 +5147,7 @@
       },
       {
         "id": "401876812",
-        "date": "2026-11-29T21:00Z",
+        "date": "2026-11-29T01:00Z",
         "state": "pre",
         "completed": false,
         "statusText": "Scheduled",
@@ -5175,7 +5175,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-11T12:45:09.194Z",
+    "updatedAt": "2026-11-12T12:46:34.024Z",
     "stale": false
   },
   "scorers": {
@@ -5935,7 +5935,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-11T12:45:09.441Z",
+    "updatedAt": "2026-11-12T12:46:34.210Z",
     "stale": false
   },
   "assists": {
@@ -9810,7 +9810,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-11T12:45:09.649Z",
+    "updatedAt": "2026-11-12T12:46:34.352Z",
     "stale": false
   },
   "coaches": {
