@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-13T12:44:47.090Z",
-  "lastSuccessAt": "2026-11-13T12:44:47.090Z",
+  "generatedAt": "2026-11-14T12:26:07.074Z",
+  "lastSuccessAt": "2026-11-14T12:26:07.074Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-13T12:44:45.873Z",
+    "updatedAt": "2026-11-14T12:26:05.879Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-13T12:44:45.873Z",
+    "updatedAt": "2026-11-14T12:26:05.879Z",
     "stale": false
   },
   "playoffs": {
@@ -4587,7 +4587,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-13T12:44:46.852Z",
+    "updatedAt": "2026-11-14T12:26:06.751Z",
     "stale": false
   },
   "upcoming": {
@@ -5175,7 +5175,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-13T12:44:46.613Z",
+    "updatedAt": "2026-11-14T12:26:06.601Z",
     "stale": false
   },
   "scorers": {
@@ -5935,7 +5935,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-13T12:44:46.855Z",
+    "updatedAt": "2026-11-14T12:26:06.754Z",
     "stale": false
   },
   "assists": {
@@ -6040,7 +6040,7 @@
             "jersey": "30",
             "name": "Minor Álvarez",
             "position": "G",
-            "age": 36,
+            "age": 37,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -9810,7 +9810,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-13T12:44:47.084Z",
+    "updatedAt": "2026-11-14T12:26:07.067Z",
     "stale": false
   },
   "coaches": {
