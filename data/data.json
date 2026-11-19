@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-18T12:46:56.797Z",
-  "lastSuccessAt": "2026-11-18T12:46:56.797Z",
+  "generatedAt": "2026-11-19T12:49:39.390Z",
+  "lastSuccessAt": "2026-11-19T12:49:39.390Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-18T12:46:56.019Z",
+    "updatedAt": "2026-11-19T12:49:38.493Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-18T12:46:56.019Z",
+    "updatedAt": "2026-11-19T12:49:38.493Z",
     "stale": false
   },
   "playoffs": {
@@ -4587,7 +4587,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-18T12:46:56.709Z",
+    "updatedAt": "2026-11-19T12:49:39.199Z",
     "stale": false
   },
   "upcoming": {
@@ -5175,7 +5175,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-18T12:46:56.618Z",
+    "updatedAt": "2026-11-19T12:49:38.949Z",
     "stale": false
   },
   "scorers": {
@@ -5935,7 +5935,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-18T12:46:56.711Z",
+    "updatedAt": "2026-11-19T12:49:39.202Z",
     "stale": false
   },
   "assists": {
@@ -6711,7 +6711,7 @@
             "jersey": "9",
             "name": "José González",
             "position": "F",
-            "age": 27,
+            "age": 28,
             "country": "México",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "goals": 3,
@@ -7406,7 +7406,7 @@
             "jersey": "7",
             "name": "Anthony Hernández",
             "position": "F",
-            "age": 23,
+            "age": 25,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 2,
@@ -9810,7 +9810,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-18T12:46:56.794Z",
+    "updatedAt": "2026-11-19T12:49:39.386Z",
     "stale": false
   },
   "coaches": {
