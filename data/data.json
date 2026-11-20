@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-19T12:49:39.390Z",
-  "lastSuccessAt": "2026-11-19T12:49:39.390Z",
+  "generatedAt": "2026-11-20T12:46:46.314Z",
+  "lastSuccessAt": "2026-11-20T12:46:46.314Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-19T12:49:38.493Z",
+    "updatedAt": "2026-11-20T12:46:45.443Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-19T12:49:38.493Z",
+    "updatedAt": "2026-11-20T12:46:45.443Z",
     "stale": false
   },
   "playoffs": {
@@ -4587,7 +4587,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-19T12:49:39.199Z",
+    "updatedAt": "2026-11-20T12:46:46.170Z",
     "stale": false
   },
   "upcoming": {
@@ -5175,7 +5175,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-19T12:49:38.949Z",
+    "updatedAt": "2026-11-20T12:46:45.987Z",
     "stale": false
   },
   "scorers": {
@@ -5935,7 +5935,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-19T12:49:39.202Z",
+    "updatedAt": "2026-11-20T12:46:46.174Z",
     "stale": false
   },
   "assists": {
@@ -6699,7 +6699,7 @@
             "jersey": "7",
             "name": "Manuel Morán",
             "position": "F",
-            "age": 28,
+            "age": 29,
             "country": "Panamá",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
             "goals": 1,
@@ -9810,7 +9810,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-19T12:49:39.386Z",
+    "updatedAt": "2026-11-20T12:46:46.309Z",
     "stale": false
   },
   "coaches": {
