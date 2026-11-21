@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-21T04:06:39.592Z",
-  "lastSuccessAt": "2026-11-21T04:06:39.592Z",
+  "generatedAt": "2026-11-21T12:33:43.969Z",
+  "lastSuccessAt": "2026-11-21T12:33:43.969Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-21T04:06:38.549Z",
+    "updatedAt": "2026-11-21T12:33:42.882Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-21T04:06:38.549Z",
+    "updatedAt": "2026-11-21T12:33:42.882Z",
     "stale": false
   },
   "playoffs": {
@@ -4640,7 +4640,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-21T04:06:39.301Z",
+    "updatedAt": "2026-11-21T12:33:43.719Z",
     "stale": false
   },
   "upcoming": {
@@ -5170,7 +5170,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-21T04:06:39.132Z",
+    "updatedAt": "2026-11-21T12:33:43.521Z",
     "stale": false
   },
   "scorers": {
@@ -5944,7 +5944,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-21T04:06:39.374Z",
+    "updatedAt": "2026-11-21T12:33:43.783Z",
     "stale": false
   },
   "assists": {
@@ -8885,7 +8885,7 @@
             "jersey": "25",
             "name": "Emerson Bravo",
             "position": "F",
-            "age": 25,
+            "age": 26,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -9819,7 +9819,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-21T04:06:39.588Z",
+    "updatedAt": "2026-11-21T12:33:43.964Z",
     "stale": false
   },
   "coaches": {
