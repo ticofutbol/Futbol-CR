@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-20T12:46:46.314Z",
-  "lastSuccessAt": "2026-11-20T12:46:46.314Z",
+  "generatedAt": "2026-11-21T04:06:06.175Z",
+  "lastSuccessAt": "2026-11-21T04:06:06.175Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -79,14 +79,14 @@
         "abbr": "ADSC",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
         "rank": 5,
-        "pj": 16,
+        "pj": 17,
         "g": 8,
-        "e": 2,
+        "e": 3,
         "p": 6,
-        "gf": 17,
-        "gc": 19,
+        "gf": 19,
+        "gc": 21,
         "dg": -2,
-        "pts": 26
+        "pts": 27
       },
       {
         "id": "131790",
@@ -143,14 +143,14 @@
         "abbr": "BEL",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
         "rank": 9,
-        "pj": 16,
+        "pj": 17,
         "g": 4,
-        "e": 1,
+        "e": 2,
         "p": 11,
-        "gf": 20,
-        "gc": 32,
+        "gf": 22,
+        "gc": 34,
         "dg": -12,
-        "pts": 13
+        "pts": 14
       },
       {
         "id": "7234",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-20T12:46:45.443Z",
+    "updatedAt": "2026-11-21T04:06:04.894Z",
     "stale": false
   },
   "tables": {
@@ -249,14 +249,14 @@
           "abbr": "ADSC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
           "rank": 5,
-          "pj": 16,
+          "pj": 17,
           "g": 8,
-          "e": 2,
+          "e": 3,
           "p": 6,
-          "gf": 17,
-          "gc": 19,
+          "gf": 19,
+          "gc": 21,
           "dg": -2,
-          "pts": 26
+          "pts": 27
         },
         {
           "id": "131790",
@@ -313,14 +313,14 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "rank": 9,
-          "pj": 16,
+          "pj": 17,
           "g": 4,
-          "e": 1,
+          "e": 2,
           "p": 11,
-          "gf": 20,
-          "gc": 32,
+          "gf": 22,
+          "gc": 34,
           "dg": -12,
-          "pts": 13
+          "pts": 14
         },
         {
           "id": "7234",
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-20T12:46:45.443Z",
+    "updatedAt": "2026-11-21T04:06:04.894Z",
     "stale": false
   },
   "playoffs": {
@@ -404,6 +404,58 @@
   "results": {
     "tournament": "Apertura",
     "matches": [
+      {
+        "id": "401876818",
+        "date": "2026-11-21T02:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Rafael Bolaños",
+        "home": {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "2"
+        },
+        "away": {
+          "id": "859",
+          "name": "AD San Carlos",
+          "short": "San Carlos",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
+          "score": "2"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 17,
+        "goals": [
+          {
+            "minute": "17'",
+            "player": "Raúl Vidal",
+            "side": "away"
+          },
+          {
+            "minute": "35'",
+            "player": "Raúl Vidal",
+            "side": "away"
+          },
+          {
+            "minute": "51'",
+            "player": "Roberto Córdoba",
+            "side": "home",
+            "og": true
+          },
+          {
+            "minute": "83'",
+            "player": "Greivin Fonseca",
+            "side": "home"
+          }
+        ]
+      },
       {
         "id": "401876888",
         "date": "2026-11-09T00:30Z",
@@ -810,60 +862,61 @@
             "side": "away"
           }
         ]
-      },
+      }
+    ],
+    "all": [
       {
-        "id": "401876824",
-        "date": "2026-11-04T01:00Z",
+        "id": "401876818",
+        "date": "2026-11-21T02:00Z",
         "state": "post",
         "completed": true,
         "statusText": "FT",
-        "venue": "Estadio Puente Piedra",
+        "venue": "Estadio Rafael Bolaños",
         "home": {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
-          "score": "3"
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "2"
         },
         "away": {
-          "id": "7234",
-          "name": "Pérez Zeledón",
-          "short": "Pérez Zeledón",
-          "abbr": "ZEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
-          "score": "1"
+          "id": "859",
+          "name": "AD San Carlos",
+          "short": "San Carlos",
+          "abbr": "ADSC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
+          "score": "2"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 15,
+        "round": 17,
         "goals": [
           {
-            "minute": "33'",
-            "player": "Alexander López",
-            "side": "home"
-          },
-          {
-            "minute": "38'",
-            "player": "Randy Ramírez",
-            "side": "home"
-          },
-          {
-            "minute": "40'",
-            "player": "Josimar Méndez",
-            "side": "home"
-          },
-          {
-            "minute": "45'+3'",
-            "player": "Allan Fallas",
+            "minute": "17'",
+            "player": "Raúl Vidal",
             "side": "away"
+          },
+          {
+            "minute": "35'",
+            "player": "Raúl Vidal",
+            "side": "away"
+          },
+          {
+            "minute": "51'",
+            "player": "Roberto Córdoba",
+            "side": "home",
+            "og": true
+          },
+          {
+            "minute": "83'",
+            "player": "Greivin Fonseca",
+            "side": "home"
           }
         ]
-      }
-    ],
-    "all": [
+      },
       {
         "id": "401876888",
         "date": "2026-11-09T00:30Z",
@@ -4460,10 +4513,10 @@
       ],
       "859": [
         "E",
+        "E",
         "G",
         "P",
-        "G",
-        "E"
+        "G"
       ],
       "862": [
         "E",
@@ -4515,16 +4568,16 @@
         "P"
       ],
       "132447": [
+        "E",
         "P",
         "P",
         "G",
-        "P",
         "P"
       ]
     },
     "stats": {
-      "matches": 80,
-      "goals": 220,
+      "matches": 81,
+      "goals": 224,
       "biggest": {
         "id": "401876842",
         "date": "2026-10-16T02:00Z",
@@ -4587,40 +4640,11 @@
         ]
       }
     },
-    "updatedAt": "2026-11-20T12:46:46.170Z",
+    "updatedAt": "2026-11-21T04:06:05.917Z",
     "stale": false
   },
   "upcoming": {
     "matches": [
-      {
-        "id": "401876818",
-        "date": "2026-11-21T02:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Rafael Bolaños",
-        "home": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "859",
-          "name": "AD San Carlos",
-          "short": "San Carlos",
-          "abbr": "ADSC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 17
-      },
       {
         "id": "401876816",
         "date": "2026-11-21T23:30Z",
@@ -4885,35 +4909,6 @@
     ],
     "all": [
       {
-        "id": "401876818",
-        "date": "2026-11-21T02:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Rafael Bolaños",
-        "home": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "859",
-          "name": "AD San Carlos",
-          "short": "San Carlos",
-          "abbr": "ADSC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 17
-      },
-      {
         "id": "401876816",
         "date": "2026-11-21T23:30Z",
         "state": "pre",
@@ -5175,12 +5170,12 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-20T12:46:45.987Z",
+    "updatedAt": "2026-11-21T04:06:05.698Z",
     "stale": false
   },
   "scorers": {
-    "matchesCounted": 80,
-    "goalsCounted": 217,
+    "matchesCounted": 81,
+    "goalsCounted": 221,
     "corrections": 4,
     "rows": [
       {
@@ -5243,6 +5238,13 @@
         "playerId": "205163",
         "player": "Juan Carlos Gaete",
         "team": "Cartaginés",
+        "goals": 5,
+        "penalties": 0
+      },
+      {
+        "playerId": "176491",
+        "player": "Raúl Vidal",
+        "team": "AD San Carlos",
         "goals": 5,
         "penalties": 0
       },
@@ -5315,6 +5317,13 @@
         "playerId": "205163",
         "player": "Juan Carlos Gaete",
         "team": "Cartaginés",
+        "goals": 5,
+        "penalties": 0
+      },
+      {
+        "playerId": "176491",
+        "player": "Raúl Vidal",
+        "team": "AD San Carlos",
         "goals": 5,
         "penalties": 0
       },
@@ -5413,13 +5422,6 @@
         "playerId": "141888",
         "player": "Gerson Torres",
         "team": "Saprissa",
-        "goals": 3,
-        "penalties": 0
-      },
-      {
-        "playerId": "176491",
-        "player": "Raúl Vidal",
-        "team": "AD San Carlos",
         "goals": 3,
         "penalties": 0
       },
@@ -5704,6 +5706,13 @@
         "penalties": 0
       },
       {
+        "playerId": "265894",
+        "player": "Greivin Fonseca",
+        "team": "Escorpiones Belén",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
         "playerId": "239562",
         "player": "Hiram Muñoz",
         "team": "Puntarenas FC",
@@ -5935,7 +5944,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-20T12:46:46.174Z",
+    "updatedAt": "2026-11-21T04:06:05.986Z",
     "stale": false
   },
   "assists": {
@@ -7848,7 +7857,7 @@
             "age": 32,
             "country": "México",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-            "goals": 3,
+            "goals": 5,
             "penalties": 0,
             "assists": 1
           }
@@ -9205,7 +9214,7 @@
             "age": 26,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0,
             "assists": 1
           },
@@ -9810,7 +9819,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-20T12:46:46.309Z",
+    "updatedAt": "2026-11-21T04:06:06.170Z",
     "stale": false
   },
   "coaches": {

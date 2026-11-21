@@ -1,4 +1,34 @@
 {
+  "401876818": [
+    {
+      "minute": "17'",
+      "playerId": "176491",
+      "player": "Raul Vidal",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    },
+    {
+      "minute": "35'",
+      "playerId": "176491",
+      "player": "Raul Vidal",
+      "team": "AD San Carlos",
+      "type": "Goal"
+    },
+    {
+      "minute": "51'",
+      "playerId": "228457",
+      "player": "Roberto Córdoba",
+      "team": "Escorpiones Belén",
+      "type": "Own Goal"
+    },
+    {
+      "minute": "83'",
+      "playerId": "265894",
+      "player": "Greivin Fonseca",
+      "team": "Escorpiones Belén",
+      "type": "Goal"
+    }
+  ],
   "401876820": [
     {
       "minute": "57'",
