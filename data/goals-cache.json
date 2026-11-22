@@ -1,4 +1,27 @@
 {
+  "401876816": [
+    {
+      "minute": "44'",
+      "playerId": "229883",
+      "player": "Allan Cruz",
+      "team": "Herediano",
+      "type": "Goal"
+    },
+    {
+      "minute": "49'",
+      "playerId": "407914",
+      "player": "Dariel Castrillo",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    },
+    {
+      "minute": "68'",
+      "playerId": "328392",
+      "player": "Doryan Rodriguez",
+      "team": "Puntarenas FC",
+      "type": "Goal"
+    }
+  ],
   "401876818": [
     {
       "minute": "17'",
