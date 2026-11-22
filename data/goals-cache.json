@@ -22,6 +22,36 @@
       "type": "Goal"
     }
   ],
+  "401876817": [
+    {
+      "minute": "2'",
+      "playerId": "282105",
+      "player": "Luis Paradela",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "minute": "36'",
+      "playerId": "291004",
+      "player": "Andrey Soto",
+      "team": "Saprissa",
+      "type": "Goal"
+    },
+    {
+      "minute": "41'",
+      "playerId": "3100025",
+      "player": "William Albán Fernández González",
+      "team": "Pérez Zeledón",
+      "type": "Goal"
+    },
+    {
+      "minute": "68'",
+      "playerId": "282105",
+      "player": "Luis Paradela",
+      "team": "Saprissa",
+      "type": "Goal"
+    }
+  ],
   "401876818": [
     {
       "minute": "17'",
