@@ -1464,6 +1464,50 @@
       "type": "Penalty - Scored"
     }
   ],
+  "401876887": [
+    {
+      "minute": "5'",
+      "playerId": "320433",
+      "player": "Joshua Navarro",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "minute": "37'",
+      "playerId": "148141",
+      "player": "Marco Ureña",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "minute": "46'",
+      "playerId": "320433",
+      "player": "Joshua Navarro",
+      "team": "Sporting San José",
+      "type": "Goal"
+    },
+    {
+      "minute": "52'",
+      "playerId": "112866",
+      "player": "Carlos Martinez",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "minute": "63'",
+      "playerId": "227935",
+      "player": "Wilmer Azofeifa",
+      "team": "Inter de San Carlos",
+      "type": "Goal"
+    },
+    {
+      "minute": "86'",
+      "playerId": "276664",
+      "player": "Eduardo Pastrana",
+      "team": "Sporting San José",
+      "type": "Goal"
+    }
+  ],
   "401876888": [
     {
       "minute": "18'",

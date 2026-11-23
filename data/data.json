@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-22T12:33:06.621Z",
-  "lastSuccessAt": "2026-11-22T12:33:06.621Z",
+  "generatedAt": "2026-11-23T00:02:41.146Z",
+  "lastSuccessAt": "2026-11-23T00:02:41.146Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -25,12 +25,28 @@
         "pts": 34
       },
       {
+        "id": "20705",
+        "name": "Sporting San José",
+        "short": "Spr. San José",
+        "abbr": "SSJ",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+        "rank": 2,
+        "pj": 17,
+        "g": 10,
+        "e": 3,
+        "p": 4,
+        "gf": 34,
+        "gc": 25,
+        "dg": 9,
+        "pts": 33
+      },
+      {
         "id": "7239",
         "name": "Cartaginés",
         "short": "Cartaginés",
         "abbr": "CAR",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
-        "rank": 2,
+        "rank": 3,
         "pj": 16,
         "g": 10,
         "e": 1,
@@ -39,22 +55,6 @@
         "gc": 20,
         "dg": 12,
         "pts": 31
-      },
-      {
-        "id": "20705",
-        "name": "Sporting San José",
-        "short": "Spr. San José",
-        "abbr": "SSJ",
-        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
-        "rank": 3,
-        "pj": 16,
-        "g": 9,
-        "e": 3,
-        "p": 4,
-        "gf": 30,
-        "gc": 23,
-        "dg": 7,
-        "pts": 30
       },
       {
         "id": "2057",
@@ -111,13 +111,13 @@
         "abbr": "ISC",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
         "rank": 7,
-        "pj": 16,
+        "pj": 17,
         "g": 5,
         "e": 5,
-        "p": 6,
-        "gf": 19,
-        "gc": 25,
-        "dg": -6,
+        "p": 7,
+        "gf": 21,
+        "gc": 29,
+        "dg": -8,
         "pts": 20
       },
       {
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-22T12:33:05.371Z",
+    "updatedAt": "2026-11-23T00:02:36.272Z",
     "stale": false
   },
   "tables": {
@@ -195,12 +195,28 @@
           "pts": 34
         },
         {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "rank": 2,
+          "pj": 17,
+          "g": 10,
+          "e": 3,
+          "p": 4,
+          "gf": 34,
+          "gc": 25,
+          "dg": 9,
+          "pts": 33
+        },
+        {
           "id": "7239",
           "name": "Cartaginés",
           "short": "Cartaginés",
           "abbr": "CAR",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
-          "rank": 2,
+          "rank": 3,
           "pj": 16,
           "g": 10,
           "e": 1,
@@ -209,22 +225,6 @@
           "gc": 20,
           "dg": 12,
           "pts": 31
-        },
-        {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
-          "rank": 3,
-          "pj": 16,
-          "g": 9,
-          "e": 3,
-          "p": 4,
-          "gf": 30,
-          "gc": 23,
-          "dg": 7,
-          "pts": 30
         },
         {
           "id": "2057",
@@ -281,13 +281,13 @@
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
           "rank": 7,
-          "pj": 16,
+          "pj": 17,
           "g": 5,
           "e": 5,
-          "p": 6,
-          "gf": 19,
-          "gc": 25,
-          "dg": -6,
+          "p": 7,
+          "gf": 21,
+          "gc": 29,
+          "dg": -8,
           "pts": 20
         },
         {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-22T12:33:05.371Z",
+    "updatedAt": "2026-11-23T00:02:36.272Z",
     "stale": false
   },
   "playoffs": {
@@ -376,20 +376,20 @@
         "stage": "semifinal",
         "teams": [
           {
-            "id": "7239",
-            "name": "Cartaginés",
-            "short": "Cartaginés",
-            "abbr": "CAR",
-            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
-            "seed": 2,
-            "aggregate": null
-          },
-          {
             "id": "20705",
             "name": "Sporting San José",
             "short": "Spr. San José",
             "abbr": "SSJ",
             "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+            "seed": 2,
+            "aggregate": null
+          },
+          {
+            "id": "7239",
+            "name": "Cartaginés",
+            "short": "Cartaginés",
+            "abbr": "CAR",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
             "seed": 3,
             "aggregate": null
           }
@@ -404,6 +404,67 @@
   "results": {
     "tournament": "Apertura",
     "matches": [
+      {
+        "id": "401876887",
+        "date": "2026-11-22T22:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Carlos Ugalde Álvarez",
+        "home": {
+          "id": "131790",
+          "name": "Inter de San Carlos",
+          "short": "San Carlos",
+          "abbr": "ISC",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
+          "score": "2"
+        },
+        "away": {
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "4"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 17,
+        "goals": [
+          {
+            "minute": "5'",
+            "player": "Joshua Navarro",
+            "side": "away"
+          },
+          {
+            "minute": "37'",
+            "player": "Marcos Ureña",
+            "side": "away"
+          },
+          {
+            "minute": "46'",
+            "player": "Joshua Navarro",
+            "side": "away"
+          },
+          {
+            "minute": "52'",
+            "player": "Carlos Martínez",
+            "side": "home"
+          },
+          {
+            "minute": "63'",
+            "player": "Wilmer Azofeifa",
+            "side": "home"
+          },
+          {
+            "minute": "86'",
+            "player": "Eduardo Pastrana",
+            "side": "away"
+          }
+        ]
+      },
       {
         "id": "401876817",
         "date": "2026-11-22T02:00Z",
@@ -824,10 +885,12 @@
             "side": "away"
           }
         ]
-      },
+      }
+    ],
+    "all": [
       {
-        "id": "401876889",
-        "date": "2026-11-05T23:00Z",
+        "id": "401876887",
+        "date": "2026-11-22T22:00Z",
         "state": "post",
         "completed": true,
         "statusText": "FT",
@@ -838,37 +901,54 @@
           "short": "San Carlos",
           "abbr": "ISC",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
-          "score": "1"
+          "score": "2"
         },
         "away": {
-          "id": "7239",
-          "name": "Cartaginés",
-          "short": "Cartaginés",
-          "abbr": "CAR",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7239.png",
-          "score": "1"
+          "id": "20705",
+          "name": "Sporting San José",
+          "short": "Spr. San José",
+          "abbr": "SSJ",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+          "score": "4"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 15,
+        "round": 17,
         "goals": [
           {
-            "minute": "11'",
-            "player": "Érick Torres",
+            "minute": "5'",
+            "player": "Joshua Navarro",
+            "side": "away"
+          },
+          {
+            "minute": "37'",
+            "player": "Marcos Ureña",
+            "side": "away"
+          },
+          {
+            "minute": "46'",
+            "player": "Joshua Navarro",
+            "side": "away"
+          },
+          {
+            "minute": "52'",
+            "player": "Carlos Martínez",
             "side": "home"
           },
           {
-            "minute": "79'",
-            "player": "José González",
-            "side": "away",
-            "pen": true
+            "minute": "63'",
+            "player": "Wilmer Azofeifa",
+            "side": "home"
+          },
+          {
+            "minute": "86'",
+            "player": "Eduardo Pastrana",
+            "side": "away"
           }
         ]
-      }
-    ],
-    "all": [
+      },
       {
         "id": "401876817",
         "date": "2026-11-22T02:00Z",
@@ -4655,16 +4735,16 @@
         "G"
       ],
       "20705": [
+        "G",
         "P",
         "G",
         "G",
-        "G",
-        "E"
+        "G"
       ],
       "131790": [
-        "E",
-        "E",
         "P",
+        "E",
+        "E",
         "P",
         "P"
       ],
@@ -4677,8 +4757,8 @@
       ]
     },
     "stats": {
-      "matches": 83,
-      "goals": 231,
+      "matches": 84,
+      "goals": 237,
       "biggest": {
         "id": "401876842",
         "date": "2026-10-16T02:00Z",
@@ -4741,40 +4821,11 @@
         ]
       }
     },
-    "updatedAt": "2026-11-22T12:33:06.345Z",
+    "updatedAt": "2026-11-23T00:02:40.068Z",
     "stale": false
   },
   "upcoming": {
     "matches": [
-      {
-        "id": "401876887",
-        "date": "2026-11-22T22:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Carlos Ugalde Álvarez",
-        "home": {
-          "id": "131790",
-          "name": "Inter de San Carlos",
-          "short": "San Carlos",
-          "abbr": "ISC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 17
-      },
       {
         "id": "401876819",
         "date": "2026-11-24T02:00Z",
@@ -4952,35 +5003,6 @@
     ],
     "all": [
       {
-        "id": "401876887",
-        "date": "2026-11-22T22:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Carlos Ugalde Álvarez",
-        "home": {
-          "id": "131790",
-          "name": "Inter de San Carlos",
-          "short": "San Carlos",
-          "abbr": "ISC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131790.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "20705",
-          "name": "Sporting San José",
-          "short": "Spr. San José",
-          "abbr": "SSJ",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 17
-      },
-      {
         "id": "401876819",
         "date": "2026-11-24T02:00Z",
         "state": "pre",
@@ -5155,12 +5177,12 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-22T12:33:06.103Z",
+    "updatedAt": "2026-11-23T00:02:38.589Z",
     "stale": false
   },
   "scorers": {
-    "matchesCounted": 83,
-    "goalsCounted": 228,
+    "matchesCounted": 84,
+    "goalsCounted": 234,
     "corrections": 4,
     "rows": [
       {
@@ -5195,6 +5217,13 @@
         "playerId": "328392",
         "player": "Doryan Rodríguez",
         "team": "Puntarenas FC",
+        "goals": 6,
+        "penalties": 0
+      },
+      {
+        "playerId": "320433",
+        "player": "Joshua Navarro",
+        "team": "Sporting San José",
         "goals": 6,
         "penalties": 0
       },
@@ -5274,6 +5303,13 @@
         "playerId": "328392",
         "player": "Doryan Rodríguez",
         "team": "Puntarenas FC",
+        "goals": 6,
+        "penalties": 0
+      },
+      {
+        "playerId": "320433",
+        "player": "Joshua Navarro",
+        "team": "Sporting San José",
         "goals": 6,
         "penalties": 0
       },
@@ -5362,13 +5398,6 @@
         "penalties": 0
       },
       {
-        "playerId": "320433",
-        "player": "Joshua Navarro",
-        "team": "Sporting San José",
-        "goals": 4,
-        "penalties": 0
-      },
-      {
         "playerId": "207279",
         "player": "Juanpi",
         "team": "Alajuelense",
@@ -5428,6 +5457,13 @@
         "playerId": "357104",
         "player": "Renzo Carballo",
         "team": "Sporting San José",
+        "goals": 3,
+        "penalties": 0
+      },
+      {
+        "playerId": "227935",
+        "player": "Wilmer Azofeifa",
+        "team": "Inter de San Carlos",
         "goals": 3,
         "penalties": 0
       },
@@ -5523,6 +5559,13 @@
         "penalties": 0
       },
       {
+        "playerId": "148141",
+        "player": "Marcos Ureña",
+        "team": "Sporting San José",
+        "goals": 2,
+        "penalties": 0
+      },
+      {
         "playerId": "399115",
         "player": "Randy Vega",
         "team": "Inter de San Carlos",
@@ -5547,13 +5590,6 @@
         "playerId": "302973",
         "player": "Sebastián Acuña",
         "team": "Saprissa",
-        "goals": 2,
-        "penalties": 0
-      },
-      {
-        "playerId": "227935",
-        "player": "Wilmer Azofeifa",
-        "team": "Inter de San Carlos",
         "goals": 2,
         "penalties": 0
       },
@@ -5635,6 +5671,13 @@
         "penalties": 0
       },
       {
+        "playerId": "112866",
+        "player": "Carlos Martínez",
+        "team": "Inter de San Carlos",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
         "playerId": "265899",
         "player": "Christian Muñoz",
         "team": "Escorpiones Belén",
@@ -5659,6 +5702,13 @@
         "playerId": "228454",
         "player": "Diego Mesén",
         "team": "Cartaginés",
+        "goals": 1,
+        "penalties": 0
+      },
+      {
+        "playerId": "276664",
+        "player": "Eduardo Pastrana",
+        "team": "Sporting San José",
         "goals": 1,
         "penalties": 0
       },
@@ -5810,13 +5860,6 @@
         "penalties": 0
       },
       {
-        "playerId": "148141",
-        "player": "Marcos Ureña",
-        "team": "Sporting San José",
-        "goals": 1,
-        "penalties": 0
-      },
-      {
         "playerId": "92511",
         "player": "Marvin Angulo",
         "team": "Pérez Zeledón",
@@ -5936,7 +5979,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-22T12:33:06.469Z",
+    "updatedAt": "2026-11-23T00:02:40.618Z",
     "stale": false
   },
   "assists": {
@@ -6428,6 +6471,320 @@
         ]
       },
       {
+        "id": "20705",
+        "name": "Sporting San José",
+        "short": "Spr. San José",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
+        "players": [
+          {
+            "id": "158483",
+            "jersey": "23",
+            "name": "Leonel Moreira",
+            "position": "G",
+            "age": 36,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "3099880",
+            "jersey": "99",
+            "name": "Rodiney Leal",
+            "position": "G",
+            "age": 24,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "228460",
+            "jersey": "2",
+            "name": "Yostin Salinas",
+            "position": "D",
+            "age": 28,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "178984",
+            "jersey": "3",
+            "name": "Kevin Espinoza",
+            "position": "D",
+            "age": 29,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "3099937",
+            "jersey": "4",
+            "name": "Fabio Coronado",
+            "position": "D",
+            "age": 24,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0,
+            "injury": {
+              "lesion": "Rotura del ligamento cruzado",
+              "desde": "2026-03-19",
+              "regreso": null
+            }
+          },
+          {
+            "id": "207182",
+            "jersey": "5",
+            "name": "Ariel Soto",
+            "position": "D",
+            "age": 34,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "tm-ryan-bolanos",
+            "jersey": "20",
+            "name": "Ryan Bolaños",
+            "position": "D",
+            "age": 27,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "added": true,
+            "assists": 0
+          },
+          {
+            "id": "3099845",
+            "jersey": "27",
+            "name": "Adrián Chévez",
+            "position": "D",
+            "age": 22,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 3
+          },
+          {
+            "id": "276664",
+            "jersey": "33",
+            "name": "Eduardo Pastrana",
+            "position": "D",
+            "age": 26,
+            "country": "México",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+            "goals": 1,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "3099913",
+            "jersey": "98",
+            "name": "Ignacio Gómez",
+            "position": "D",
+            "age": 28,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "147023",
+            "jersey": null,
+            "name": "Christopher Meneses",
+            "position": "D",
+            "age": 36,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "227608",
+            "jersey": "6",
+            "name": "Gabriel Leiva",
+            "position": "M",
+            "age": 32,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 5,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "240989",
+            "jersey": "8",
+            "name": "Carlos Pineda",
+            "position": "M",
+            "age": 29,
+            "country": "Honduras",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hon.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "175969",
+            "jersey": "10",
+            "name": "Alexander López",
+            "position": "M",
+            "age": 34,
+            "country": "Honduras",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hon.png",
+            "goals": 4,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "260484",
+            "jersey": "22",
+            "name": "Youstin Salas",
+            "position": "M",
+            "age": 30,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 1,
+            "penalties": 0,
+            "assists": 2
+          },
+          {
+            "id": "3099933",
+            "jersey": "24",
+            "name": "Anderson Barboza",
+            "position": "M",
+            "age": 24,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "81856",
+            "jersey": "7",
+            "name": "José Pinto",
+            "position": "F",
+            "age": 26,
+            "country": "Honduras",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hon.png",
+            "goals": 2,
+            "penalties": 0,
+            "assists": 2
+          },
+          {
+            "id": "212592",
+            "jersey": "9",
+            "name": "Mayron George",
+            "position": "F",
+            "age": 33,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 4,
+            "penalties": 1,
+            "assists": 3
+          },
+          {
+            "id": "357104",
+            "jersey": "11",
+            "name": "Renzo Carballo",
+            "position": "F",
+            "age": 30,
+            "country": "Paraguay",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+            "goals": 3,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "151184",
+            "jersey": "14",
+            "name": "Daniel Colindres",
+            "position": "F",
+            "age": 41,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 2,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "3099877",
+            "jersey": "16",
+            "name": "Randy Ramírez",
+            "position": "F",
+            "age": 22,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 1,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "324450",
+            "jersey": "19",
+            "name": "Josimar Méndez",
+            "position": "F",
+            "age": 25,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 3,
+            "penalties": 0,
+            "assists": 1
+          },
+          {
+            "id": "148141",
+            "jersey": "21",
+            "name": "Marcos Ureña",
+            "position": "F",
+            "age": 36,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 2,
+            "penalties": 0,
+            "assists": 3
+          },
+          {
+            "id": "404051",
+            "jersey": "25",
+            "name": "Kaden Farrier",
+            "position": "F",
+            "age": 17,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 0,
+            "penalties": 0,
+            "assists": 0
+          },
+          {
+            "id": "320433",
+            "jersey": "28",
+            "name": "Joshua Navarro",
+            "position": "F",
+            "age": 27,
+            "country": "Costa Rica",
+            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+            "goals": 6,
+            "penalties": 0,
+            "assists": 2
+          }
+        ]
+      },
+      {
         "id": "7239",
         "name": "Cartaginés",
         "short": "Cartaginés",
@@ -6795,320 +7152,6 @@
             "goals": 1,
             "penalties": 0,
             "assists": 0
-          }
-        ]
-      },
-      {
-        "id": "20705",
-        "name": "Sporting San José",
-        "short": "Spr. San José",
-        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20705.png",
-        "players": [
-          {
-            "id": "158483",
-            "jersey": "23",
-            "name": "Leonel Moreira",
-            "position": "G",
-            "age": 36,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "3099880",
-            "jersey": "99",
-            "name": "Rodiney Leal",
-            "position": "G",
-            "age": 24,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "228460",
-            "jersey": "2",
-            "name": "Yostin Salinas",
-            "position": "D",
-            "age": 28,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "178984",
-            "jersey": "3",
-            "name": "Kevin Espinoza",
-            "position": "D",
-            "age": 29,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "3099937",
-            "jersey": "4",
-            "name": "Fabio Coronado",
-            "position": "D",
-            "age": 24,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0,
-            "injury": {
-              "lesion": "Rotura del ligamento cruzado",
-              "desde": "2026-03-19",
-              "regreso": null
-            }
-          },
-          {
-            "id": "207182",
-            "jersey": "5",
-            "name": "Ariel Soto",
-            "position": "D",
-            "age": 34,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "tm-ryan-bolanos",
-            "jersey": "20",
-            "name": "Ryan Bolaños",
-            "position": "D",
-            "age": 27,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "added": true,
-            "assists": 0
-          },
-          {
-            "id": "3099845",
-            "jersey": "27",
-            "name": "Adrián Chévez",
-            "position": "D",
-            "age": 22,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 3
-          },
-          {
-            "id": "276664",
-            "jersey": "33",
-            "name": "Eduardo Pastrana",
-            "position": "D",
-            "age": 26,
-            "country": "México",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "3099913",
-            "jersey": "98",
-            "name": "Ignacio Gómez",
-            "position": "D",
-            "age": 28,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "147023",
-            "jersey": null,
-            "name": "Christopher Meneses",
-            "position": "D",
-            "age": 36,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "227608",
-            "jersey": "6",
-            "name": "Gabriel Leiva",
-            "position": "M",
-            "age": 32,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 5,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "240989",
-            "jersey": "8",
-            "name": "Carlos Pineda",
-            "position": "M",
-            "age": 29,
-            "country": "Honduras",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hon.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "175969",
-            "jersey": "10",
-            "name": "Alexander López",
-            "position": "M",
-            "age": 34,
-            "country": "Honduras",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hon.png",
-            "goals": 4,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "260484",
-            "jersey": "22",
-            "name": "Youstin Salas",
-            "position": "M",
-            "age": 30,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 1,
-            "penalties": 0,
-            "assists": 2
-          },
-          {
-            "id": "3099933",
-            "jersey": "24",
-            "name": "Anderson Barboza",
-            "position": "M",
-            "age": 24,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "81856",
-            "jersey": "7",
-            "name": "José Pinto",
-            "position": "F",
-            "age": 26,
-            "country": "Honduras",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hon.png",
-            "goals": 2,
-            "penalties": 0,
-            "assists": 2
-          },
-          {
-            "id": "212592",
-            "jersey": "9",
-            "name": "Mayron George",
-            "position": "F",
-            "age": 33,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 4,
-            "penalties": 1,
-            "assists": 3
-          },
-          {
-            "id": "357104",
-            "jersey": "11",
-            "name": "Renzo Carballo",
-            "position": "F",
-            "age": 30,
-            "country": "Paraguay",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-            "goals": 3,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "151184",
-            "jersey": "14",
-            "name": "Daniel Colindres",
-            "position": "F",
-            "age": 41,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 2,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "3099877",
-            "jersey": "16",
-            "name": "Randy Ramírez",
-            "position": "F",
-            "age": 22,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 1,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "324450",
-            "jersey": "19",
-            "name": "Josimar Méndez",
-            "position": "F",
-            "age": 25,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 3,
-            "penalties": 0,
-            "assists": 1
-          },
-          {
-            "id": "148141",
-            "jersey": "21",
-            "name": "Marcos Ureña",
-            "position": "F",
-            "age": 36,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 1,
-            "penalties": 0,
-            "assists": 3
-          },
-          {
-            "id": "404051",
-            "jersey": "25",
-            "name": "Kaden Farrier",
-            "position": "F",
-            "age": 17,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
-            "penalties": 0,
-            "assists": 0
-          },
-          {
-            "id": "320433",
-            "jersey": "28",
-            "name": "Joshua Navarro",
-            "position": "F",
-            "age": 27,
-            "country": "Costa Rica",
-            "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 4,
-            "penalties": 0,
-            "assists": 2
           }
         ]
       },
@@ -8387,7 +8430,7 @@
             "age": 27,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 0,
+            "goals": 1,
             "penalties": 0,
             "assists": 1
           },
@@ -8483,7 +8526,7 @@
             "age": 32,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 2,
+            "goals": 3,
             "penalties": 0,
             "assists": 1
           },
@@ -9811,7 +9854,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-22T12:33:06.617Z",
+    "updatedAt": "2026-11-23T00:02:41.141Z",
     "stale": false
   },
   "coaches": {
