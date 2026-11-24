@@ -82,6 +82,29 @@
       "type": "Goal"
     }
   ],
+  "401876819": [
+    {
+      "minute": "45'+3'",
+      "playerId": "379972",
+      "player": "Yeison Molina",
+      "team": "Alajuelense",
+      "type": "Goal"
+    },
+    {
+      "minute": "61'",
+      "playerId": "155960",
+      "player": "Manuel Morán",
+      "team": "Cartaginés",
+      "type": "Goal"
+    },
+    {
+      "minute": "69'",
+      "playerId": "205163",
+      "player": "Juan Gaete",
+      "team": "Cartaginés",
+      "type": "Goal"
+    }
+  ],
   "401876820": [
     {
       "minute": "57'",
