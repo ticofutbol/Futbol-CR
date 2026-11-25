@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-24T12:51:40.604Z",
-  "lastSuccessAt": "2026-11-24T12:51:40.604Z",
+  "generatedAt": "2026-11-25T12:53:58.517Z",
+  "lastSuccessAt": "2026-11-25T12:53:58.517Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-24T12:51:39.261Z",
+    "updatedAt": "2026-11-25T12:53:57.422Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-24T12:51:39.261Z",
+    "updatedAt": "2026-11-25T12:53:57.422Z",
     "stale": false
   },
   "playoffs": {
@@ -4872,7 +4872,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-24T12:51:40.330Z",
+    "updatedAt": "2026-11-25T12:53:58.281Z",
     "stale": false
   },
   "upcoming": {
@@ -5170,7 +5170,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-24T12:51:40.127Z",
+    "updatedAt": "2026-11-25T12:53:58.101Z",
     "stale": false
   },
   "scorers": {
@@ -5979,7 +5979,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-24T12:51:40.394Z",
+    "updatedAt": "2026-11-25T12:53:58.327Z",
     "stale": false
   },
   "assists": {
@@ -6815,7 +6815,7 @@
             "jersey": "29",
             "name": "Nicolás Vargas",
             "position": "F",
-            "age": 19,
+            "age": 33,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 0,
@@ -9174,7 +9174,7 @@
             "jersey": "23",
             "name": "Preston Kilwien",
             "position": "D",
-            "age": 29,
+            "age": 30,
             "country": "Estados Unidos",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
             "goals": 0,
@@ -9854,7 +9854,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-24T12:51:40.600Z",
+    "updatedAt": "2026-11-25T12:53:58.512Z",
     "stale": false
   },
   "coaches": {
