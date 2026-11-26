@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-25T12:53:58.517Z",
-  "lastSuccessAt": "2026-11-25T12:53:58.517Z",
+  "generatedAt": "2026-11-26T12:52:56.835Z",
+  "lastSuccessAt": "2026-11-26T12:52:56.835Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-25T12:53:57.422Z",
+    "updatedAt": "2026-11-26T12:52:55.796Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-25T12:53:57.422Z",
+    "updatedAt": "2026-11-26T12:52:55.796Z",
     "stale": false
   },
   "playoffs": {
@@ -4872,7 +4872,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-25T12:53:58.281Z",
+    "updatedAt": "2026-11-26T12:52:56.716Z",
     "stale": false
   },
   "upcoming": {
@@ -5170,7 +5170,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-25T12:53:58.101Z",
+    "updatedAt": "2026-11-26T12:52:56.302Z",
     "stale": false
   },
   "scorers": {
@@ -5979,7 +5979,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-25T12:53:58.327Z",
+    "updatedAt": "2026-11-26T12:52:56.718Z",
     "stale": false
   },
   "assists": {
@@ -8819,7 +8819,7 @@
             "jersey": "24",
             "name": "Sergio Rodríguez",
             "position": "M",
-            "age": 30,
+            "age": 31,
             "country": "México",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "goals": 0,
@@ -9854,7 +9854,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-25T12:53:58.512Z",
+    "updatedAt": "2026-11-26T12:52:56.832Z",
     "stale": false
   },
   "coaches": {
