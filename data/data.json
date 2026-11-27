@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-26T12:52:56.835Z",
-  "lastSuccessAt": "2026-11-26T12:52:56.835Z",
+  "generatedAt": "2026-11-27T12:50:06.245Z",
+  "lastSuccessAt": "2026-11-27T12:50:06.245Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-26T12:52:55.796Z",
+    "updatedAt": "2026-11-27T12:50:05.029Z",
     "stale": false
   },
   "tables": {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-26T12:52:55.796Z",
+    "updatedAt": "2026-11-27T12:50:05.029Z",
     "stale": false
   },
   "playoffs": {
@@ -4872,7 +4872,7 @@
         ]
       }
     },
-    "updatedAt": "2026-11-26T12:52:56.716Z",
+    "updatedAt": "2026-11-27T12:50:06.048Z",
     "stale": false
   },
   "upcoming": {
@@ -5170,7 +5170,7 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-26T12:52:56.302Z",
+    "updatedAt": "2026-11-27T12:50:05.754Z",
     "stale": false
   },
   "scorers": {
@@ -5979,7 +5979,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-26T12:52:56.718Z",
+    "updatedAt": "2026-11-27T12:50:06.051Z",
     "stale": false
   },
   "assists": {
@@ -9270,7 +9270,7 @@
             "jersey": "21",
             "name": "Johan Venegas",
             "position": "M",
-            "age": 37,
+            "age": 38,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
             "goals": 1,
@@ -9854,7 +9854,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-26T12:52:56.832Z",
+    "updatedAt": "2026-11-27T12:50:06.241Z",
     "stale": false
   },
   "coaches": {
