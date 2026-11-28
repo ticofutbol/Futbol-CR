@@ -1,7 +1,7 @@
 {
   "source": "ESPN (site.api.espn.com, liga crc.1)",
-  "generatedAt": "2026-11-27T12:50:06.245Z",
-  "lastSuccessAt": "2026-11-27T12:50:06.245Z",
+  "generatedAt": "2026-11-28T03:58:48.173Z",
+  "lastSuccessAt": "2026-11-28T03:58:48.173Z",
   "warnings": [],
   "standings": {
     "league": "Costa Rican Primera Division",
@@ -127,14 +127,14 @@
         "abbr": "HER",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
         "rank": 8,
-        "pj": 17,
-        "g": 4,
+        "pj": 18,
+        "g": 5,
         "e": 3,
         "p": 10,
-        "gf": 17,
-        "gc": 23,
-        "dg": -6,
-        "pts": 15
+        "gf": 19,
+        "gc": 24,
+        "dg": -5,
+        "pts": 18
       },
       {
         "id": "132447",
@@ -143,13 +143,13 @@
         "abbr": "BEL",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
         "rank": 9,
-        "pj": 17,
+        "pj": 18,
         "g": 4,
         "e": 2,
-        "p": 11,
-        "gf": 22,
-        "gc": 34,
-        "dg": -12,
+        "p": 12,
+        "gf": 23,
+        "gc": 36,
+        "dg": -13,
         "pts": 14
       },
       {
@@ -169,7 +169,7 @@
         "pts": 11
       }
     ],
-    "updatedAt": "2026-11-27T12:50:05.029Z",
+    "updatedAt": "2026-11-28T03:58:46.928Z",
     "stale": false
   },
   "tables": {
@@ -297,14 +297,14 @@
           "abbr": "HER",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
           "rank": 8,
-          "pj": 17,
-          "g": 4,
+          "pj": 18,
+          "g": 5,
           "e": 3,
           "p": 10,
-          "gf": 17,
-          "gc": 23,
-          "dg": -6,
-          "pts": 15
+          "gf": 19,
+          "gc": 24,
+          "dg": -5,
+          "pts": 18
         },
         {
           "id": "132447",
@@ -313,13 +313,13 @@
           "abbr": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "rank": 9,
-          "pj": 17,
+          "pj": 18,
           "g": 4,
           "e": 2,
-          "p": 11,
-          "gf": 22,
-          "gc": 34,
-          "dg": -12,
+          "p": 12,
+          "gf": 23,
+          "gc": 36,
+          "dg": -13,
           "pts": 14
         },
         {
@@ -341,7 +341,7 @@
       ]
     },
     "Clausura": null,
-    "updatedAt": "2026-11-27T12:50:05.029Z",
+    "updatedAt": "2026-11-28T03:58:46.928Z",
     "stale": false
   },
   "playoffs": {
@@ -404,6 +404,52 @@
   "results": {
     "tournament": "Apertura",
     "matches": [
+      {
+        "id": "401876813",
+        "date": "2026-11-28T02:00Z",
+        "state": "post",
+        "completed": true,
+        "statusText": "FT",
+        "venue": "Estadio Carlos Alvarado",
+        "home": {
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "score": "2"
+        },
+        "away": {
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
+          "score": "1"
+        },
+        "tournament": "Apertura",
+        "stage": "regular",
+        "leg": null,
+        "seriesWinner": null,
+        "round": 18,
+        "goals": [
+          {
+            "minute": "45'+2'",
+            "player": "Danilo Pimpinati",
+            "side": "away"
+          },
+          {
+            "minute": "61'",
+            "player": "Elías Aguilar",
+            "side": "home"
+          },
+          {
+            "minute": "85'",
+            "player": "Fernando Lesme",
+            "side": "home"
+          }
+        ]
+      },
       {
         "id": "401876819",
         "date": "2026-11-24T02:00Z",
@@ -848,51 +894,55 @@
             "side": "home"
           }
         ]
-      },
+      }
+    ],
+    "all": [
       {
-        "id": "401876823",
-        "date": "2026-11-08T00:00Z",
+        "id": "401876813",
+        "date": "2026-11-28T02:00Z",
         "state": "post",
         "completed": true,
         "statusText": "FT",
-        "venue": "Estadio Carlos Ugalde Álvarez",
+        "venue": "Estadio Carlos Alvarado",
         "home": {
-          "id": "859",
-          "name": "AD San Carlos",
-          "short": "San Carlos",
-          "abbr": "ADSC",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/859.png",
-          "score": "1"
+          "id": "862",
+          "name": "Herediano",
+          "short": "Herediano",
+          "abbr": "HER",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+          "score": "2"
         },
         "away": {
-          "id": "7234",
-          "name": "Pérez Zeledón",
-          "short": "Pérez Zeledón",
-          "abbr": "ZEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7234.png",
+          "id": "132447",
+          "name": "Escorpiones Belén",
+          "short": "Belén",
+          "abbr": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
           "score": "1"
         },
         "tournament": "Apertura",
         "stage": "regular",
         "leg": null,
         "seriesWinner": null,
-        "round": 16,
+        "round": 18,
         "goals": [
           {
-            "minute": "66'",
-            "player": "Wílber Rentería",
-            "side": "away",
-            "pen": true
+            "minute": "45'+2'",
+            "player": "Danilo Pimpinati",
+            "side": "away"
           },
           {
-            "minute": "90'+3'",
-            "player": "Raúl Vidal",
+            "minute": "61'",
+            "player": "Elías Aguilar",
+            "side": "home"
+          },
+          {
+            "minute": "85'",
+            "player": "Fernando Lesme",
             "side": "home"
           }
         ]
-      }
-    ],
-    "all": [
+      },
       {
         "id": "401876819",
         "date": "2026-11-24T02:00Z",
@@ -4751,11 +4801,11 @@
         "G"
       ],
       "862": [
+        "G",
         "P",
         "E",
         "P",
-        "P",
-        "G"
+        "P"
       ],
       "2057": [
         "P",
@@ -4800,16 +4850,16 @@
         "P"
       ],
       "132447": [
+        "P",
         "E",
         "P",
         "P",
-        "G",
-        "P"
+        "G"
       ]
     },
     "stats": {
-      "matches": 85,
-      "goals": 240,
+      "matches": 86,
+      "goals": 243,
       "biggest": {
         "id": "401876842",
         "date": "2026-10-16T02:00Z",
@@ -4872,40 +4922,11 @@
         ]
       }
     },
-    "updatedAt": "2026-11-27T12:50:06.048Z",
+    "updatedAt": "2026-11-28T03:58:47.947Z",
     "stale": false
   },
   "upcoming": {
     "matches": [
-      {
-        "id": "401876813",
-        "date": "2026-11-28T02:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Carlos Alvarado",
-        "home": {
-          "id": "862",
-          "name": "Herediano",
-          "short": "Herediano",
-          "abbr": "HER",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 18
-      },
       {
         "id": "401876815",
         "date": "2026-11-29T01:00Z",
@@ -5025,35 +5046,6 @@
     ],
     "all": [
       {
-        "id": "401876813",
-        "date": "2026-11-28T02:00Z",
-        "state": "pre",
-        "completed": false,
-        "statusText": "Scheduled",
-        "venue": "Estadio Carlos Alvarado",
-        "home": {
-          "id": "862",
-          "name": "Herediano",
-          "short": "Herediano",
-          "abbr": "HER",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
-          "score": "0"
-        },
-        "away": {
-          "id": "132447",
-          "name": "Escorpiones Belén",
-          "short": "Belén",
-          "abbr": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132447.png",
-          "score": "0"
-        },
-        "tournament": "Apertura",
-        "stage": "regular",
-        "leg": null,
-        "seriesWinner": null,
-        "round": 18
-      },
-      {
         "id": "401876815",
         "date": "2026-11-29T01:00Z",
         "state": "pre",
@@ -5170,12 +5162,12 @@
         "round": 18
       }
     ],
-    "updatedAt": "2026-11-27T12:50:05.754Z",
+    "updatedAt": "2026-11-28T03:58:47.770Z",
     "stale": false
   },
   "scorers": {
-    "matchesCounted": 85,
-    "goalsCounted": 237,
+    "matchesCounted": 86,
+    "goalsCounted": 240,
     "corrections": 4,
     "rows": [
       {
@@ -5235,6 +5227,13 @@
         "penalties": 4
       },
       {
+        "playerId": "3100022",
+        "player": "Danilo Pimpinati",
+        "team": "Escorpiones Belén",
+        "goals": 5,
+        "penalties": 0
+      },
+      {
         "playerId": "227608",
         "player": "Gabriel Leiva",
         "team": "Sporting San José",
@@ -5321,6 +5320,13 @@
         "penalties": 4
       },
       {
+        "playerId": "3100022",
+        "player": "Danilo Pimpinati",
+        "team": "Escorpiones Belén",
+        "goals": 5,
+        "penalties": 0
+      },
+      {
         "playerId": "227608",
         "player": "Gabriel Leiva",
         "team": "Sporting San José",
@@ -5359,13 +5365,6 @@
         "playerId": "291004",
         "player": "Andrey Soto",
         "team": "Saprissa",
-        "goals": 4,
-        "penalties": 0
-      },
-      {
-        "playerId": "3100022",
-        "player": "Danilo Pimpinati",
-        "team": "Escorpiones Belén",
         "goals": 4,
         "penalties": 0
       },
@@ -5461,11 +5460,25 @@
         "penalties": 0
       },
       {
+        "playerId": "381345",
+        "player": "Fernando Lesme",
+        "team": "Herediano",
+        "goals": 3,
+        "penalties": 1
+      },
+      {
         "playerId": "280546",
         "player": "José González",
         "team": "Cartaginés",
         "goals": 3,
         "penalties": 1
+      },
+      {
+        "playerId": "210206",
+        "player": "Elías Aguilar",
+        "team": "Herediano",
+        "goals": 3,
+        "penalties": 2
       },
       {
         "playerId": "267307",
@@ -5594,13 +5607,6 @@
         "penalties": 0
       },
       {
-        "playerId": "381345",
-        "player": "Fernando Lesme",
-        "team": "Herediano",
-        "goals": 2,
-        "penalties": 1
-      },
-      {
         "playerId": "35147",
         "player": "Mariano Torres",
         "team": "Saprissa",
@@ -5620,13 +5626,6 @@
         "team": "Escorpiones Belén",
         "goals": 2,
         "penalties": 1
-      },
-      {
-        "playerId": "210206",
-        "player": "Elías Aguilar",
-        "team": "Herediano",
-        "goals": 2,
-        "penalties": 2
       },
       {
         "playerId": "3100029",
@@ -5979,7 +5978,7 @@
         "penalties": 1
       }
     ],
-    "updatedAt": "2026-11-27T12:50:06.051Z",
+    "updatedAt": "2026-11-28T03:58:47.989Z",
     "stale": false
   },
   "assists": {
@@ -8798,7 +8797,7 @@
             "age": 35,
             "country": "Costa Rica",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
-            "goals": 2,
+            "goals": 3,
             "penalties": 2,
             "assists": 1
           },
@@ -8947,7 +8946,7 @@
             "age": 24,
             "country": "Paraguay",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-            "goals": 2,
+            "goals": 3,
             "penalties": 1,
             "assists": 0
           },
@@ -9454,7 +9453,7 @@
             "age": 26,
             "country": "Brasil",
             "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-            "goals": 4,
+            "goals": 5,
             "penalties": 0,
             "assists": 1
           },
@@ -9854,7 +9853,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-11-27T12:50:06.241Z",
+    "updatedAt": "2026-11-28T03:58:48.168Z",
     "stale": false
   },
   "coaches": {
